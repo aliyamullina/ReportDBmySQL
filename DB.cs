@@ -12,9 +12,8 @@ namespace ReportDBmySQL
             "database = reportdbmysqlhomes"
             );
 
-0 таблица
-Id, 1, 2
-Город, Казань, Нурлат
+INSERT Cities(1, City) 
+VALUES ('Казань');
 
 1 таблица
 IdГород 1, 1
