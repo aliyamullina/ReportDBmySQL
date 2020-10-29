@@ -57,6 +57,27 @@ Mассив передать в макет word с адресом в имени
 
 
 
+
+// Вариант1
+var p = Basket.arrayList;
+
+itemsQueryCommand.CommandText = "INSERT INTO tOrderItems (orderId, name, quantity) VALUES (@OrderId, @name, @quantity )";
+itemsQueryCommand.Parameters.Add("@OrderId");
+itemsQueryCommand.Parameters.Add("@name");
+itemsQueryCommand.Parameters.Add("@quantity");
+
+
+for (int i = 0; i < p.Count; i++)
+    // Loop through List 
+{
+    itemsQueryCommand.Parameters["@OrderId"] = id;
+    itemsQueryCommand.Parameters["@name"] =  p[i][0]; // ProductId;
+    itemsQueryCommand.Parameters["@quantity"] = p[i][1]; //Quantity;
+
+    itemsQueryCommand.ExecuteNonQuery();
+}
+
+
 2 таблица Реестр
 IdУлица
 IdДом
