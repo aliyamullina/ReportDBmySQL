@@ -12,19 +12,23 @@ namespace ReportDBmySQL
             "database = reportdbmysqlhomes"
             );
 
+/*******************/
+
 CREATE DATABASE productsdb;
 USE productsdb;
 CREATE TABLE Cities
 (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
+    City_Id INT AUTO_INCREMENT PRIMARY KEY,
     City VARCHAR(30) NOT NULL,
 );
 
-INSERT Cities(Id, City) 
+INSERT Cities(City_Id, City) 
 VALUES ('Казань'),
 VALUES ('Нурлат'),
 VALUES ('Чистополь'),
 VALUES ('Высокая гора');
+
+/*******************/
 
 CREATE DATABASE productsdb;
 USE productsdb;
@@ -33,12 +37,18 @@ CREATE TABLE Addresses
     Id INT AUTO_INCREMENT PRIMARY KEY,
     Address VARCHAR(30) NOT NULL,
     Home VARCHAR(10),
-    Id_city,
+    City_Id,
 );
 
-INSERT Cities(Id, Address, Home, Id_city) 
+INSERT Cities(Id, Address, Home, City_Id) 
 VALUES ('Большая', '80', 1),
 VALUES ('Подлужная', '40', 1);
+
+/*******************/
+Заполнить таблицы:
+ Из названия папки в город
+ Из названия файлов в Адрес и номер дома
+
 
 
 2 таблица Реестр
