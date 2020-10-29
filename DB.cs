@@ -11,6 +11,13 @@ namespace ReportDBmySQL
             "Password = root; " +
             "database = reportdbmysqlhomes"
             );
+CREATE DATABASE productsdb;
+USE productsdb;
+CREATE TABLE Cities
+(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    City VARCHAR(30) NOT NULL,
+);
 
 INSERT Cities(Id, City) 
 VALUES ('Казань'),
