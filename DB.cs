@@ -37,7 +37,7 @@ CREATE TABLE Addresses
     Id INT AUTO_INCREMENT PRIMARY KEY,
     Address VARCHAR(30) NOT NULL,
     Home VARCHAR(10),
-    City_Id,
+    City_Id INT REFERENCES Cities(City_Id),
 );
 
 INSERT Cities(Id, Address, Home, City_Id) 
