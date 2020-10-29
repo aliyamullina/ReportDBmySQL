@@ -55,7 +55,20 @@ VALUES ('Подлужная', '40', 1);
 Из mysql в массив
 Mассив передать в макет word с адресом в имени
 
+// Вариант2
+var mycommand = new SqlCommand("INSERT INTO RSS2 VALUES(@Date, @Templow, @Temphigh)", 
+                               myConnection);
 
+mycommand.Parameters.AddWithValue("@Date", DateTime.MinValue);
+mycommand.Parameters.AddWithValue("@Templow", Double.MinValue);
+mycommand.Parameters.AddWithValue("@Temphigh", Double.MinValue);
+for (i = 0; i < 5; i++)
+{
+    mycommand.Parameters["@Date"].Value = Convert.ToDateTime(myArray[i,0]);   
+    mycommand.Parameters["@Templow"].Value = Convert.ToDouble(myArray[i,1]);   
+    mycommand.Parameters["@Temphigh"].Value = Convert.ToDouble(myArray[i,2]);    
+    mycommand.ExecuteNonQuery();
+}
 
 
 // Вариант1
