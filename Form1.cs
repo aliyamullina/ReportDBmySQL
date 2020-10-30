@@ -12,17 +12,16 @@ namespace ReportDBmySQL
             InitializeComponent();
         }
 
-        // Получимть имена папок
         private void button1_Click(object sender, System.EventArgs e)
         {
-            List<AddressInfo> addresses = new List<AddressInfo>();
-
-
-            //addresses.AddRange(System.IO.Directory.)
+            GetFolderName();
         }
 
-        public string[] GetFolderName(ref string[] allfolders)
+        public void GetFolderName()
         {
+            List<AddressInfo> addresses = new List<AddressInfo>();
+            
+
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
             folderDlg.ShowNewFolderButton = true;
 
@@ -33,9 +32,14 @@ namespace ReportDBmySQL
                 string PathToFolder = folderDlg.SelectedPath;
                 Environment.SpecialFolder root = folderDlg.RootFolder;
 
-                _ = Directory.GetDirectories(PathToFolder);
+                string[] allfolders = Directory.GetDirectories(PathToFolder);
+
+                foreach(var f in allfolders)
+                {
+                   // addresses = addresses.AddRange(f.allfolders);
+                }
             }
-            return allfolders;
+
         }
 
     }
