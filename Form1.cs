@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -17,9 +11,34 @@ namespace ReportDBmySQL
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        // Получимть имена папок
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            GetFolderName();
+        }
+
+        public void GetFolderName()
         {
 
+            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
+            folderDlg.ShowNewFolderButton = true;
+
+            DialogResult result = folderDlg.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                string PathToFolder = folderDlg.SelectedPath;
+                Environment.SpecialFolder root = folderDlg.RootFolder;
+
+                string[] allfolders = Directory.GetDirectories(PathToFolder);
+
+                foreach (string folder in allfolders)
+                {
+                    Console.WriteLine();
+                }
+
+            }
         }
+
     }
 }
