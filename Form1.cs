@@ -15,10 +15,13 @@ namespace ReportDBmySQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            GetFolderName();
+            //GetFolderName();
+
+            Application.Exit();
         }
 
-        public void GetFolderName()
+        //public void GetFolderName()
+        private static List<AddressInfo> ParseFolderName(string text)
         {
             List<AddressInfo> addresses = new List<AddressInfo>();
             
@@ -26,22 +29,25 @@ namespace ReportDBmySQL
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
             folderDlg.ShowNewFolderButton = true;
 
-            DialogResult result = folderDlg.ShowDialog();
+            DialogResult dialog = folderDlg.ShowDialog();
 
-            if (result == DialogResult.OK)
+            if (dialog == DialogResult.OK)
             {
                 string PathToFolder = folderDlg.SelectedPath;
                 _ = folderDlg.RootFolder;
 
                 string[] allfolders = Directory.GetDirectories(PathToFolder);
 
-                foreach (var f in allfolders)
+                foreach (var street in allfolders)
                 {
-                    addresses.Add(new AddressInfo("1", f, f));
+                    
+
+
+                    addresses.Add(new AddressInfo(city, street, home));
                 }
             }
-            Console.WriteLine();
-        }
 
+            return addresses;
+        }
     }
 }
