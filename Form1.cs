@@ -31,13 +31,13 @@ namespace ReportDBmySQL
             if (result == DialogResult.OK)
             {
                 string PathToFolder = folderDlg.SelectedPath;
-                Environment.SpecialFolder root = folderDlg.RootFolder;
+                _ = folderDlg.RootFolder;
 
                 string[] allfolders = Directory.GetDirectories(PathToFolder);
 
                 foreach (var f in allfolders)
                 {
-                    addresses.Add(new AddressInfo(null, f, f));
+                    addresses.Add(new AddressInfo("1", f, f));
                 }
             }
             Console.WriteLine();
