@@ -36,7 +36,7 @@ namespace ReportDBmySQL
 
                 foreach(var f in allfolders)
                 {
-                   // addresses = addresses.AddRange(f.allfolders);
+                    addresses.Add(f);
                 }
             }
 
