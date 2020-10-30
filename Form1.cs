@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -23,7 +24,7 @@ namespace ReportDBmySQL
         //public void GetFolderName()
         private static List<AddressInfo> ParseFolderName(string text)
         {
-            List<AddressInfo> addresses = new List<AddressInfo>();
+            List<AddressInfo> folderName = new List<AddressInfo>();
             
 
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
@@ -38,16 +39,19 @@ namespace ReportDBmySQL
 
                 string[] allfolders = Directory.GetDirectories(PathToFolder);
 
+                string city = "1";
+                string home = "1";
+
                 foreach (var street in allfolders)
                 {
-                    
-
-
-                    addresses.Add(new AddressInfo(city, street, home));
+                    folderName.Add(new AddressInfo(city, street, home));
                 }
             }
 
-            return addresses;
+            return folderName;
         }
+        // Из папки в mysql
+        // Из mysql в массив
+        // Mассив передать в макет word с адресом в имени
     }
 }
