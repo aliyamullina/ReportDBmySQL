@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -34,10 +35,15 @@ namespace ReportDBmySQL
 
                 string[] allfolders = Directory.GetDirectories(PathToFolder);
 
-                foreach(var f in allfolders)
-                {
-                    addresses.Add(f);
-                }
+            }
+
+            AddressInfo[] addressInfos = AddressInfo.GetAdress();
+
+            List<string> directoryList = new List<string>();
+
+            foreach (AddressInfo f in addressInfos)
+            {
+                directoryList.AddRange(Directory.GetDirectories(f.Street, "*", SearchOption.AllDirectories));
             }
 
         }

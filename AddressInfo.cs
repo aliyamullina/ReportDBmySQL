@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
@@ -16,7 +17,12 @@ namespace ReportDBmySQL
         public string Street { get; private set; }
         public string Home { get; private set; }
 
-        
+        internal static AddressInfo[] GetAdress()
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         // инициализировать 
         //AddressInfo address = new AddressInfo("Казань", "Большая", "80");
