@@ -1,4 +1,6 @@
-﻿namespace ReportDBmySQL
+﻿using System.Collections.Generic;
+
+namespace ReportDBmySQL
 {
     class AddressInfo
     {
@@ -13,6 +15,8 @@
         public string City { get; private set; }
         public string Street { get; private set; }
         public string Home { get; private set; }
+
+        
 
         // инициализировать 
         //AddressInfo address = new AddressInfo("Казань", "Большая", "80");

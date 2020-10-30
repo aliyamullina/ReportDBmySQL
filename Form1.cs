@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -14,13 +15,14 @@ namespace ReportDBmySQL
         // Получимть имена папок
         private void button1_Click(object sender, System.EventArgs e)
         {
-            //GetFolderName();
-            GetAddressName();
+            List<AddressInfo> addresses = new List<AddressInfo>();
+
+
+            //addresses.AddRange(System.IO.Directory.)
         }
 
-        public string[] GetFolderName(string[] allfolders)
+        public string[] GetFolderName(ref string[] allfolders)
         {
-
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
             folderDlg.ShowNewFolderButton = true;
 
@@ -36,19 +38,5 @@ namespace ReportDBmySQL
             return allfolders;
         }
 
-        public void GetAddressName()
-        {
-            
-            foreach (string folder in allfolders)
-             {
-                 Console.WriteLine();
-             }
-
-            /*
-             // Передать массив string[] allfolders в AddressInfo
-             AddressInfo address = new AddressInfo();
-            */
-        }
-
     }
-    }
+}
