@@ -14,10 +14,11 @@ namespace ReportDBmySQL
         // Получимть имена папок
         private void button1_Click(object sender, System.EventArgs e)
         {
-            GetFolderName();
+            //GetFolderName();
+            GetAddressName();
         }
 
-        public void GetFolderName()
+        public string[] GetFolderName(string[] allfolders)
         {
 
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
@@ -30,17 +31,24 @@ namespace ReportDBmySQL
                 string PathToFolder = folderDlg.SelectedPath;
                 Environment.SpecialFolder root = folderDlg.RootFolder;
 
-                string[] allfolders = Directory.GetDirectories(PathToFolder);
-
-                foreach (string folder in allfolders)
-                {
-                    Console.WriteLine();
-                }
-
-                // Передать массив string[] allfolders в AddressInfo
-
+                _ = Directory.GetDirectories(PathToFolder);
             }
+            return allfolders;
+        }
+
+        public void GetAddressName()
+        {
+            
+            foreach (string folder in allfolders)
+             {
+                 Console.WriteLine();
+             }
+
+            /*
+             // Передать массив string[] allfolders в AddressInfo
+             AddressInfo address = new AddressInfo();
+            */
         }
 
     }
-}
+    }
