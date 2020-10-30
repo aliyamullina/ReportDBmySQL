@@ -37,6 +37,8 @@ namespace ReportDBmySQL
                     Console.WriteLine();
                 }
 
+                // Передать массив string[] allfolders в AddressInfo
+
             }
         }
 
