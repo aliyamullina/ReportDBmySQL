@@ -33,7 +33,12 @@ namespace ReportDBmySQL
                 string PathToFolder = folderDlg.SelectedPath;
                 Environment.SpecialFolder root = folderDlg.RootFolder;
 
-                List<string> allfolders = (Directory.GetDirectories(PathToFolder)).ToList();
+                string[] allfolders = Directory.GetDirectories(PathToFolder);
+
+                foreach (var f in allfolders)
+                {
+                    addresses.Add(new AddressInfo(null, f, f));
+                }
             }
             Console.WriteLine();
         }
