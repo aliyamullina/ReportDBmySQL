@@ -27,6 +27,11 @@ namespace ReportDBmySQL
                 connection.Close();
             }
         }
+        public MySqlConnection getConnection()
+        {
+            return connection;
+        }
+        
     }
 }
 
