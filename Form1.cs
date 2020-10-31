@@ -47,14 +47,13 @@ namespace ReportDBmySQL
                     var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
 
                     // " 27А"
-                    var home = pathTrim.Substring(pathTrim.LastIndexOf(" "));
+                    var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
 
                     folderAdress.Add(new AddressInfo(city, street, home));
                 }
             }
             Console.WriteLine();
             return folderAdress;
-            
         }
         // Из папки в mysql
         // Из mysql в массив
