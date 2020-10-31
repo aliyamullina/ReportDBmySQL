@@ -9,8 +9,26 @@ namespace ReportDBmySQL
             "Port = 3306; " +
             "Username = root; " +
             "Password = root; " +
-            "database = reportdbmysqlhomes"
+            "database = addressinfodb"
             );
+
+        public void openConnection()
+        {
+            if(connection.State == System.Data.ConnectionState.Closed)
+            {
+                connection.Open();
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (connection.State == System.Data.ConnectionState.Open)
+            {
+                connection.Close();
+            }
+        }
+    }
+}
 
 /*
 
@@ -107,5 +125,5 @@ for (int i = 0; i < p.Count; i++)
     Этаж
     Количество квартир
     Подъезды*/
-    }
-}
+    
+
