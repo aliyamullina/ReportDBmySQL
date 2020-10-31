@@ -16,8 +16,7 @@ namespace ReportDBmySQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            var AdressInfo = getFolderAddressInfo();
-            
+            var FolderAddressInfo = getFolderAddressInfo();
 
             Application.Exit();
         }
@@ -39,9 +38,12 @@ namespace ReportDBmySQL
 
                 string city = "1";
                 string home = "1";
+
+                string pattern = "\\";
                 
                 foreach (var street in allfolders)
                 {
+                    Regex.Replace(street, pattern, string.Empty);
                     folderAdress.Add(new AddressInfo(city, street, home));
                 }
             }
