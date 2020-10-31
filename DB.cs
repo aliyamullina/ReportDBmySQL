@@ -12,7 +12,7 @@ namespace ReportDBmySQL
             "database = reportdbmysqlhomes"
             );
 
-/*******************/
+/*
 
 CREATE DATABASE productsdb;
 USE productsdb;
@@ -28,7 +28,7 @@ VALUES ('Нурлат'),
 VALUES ('Чистополь'),
 VALUES ('Высокая гора');
 
-/*******************/
+
 
 CREATE DATABASE productsdb;
 USE productsdb;
@@ -44,7 +44,7 @@ INSERT Cities(Id, Address, Home, City_Id)
 VALUES ('Большая', '80', 1),
 VALUES ('Подлужная', '40', 1);
 
-/*******************/
+
 Заполнить таблицы:
  Из названия папки в город
  Из названия файлов в Адрес и дома
