@@ -16,15 +16,15 @@ namespace ReportDBmySQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            var adress = getFolderNameAdresses();
+            var AdressInfo = getFolderAddressInfo();
             
 
             Application.Exit();
         }
 
-        private static List<AddressInfo> getFolderNameAdresses()
+        private static List<AddressInfo> getFolderAddressInfo()
         {
-            List<AddressInfo> folderNameAdresses = new List<AddressInfo>();
+            List<AddressInfo> folderAdress = new List<AddressInfo>();
             
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
             folderDlg.ShowNewFolderButton = true;
@@ -43,11 +43,11 @@ namespace ReportDBmySQL
                 
                 foreach (var street in allfolders)
                 {
-                    folderNameAdresses.Add(new AddressInfo(city, street, home));
+                    folderAdress.Add(new AddressInfo(city, street, home));
                 }
             }
             Console.WriteLine();
-            return folderNameAdresses;
+            return folderAdress;
             
         }
         // Из папки в mysql
