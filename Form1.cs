@@ -25,9 +25,8 @@ namespace ReportDBmySQL
         private static List<AddressInfo> getFolderAddressInfo()
         {
             List<AddressInfo> folderAdress = new List<AddressInfo>();
-            
-            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
-            folderDlg.ShowNewFolderButton = true;
+
+            FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
 
             DialogResult dialog = folderDlg.ShowDialog();
 
