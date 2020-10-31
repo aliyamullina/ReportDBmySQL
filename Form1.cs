@@ -37,13 +37,15 @@ namespace ReportDBmySQL
                 string[] allfolders = Directory.GetDirectories(PathToFolder);
 
                 string city = "1";
-                string home = "1";
-
-                string pattern = "\\";
                 
-                foreach (var street in allfolders)
+                foreach (var path in allfolders)
                 {
-                    Regex.Replace(street, pattern, string.Empty);
+                    // "Адоратского 27А"
+                    var street = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty).TrimEnd();
+
+                    // "\\Адоратского 27А"
+                    var home = path.Substring(path.LastIndexOf("\\"));
+
                     folderAdress.Add(new AddressInfo(city, street, home));
                 }
             }
