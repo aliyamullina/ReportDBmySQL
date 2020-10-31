@@ -31,7 +31,21 @@ namespace ReportDBmySQL
         {
             return connection;
         }
-        
+
+        public void createAddressInfoDB()
+        {
+
+        }
+
+
+        public void createTableCities()
+        {
+            
+        }
+        public void createTableAdresses()
+        {
+
+        }
     }
 }
 
