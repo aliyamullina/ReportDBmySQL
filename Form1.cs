@@ -24,7 +24,7 @@ namespace ReportDBmySQL
         //public void GetFolderName()
         private static List<AddressInfo> ParseFolderName(string text)
         {
-            List<AddressInfo> folderName = new List<AddressInfo>();
+            List<AddressInfo> folderNameAdresses = new List<AddressInfo>();
             
 
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
@@ -44,11 +44,11 @@ namespace ReportDBmySQL
 
                 foreach (var street in allfolders)
                 {
-                    folderName.Add(new AddressInfo(city, street, home));
+                    folderNameAdresses.Add(new AddressInfo(city, street, home));
                 }
             }
 
-            return folderName;
+            return folderNameAdresses;
         }
         // Из папки в mysql
         // Из mysql в массив
