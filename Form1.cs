@@ -21,6 +21,11 @@ namespace ReportDBmySQL
             Application.Exit();
         }
 
+
+        /// <summary>
+        /// Берет названия папок, разделяет на улицу, дом. Добавляет в коллекцию
+        /// </summary>
+        /// <returns>folderAdress</returns>
         private static List<AddressInfo> getFolderAddressInfo()
         {
             List<AddressInfo> folderAdress = new List<AddressInfo>();
@@ -42,6 +47,8 @@ namespace ReportDBmySQL
             }
             return folderAdress;
         }
+        
+
         // Из папки в mysql
         // Из mysql в массив
         // Mассив передать в макет word с адресом в имени
