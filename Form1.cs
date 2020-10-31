@@ -40,11 +40,14 @@ namespace ReportDBmySQL
                 
                 foreach (var path in allfolders)
                 {
-                    // "Адоратского 27А"
-                    var street = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty).TrimEnd();
+                    // "Адоратского 27"
+                    var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
 
-                    // "\\Адоратского 27А"
-                    var home = path.Substring(path.LastIndexOf("\\"));
+                    // "Адоратского"
+                    var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
+
+                    // " 27А"
+                    var home = pathTrim.Substring(pathTrim.LastIndexOf(" "));
 
                     folderAdress.Add(new AddressInfo(city, street, home));
                 }
