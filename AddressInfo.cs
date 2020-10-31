@@ -11,9 +11,11 @@ namespace ReportDBmySQL
             this.Street = street;
             this.Home = home;
         }
-
+        
         public string City { get; private set; }
         public string Street { get; private set; }
         public string Home { get; private set; }
     }
 }
+
+// AddressInfo a = new AddressInfo("1", "Большая", "80");
