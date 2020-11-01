@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -16,11 +18,11 @@ namespace ReportDBmySQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            var FolderAddressInfo = getFolderAddressInfo();
+            //_ = getFolderAddressInfo();
+            addFolderaddressInfoToBD();
 
             Application.Exit();
         }
-
 
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом. Добавляет в коллекцию
@@ -47,7 +49,20 @@ namespace ReportDBmySQL
             }
             return folderAdress;
         }
-        
+
+        /// <summary>
+        /// Из коллекции в БД
+        /// </summary>
+        private void addFolderaddressInfoToBD()
+        {
+            DB db = new DB();
+            db.CreateTableCities();
+            db.CreateTableAdresses();
+
+            /*DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("");*/
+        }
 
         // Из папки в mysql
         // Из mysql в массив
