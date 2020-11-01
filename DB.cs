@@ -91,18 +91,11 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Cities в БД
         /// </summary>
-        public void InsertTableCities()
+        public void InsertTableCities(List<CityInfo> citiesList)
         {
-            string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора" };
-            List<CityInfo> citiesList = new List<CityInfo>();
-
-            foreach (var city in citiesArray)
-            {
-                citiesList.Add(new CityInfo(city));
-            }
-
             using (MySqlCommand command = new MySqlCommand(@"INSERT INTO cities(City) VALUES (@city)", connection))
             {
+                //citiesList = getFillCities();
                 connection.Open();
                 foreach (var item in citiesList)
                 {

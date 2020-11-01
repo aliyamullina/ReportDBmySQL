@@ -15,8 +15,14 @@ namespace ReportDBmySQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            fillCities();
+            DB db = new DB();
+            db.CreateTableCities();
+
+            List<CityInfo> torun = getFillCities();
+            db.InsertTableCities(torun);
+
             fillAdressses();
+
             Application.Exit();
         }
 
@@ -47,18 +53,18 @@ namespace ReportDBmySQL
         }
 
         /// <summary>
-        /// Из коллекции в БД
+        /// Из коллекции Города в БД
         /// </summary>
-        private void fillCities()
+        private static List<CityInfo> getFillCities()
         {
+            List<CityInfo> citiesList = new List<CityInfo>();
+            string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора" };
             
-
-            DB db = new DB();
-            db.CreateTableCities();
-
-            db.InsertTableCities();
-
-            // Как передать данные из List в Mysql?
+            foreach (var city in citiesArray)
+            {
+                citiesList.Add(new CityInfo(city));
+            }
+            return citiesList;
         }
 
         /// <summary>
