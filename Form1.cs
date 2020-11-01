@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ReportDBmySQL
 {
@@ -59,7 +60,11 @@ namespace ReportDBmySQL
 
             DB db = new DB();
             db.CreateTableCities();
-            db.InsertTableCities();
+
+
+            //db.InsertTableCities();
+
+            // Как передать данные из List в Mysql?
         }
 
         /// <summary>
@@ -77,6 +82,12 @@ namespace ReportDBmySQL
             /*DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             MySqlCommand command = new MySqlCommand("");*/
+        }
+
+        public List<string> MySQLCollectionQuery(MySqlConnection connection, string cmd)
+        {
+            List<string> QueryResult = new List<string>();
+            MySqlCommand cmdName =new
         }
 
         // Из папки в mysql
