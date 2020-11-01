@@ -1,10 +1,5 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -18,9 +13,7 @@ namespace ReportDBmySQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            //_ = getFolderAddressInfo();
-            addFolderaddressInfoToBD();
-
+            fillAdressses();
             Application.Exit();
         }
 
@@ -53,11 +46,29 @@ namespace ReportDBmySQL
         /// <summary>
         /// Из коллекции в БД
         /// </summary>
-        private void addFolderaddressInfoToBD()
+        private void fillCities()
         {
+            string[] citiesList = new string[]
+            {
+                "Казань", "Нурлат", "Чистополь", "Высокая гора"
+            };
+
             DB db = new DB();
             db.CreateTableCities();
+            db.InsertTableCities();
+        }
+
+        /// <summary>
+        /// Из коллекции в БД
+        /// </summary>
+        private void fillAdressses()
+        {
+            DB db = new DB();
             db.CreateTableAdresses();
+
+            db.InsertTableAdresses();
+
+            //_ = getFolderAddressInfo();
 
             /*DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
