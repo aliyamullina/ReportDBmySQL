@@ -118,16 +118,6 @@ namespace ReportDBmySQL
 }
 
 /*
-
-INSERT Cities(City_Id, City) 
-VALUES ('Казань'),
-VALUES ('Нурлат'),
-VALUES ('Чистополь'),
-VALUES ('Высокая гора');
-
-INSERT Addresses(Id, Address, Home, City_Id) VALUES ('Большая', '80', 1),
-VALUES ('Подлужная', '40', 1);
-
     /*2 таблица Реестр
     IdУлица
     IdДом
