@@ -13,6 +13,7 @@ namespace ReportDBmySQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
+            fillCities();
             fillAdressses();
             Application.Exit();
         }
@@ -48,10 +49,13 @@ namespace ReportDBmySQL
         /// </summary>
         private void fillCities()
         {
-            string[] citiesList = new string[]
+            string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора" };
+            List <CityInfo> citiesList = new List<CityInfo>();
+
+            foreach (var city in citiesArray)
             {
-                "Казань", "Нурлат", "Чистополь", "Высокая гора"
-            };
+                citiesList.Add(new CityInfo(city));
+            }
 
             DB db = new DB();
             db.CreateTableCities();
