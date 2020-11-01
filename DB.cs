@@ -1,10 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
+using Renci.SshNet.Security.Cryptography;
 
 namespace ReportDBmySQL
 {
     class DB
     {
-        MySqlConnection connection = new MySqlConnection(
+        readonly MySqlConnection connection = new MySqlConnection(
             "Server = localhost; " +
             "Port = 3306; " +
             "Username = root; " +
@@ -12,39 +13,77 @@ namespace ReportDBmySQL
             "database = addressinfodb"
             );
 
-        public void openConnection()
+        /// <summary>
+        /// Подключение к БД
+        /// </summary>
+        public void OpenConnection()
         {
-            if(connection.State == System.Data.ConnectionState.Closed)
+            if (connection.State == System.Data.ConnectionState.Closed)
             {
                 connection.Open();
             }
         }
 
-        public void closeConnection()
+        /// <summary>
+        /// Отключение от БД
+        /// </summary>
+        public void CloseConnection()
         {
             if (connection.State == System.Data.ConnectionState.Open)
             {
                 connection.Close();
             }
         }
-        public MySqlConnection getConnection()
+        
+        /// <summary>
+        /// Возвращает подключение к БД
+        /// </summary>
+        /// <returns></returns>
+        public MySqlConnection GetConnection()
         {
             return connection;
         }
 
-        public void createAddressInfoDB()
+        /// <summary>
+        /// Создается БД addressinfodb
+        /// </summary>
+        public void CreateAddressInfoDB()
         {
-
+            MySqlCommand command = new MySqlCommand("CREATE DATABASE addressinfodb;", connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
         }
 
-
-        public void createTableCities()
+        /// <summary>
+        /// Создается таблица Cities в БД
+        /// </summary>
+        public void CreateTableCities()
         {
-            
+            MySqlCommand command = new MySqlCommand(@"
+                CREATE TABLE Cities
+                (City_Id INT AUTO_INCREMENT PRIMARY KEY, 
+                City VARCHAR(30) NOT NULL);",
+                connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
         }
-        public void createTableAdresses()
+        /// <summary>
+        /// Создается таблица Adresses в БД
+        /// </summary>
+        public void CreateTableAdresses()
         {
-
+            MySqlCommand command = new MySqlCommand(@"
+                CREATE TABLE Adresses
+                (Id INT AUTO_INCREMENT PRIMARY KEY, 
+                Address VARCHAR(30) NOT NULL, 
+                Home VARCHAR(10), 
+                City_Id INT REFERENCES Cities(City_Id);",
+                connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
         }
     }
 }
