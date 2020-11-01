@@ -1,4 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
@@ -91,7 +93,29 @@ namespace ReportDBmySQL
         /// </summary>
         public void InsertTableCities()
         {
-            
+            string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора" };
+            List<CityInfo> citiesList = new List<CityInfo>();
+
+            foreach (var city in citiesArray)
+            {
+                citiesList.Add(new CityInfo(city));
+            }
+
+            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO Cities(City) VALUES ('@city')", connection))
+            {
+                connection.Open();
+
+                foreach (var item in citiesList)
+                {
+                    command.Parameters.Add("@city", MySqlDbType.VarChar).Value = item;
+                    //command.Parameters["@city"].Value = item;
+                    command.ExecuteNonQuery();
+                }
+                
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
