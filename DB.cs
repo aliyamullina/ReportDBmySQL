@@ -101,18 +101,15 @@ namespace ReportDBmySQL
                 citiesList.Add(new CityInfo(city));
             }
 
-            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO Cities(City) VALUES ('@city')", connection))
+            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO cities(City) VALUES (@city)", connection))
             {
                 connection.Open();
-
                 foreach (var item in citiesList)
                 {
-                    command.Parameters.Add("@city", MySqlDbType.VarChar).Value = item;
-                    //command.Parameters["@city"].Value = item;
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@city", item.City);
                     command.ExecuteNonQuery();
                 }
-                
-                command.ExecuteNonQuery();
                 connection.Close();
             }
             Console.WriteLine();
@@ -123,14 +120,12 @@ namespace ReportDBmySQL
         /// </summary>
         public void InsertTableAdresses()
         {
-            MySqlCommand command = new MySqlCommand(@"
-            INSERT INTO Addresses(Address, Home, City_Id) 
-            VALUES ('Подлужная', '40', 1),
-            VALUES ('Большая', '80', 1)",
+            MySqlCommand command = new MySqlCommand(@"INSERT INTO adresses(Address, Home, City_Id) VALUES ('Подлужная','40','1')",
             connection);
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
+            //VALUES ('Большая', '80', 1)
         }
     }
 }
