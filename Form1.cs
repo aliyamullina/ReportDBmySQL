@@ -84,11 +84,31 @@ namespace ReportDBmySQL
             MySqlCommand command = new MySqlCommand("");*/
         }
 
-        public List<string> MySQLCollectionQuery(MySqlConnection connection, string cmd)
-        {
-            List<string> QueryResult = new List<string>();
-            MySqlCommand cmdName =new
-        }
+        
+
+public List<string> MySqlCollectionQuery(MySqlConnection connection, string cmd)
+{
+    List<string> QueryResult = new List<string>();
+    MySqlCommand cmdName = new MySqlCommand(cmd, connection);
+    MySqlDataReader reader = cmdName.ExecuteReader();
+    while (reader.Read())
+    {
+        QueryResult.Add(reader.GetString(0));
+    }
+    reader.Close();
+    return QueryResult;
+}
+
+string connStr = string.Format("user={0};password={1};database={2}",
+                                username,password,database);
+List<string>TableNames = new List<string>();//Stores table names in List<string> form
+using(MySqlConnection Conn = new MySqlConnection(connStr))
+{
+    Conn.Open();
+    string cmdStr = "show tables";
+    TableNames = MySqlCollectionQuery(Conn,cmdStr);
+}
+
 
         // Из папки в mysql
         // Из mysql в массив
