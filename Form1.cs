@@ -51,35 +51,12 @@ namespace ReportDBmySQL
         /// </summary>
         private void fillCities()
         {
-            string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора" };
-            List <CityInfo> citiesList = new List<CityInfo>();
-
-            foreach (var city in citiesArray)
-            {
-                citiesList.Add(new CityInfo(city));
-            }
+            
 
             DB db = new DB();
             db.CreateTableCities();
 
             db.InsertTableCities();
-
-            var connection = db.GetConnection();
-
-            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO Cities(City) VALUES ('@city')", connection))
-            {
-                command.Parameters.Add("@city", MySqlDbType.VarChar);
-                foreach (var item in citiesList)
-                {
-                    command.Parameters["@city"].Value = item;
-                    command.ExecuteNonQuery();
-                }
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-
-            Console.WriteLine();
 
             // Как передать данные из List в Mysql?
         }
