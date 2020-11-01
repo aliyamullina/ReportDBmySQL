@@ -61,7 +61,7 @@ namespace ReportDBmySQL
         public void CreateTableCities()
         {
             MySqlCommand command = new MySqlCommand(@"
-                CREATE TABLE Cities
+                CREATE TABLE IF NOT EXISTS Cities
                 (City_Id INT AUTO_INCREMENT PRIMARY KEY, 
                 City VARCHAR(30) NOT NULL);",
                 connection);
@@ -75,11 +75,11 @@ namespace ReportDBmySQL
         public void CreateTableAdresses()
         {
             MySqlCommand command = new MySqlCommand(@"
-                CREATE TABLE Adresses
+                CREATE TABLE IF NOT EXISTS Adresses
                 (Id INT AUTO_INCREMENT PRIMARY KEY, 
                 Address VARCHAR(30) NOT NULL, 
                 Home VARCHAR(10), 
-                City_Id INT REFERENCES Cities(City_Id);",
+                City_Id INT REFERENCES Cities(City_Id))",
                 connection);
             connection.Open();
             command.ExecuteNonQuery();
