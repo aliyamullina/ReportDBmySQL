@@ -91,12 +91,7 @@ namespace ReportDBmySQL
         /// </summary>
         public void InsertTableCities()
         {
-            MySqlCommand command = new MySqlCommand(@"
-            INSERT INTO Cities(City) VALUES ('@city')",
-            connection);
-            connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
+            
         }
 
         /// <summary>

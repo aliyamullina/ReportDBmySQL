@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -61,8 +62,24 @@ namespace ReportDBmySQL
             DB db = new DB();
             db.CreateTableCities();
 
+            db.InsertTableCities();
 
-            //db.InsertTableCities();
+            var connection = db.GetConnection();
+
+            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO Cities(City) VALUES ('@city')", connection))
+            {
+                command.Parameters.Add("@city", MySqlDbType.VarChar);
+                foreach (var item in citiesList)
+                {
+                    command.Parameters["@city"].Value = item;
+                    command.ExecuteNonQuery();
+                }
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            Console.WriteLine();
 
             // Как передать данные из List в Mysql?
         }
@@ -84,33 +101,6 @@ namespace ReportDBmySQL
             MySqlCommand command = new MySqlCommand("");*/
         }
 
-private List<string> CategoriesPicker = new List<string>();
-    //add all the items to the list
-    private void SavedItemsButton_Clicked(object sender, System.EventArgs e)
-    {
-        string sqlstring = "server=; port= ; user id =;Password= ;Database=test;";
-        using (MySqlConnection conn = new MySqlConnection(sqlstring))
-        {
-            string Query = "INSERT INTO test.maintable (Categories)values(@Category);";
-            using (MySqlCommand cmd = new MySqlCommand(Query, conn))
-            {
-                cmd.Parameters.Add("@Category", MySqlDbType.VarChar);
-                try
-                {
-                    conn.Open();
-                }
-                catch (MySqlException ex)
-                {
-                    throw ex;
-                }
-                foreach (String item in CategoriesPicker)
-                {
-                    cmd.Parameters["@Category"].Value = item;
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
-    }
         // Из папки в mysql
         // Из mysql в массив
         // Mассив передать в макет word с адресом в имени
