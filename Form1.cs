@@ -16,18 +16,21 @@ namespace ReportDBmySQL
         private void button1_Click(object sender, System.EventArgs e)
         {
             DB db = new DB();
+
             db.CreateTableCities();
+            List<CityInfo> CitiesList = getFillCities();
+            db.InsertTableCities(CitiesList);
 
-            List<CityInfo> torun = getFillCities();
-            db.InsertTableCities(torun);
 
-            fillAdressses();
+            List<AddressInfo> addressesList = getFolderAddressInfo();
+            db.CreateTableAdresses();
+            db.InsertTableAdresses(addressesList);
 
             Application.Exit();
         }
 
         /// <summary>
-        /// Берет названия папок, разделяет на улицу, дом. Добавляет в коллекцию
+        /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию 
         /// </summary>
         /// <returns>folderAdress</returns>
         private static List<AddressInfo> getFolderAddressInfo()
@@ -40,20 +43,20 @@ namespace ReportDBmySQL
                 string PathToFolder = folderDlg.SelectedPath;
                 _ = folderDlg.RootFolder;
                 string[] allfolders = Directory.GetDirectories(PathToFolder);
-                string city = "1";
+                string city_id = "1";
                 foreach (var path in allfolders)
                 {
                     var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
                     var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
                     var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                    folderAdress.Add(new AddressInfo(city, street, home));
+                    folderAdress.Add(new AddressInfo(street, home, city_id));
                 }
             }
             return folderAdress;
         }
 
         /// <summary>
-        /// Из коллекции Города в БД
+        /// Берет данные из массива и передает в коллекцию
         /// </summary>
         private static List<CityInfo> getFillCities()
         {
@@ -65,23 +68,6 @@ namespace ReportDBmySQL
                 citiesList.Add(new CityInfo(city));
             }
             return citiesList;
-        }
-
-        /// <summary>
-        /// Из коллекции в БД
-        /// </summary>
-        private void fillAdressses()
-        {
-            DB db = new DB();
-            db.CreateTableAdresses();
-
-            db.InsertTableAdresses();
-
-            //_ = getFolderAddressInfo();
-
-            /*DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("");*/
         }
 
         // Из папки в mysql
