@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -86,30 +87,38 @@ namespace ReportDBmySQL
         public static void CreateDoc()
         {
             var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
-            var modifiedFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template2.docx";
+            //var modifiedFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template2.docx";
+            string[] modifiedFilePath = 
+                { 
+                    @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy1.docx",
+                    @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy2.docx",
+                    @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy3.docx",
+                };
 
-            // Копировал файл, давал новое имя, редактировал
-            File.Copy(originalFilePath, modifiedFilePath);
+            foreach(var item in modifiedFilePath) { 
+                // Копировал файл, давал новое имя, редактировал
+                File.Copy(originalFilePath, item);
 
-            // Берет готовый doc, редактирует
-            using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(modifiedFilePath, isEditable: true))
-            {
-                string docText = null;
-                using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
+                // Берет готовый doc, редактирует
+                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(item, isEditable: true))
                 {
-                    docText = sr.ReadToEnd();
+                    string docText = null;
+                    using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
+                    {
+                        docText = sr.ReadToEnd();
+                    }
+
+                    Regex regexText = new Regex("AddressInfo");
+                    docText = regexText.Replace(docText, "Казань, Большая 80");
+
+                    using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                    {
+                        sw.Write(docText);
+                    }
+
+                    WordDoc.MainDocumentPart.Document.Save();
+                    WordDoc.Close();
                 }
-
-                Regex regexText = new Regex("AddressInfo");
-                docText = regexText.Replace(docText, "Казань, Большая 80");
-
-                using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
-                {
-                    sw.Write(docText);
-                }
-
-                WordDoc.MainDocumentPart.Document.Save();
-                WordDoc.Close();
             }
         }
     }
