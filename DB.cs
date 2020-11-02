@@ -105,7 +105,6 @@ namespace ReportDBmySQL
                 }
                 connection.Close();
             }
-            Console.WriteLine();
         }
 
         /// <summary>
@@ -127,7 +126,6 @@ namespace ReportDBmySQL
                 }
                 connection.Close();
             }
-            Console.WriteLine();
         }
     }
 }
