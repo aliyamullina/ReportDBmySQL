@@ -48,7 +48,7 @@ namespace ReportDBmySQL
                 // Ак. вместо Ак. Королева
                 // О. вместо О. Кошевого
                 // Проспект вместо Проспект Победы
-                // 
+                // Серова к1 вместо Серова 6 к1
                 foreach (var path in allfolders)
                 {
                     var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
