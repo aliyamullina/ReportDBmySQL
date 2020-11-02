@@ -83,11 +83,13 @@ namespace ReportDBmySQL
         }
 
   
+        /// <summary>
+        /// Принимает путь до файла, редактирует его
+        /// </summary>
+        /// <param name="document"></param>
         public static void CreateDoc(string document)
         {
-            //Получить данные из бд
-            //Записать в xml
-            //
+
             using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
             {
                 string docText = null;
