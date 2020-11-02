@@ -1,11 +1,8 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Packaging;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Wordprocessing;
-using MySql.Data.MySqlClient;
 
 namespace ReportDBmySQL
 {
@@ -89,7 +86,7 @@ namespace ReportDBmySQL
         /// <param name="document"></param>
         public static void CreateDoc(string document)
         {
-
+            // Копировал файл, давал новое, редактировал
             using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
             {
                 string docText = null;
