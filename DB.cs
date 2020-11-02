@@ -93,6 +93,7 @@ namespace ReportDBmySQL
         /// </summary>
         public void InsertTableCities(List<CityInfo> citiesList)
         {
+            // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"INSERT INTO cities(City) VALUES (@city)", connection))
             {
                 connection.Open();
@@ -112,6 +113,7 @@ namespace ReportDBmySQL
         /// </summary>
         public void InsertTableAdresses(List<AddressInfo> addressesList)
         {
+            // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"INSERT INTO addresses(Street, Home, City_Id) VALUES (@street, @home, @city_id)", connection))
             {
                 connection.Open();

@@ -43,6 +43,12 @@ namespace ReportDBmySQL
                 _ = folderDlg.RootFolder;
                 string[] allfolders = Directory.GetDirectories(PathToFolder);
                 string city_id = "1";
+
+                // Неправильно обрезает двойные пробелы 
+                // Ак. вместо Ак. Королева
+                // О. вместо О. Кошевого
+                // Проспект вместо Проспект Победы
+                // 
                 foreach (var path in allfolders)
                 {
                     var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
