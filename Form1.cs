@@ -26,8 +26,7 @@ namespace ReportDBmySQL
             List<AddressInfo> addressesList = getFolderAddressInfo();
             db.InsertTableAdresses(addressesList);*/
 
-            var puthRemplate = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
-            CreateDoc(puthRemplate);
+            CreateDoc();
 
             Application.Exit();
         }
@@ -79,18 +78,24 @@ namespace ReportDBmySQL
             return citiesList;
         }
 
-  
+
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        /// <param name="document"></param>
-        public static void CreateDoc(string document)
+        /// <param name="modifiedFilePath"></param>
+        public static void CreateDoc()
         {
-            // Копировал файл, давал новое, редактировал
-            using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
+            var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
+            var modifiedFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template2.docx";
+
+            // Копировал файл, давал новое имя, редактировал
+            File.Copy(originalFilePath, modifiedFilePath);
+
+            // Берет готовый doc, редактирует
+            using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(modifiedFilePath, isEditable: true))
             {
                 string docText = null;
-                using (StreamReader sr = new StreamReader(wordDoc.MainDocumentPart.GetStream()))
+                using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
                 {
                     docText = sr.ReadToEnd();
                 }
@@ -98,10 +103,13 @@ namespace ReportDBmySQL
                 Regex regexText = new Regex("AddressInfo");
                 docText = regexText.Replace(docText, "Казань, Большая 80");
 
-                using (StreamWriter sw = new StreamWriter(wordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {
                     sw.Write(docText);
                 }
+
+                WordDoc.MainDocumentPart.Document.Save();
+                WordDoc.Close();
             }
         }
     }
