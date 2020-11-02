@@ -83,7 +83,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Принимает путь, создает файлы
         /// </summary>
-        public static void CreateDoc()
+        public static List<string> CreateDoc()
         {
             var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
 
@@ -104,40 +104,44 @@ namespace ReportDBmySQL
             {
                 File.Copy(originalFilePath, mp, true);
             }
+            return modifiedFilesPath;
+            // Идея: возвращать каждый путь в цикле и вызывать ReplaceDoc()
+        }
 
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        public static void ReplaceDoc(string mp, string mf)
+        public static void ReplaceDoc()
+         {
+            //сравнить часть пути и значение modifiedFiles,
+            //если есть совпадение, то редактировать файл
+
+
+            // Берет готовый doc, редактирует
+            using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(mp, isEditable: true))
             {
-                // Берет готовый doc, редактирует
-                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(mp, isEditable: true))
+                string docText = null;
+                using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
                 {
-                    string docText = null;
-                    using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
-                    {
-                        docText = sr.ReadToEnd();
-                    }
-
-                    //foreach (var mf in modifiedFiles) { 
-                    Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, mf);
-                    //}
-
-                    //Путь до файла, имя файла
-                    //modifiedFilesPath, modifiedFiles
-                    //как сделать foreach
-
-                    using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
-                    {
-                        sw.Write(docText);
-                    }
-
-                    WordDoc.MainDocumentPart.Document.Save();
-                    WordDoc.Close();
+                    docText = sr.ReadToEnd();
                 }
+
+                //foreach (var mf in modifiedFiles) { 
+                Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, mf);
+                //}
+
+                //Путь до файла, имя файла
+                //modifiedFilesPath, modifiedFiles
+                //как сделать foreach
+
+                using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                {
+                    sw.Write(docText);
+                }
+
+                WordDoc.MainDocumentPart.Document.Save();
+                WordDoc.Close();
             }
-            
-            
         }
     }
 }
