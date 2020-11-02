@@ -105,38 +105,38 @@ namespace ReportDBmySQL
             //modifiedFilesPath, modifiedFiles
             //как сделать foreach
 
-            foreach (var mp in modifiedFilesPath)
+            foreach (var mp in modifiedFilesPath) 
             {
-                foreach (var mf in modifiedFiles)
+                // Копировал файл, давал новое имя, редактировал
+                File.Copy(originalFilePath, mp, true);
+
+                // Берет готовый doc, редактирует
+                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(mp, isEditable: true))
                 {
-                    // Копировал файл, давал новое имя, редактировал
-                    File.Copy(originalFilePath, mp, true);
-
-                    // Берет готовый doc, редактирует
-                    using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(mp, isEditable: true))
+                    string docText = null;
+                    using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
                     {
-                        string docText = null;
-                        using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
-                        {
-                            docText = sr.ReadToEnd();
-                        }
-
-                        Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, mf);
-
-                        //Путь до файла, имя файла
-                        //modifiedFilesPath, modifiedFiles
-                        //как сделать foreach
-
-                        using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
-                        {
-                            sw.Write(docText);
-                        }
-
-                        WordDoc.MainDocumentPart.Document.Save();
-                        WordDoc.Close();
+                        docText = sr.ReadToEnd();
                     }
+
+                    //foreach (var mf in modifiedFiles) { 
+                        Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, mf);
+                    //}
+
+                    //Путь до файла, имя файла
+                    //modifiedFilesPath, modifiedFiles
+                    //как сделать foreach
+
+                    using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                    {
+                        sw.Write(docText);
+                    }
+
+                    WordDoc.MainDocumentPart.Document.Save();
+                    WordDoc.Close();
                 }
             }
+            
         }
     }
 }
