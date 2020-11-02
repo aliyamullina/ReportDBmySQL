@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using MySql.Data.MySqlClient;
 
 namespace ReportDBmySQL
@@ -26,7 +29,8 @@ namespace ReportDBmySQL
             List<AddressInfo> addressesList = getFolderAddressInfo();
             db.InsertTableAdresses(addressesList);*/
 
-            CreateDoc();
+            var puthRemplate = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
+            CreateDoc(puthRemplate);
 
             Application.Exit();
         }
@@ -78,14 +82,28 @@ namespace ReportDBmySQL
             return citiesList;
         }
 
-        // Выгрузить из БД данные из 2х таблиц
-        // Записать в файл word 
-        // Изменить существующий файл-шаблон с сохранением
-
-        //Пока создать файлы с именами из БД 
-        public void CreateDoc()
+  
+        public static void CreateDoc(string document)
         {
+            //Получить данные из бд
+            //Записать в xml
+            //
+            using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
+            {
+                string docText = null;
+                using (StreamReader sr = new StreamReader(wordDoc.MainDocumentPart.GetStream()))
+                {
+                    docText = sr.ReadToEnd();
+                }
 
+                Regex regexText = new Regex("AddressInfo");
+                docText = regexText.Replace(docText, "Казань, Большая 80");
+
+                using (StreamWriter sw = new StreamWriter(wordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                {
+                    sw.Write(docText);
+                }
+            }
         }
     }
 }
