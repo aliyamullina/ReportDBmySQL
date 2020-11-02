@@ -80,14 +80,13 @@ namespace ReportDBmySQL
             return citiesList;
         }
 
-
         /// <summary>
-        /// Принимает путь до файла, редактирует его
+        /// Принимает путь, создает файлы
         /// </summary>
-        /// <param name="modifiedFilePath"></param>
         public static void CreateDoc()
         {
             var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
+
             var Path = @"C:\Users\User1_106\Google Диск\Github\Files\";
             var Format = ".docx";
 
@@ -101,15 +100,16 @@ namespace ReportDBmySQL
 
             var modifiedFilesPath = modifiedFiles.Select(x => Path + x + Format).ToList();
 
-            //Путь до файла, имя файла
-            //modifiedFilesPath, modifiedFiles
-            //как сделать foreach
-
-            foreach (var mp in modifiedFilesPath) 
+            foreach (var mp in modifiedFilesPath)
             {
-                // Копировал файл, давал новое имя, редактировал
                 File.Copy(originalFilePath, mp, true);
+            }
 
+        /// <summary>
+        /// Принимает путь до файла, редактирует его
+        /// </summary>
+        public static void ReplaceDoc(string mp, string mf)
+            {
                 // Берет готовый doc, редактирует
                 using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(mp, isEditable: true))
                 {
@@ -120,7 +120,7 @@ namespace ReportDBmySQL
                     }
 
                     //foreach (var mf in modifiedFiles) { 
-                        Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, mf);
+                    Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, mf);
                     //}
 
                     //Путь до файла, имя файла
@@ -136,6 +136,7 @@ namespace ReportDBmySQL
                     WordDoc.Close();
                 }
             }
+            
             
         }
     }
