@@ -99,9 +99,9 @@ namespace ReportDBmySQL
                     "Казань, Волгоградская 29",
                 };
 
-            var suckingList = modifiedFiles.Select(x => Path + x + Format).ToList();
+            var modifiedFilesPath = modifiedFiles.Select(x => Path + x + Format).ToList();
 
-            foreach (var item in suckingList) { 
+            foreach (var item in modifiedFilesPath) { 
                 // Копировал файл, давал новое имя, редактировал
                 File.Copy(originalFilePath, item);
 
