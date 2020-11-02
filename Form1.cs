@@ -15,6 +15,7 @@ namespace ReportDBmySQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
+            /*
             DB db = new DB();
 
             db.CreateTableCities();
@@ -23,7 +24,9 @@ namespace ReportDBmySQL
 
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = getFolderAddressInfo();
-            db.InsertTableAdresses(addressesList);
+            db.InsertTableAdresses(addressesList);*/
+
+            CreateDoc();
 
             Application.Exit();
         }
@@ -75,8 +78,14 @@ namespace ReportDBmySQL
             return citiesList;
         }
 
-        // Из папки в mysql
-        // Из mysql в массив
-        // Mассив передать в макет word с адресом в имени
+        // Выгрузить из БД данные из 2х таблиц
+        // Записать в файл word 
+        // Изменить существующий файл-шаблон с сохранением
+
+        //Пока создать файлы с именами из БД 
+        public void CreateDoc()
+        {
+
+        }
     }
 }
