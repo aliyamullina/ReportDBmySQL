@@ -79,7 +79,7 @@ namespace ReportDBmySQL
             MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Addresses
                 (Id INT AUTO_INCREMENT PRIMARY KEY, 
-                Address VARCHAR(30) NOT NULL, 
+                Street VARCHAR(30) NOT NULL, 
                 Home VARCHAR(10), 
                 City_Id INT REFERENCES Cities(City_Id))",
                 connection);
