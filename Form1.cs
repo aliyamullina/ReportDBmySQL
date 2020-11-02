@@ -95,34 +95,46 @@ namespace ReportDBmySQL
                 {
                     "Казань, Большая 80",
                     "Казань, Подлужная 40",
-                    "Казань, Подлужная 40",
+                    "Казань, Подлужная 50",
                     "Казань, Волгоградская 29",
                 };
 
             var modifiedFilesPath = modifiedFiles.Select(x => Path + x + Format).ToList();
 
-            foreach (var item in modifiedFilesPath) { 
-                // Копировал файл, давал новое имя, редактировал
-                File.Copy(originalFilePath, item);
+            //Путь до файла, имя файла
+            //modifiedFilesPath, modifiedFiles
+            //как сделать foreach
 
-                // Берет готовый doc, редактирует
-                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(item, isEditable: true))
+            foreach (var mp in modifiedFilesPath)
+            {
+                foreach (var mf in modifiedFiles)
                 {
-                    string docText = null;
-                    using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
+                    // Копировал файл, давал новое имя, редактировал
+                    File.Copy(originalFilePath, mp, true);
+
+                    // Берет готовый doc, редактирует
+                    using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(mp, isEditable: true))
                     {
-                        docText = sr.ReadToEnd();
+                        string docText = null;
+                        using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
+                        {
+                            docText = sr.ReadToEnd();
+                        }
+
+                        Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, mf);
+
+                        //Путь до файла, имя файла
+                        //modifiedFilesPath, modifiedFiles
+                        //как сделать foreach
+
+                        using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                        {
+                            sw.Write(docText);
+                        }
+
+                        WordDoc.MainDocumentPart.Document.Save();
+                        WordDoc.Close();
                     }
-
-                    Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, "Казань, Большая 80");
-
-                    using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
-                    {
-                        sw.Write(docText);
-                    }
-
-                    WordDoc.MainDocumentPart.Document.Save();
-                    WordDoc.Close();
                 }
             }
         }
