@@ -15,18 +15,27 @@ namespace ReportDBmySQL
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Действие по клику
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, System.EventArgs e)
         {
-            /*
+            
             DB db = new DB();
 
             db.CreateTableCities();
             List<CityInfo> CitiesList = getFillCities();
             db.InsertTableCities(CitiesList);
 
+            db.CreateTableCatalogs();
+            List<CatalogInfo> CatalogsList = getFillCatalogs();
+            db.InsertTableCatalogs(CatalogsList);
+
             db.CreateTableAdresses();
-            List<AddressInfo> addressesList = getFolderAddressInfo();
-            db.InsertTableAdresses(addressesList);*/
+            List<AddressInfo> addressesList = getFillAddresses();
+            db.InsertTableAdresses(addressesList);
 
             CreateDoc();
 
@@ -46,25 +55,28 @@ namespace ReportDBmySQL
                 string PathToFolder = folderDlg.SelectedPath;
                 _ = folderDlg.RootFolder;
                 allfolders = Directory.GetDirectories(PathToFolder);
-
             }
         }
 
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        private static List<AddressInfo> getFolderAddressInfo(List<AddressInfo> folderAdress)
+        private static List<AddressInfo> getFillAddresses()
         {
-            string[] allfolders = { };
-            catalogInfo(ref allfolders);
-            string city_id = "1";
+            List<AddressInfo> folderAdress = new List<AddressInfo>();
 
-            foreach (var path in allfolders)
+            string[] cI = { };
+            catalogInfo(ref cI);
+
+            string city_id = "1";
+            string catalog_id = "1";
+
+            foreach (var path in cI)
             {
                 var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
                 var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                folderAdress.Add(new AddressInfo(street, home, city_id));
+                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
             }
             return folderAdress;
         }
@@ -85,52 +97,31 @@ namespace ReportDBmySQL
         }
 
         /// <summary>
+        /// Берет данные из массива и передает в коллекцию
+        /// </summary>
+        private static List<CatalogInfo> getFillCatalogs()
+        {
+            List<CatalogInfo> catalogsList = new List<CatalogInfo>();
+            string[] catalogsArray = { 
+                @"C:\Users\User1_106\Google Диск\Github\сдаем без успд и с УСПД подписанные акты\3\",
+                @"C:\Users\User1_106\Google Диск\Github\сдаем без успд и с УСПД подписанные акты\3\",
+                @"C:\Users\User1_106\Google Диск\Github\сдаем без успд и с УСПД подписанные акты\3\",
+                @"C:\Users\User1_106\Google Диск\Github\сдаем без успд и с УСПД подписанные акты\3\"
+            };
+
+            foreach (var c in catalogsArray)
+            {
+                catalogsList.Add(new CatalogInfo(c));
+            }
+            return catalogsList;
+        }
+
+        /// <summary>
         /// Принимает путь, создает файлы
         /// </summary>
         public static void CreateDoc()
         {
-            var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
-
-            var Path = @"C:\Users\User1_106\Google Диск\Github\Files\";
-            var Format = ".docx";
-
-            List<string> modifiedFiles = new List<string>()
-             {
-                    "Казань, Большая 80",
-                    "Казань, Подлужная 40",
-                    "Казань, Подлужная 50",
-                    "Казань, Волгоградская 29",
-             };
-
-            var modifiedFilesPath = modifiedFiles.Select(x => Path + x + Format).ToList();
-
-            var res = modifiedFilesPath.Zip(modifiedFiles, (n, w) => new { Puth = n, Name = w });
-
-            foreach (var item in res)
-            {
-
-                File.Copy(originalFilePath, item.Puth, true);
-
-
-                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(item.Puth, isEditable: true))
-                {
-                    string docText = null;
-                    using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
-                    {
-                        docText = sr.ReadToEnd();
-                    }
-
-                    Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, item.Name);
-
-                    using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
-                    {
-                        sw.Write(docText);
-                    }
-                    WordDoc.MainDocumentPart.Document.Save();
-                    WordDoc.Close();
-                }
                 
-            }
         }
     }
 }
