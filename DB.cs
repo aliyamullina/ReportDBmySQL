@@ -71,6 +71,21 @@ namespace ReportDBmySQL
         }
 
         /// <summary>
+        /// Создается таблица Catalogs в БД
+        /// </summary>
+        public void CreateTableCatalogs()
+        {
+            MySqlCommand command = new MySqlCommand(@"
+                CREATE TABLE IF NOT EXISTS Catalogs
+                (Catalog_Id INT AUTO_INCREMENT PRIMARY KEY, 
+                Catalog VARCHAR(150) NOT NULL);",
+                connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        /// <summary>
         /// Создается таблица Adresses в БД
         /// </summary>
         public void CreateTableAdresses()
@@ -80,11 +95,31 @@ namespace ReportDBmySQL
                 (Id INT AUTO_INCREMENT PRIMARY KEY, 
                 Street VARCHAR(30) NOT NULL, 
                 Home VARCHAR(10), 
-                City_Id INT REFERENCES Cities(City_Id))",
+                City_Id INT REFERENCES Cities(City_Id),
+                Catalog_Id INT REFERENCES Catalogs(Catalog_Id))",
                 connection);
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
+        }
+
+        /// <summary>
+        /// Заполнение таблицы Catalogs в БД
+        /// </summary>
+        public void InsertTableCatalogs(List<CatalogInfo> catalogsList)
+        {
+            // Добавляет повторно, нет проверки на существование записи
+            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO catalogs(Catalog) VALUES (@catalog)", connection))
+            {
+                connection.Open();
+                foreach (var item in catalogsList)
+                {
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@catalog", item.Catalog);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
         }
 
         /// <summary>
