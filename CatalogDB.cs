@@ -25,10 +25,8 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Catalogs в БД
         /// </summary>
-        public void InsertTableCatalogs()
+        public void InsertTableCatalogs(List<CatalogInfo> catalogsInsert)
         {
-            List<CatalogInfo> catalogsInsert = new List<CatalogInfo>();
-
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"INSERT INTO catalogs(Catalog, Save) VALUES (@catalog, @save)", connection))
             {
@@ -42,10 +40,7 @@ namespace ReportDBmySQL
                 }
                 connection.Close();
             }
-            foreach (CatalogInfo path in catalogsSelect)
-            {
-                Console.WriteLine(path);
-            }
+            
         }
 
         /// <summary>
@@ -53,19 +48,17 @@ namespace ReportDBmySQL
         /// </summary>
         public List<CatalogInfo> GetTableCatalogs()
         {
-            List<CatalogInfo> catalogsSelect = new List<CatalogInfo>();
 
-            using (MySqlCommand command = new MySqlCommand(@"SELECT INTO VALUES (@catalog, @save) FROM catalogs", connection))
+            var catalogsSelect = new List<CatalogInfo>();
+            using (MySqlCommand command = new MySqlCommand(@"SELECT 'Catalog' FROM catalogs", connection))
             {
                 connection.Open();
 
-                foreach (var item in catalogsSelect)
+                MySqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
                 {
-                    command.Parameters.Clear();
-                    command.Parameters.AddWithValue("@catalog", item.Catalog);
-                    command.Parameters.AddWithValue("@save", item.Save);
-                    command.ExecuteNonQuery();
-                    Console.WriteLine();
+                    Console.WriteLine(dataReader);
                 }
                 connection.Close();
             }

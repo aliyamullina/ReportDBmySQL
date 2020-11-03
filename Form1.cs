@@ -26,9 +26,14 @@ namespace ReportDBmySQL
             List<CatalogInfo> catalogsInsert = GetFillcatalog();
             db.InsertTableCatalogs(catalogsInsert);
 
+            //List<CatalogInfo> catalogsSelect = new List<CatalogInfo>();
+            db.GetTableCatalogs();
+
+
             db.CreateTableCities();
             List<CityInfo> CitiesList = GetFillCities();
             db.InsertTableCities(CitiesList);
+
 
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
@@ -64,7 +69,9 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<AddressInfo> GetFillAddresses()
         {
+
             
+
             List<AddressInfo> folderAdress = new List<AddressInfo>();
 
             //string city_id = "1";
@@ -74,12 +81,13 @@ namespace ReportDBmySQL
 
             //foreach (CatalogInfo path in catalogsSelect)
            // {
-                Console.WriteLine(path);
+               // Console.WriteLine(path);
                 /*var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
                 var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
                 folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));*/
             //}
+
             return folderAdress;
         }
 
