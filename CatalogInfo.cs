@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ReportDBmySQL
+﻿namespace ReportDBmySQL
 {
     public class CatalogInfo
     {
@@ -13,7 +7,7 @@ namespace ReportDBmySQL
             this.Catalog = catalog;
             this.Save = save;
         }
-        public string Catalog { get; private set; }
-        public string Save { get; private set; }
+        public string Catalog { get; set; }
+        public string Save { get; set; }
     }
 }
