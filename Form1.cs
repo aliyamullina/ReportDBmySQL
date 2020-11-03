@@ -1,9 +1,5 @@
-﻿using DocumentFormat.OpenXml.Packaging;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -26,17 +22,17 @@ namespace ReportDBmySQL
             DB db = new DB();
 
             db.CreateTableCatalogs();
-            List<CatalogInfo> CatalogsList = getFillcatalog();
+            List<CatalogInfo> CatalogsList = GetFillcatalog();
             db.InsertTableCatalogs(CatalogsList);
 
             
             db.CreateTableCities();
-            List<CityInfo> CitiesList = getFillCities();
+            List<CityInfo> CitiesList = GetFillCities();
             db.InsertTableCities(CitiesList);
 
             
             db.CreateTableAdresses();
-            List<AddressInfo> addressesList = getFillAddresses();
+            List<AddressInfo> addressesList = GetFillAddresses();
             db.InsertTableAdresses(addressesList);
 
             CreateDoc();
@@ -47,7 +43,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        private static List<CatalogInfo> getFillcatalog()
+        private static List<CatalogInfo> GetFillcatalog()
         {
             List<CatalogInfo> catalogsList = new List<CatalogInfo>();
   
@@ -67,7 +63,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        private static List<AddressInfo> getFillAddresses()
+        private static List<AddressInfo> GetFillAddresses()
         {
             List<AddressInfo> folderAdress = new List<AddressInfo>();
 
@@ -89,7 +85,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        private static List<CityInfo> getFillCities()
+        private static List<CityInfo> GetFillCities()
         {
             List<CityInfo> citiesList = new List<CityInfo>();
             string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора" };
@@ -104,7 +100,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Принимает путь, создает файлы
         /// </summary>
-        public static void CreateDoc()
+        private static void CreateDoc()
         {
                 
         }
