@@ -2,6 +2,10 @@
 {
     public class CatalogInfo
     {
+        public CatalogInfo()
+        {
+        }
+
         public CatalogInfo(string catalog, string save)
         {
             this.Catalog = catalog;

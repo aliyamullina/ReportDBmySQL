@@ -50,7 +50,7 @@ namespace ReportDBmySQL
         {
             List<CatalogInfo> catalogsSelect = new List<CatalogInfo>();
 
-            using (MySqlCommand command = new MySqlCommand(@"SELECT 'Catalog' FROM catalogs", connection))
+            using (MySqlCommand command = new MySqlCommand(@"SELECT * FROM catalogs", connection))
             {
                 connection.Open();
 
@@ -60,8 +60,8 @@ namespace ReportDBmySQL
                 {
                     CatalogInfo catalog = new CatalogInfo();
 
-                    catalog.Catalog = dataReader["Catalog"];
-                    catalog.Save = dataReader["Save"];
+                    catalog.Catalog = dataReader["Catalog"].ToString();
+                    catalog.Save = dataReader["Save"].ToString();
 
                     catalogsSelect.Add(catalog);
                 }
