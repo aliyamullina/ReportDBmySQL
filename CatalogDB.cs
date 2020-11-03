@@ -75,40 +75,7 @@ namespace ReportDBmySQL
 }
 
 /*
-    public class YourClass
-    {
-        public List<string>[] Select()
-        {
-            string query = "SELECT * FROM users";
-
-            //Create a list to store the result
-            List<string>[] list = new List<string>[3];
-
-
-            ///
-            /// you original implementation here 
-            ///
-        }
-    }
-
-
- public class UsingClass
-   {
-    private YourClass _yourClass;
-    public UsingClass()
-    {
-       _yourClass = new YourClass();
-    }
-
-    private void SomeUsingMethod()
-    {
-       List<string>[] list =  _yourClass.Select();
-    }
-  }
-
-*/
-
-/*
+https://coderoad.ru/34828151/C-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D1%8F
 Затем измените rest метода для создания и возврата списка пользователей.
 
 public List<User> Select()

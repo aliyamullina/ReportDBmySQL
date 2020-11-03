@@ -27,7 +27,7 @@ namespace ReportDBmySQL
             db.InsertTableCatalogs(catalogsInsert);
 
             //List<CatalogInfo> catalogsSelect = new List<CatalogInfo>();
-            db.Select();
+            //db.Select();
 
 
             db.CreateTableCities();
