@@ -25,17 +25,19 @@ namespace ReportDBmySQL
             
             DB db = new DB();
 
+            db.CreateTableCatalogs();
+            List<CatalogInfo> CatalogsList = getFillcatalog();
+            db.InsertTableCatalogs(CatalogsList);
+
+            
             db.CreateTableCities();
             List<CityInfo> CitiesList = getFillCities();
             db.InsertTableCities(CitiesList);
 
-            db.CreateTableCatalogs();
-            List<CatalogInfo> CatalogsList = getFillCatalogs();
-            db.InsertTableCatalogs(CatalogsList);
-
+            /*
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = getFillAddresses();
-            db.InsertTableAdresses(addressesList);
+            db.InsertTableAdresses(addressesList);*/
 
             CreateDoc();
 
@@ -43,9 +45,9 @@ namespace ReportDBmySQL
         }
 
         /// <summary>
-        /// Папка с папками, передает пути и передает в коллекцию  CatalogInfo
+        /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        private static void catalogInfo (ref string[] allfolders)
+        private static List<CatalogInfo> getFillcatalog()
         {
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
             DialogResult dialog = folderDlg.ShowDialog();
@@ -54,8 +56,17 @@ namespace ReportDBmySQL
             {
                 string PathToFolder = folderDlg.SelectedPath;
                 _ = folderDlg.RootFolder;
-                allfolders = Directory.GetDirectories(PathToFolder);
+                _ = Directory.GetDirectories(PathToFolder);
             }
+
+            List<CatalogInfo> catalogsList = new List<CatalogInfo>();
+
+            string[] cI = { };
+            foreach (var c in cI)
+            {
+                catalogsList.Add(new CatalogInfo(c));
+            }
+            return catalogsList;
         }
 
         /// <summary>
@@ -66,7 +77,6 @@ namespace ReportDBmySQL
             List<AddressInfo> folderAdress = new List<AddressInfo>();
 
             string[] cI = { };
-            catalogInfo(ref cI);
 
             string city_id = "1";
             string catalog_id = "1";
@@ -94,26 +104,6 @@ namespace ReportDBmySQL
                 citiesList.Add(new CityInfo(city));
             }
             return citiesList;
-        }
-
-        /// <summary>
-        /// Берет данные из массива и передает в коллекцию
-        /// </summary>
-        private static List<CatalogInfo> getFillCatalogs()
-        {
-            List<CatalogInfo> catalogsList = new List<CatalogInfo>();
-            string[] catalogsArray = { 
-                @"C:\Users\User1_106\Google Диск\Github\сдаем без успд и с УСПД подписанные акты\3\",
-                @"C:\Users\User1_106\Google Диск\Github\сдаем без успд и с УСПД подписанные акты\3\",
-                @"C:\Users\User1_106\Google Диск\Github\сдаем без успд и с УСПД подписанные акты\3\",
-                @"C:\Users\User1_106\Google Диск\Github\сдаем без успд и с УСПД подписанные акты\3\"
-            };
-
-            foreach (var c in catalogsArray)
-            {
-                catalogsList.Add(new CatalogInfo(c));
-            }
-            return catalogsList;
         }
 
         /// <summary>
