@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -16,21 +17,19 @@ namespace ReportDBmySQL
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, System.EventArgs e)
+        private void Button1_Click(object sender, System.EventArgs e)
         {
             
             DB db = new DB();
 
             db.CreateTableCatalogs();
-            List<CatalogInfo> CatalogsList = GetFillcatalog();
-            db.InsertTableCatalogs(CatalogsList);
+            List<CatalogInfo> catalogsInsert = GetFillcatalog();
+            db.InsertTableCatalogs(catalogsInsert);
 
-            
             db.CreateTableCities();
             List<CityInfo> CitiesList = GetFillCities();
             db.InsertTableCities(CitiesList);
 
-            
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
             db.InsertTableAdresses(addressesList);
@@ -45,7 +44,7 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<CatalogInfo> GetFillcatalog()
         {
-            List<CatalogInfo> catalogsList = new List<CatalogInfo>();
+            List<CatalogInfo> catalogsInsert = new List<CatalogInfo>();
   
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
             DialogResult dialog = folderDlg.ShowDialog();
@@ -55,9 +54,9 @@ namespace ReportDBmySQL
                 string PathToFolder = folderDlg.SelectedPath;
                 string[] cI = Directory.GetDirectories(PathToFolder);
                
-                foreach (var c in cI) { catalogsList.Add(new CatalogInfo(c, PathToFolder)); }
+                foreach (var c in cI) { catalogsInsert.Add(new CatalogInfo(c, PathToFolder)); }
             }
-            return catalogsList;
+            return catalogsInsert;
         }
 
         /// <summary>
@@ -65,20 +64,22 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<AddressInfo> GetFillAddresses()
         {
+            
             List<AddressInfo> folderAdress = new List<AddressInfo>();
 
-            string[] cI = { };
+            //string city_id = "1";
 
-            string city_id = "1";
-            string catalog_id = "1";
+            //Получить Catalog.catalog
+            
 
-            foreach (var path in cI)
-            {
-                var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
+            //foreach (CatalogInfo path in catalogsSelect)
+           // {
+                Console.WriteLine(path);
+                /*var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
                 var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
-            }
+                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));*/
+            //}
             return folderAdress;
         }
 
