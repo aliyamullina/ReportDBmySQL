@@ -107,6 +107,9 @@
     <Compile Include="CatalogInfo.cs" />
     <Compile Include="CityInfo.cs" />
     <Compile Include="DB.cs" />
+    <Compile Include="DBAdresses.cs" />
+    <Compile Include="DBCatalogs.cs" />
+    <Compile Include="DBCities.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
