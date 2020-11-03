@@ -70,7 +70,14 @@ namespace ReportDBmySQL
         private static List<AddressInfo> GetFillAddresses()
         {
 
-            
+            ClassThatContainsSelectMethod yourDBObject = new ClassThatContainsSelectMethod();
+
+            List<CatalogInfo> path = yourDBObject.Select();
+
+            foreach (CatalogInfo c in path)
+            {
+                Console.WriteLine(c.Catalog);
+            }
 
             List<AddressInfo> folderAdress = new List<AddressInfo>();
 
