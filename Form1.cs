@@ -69,8 +69,9 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<AddressInfo> GetFillAddresses()
         {
+            var yourDBObject;
 
-            ClassThatContainsSelectMethod yourDBObject = new ClassThatContainsSelectMethod();
+            //catalogsSelect yourDBObject = new catalogsSelect();
 
             List<CatalogInfo> path = yourDBObject.Select();
 
@@ -79,21 +80,24 @@ namespace ReportDBmySQL
                 Console.WriteLine(c.Catalog);
             }
 
+
+
+
+
             List<AddressInfo> folderAdress = new List<AddressInfo>();
 
-            //string city_id = "1";
+            string city_id = "1";
 
             //Получить Catalog.catalog
             
 
-            //foreach (CatalogInfo path in catalogsSelect)
-           // {
-               // Console.WriteLine(path);
-                /*var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
+            foreach (CatalogInfo path in catalogsSelect)
+            {
+                var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
                 var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));*/
-            //}
+                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
+            }
 
             return folderAdress;
         }
