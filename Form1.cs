@@ -36,7 +36,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути и передает в коллекцию  CatalogInfo
         /// </summary>
-        private static void init (ref string[] allfolders)
+        private static void catalogInfo (ref string[] allfolders)
         {
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
             DialogResult dialog = folderDlg.ShowDialog();
@@ -56,7 +56,7 @@ namespace ReportDBmySQL
         private static List<AddressInfo> getFolderAddressInfo(List<AddressInfo> folderAdress)
         {
             string[] allfolders = { };
-            init(ref allfolders);
+            catalogInfo(ref allfolders);
             string city_id = "1";
 
             foreach (var path in allfolders)
