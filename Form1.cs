@@ -37,30 +37,38 @@ namespace ReportDBmySQL
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию 
         /// </summary>
         /// <returns>folderAdress</returns>
-        private static List<AddressInfo> getFolderAddressInfo()
+        private static List<CatalogInfo> getFolderAddressInfo(List<CatalogInfo> folderPuth)
         {
-            List<AddressInfo> folderAdress = new List<AddressInfo>();
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
             DialogResult dialog = folderDlg.ShowDialog();
+
             if (dialog == DialogResult.OK)
             {
                 string PathToFolder = folderDlg.SelectedPath;
                 _ = folderDlg.RootFolder;
                 string[] allfolders = Directory.GetDirectories(PathToFolder);
-                string city_id = "1";
 
-                // Неправильно обрезает двойные пробелы 
-                // Ак. вместо Ак. Королева
-                // О. вместо О. Кошевого
-                // Проспект вместо Проспект Победы
-                // Серова к1 вместо Серова 6 к1
-                foreach (var path in allfolders)
-                {
-                    var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
-                    var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
-                    var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                    folderAdress.Add(new AddressInfo(street, home, city_id));
+                foreach (var path in allfolders) { 
+                    folderPuth.Add(new CatalogInfo(path));
                 }
+            }
+            return folderPuth;
+        }
+
+        /// <summary>
+        /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию 
+        /// </summary>
+        /// <returns>folderAdress</returns>
+        private static List<AddressInfo> getFolderAddressInfo(List<AddressInfo> folderAdress)
+        {
+            string city_id = "1";
+
+            foreach (var path in allfolders)
+            {
+                var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
+                var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
+                var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
+                folderAdress.Add(new AddressInfo(street, home, city_id));
             }
             return folderAdress;
         }
