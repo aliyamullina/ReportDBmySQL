@@ -1,6 +1,6 @@
 ﻿namespace ReportDBmySQL
 {
-    class AddressInfo
+    public class AddressInfo
     {
         public AddressInfo(string street, string home, string city_id, string catalog_id)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReportDBmySQL
 {
-    class CatalogInfo
+    public class CatalogInfo
     {
         public CatalogInfo(string catalog, string save)
         {

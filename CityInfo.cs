@@ -1,6 +1,6 @@
 ﻿namespace ReportDBmySQL
 {
-    class CityInfo
+    public class CityInfo
     {
         public CityInfo(string city)
         {
