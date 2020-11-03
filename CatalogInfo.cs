@@ -8,10 +8,12 @@ namespace ReportDBmySQL
 {
     class CatalogInfo
     {
-        public CatalogInfo(string catalog)
+        public CatalogInfo(string catalog, string save)
         {
             this.Catalog = catalog;
+            this.Save = save;
         }
         public string Catalog { get; private set; }
+        public string Save { get; private set; }
     }
 }

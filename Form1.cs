@@ -34,10 +34,10 @@ namespace ReportDBmySQL
             List<CityInfo> CitiesList = getFillCities();
             db.InsertTableCities(CitiesList);
 
-            /*
+            
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = getFillAddresses();
-            db.InsertTableAdresses(addressesList);*/
+            db.InsertTableAdresses(addressesList);
 
             CreateDoc();
 
@@ -49,22 +49,17 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<CatalogInfo> getFillcatalog()
         {
+            List<CatalogInfo> catalogsList = new List<CatalogInfo>();
+  
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
             DialogResult dialog = folderDlg.ShowDialog();
 
             if (dialog == DialogResult.OK)
             {
                 string PathToFolder = folderDlg.SelectedPath;
-                _ = folderDlg.RootFolder;
-                _ = Directory.GetDirectories(PathToFolder);
-            }
-
-            List<CatalogInfo> catalogsList = new List<CatalogInfo>();
-
-            string[] cI = { };
-            foreach (var c in cI)
-            {
-                catalogsList.Add(new CatalogInfo(c));
+                string[] cI = Directory.GetDirectories(PathToFolder);
+               
+                foreach (var c in cI) { catalogsList.Add(new CatalogInfo(c, PathToFolder)); }
             }
             return catalogsList;
         }
