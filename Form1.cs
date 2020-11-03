@@ -34,10 +34,9 @@ namespace ReportDBmySQL
         }
 
         /// <summary>
-        /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию 
+        /// Папка с папками, передает пути и передает в коллекцию  CatalogInfo
         /// </summary>
-        /// <returns>folderAdress</returns>
-        private static List<CatalogInfo> getFolderAddressInfo(List<CatalogInfo> folderPuth)
+        private static void init (ref string[] allfolders)
         {
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
             DialogResult dialog = folderDlg.ShowDialog();
@@ -46,21 +45,18 @@ namespace ReportDBmySQL
             {
                 string PathToFolder = folderDlg.SelectedPath;
                 _ = folderDlg.RootFolder;
-                string[] allfolders = Directory.GetDirectories(PathToFolder);
+                allfolders = Directory.GetDirectories(PathToFolder);
 
-                foreach (var path in allfolders) { 
-                    folderPuth.Add(new CatalogInfo(path));
-                }
             }
-            return folderPuth;
         }
 
         /// <summary>
-        /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию 
+        /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        /// <returns>folderAdress</returns>
         private static List<AddressInfo> getFolderAddressInfo(List<AddressInfo> folderAdress)
         {
+            string[] allfolders = { };
+            init(ref allfolders);
             string city_id = "1";
 
             foreach (var path in allfolders)
