@@ -91,33 +91,29 @@ namespace ReportDBmySQL
             var Format = ".docx";
 
             List<string> modifiedFiles = new List<string>()
-                {
+             {
                     "Казань, Большая 80",
                     "Казань, Подлужная 40",
                     "Казань, Подлужная 50",
                     "Казань, Волгоградская 29",
-                };
+             };
 
             var modifiedFilesPath = modifiedFiles.Select(x => Path + x + Format).ToList();
 
             foreach (var mp in modifiedFilesPath)
             {
                 File.Copy(originalFilePath, mp, true);
+                if (modifiedFiles == modifiedFilesPath)
+                    mp.ReplaceDoc();
             }
             return modifiedFilesPath;
-            // Идея: возвращать каждый путь в цикле и вызывать ReplaceDoc()
         }
 
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        public static void ReplaceDoc()
+        public static void ReplaceDoc(string mp, string mf)
          {
-            //сравнить часть пути и значение modifiedFiles,
-            //если есть совпадение, то редактировать файл
-
-
-            // Берет готовый doc, редактирует
             using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(mp, isEditable: true))
             {
                 string docText = null;
@@ -126,19 +122,12 @@ namespace ReportDBmySQL
                     docText = sr.ReadToEnd();
                 }
 
-                //foreach (var mf in modifiedFiles) { 
                 Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, mf);
-                //}
-
-                //Путь до файла, имя файла
-                //modifiedFilesPath, modifiedFiles
-                //как сделать foreach
 
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {
                     sw.Write(docText);
                 }
-
                 WordDoc.MainDocumentPart.Document.Save();
                 WordDoc.Close();
             }
