@@ -19,10 +19,10 @@ namespace ReportDBmySQL
         /// <param name="e"></param>
         private void Button1_Click(object sender, System.EventArgs e)
         {
-            
             DB db = new DB();
 
-            db.CreateTableCatalogs();
+
+        db.CreateTableCatalogs();
             List<CatalogInfo> catalogsInsert = GetFillcatalog();
             db.InsertTableCatalogs(catalogsInsert);
 
@@ -69,35 +69,27 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<AddressInfo> GetFillAddresses()
         {
-            var yourDBObject;
 
-            //catalogsSelect yourDBObject = new catalogsSelect();
+            DB yourDBObject = new DB();
 
-            List<CatalogInfo> path = yourDBObject.Select();
+            List<CatalogInfo> path = yourDBObject.GetCatalogList();
 
             foreach (CatalogInfo c in path)
             {
                 Console.WriteLine(c.Catalog);
             }
 
-
-
-
-
             List<AddressInfo> folderAdress = new List<AddressInfo>();
 
             string city_id = "1";
-
-            //Получить Catalog.catalog
-            
-
+            /*
             foreach (CatalogInfo path in catalogsSelect)
             {
                 var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
                 var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
                 folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
-            }
+            }*/
 
             return folderAdress;
         }

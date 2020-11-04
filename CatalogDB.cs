@@ -46,7 +46,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Извлечение из таблицы Catalogs в List
         /// </summary>
-        public List<CatalogInfo> Select()
+        public List<CatalogInfo> GetCatalogList()
         {
             List<CatalogInfo> catalogsSelect = new List<CatalogInfo>();
 
@@ -54,19 +54,19 @@ namespace ReportDBmySQL
             {
                 connection.Open();
 
-                MySqlDataReader dataReader = command.ExecuteReader();
-
-                while (dataReader.Read())
+                using (MySqlDataReader dataReader = command.ExecuteReader())
                 {
-                    CatalogInfo catalog = new CatalogInfo();
+                    while (dataReader.Read())
+                    {
+                        CatalogInfo catalog = new CatalogInfo();
 
-                    catalog.Catalog = dataReader["Catalog"].ToString();
-                    catalog.Save = dataReader["Save"].ToString();
+                        catalog.Catalog = dataReader["Catalog"].ToString();
+                        catalog.Save = dataReader["Save"].ToString();
 
-                    catalogsSelect.Add(catalog);
+                        catalogsSelect.Add(catalog);
+                    }
+                    dataReader.Close();
                 }
-
-                dataReader.Close();
                 connection.Close();
             }
             return catalogsSelect;
