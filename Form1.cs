@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -21,14 +22,9 @@ namespace ReportDBmySQL
         {
             DB db = new DB();
 
-
-        db.CreateTableCatalogs();
+            db.CreateTableCatalogs();
             List<CatalogInfo> catalogsInsert = GetFillcatalog();
             db.InsertTableCatalogs(catalogsInsert);
-
-            //List<CatalogInfo> catalogsSelect = new List<CatalogInfo>();
-            //db.Select();
-
 
             db.CreateTableCities();
             List<CityInfo> CitiesList = GetFillCities();
@@ -50,15 +46,12 @@ namespace ReportDBmySQL
         private static List<CatalogInfo> GetFillcatalog()
         {
             List<CatalogInfo> catalogsInsert = new List<CatalogInfo>();
-  
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
             DialogResult dialog = folderDlg.ShowDialog();
-
             if (dialog == DialogResult.OK)
             {
                 string PathToFolder = folderDlg.SelectedPath;
                 string[] cI = Directory.GetDirectories(PathToFolder);
-               
                 foreach (var c in cI) { catalogsInsert.Add(new CatalogInfo(c, PathToFolder)); }
             }
             return catalogsInsert;
@@ -69,22 +62,20 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<AddressInfo> GetFillAddresses()
         {
-
             DB yourDBObject = new DB();
-
             List<CatalogInfo> path = yourDBObject.GetCatalogList();
-
             List<AddressInfo> folderAdress = new List<AddressInfo>();
-
-            string city_id = "1";
-            string catalog_id = "1";
-
+            int city_id = 1;
             foreach (CatalogInfo c in path)
             {
-                var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
-                var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
-                var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
+                //string catalog_id = "1";
+                for (int catalog_id = 1; catalog_id < path.Count; catalog_id++)
+                {
+                    var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
+                    var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
+                    var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
+                    folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
+                }
             }
             return folderAdress;
         }
@@ -96,7 +87,6 @@ namespace ReportDBmySQL
         {
             List<CityInfo> citiesList = new List<CityInfo>();
             string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора" };
-            
             foreach (var city in citiesArray)
             {
                 citiesList.Add(new CityInfo(city));

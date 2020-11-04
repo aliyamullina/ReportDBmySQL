@@ -5,7 +5,7 @@ namespace ReportDBmySQL
 {
     public class AddressInfo
     {
-        public AddressInfo(string street, string home, string city_id, string catalog_id)
+        public AddressInfo(string street, string home, int city_id, int catalog_id)
         {
             this.Street = street;
             this.Home = home;
@@ -15,8 +15,8 @@ namespace ReportDBmySQL
 
         public string Street { get; private set; }
         public string Home { get; private set; }
-        public string City_id { get; private set; }
-        public string Catalog_id { get; private set; }
+        public int City_id { get; private set; }
+        public int Catalog_id { get; private set; }
     }
     public partial class DB
     {
@@ -30,8 +30,8 @@ namespace ReportDBmySQL
                 (Id INT AUTO_INCREMENT PRIMARY KEY, 
                 Street VARCHAR(30) NOT NULL, 
                 Home VARCHAR(10), 
-                City_Id INT REFERENCES Cities(City_Id),
-                Catalog_Id INT REFERENCES Catalogs(Catalog_Id))",
+                City_id INT REFERENCES Cities(City_id),
+                Catalog_id INT REFERENCES Catalogs(Catalog_id))",
                 connection);
             connection.Open();
             command.ExecuteNonQuery();
@@ -44,7 +44,10 @@ namespace ReportDBmySQL
         public void InsertTableAdresses(List<AddressInfo> addressesList)
         {
             // Добавляет повторно, нет проверки на существование записи
-            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO addresses(Street, Home, City_Id) VALUES (@street, @home, @city_id)", connection))
+            using (MySqlCommand command = new MySqlCommand(@"
+                INSERT INTO addresses(Street, Home, City_id, Catalog_id) 
+                VALUES (@street, @home, @city_id, @сatalog_id)", 
+                connection))
             {
                 connection.Open();
                 foreach (var item in addressesList)
@@ -53,6 +56,7 @@ namespace ReportDBmySQL
                     command.Parameters.AddWithValue("@street", item.Street);
                     command.Parameters.AddWithValue("@home", item.Home);
                     command.Parameters.AddWithValue("@city_id", item.City_id);
+                    command.Parameters.AddWithValue("@сatalog_id", item.Catalog_id);
                     command.ExecuteNonQuery();
                 }
                 connection.Close();
