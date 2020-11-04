@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
 
 namespace ReportDBmySQL
@@ -29,6 +28,7 @@ namespace ReportDBmySQL
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"INSERT INTO catalogs(Catalog, Save) VALUES (@catalog, @save)", connection))
+            //using (MySqlCommand command = new MySqlCommand(@"INSERT INTO catalogs(Catalog) VALUES (@catalog)", connection))
             {
                 connection.Open();
                 foreach (var item in catalogsInsert)
@@ -40,7 +40,7 @@ namespace ReportDBmySQL
                 }
                 connection.Close();
             }
-            
+
         }
 
         /// <summary>

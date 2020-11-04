@@ -74,23 +74,18 @@ namespace ReportDBmySQL
 
             List<CatalogInfo> path = yourDBObject.GetCatalogList();
 
-            foreach (CatalogInfo c in path)
-            {
-                Console.WriteLine(c.Catalog);
-            }
-
             List<AddressInfo> folderAdress = new List<AddressInfo>();
 
             string city_id = "1";
-            /*
-            foreach (CatalogInfo path in catalogsSelect)
+            string catalog_id = "1";
+
+            foreach (CatalogInfo c in path)
             {
-                var pathTrim = path.Substring(path.LastIndexOf("\\")).Replace("\\", string.Empty);
+                var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
                 var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
                 folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
-            }*/
-
+            }
             return folderAdress;
         }
 
