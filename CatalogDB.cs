@@ -80,31 +80,22 @@ https://coderoad.ru/34828151/C-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B4%D0%BE
 
 public List<User> Select()
 {
-
     List<User> list = new List<User>();
-
     if (this.OpenConnection() == true)
     {
         MySqlCommand cmd = new MySqlCommand(query, connection);
-
         MySqlDataReader dataReader = cmd.ExecuteReader();
-
         while (dataReader.Read())
         {
             User user = new User();
-
             user.Id = dataReader["id"].toString();
             user.Test = dataReader["test"].toString();
             user.Balance = dataReader["balance"].toString();
-
             list.Add(user);
         }
-
         dataReader.Close();
-
         this.CloseConnection();
     }
-
     return list;
 }
 Тогда вы можете использовать свой список примерно так:
