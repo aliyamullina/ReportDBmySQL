@@ -66,16 +66,16 @@ namespace ReportDBmySQL
             List<CatalogInfo> path = yourDBObject.GetCatalogList();
             List<AddressInfo> folderAdress = new List<AddressInfo>();
             int city_id = 1;
+            int catalog_id = 0;
+
             foreach (CatalogInfo c in path)
             {
-                //string catalog_id = "1";
-                for (int catalog_id = 1; catalog_id < path.Count; catalog_id++)
-                {
-                    var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
-                    var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
-                    var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                    folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
-                }
+                var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
+                var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
+                var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
+                catalog_id++;
+                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
+                
             }
             return folderAdress;
         }
