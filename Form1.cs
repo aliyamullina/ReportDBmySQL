@@ -106,28 +106,26 @@ namespace ReportDBmySQL
             DB yourDBObject = new DB();
             List<AddressDoc> AddressDocList = yourDBObject.GetAddressList();
 
-            // Home Street - приходит только Home и Street
-            // City 
-            // Save 
+            // d.City 
+            // d.Street
+            // d.Home 
+            // d.Save 
 
             foreach (AddressDoc d in AddressDocList)
             {
-                Console.WriteLine();
-            }
-
                 var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
 
-            string[] modifiedFilePath =
-            {
+                string[] modifiedFilePath =
+                {
                 @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy1.docx",
                 @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy2.docx",
                 @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy3.docx"
-            };
+                };
 
-            var Path = @"C:\Users\User1_106\Google Диск\Github\Files\";
-            var Format = ".docx";
+                var Path = @"C:\Users\User1_106\Google Диск\Github\Files\";
+                var Format = ".docx";
 
-            List<string> modifiedFiles = new List<string>()
+                List<string> modifiedFiles = new List<string>()
                 {
                     "Казань, Большая 80",
                     "Казань, Подлужная 40",
@@ -135,35 +133,35 @@ namespace ReportDBmySQL
                     "Казань, Волгоградская 29",
                 };
 
-            foreach (var item in modifiedFilePath)
-            {
-                var suckingList = modifiedFiles.Select(x => Path + x + Format).ToList();
-
-                /*
-                // Копировал файл, давал новое имя, редактировал
-                File.Copy(originalFilePath, item);
-
-                // Берет готовый doc, редактирует
-                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(item, isEditable: true))
+                foreach (var item in modifiedFilePath)
                 {
-                    string docText = null;
-                    using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
-                    {
-                        docText = sr.ReadToEnd();
-                    }
+                    var suckingList = modifiedFiles.Select(x => Path + x + Format).ToList();
 
-                    Regex regexText = new Regex("AddressInfo");
-                    docText = regexText.Replace(docText, "Казань, Большая 80");
+                    // Копировал файл, давал новое имя, редактировал
+                    File.Copy(originalFilePath, item);
 
-                    using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                    // Берет готовый doc, редактирует
+                    using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(item, isEditable: true))
                     {
-                        sw.Write(docText);
+                        string docText = null;
+                        using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
+                        {
+                            docText = sr.ReadToEnd();
+                        }
+
+                        Regex regexText = new Regex("AddressInfo");
+                        docText = regexText.Replace(docText, "Казань, Большая 80");
+
+                        using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                        {
+                            sw.Write(docText);
+                        }
+                        WordDoc.MainDocumentPart.Document.Save();
+                        WordDoc.Close();
                     }
-                    WordDoc.MainDocumentPart.Document.Save();
-                    WordDoc.Close();
                 }
-                */
-             }
+            }
+            Console.WriteLine();
         }
     }
 }
