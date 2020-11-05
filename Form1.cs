@@ -22,6 +22,7 @@ namespace ReportDBmySQL
         /// <param name="e"></param>
         private void Button1_Click(object sender, System.EventArgs e)
         {
+            /*
             DB db = new DB();
 
             db.CreateTableCatalogs();
@@ -36,6 +37,7 @@ namespace ReportDBmySQL
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
             db.InsertTableAdresses(addressesList);
+            */
 
             CreateDoc();
 
@@ -64,8 +66,8 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<AddressInfo> GetFillAddresses()
         {
-            DB yourDBObject = new DB();
-            List<CatalogInfo> path = yourDBObject.GetCatalogList();
+            DB DBObject = new DB();
+            List<CatalogInfo> path = DBObject.GetCatalogList();
             List<AddressInfo> folderAdress = new List<AddressInfo>();
             int city_id = 1;
             int catalog_id = 0;
@@ -101,6 +103,9 @@ namespace ReportDBmySQL
         /// </summary>
         public static void CreateDoc()
         {
+            DB yourDBObject = new DB();
+            List<AddressInfo> path = yourDBObject.GetAddressList();
+
             var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
 
             string[] modifiedFilePath =
