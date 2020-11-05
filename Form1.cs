@@ -122,7 +122,6 @@ namespace ReportDBmySQL
                 @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy3.docx"
                 };
 
-                var Path = @"C:\Users\User1_106\Google Диск\Github\Files\";
                 var Format = ".docx";
 
                 List<string> modifiedFiles = new List<string>()
@@ -135,7 +134,7 @@ namespace ReportDBmySQL
 
                 foreach (var item in modifiedFilePath)
                 {
-                    var suckingList = modifiedFiles.Select(x => Path + x + Format).ToList();
+                    var suckingList = modifiedFiles.Select(x => d.Save + x + Format).ToList();
 
                     // Копировал файл, давал новое имя, редактировал
                     File.Copy(originalFilePath, item);
@@ -150,7 +149,7 @@ namespace ReportDBmySQL
                         }
 
                         Regex regexText = new Regex("AddressInfo");
-                        docText = regexText.Replace(docText, "Казань, Большая 80");
+                        docText = regexText.Replace(docText, d.Street);
 
                         using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                         {
