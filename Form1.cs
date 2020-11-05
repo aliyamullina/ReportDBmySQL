@@ -109,19 +109,18 @@ namespace ReportDBmySQL
 
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
+            // Путь
             var filePuth = AddressDocList.Select(x => x.Save + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").ToList();
 
+            // Имя
             var fileName = AddressDocList.Select(x => x.City + ", " + x.Street + " " + x.Home).ToList();
 
-            foreach (var p in filePuth) {
+            foreach (var pn in filePuth.Zip(fileName, (p, n) => new {filePuth=p,fileName=n })) { 
                 // Копировал файл, давал новое имя, редактировал
-                File.Copy(originalFilePath, p);
-            }
+                File.Copy(originalFilePath, pn.filePuth);
 
-            foreach (var n in fileName)
-            {
                 // Берет готовый doc, редактирует
-                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(p, isEditable: true))
+                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(pn.filePuth, isEditable: true))
                 {
                     string docText = null;
                     using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
@@ -130,7 +129,7 @@ namespace ReportDBmySQL
                     }
 
                     Regex regexText = new Regex("AddressInfo");
-                    docText = regexText.Replace(docText, n);
+                    docText = regexText.Replace(docText, pn.fileName);
 
                     using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                     {
