@@ -73,7 +73,22 @@ namespace ReportDBmySQL
         {
             List<AddressInfo> addressSelect = new List<AddressInfo>();
 
-            using (MySqlCommand command = new MySqlCommand(@"SELECT * FROM addresses", connection))
+
+            // LEFT \ INNER JOIN
+            using (MySqlCommand command = new MySqlCommand(@"
+                SELECT 
+	                cities.City,
+                    addresses.street, 
+                    addresses.home,
+                    catalogs.Save
+                FROM 
+	                cities,
+                    addresses,
+                    catalogs
+                WHERE
+	                cities.City_Id = addresses.City_id,
+                    catalogs.Catalog_Id = addresses.Catalog_id
+                ", connection))
             {
                 connection.Open();
 
