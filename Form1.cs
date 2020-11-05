@@ -106,7 +106,7 @@ namespace ReportDBmySQL
             DB yourDBObject = new DB();
             List<AddressDoc> AddressDocList = yourDBObject.GetAddressList();
 
-            var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
+            var originalFilePath = @"C:\Users\User1_106\Desktop\3\template.docx";
 
             List<string> modifiedFiles = new List<string>()
             {
@@ -136,29 +136,31 @@ namespace ReportDBmySQL
                 // + .docx
                 var filePuth = AddressDocList.Select(x => x.Catalog + ".docx").ToList();
 
-                // Копировал файл, давал новое имя, редактировал
-                //File.Copy(originalFilePath, filePuth);
+                foreach (var f in filePuth) {
+                    // Копировал файл, давал новое имя, редактировал
+                    File.Copy(originalFilePath, f);
 
-                // Берет готовый doc, редактирует
-                /*
-                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(item, isEditable: true))
-                {
-                    string docText = null;
-                    using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
+                    // Берет готовый doc, редактирует
+                    /*
+                    using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(item, isEditable: true))
                     {
-                        docText = sr.ReadToEnd();
-                    }
+                        string docText = null;
+                        using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
+                        {
+                            docText = sr.ReadToEnd();
+                        }
 
-                    Regex regexText = new Regex("AddressInfo");
-                    docText = regexText.Replace(docText, d.Street);
+                        Regex regexText = new Regex("AddressInfo");
+                        docText = regexText.Replace(docText, d.Street);
 
-                    using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
-                    {
-                        sw.Write(docText);
-                    }
-                    WordDoc.MainDocumentPart.Document.Save();
-                    WordDoc.Close();
-                }*/
+                        using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                        {
+                            sw.Write(docText);
+                        }
+                        WordDoc.MainDocumentPart.Document.Save();
+                        WordDoc.Close();
+                    }*/
+                }
             }
             Console.WriteLine();
         }
