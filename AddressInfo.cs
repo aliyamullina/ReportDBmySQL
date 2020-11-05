@@ -78,17 +78,17 @@ namespace ReportDBmySQL
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
 	                cities.City,
-                    addresses.street, 
-                    addresses.home,
+                    addresses.Street, 
+                    addresses.Home,
                     catalogs.Save
                 FROM 
-                    addresses
-                LEFT JOIN
-                    cities
-                INNER JOIN
+                    addresses,
+                    cities,
                     catalogs
-                ON addresses.City_id = cities.City_Id 
-                ON addresses.Catalog_id = catalogs.Catalog_Id
+                WHERE 
+                    addresses.City_id = cities.City_Id 
+                AND
+                    addresses.Catalog_id = catalogs.Catalog_Id
                 ", connection))
             {
                 connection.Open();
