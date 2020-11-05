@@ -111,14 +111,17 @@ namespace ReportDBmySQL
 
             var filePuth = AddressDocList.Select(x => x.Save + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").ToList();
 
+            var fileName = AddressDocList.Select(x => x.City + ", " + x.Street + " " + x.Home).ToList();
 
-
-            foreach (var f in filePuth) {
+            foreach (var p in filePuth) {
                 // Копировал файл, давал новое имя, редактировал
-                File.Copy(originalFilePath, f);
+                File.Copy(originalFilePath, p);
+            }
 
+            foreach (var n in fileName)
+            {
                 // Берет готовый doc, редактирует
-                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(f, isEditable: true))
+                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(p, isEditable: true))
                 {
                     string docText = null;
                     using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
@@ -127,7 +130,7 @@ namespace ReportDBmySQL
                     }
 
                     Regex regexText = new Regex("AddressInfo");
-                    docText = regexText.Replace(docText, "Казань, Большая 80");
+                    docText = regexText.Replace(docText, n);
 
                     using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                     {
