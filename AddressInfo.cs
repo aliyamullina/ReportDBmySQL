@@ -3,6 +3,26 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
+
+    public class AddressDoc
+    {
+        public AddressDoc()
+        {
+        }
+
+        public AddressDoc(string city, string street, string home, string save)
+        {
+            this.City = city;
+            this.Street = street;
+            this.Home = home;
+            this.Save = save;
+        }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string Home { get; set; }
+        public string Save { get; set; }
+    }
+
     public class AddressInfo
     {
         public AddressInfo()
@@ -69,12 +89,10 @@ namespace ReportDBmySQL
         /// <summary>
         /// Извлечение из таблицы Catalogs в List
         /// </summary>
-        public List<AddressInfo> GetAddressList()
+        public List<AddressDoc> GetAddressList()
         {
-            List<AddressInfo> addressSelect = new List<AddressInfo>();
+            List<AddressDoc> addressSelect = new List<AddressDoc>();
 
-
-            // LEFT \ INNER JOIN
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
 	                cities.City,
@@ -97,14 +115,14 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        AddressInfo addressList = new AddressInfo();
+                        AddressDoc addressFullList = new AddressDoc();
 
-                        addressList.Street = dataReader["Street"].ToString();
-                        addressList.Home = dataReader["Home"].ToString();
-                        addressList.City_id = (int)dataReader["City_id"];
-                        addressList.Catalog_id = (int)dataReader["Catalog_id"];
+                        addressFullList.City = dataReader["City"].ToString();
+                        addressFullList.Street = dataReader["Street"].ToString();
+                        addressFullList.Home = dataReader["Home"].ToString();
+                        addressFullList.Save = dataReader["Save"].ToString();
 
-                        addressSelect.Add(addressList);
+                        addressSelect.Add(addressFullList);
                     }
                     dataReader.Close();
                 }

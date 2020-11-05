@@ -104,13 +104,13 @@ namespace ReportDBmySQL
         public static void CreateDoc()
         {
             DB yourDBObject = new DB();
-            List<AddressInfo> path = yourDBObject.GetAddressList();
+            List<AddressDoc> AddressDocList = yourDBObject.GetAddressList();
 
             // Home Street - приходит только Home и Street
             // City 
             // Save 
 
-            foreach (AddressInfo c in path)
+            foreach (AddressDoc d in AddressDocList)
             {
                 Console.WriteLine();
             }
