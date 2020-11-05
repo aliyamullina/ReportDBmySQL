@@ -106,7 +106,16 @@ namespace ReportDBmySQL
             DB yourDBObject = new DB();
             List<AddressInfo> path = yourDBObject.GetAddressList();
 
-            var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
+            // Home Street - приходит только Home и Street
+            // City 
+            // Save 
+
+            foreach (AddressInfo c in path)
+            {
+                Console.WriteLine();
+            }
+
+                var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
 
             string[] modifiedFilePath =
             {
@@ -130,6 +139,7 @@ namespace ReportDBmySQL
             {
                 var suckingList = modifiedFiles.Select(x => Path + x + Format).ToList();
 
+                /*
                 // Копировал файл, давал новое имя, редактировал
                 File.Copy(originalFilePath, item);
 
@@ -152,6 +162,7 @@ namespace ReportDBmySQL
                     WordDoc.MainDocumentPart.Document.Save();
                     WordDoc.Close();
                 }
+                */
              }
         }
     }
