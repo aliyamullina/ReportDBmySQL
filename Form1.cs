@@ -117,14 +117,6 @@ namespace ReportDBmySQL
                 "Казань, Волгоградская 29",
             };
 
-            string[] modifiedFilePath =
-            {
-                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy1.docx",
-                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy2.docx",
-                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy3.docx",
-                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy4.docx"
-            };
-
             // d.City 
             // d.Street
             // d.Home 
@@ -144,7 +136,7 @@ namespace ReportDBmySQL
                     File.Copy(originalFilePath, f);
 
                     // Берет готовый doc, редактирует
-                    /*
+                    
                     using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(item, isEditable: true))
                     {
                         string docText = null;
@@ -162,7 +154,7 @@ namespace ReportDBmySQL
                         }
                         WordDoc.MainDocumentPart.Document.Save();
                         WordDoc.Close();
-                    }*/
+                    }
                 }
             }
             Console.WriteLine();
