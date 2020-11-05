@@ -109,19 +109,6 @@ namespace ReportDBmySQL
 
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
-            List<string> modifiedFiles = new List<string>()
-            {
-                "Казань, Большая 80",
-                "Казань, Подлужная 40",
-                "Казань, Подлужная 40",
-                "Казань, Волгоградская 29",
-            };
-
-            // d.City 
-            // d.Street
-            // d.Home 
-            // d.Catalog 
-            // d.Save 
             //foreach (AddressDoc d in AddressDocList) //foreach (var item in modifiedFilePath)
             //{
                 var filePuth = AddressDocList.Select(x => x.Save + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").ToList();
@@ -131,7 +118,7 @@ namespace ReportDBmySQL
                     File.Copy(originalFilePath, f);
 
                     // Берет готовый doc, редактирует
-                    /*
+                    
                     using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(f, isEditable: true))
                     {
                         string docText = null;
@@ -150,7 +137,6 @@ namespace ReportDBmySQL
                         WordDoc.MainDocumentPart.Document.Save();
                         WordDoc.Close();
                     }
-                    */
                 }
            // }
             Console.WriteLine();
