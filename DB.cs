@@ -54,6 +54,17 @@ namespace ReportDBmySQL
             command.ExecuteNonQuery();
             connection.Close();
         }
+
+        /// <summary>
+        /// Очистка общей таблицы
+        /// </summary>
+        public void ClearAddressInfoDB()
+        {
+            MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, catalogs;", connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }
 

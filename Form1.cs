@@ -22,7 +22,7 @@ namespace ReportDBmySQL
         /// <param name="e"></param>
         private void Button1_Click(object sender, System.EventArgs e)
         {
-            /*
+            
             DB db = new DB();
 
             db.CreateTableCatalogs();
@@ -37,9 +37,10 @@ namespace ReportDBmySQL
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
             db.InsertTableAdresses(addressesList);
-            */
 
             CreateDoc();
+
+            db.ClearAddressInfoDB();
 
             Application.Exit();
         }
@@ -106,7 +107,7 @@ namespace ReportDBmySQL
             DB yourDBObject = new DB();
             List<AddressDoc> AddressDocList = yourDBObject.GetAddressList();
 
-            var originalFilePath = @"C:\Users\User1_106\Desktop\3\template.docx";
+            var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
             List<string> modifiedFiles = new List<string>()
             {
@@ -134,7 +135,9 @@ namespace ReportDBmySQL
                 // Файл: путь к папке + имя + .docx
                 // d.Catalog "C:\\Users\\User1_106\\Desktop\\Github\\сдаем без успд и с УСПД подписанные акты\\3\\Адоратского 27А" 
                 // + .docx
-                var filePuth = AddressDocList.Select(x => x.Catalog + ".docx").ToList();
+
+                // d.Save
+                var filePuth = AddressDocList.Select(x => x.Save + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").ToList();
 
                 foreach (var f in filePuth) {
                     // Копировал файл, давал новое имя, редактировал
