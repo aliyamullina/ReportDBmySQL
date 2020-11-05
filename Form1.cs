@@ -111,6 +111,8 @@ namespace ReportDBmySQL
 
             var filePuth = AddressDocList.Select(x => x.Save + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").ToList();
 
+
+
             foreach (var f in filePuth) {
                 // Копировал файл, давал новое имя, редактировал
                 File.Copy(originalFilePath, f);
@@ -125,7 +127,7 @@ namespace ReportDBmySQL
                     }
 
                     Regex regexText = new Regex("AddressInfo");
-                    docText = regexText.Replace(docText, AddressDocList.Select(y => y.Street)).ToList();
+                    docText = regexText.Replace(docText, "Казань, Большая 80");
 
                     using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                     {
