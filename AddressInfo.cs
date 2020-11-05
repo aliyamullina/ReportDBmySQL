@@ -81,17 +81,14 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        AddressInfo address = new AddressInfo();
+                        AddressInfo addressList = new AddressInfo();
 
-                        address.Street = dataReader["Street"].ToString();
-                        address.Home = dataReader["Home"].ToString();
-                        address.City_id = (int)dataReader["City_id"];
-                        address.Catalog_id = (int)dataReader["Catalog_id"];
+                        addressList.Street = dataReader["Street"].ToString();
+                        addressList.Home = dataReader["Home"].ToString();
+                        addressList.City_id = (int)dataReader["City_id"];
+                        addressList.Catalog_id = (int)dataReader["Catalog_id"];
 
-                        addressSelect.Add(street);
-                        addressSelect.Add(home);
-                        addressSelect.Add(city_id);
-                        addressSelect.Add(catalog_id);
+                        addressSelect.Add(addressList);
                     }
                     dataReader.Close();
                 }

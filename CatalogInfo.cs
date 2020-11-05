@@ -73,12 +73,12 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        CatalogInfo catalog = new CatalogInfo();
+                        CatalogInfo catalogList = new CatalogInfo();
 
-                        catalog.Catalog = dataReader["Catalog"].ToString();
-                        catalog.Save = dataReader["Save"].ToString();
+                        catalogList.Catalog = dataReader["Catalog"].ToString();
+                        catalogList.Save = dataReader["Save"].ToString();
 
-                        catalogsSelect.Add(catalog);
+                        catalogsSelect.Add(catalogList);
                     }
                     dataReader.Close();
                 }
