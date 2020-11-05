@@ -22,7 +22,7 @@ namespace ReportDBmySQL.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace ReportDBmySQL.Properties {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ReportDBmySQL.Properties.Resources", typeof(Resources).Assembly);
@@ -51,71 +51,12 @@ namespace ReportDBmySQL.Properties {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на using System;
-        ///using System.Collections.Generic;
-        ///
-        ///namespace ReportDBmySQL
-        ///{
-        ///    class AddressInfo
-        ///    {
-        ///        public AddressInfo(string city, string street, string home)
-        ///        {
-        ///            this.City = city;
-        ///            this.Street = street;
-        ///            this.Home = home;
-        ///        }
-        ///        
-        ///        public string City { get; private set; }
-        ///        public string Street { get; private set; }
-        ///        public string Home { get; private set; }
-        ///    }
-        ///}
-        ///
-        ///// AddressInfo a = new AddressInfo(&quot;1&quot;,  [остаток строки не уместился]&quot;;.
-        /// </summary>
-        internal static string AddressInfo {
-            get {
-                return ResourceManager.GetString("AddressInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на using MySql.Data.MySqlClient;
-        ///
-        ///namespace ReportDBmySQL
-        ///{
-        ///    class DB
-        ///    {
-        ///        MySqlConnection connection = new MySqlConnection(
-        ///            &quot;Server = localhost; &quot; +
-        ///            &quot;Port = 3306; &quot; +
-        ///            &quot;Username = root; &quot; +
-        ///            &quot;Password = root; &quot; +
-        ///            &quot;database = reportdbmysqlhomes&quot;
-        ///            );
-        ///
-        ////*******************/
-        ///
-        ///CREATE DATABASE productsdb;
-        ///USE productsdb;
-        ///CREATE TABLE Cities
-        ///(
-        ///    City_Id INT AUTO_INCREMENT PRIMARY KEY,
-        ///    City VARCHAR(30) NOT NULL [остаток строки не уместился]&quot;;.
-        /// </summary>
-        internal static string DB {
-            get {
-                return ResourceManager.GetString("DB", resourceCulture);
             }
         }
     }
