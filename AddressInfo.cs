@@ -82,12 +82,13 @@ namespace ReportDBmySQL
                     addresses.home,
                     catalogs.Save
                 FROM 
-	                cities,
-                    addresses,
+                    addresses
+                LEFT JOIN
+                    cities
+                INNER JOIN
                     catalogs
-                WHERE
-	                cities.City_Id = addresses.City_id,
-                    catalogs.Catalog_Id = addresses.Catalog_id
+                ON addresses.City_id = cities.City_Id 
+                ON addresses.Catalog_id = catalogs.Catalog_Id
                 ", connection))
             {
                 connection.Open();
