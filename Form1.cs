@@ -106,40 +106,43 @@ namespace ReportDBmySQL
             DB yourDBObject = new DB();
             List<AddressDoc> AddressDocList = yourDBObject.GetAddressList();
 
+            var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
+
+            var Format = ".docx";
+
+            List<string> modifiedFiles = new List<string>()
+            {
+                "Казань, Большая 80",
+                "Казань, Подлужная 40",
+                "Казань, Подлужная 40",
+                "Казань, Волгоградская 29",
+            };
+
+            string[] modifiedFilePath =
+            {
+                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy1.docx",
+                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy2.docx",
+                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy3.docx",
+                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy4.docx"
+            };
+
             // d.City 
             // d.Street
             // d.Home 
+            // d.Catalog 
             // d.Save 
-
             foreach (AddressDoc d in AddressDocList)
             {
-                var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
-
-                string[] modifiedFilePath =
-                {
-                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy1.docx",
-                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy2.docx",
-                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy3.docx"
-                };
-
-                var Format = ".docx";
-
-                List<string> modifiedFiles = new List<string>()
-                {
-                    "Казань, Большая 80",
-                    "Казань, Подлужная 40",
-                    "Казань, Подлужная 40",
-                    "Казань, Волгоградская 29",
-                };
-
-                foreach (var item in modifiedFilePath)
-                {
+                //foreach (var item in modifiedFilePath)
+                //{
+                    // 
                     var suckingList = modifiedFiles.Select(x => d.Save + x + Format).ToList();
 
                     // Копировал файл, давал новое имя, редактировал
                     File.Copy(originalFilePath, item);
 
                     // Берет готовый doc, редактирует
+                    /*
                     using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(item, isEditable: true))
                     {
                         string docText = null;
@@ -157,8 +160,8 @@ namespace ReportDBmySQL
                         }
                         WordDoc.MainDocumentPart.Document.Save();
                         WordDoc.Close();
-                    }
-                }
+                    }*/
+                //}
             }
             Console.WriteLine();
         }
