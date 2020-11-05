@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Packaging;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -75,7 +77,7 @@ namespace ReportDBmySQL
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
                 catalog_id++;
                 folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
-                
+
             }
             return folderAdress;
         }
@@ -100,12 +102,14 @@ namespace ReportDBmySQL
         public static void CreateDoc()
         {
             var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
-            //var modifiedFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template2.docx";
-            string[] modifiedFilePath = 
-                { 
-                    @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy1.docx",
-                    @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy2.docx",
-                    @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy3.docx",
+
+            string[] modifiedFilePath =
+            {
+                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy1.docx",
+                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy2.docx",
+                @"C:\Users\User1_106\Google Диск\Github\Files\templatecopy3.docx"
+            };
+
             var Path = @"C:\Users\User1_106\Google Диск\Github\Files\";
             var Format = ".docx";
 
@@ -117,10 +121,10 @@ namespace ReportDBmySQL
                     "Казань, Волгоградская 29",
                 };
 
-            foreach(var item in modifiedFilePath) { 
-            var suckingList = modifiedFiles.Select(x => Path + x + Format).ToList();
+            foreach (var item in modifiedFilePath)
+            {
+                var suckingList = modifiedFiles.Select(x => Path + x + Format).ToList();
 
-            foreach (var item in suckingList) { 
                 // Копировал файл, давал новое имя, редактировал
                 File.Copy(originalFilePath, item);
 
@@ -135,7 +139,6 @@ namespace ReportDBmySQL
 
                     Regex regexText = new Regex("AddressInfo");
                     docText = regexText.Replace(docText, "Казань, Большая 80");
-                    Regex regexText = new Regex("AddressInfo"); docText = regexText.Replace(docText, "Казань, Большая 80");
 
                     using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                     {
@@ -144,6 +147,7 @@ namespace ReportDBmySQL
                     WordDoc.MainDocumentPart.Document.Save();
                     WordDoc.Close();
                 }
-            }
+             }
+        }
     }
 }
