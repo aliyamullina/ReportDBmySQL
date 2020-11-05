@@ -108,8 +108,6 @@ namespace ReportDBmySQL
 
             var originalFilePath = @"C:\Users\User1_106\Google Диск\Github\Files\template.docx";
 
-            var Format = ".docx";
-
             List<string> modifiedFiles = new List<string>()
             {
                 "Казань, Большая 80",
@@ -134,10 +132,12 @@ namespace ReportDBmySQL
             foreach (AddressDoc d in AddressDocList) //foreach (var item in modifiedFilePath)
             {
                 // Файл: путь к папке + имя + .docx
-                var fileName = modifiedFiles.Select(x => d.Save + x + Format).ToList();
+                // d.Catalog "C:\\Users\\User1_106\\Desktop\\Github\\сдаем без успд и с УСПД подписанные акты\\3\\Адоратского 27А" 
+                // + .docx
+                var filePuth = AddressDocList.Select(x => x.Catalog + ".docx").ToList();
 
                 // Копировал файл, давал новое имя, редактировал
-                //File.Copy(originalFilePath, fileName);
+                //File.Copy(originalFilePath, filePuth);
 
                 // Берет готовый doc, редактирует
                 /*
