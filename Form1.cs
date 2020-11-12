@@ -111,14 +111,11 @@ namespace ReportDBmySQL
         {
             List<RegistryInfo> registersList = new List<RegistryInfo>();
 
-            string[] pathDoc = 
-            {
-                @"C:\Users\User1_106\Desktop\Github\сдаем без успд и с УСПД подписанные акты\зеленодольск\Реестр Васильево Ленина 28.xlsx",
-                @"C:\Users\User1_106\Desktop\Github\сдаем без успд и с УСПД подписанные акты\зеленодольск\Реестр Васильево Октябрьская 11.xlsx",
-                @"C:\Users\User1_106\Desktop\Github\сдаем без успд и с УСПД подписанные акты\зеленодольск\Реестр Васильево Санатория территория 40.xlsx"
-            };
-
             var fileName = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
+
+            // https://docs.microsoft.com/ru-ru/office/open-xml/how-to-open-a-spreadsheet-document-from-a-stream 
+
+
             using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
             {
                 WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
@@ -126,6 +123,7 @@ namespace ReportDBmySQL
                 SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
 
                 ArrayList data = new ArrayList();
+
                 foreach (Row r in sheetData.Elements<Row>())
                 {
                     foreach (Cell c in r.Elements<Cell>())
@@ -139,11 +137,20 @@ namespace ReportDBmySQL
                         {
                             data.Add(c.InnerText);
                         }
-
-
                     }
                 }
-                Console.ReadKey();
+
+                string text;
+                foreach (Row r in sheetData.Elements<Row>())
+                {
+                    foreach (Cell c in r.Elements<Cell>())
+                    {
+                        text = c.CellValue.Text;
+                        Console.Write(text + " ");
+                    }
+                }
+
+                Console.WriteLine();
             }
 
             var apartment = "97";
