@@ -67,6 +67,9 @@ namespace ReportDBmySQL
             }
         }
 
+        /// <summary>
+        /// Извлечение из таблицы Registers в List
+        /// </summary>
         public List<RegistryInfo> GetRegistryList()
         {
             List<RegistryInfo> registrySelect = new List<RegistryInfo>();
