@@ -18,8 +18,6 @@ namespace ReportDBmySQL
         /// <summary>
         /// Действие по клику
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Button1_Click(object sender, System.EventArgs e)
         {
             
