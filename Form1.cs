@@ -1,5 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,6 +25,7 @@ namespace ReportDBmySQL
             
             DB db = new DB();
 
+            /*
             db.CreateTableCatalogs();
             List<CatalogInfo> catalogsInsert = GetFillcatalog();
             db.InsertTableCatalogs(catalogsInsert);
@@ -30,17 +33,19 @@ namespace ReportDBmySQL
             db.CreateTableCities();
             List<CityInfo> CitiesList = GetFillCities();
             db.InsertTableCities(CitiesList);
+            */
 
             db.CreateTableRegisters();
             List<RegistryInfo> RegistersList = GetFillRegisters();
             db.InsertTableRegisters(RegistersList);
 
+            /*
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
             db.InsertTableAdresses(addressesList);
 
             CreateDoc();
-
+            */
             //db.ClearAddressInfoDB();
 
             Application.Exit();
@@ -105,6 +110,41 @@ namespace ReportDBmySQL
         private static List<RegistryInfo> GetFillRegisters()
         {
             List<RegistryInfo> registersList = new List<RegistryInfo>();
+
+            string[] pathDoc = 
+            {
+                @"C:\Users\User1_106\Desktop\Github\сдаем без успд и с УСПД подписанные акты\зеленодольск\Реестр Васильево Ленина 28.xlsx",
+                @"C:\Users\User1_106\Desktop\Github\сдаем без успд и с УСПД подписанные акты\зеленодольск\Реестр Васильево Октябрьская 11.xlsx",
+                @"C:\Users\User1_106\Desktop\Github\сдаем без успд и с УСПД подписанные акты\зеленодольск\Реестр Васильево Санатория территория 40.xlsx"
+            };
+
+            var fileName = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
+            using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
+            {
+                WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
+                WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
+                SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
+
+                ArrayList data = new ArrayList();
+                foreach (Row r in sheetData.Elements<Row>())
+                {
+                    foreach (Cell c in r.Elements<Cell>())
+                    {
+                        if (c.DataType != null && c.DataType == CellValues.SharedString)
+                        {
+                            var stringId = Convert.ToInt32(c.InnerText);
+                            data.Add(workbookPart.SharedStringTablePart.SharedStringTable.Elements<SharedStringItem>().ElementAt(stringId).InnerText);
+                        }
+                        else if (c.InnerText != null || c.InnerText != string.Empty)
+                        {
+                            data.Add(c.InnerText);
+                        }
+
+
+                    }
+                }
+                Console.ReadKey();
+            }
 
             var apartment = "97";
             var model = "СО-И449М";
