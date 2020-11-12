@@ -113,6 +113,7 @@
     <Compile Include="Classes\DB.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Classes\DocumentInfo.cs" />
     <Compile Include="Classes\RegistryInfo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

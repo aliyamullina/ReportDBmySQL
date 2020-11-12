@@ -3,28 +3,6 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-
-    public class AddressDoc
-    {
-        public AddressDoc()
-        {
-        }
-
-        public AddressDoc(string city, string street, string home, string save, string catalog)
-        {
-            this.City = city;
-            this.Street = street;
-            this.Home = home;
-            this.Catalog = catalog;
-            this.Save = save;
-        }
-        public string City { get; set; }
-        public string Street { get; set; }
-        public string Home { get; set; }
-        public string Catalog { get; set; }
-        public string Save { get; set; }
-    }
-
     public class AddressInfo
     {
         public AddressInfo()
@@ -86,53 +64,6 @@ namespace ReportDBmySQL
                 }
                 connection.Close();
             }
-        }
-
-        /// <summary>
-        /// Извлечение из БД все связанные таблицы в List
-        /// </summary>
-        public List<AddressDoc> GetAddressList()
-        {
-            List<AddressDoc> addressSelect = new List<AddressDoc>();
-
-            using (MySqlCommand command = new MySqlCommand(@"
-                SELECT 
-	                cities.City,
-                    addresses.Street, 
-                    addresses.Home,
-                    catalogs.Catalog,
-                    catalogs.Save
-                FROM 
-                    addresses,
-                    cities,
-                    catalogs
-                WHERE 
-                    addresses.City_id = cities.City_Id 
-                AND
-                    addresses.Catalog_id = catalogs.Catalog_Id
-                ", connection))
-            {
-                connection.Open();
-
-                using (MySqlDataReader dataReader = command.ExecuteReader())
-                {
-                    while (dataReader.Read())
-                    {
-                        AddressDoc addressFullList = new AddressDoc();
-
-                        addressFullList.City = dataReader["City"].ToString();
-                        addressFullList.Street = dataReader["Street"].ToString();
-                        addressFullList.Home = dataReader["Home"].ToString();
-                        addressFullList.Catalog = dataReader["Catalog"].ToString();
-                        addressFullList.Save = dataReader["Save"].ToString();
-
-                        addressSelect.Add(addressFullList);
-                    }
-                    dataReader.Close();
-                }
-                connection.Close();
-            }
-            return addressSelect;
         }
     }
 }
