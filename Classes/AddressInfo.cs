@@ -89,7 +89,7 @@ namespace ReportDBmySQL
         }
 
         /// <summary>
-        /// Извлечение из таблицы Catalogs в List
+        /// Извлечение из БД все связанные таблицы в List
         /// </summary>
         public List<AddressDoc> GetAddressList()
         {
