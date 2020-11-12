@@ -119,11 +119,16 @@ namespace ReportDBmySQL
                 // Получить ссылку на часть книги
                 WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
 
+                // Находим лист с указанным именем, а затем используем это
+                // Объект листа для получения ссылки на первый рабочий лист.
+                Sheet theSheet = workbookPart.Workbook.Descendants<Sheet>().Where(s => s.Name == "Лист1").FirstOrDefault();
+
                 // https://docs.microsoft.com/ru-ru/office/open-xml/how-to-retrieve-the-values-of-cells-in-a-spreadsheet
 
                 WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
 
                 SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
+
 
                 ArrayList data = new ArrayList();
 
