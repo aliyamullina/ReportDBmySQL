@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 
-namespace ReportDBmySQL.Classes
+namespace ReportDBmySQL
 {
     public class DocumentInfo
     {
@@ -29,7 +29,7 @@ namespace ReportDBmySQL.Classes
         /// <summary>
         /// Извлечение из БД все связанные таблицы в List
         /// </summary>
-        public List<DocumentInfo> GetAddressList()
+        public List<DocumentInfo> GetDocumentList()
         {
             List<DocumentInfo> addressSelect = new List<DocumentInfo>();
 
