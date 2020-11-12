@@ -1,7 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -36,10 +35,8 @@ namespace ReportDBmySQL
             */
 
             db.CreateTableRegisters();
-            //List<RegistryInfo> RegistersList = GetFillRegisters();
-            //db.InsertTableRegisters(RegistersList);
-
-            GetCellValue(@"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx", "Лист1", "A8");
+            List<RegistryInfo> RegistersList = GetFillRegisters();
+            db.InsertTableRegisters(RegistersList);
 
             /*
             db.CreateTableAdresses();
@@ -115,24 +112,37 @@ namespace ReportDBmySQL
 
             var fileName = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
 
-            // Откройте документ электронной таблицы для доступа только для чтения
-            using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
+            using (SpreadsheetDocument doc = SpreadsheetDocument.Open(fileName, false))
             {
-                // Получить ссылку на часть книги
-                WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
 
-                // Находим лист с указанным именем, а затем используем это
-                // Объект листа для получения ссылки на первый рабочий лист.
-                Sheet theSheet = workbookPart.Workbook.Descendants<Sheet>().Where(s => s.Name == "Лист1").FirstOrDefault();
+                //создать объект для части книги
+                WorkbookPart wbPart = doc.WorkbookPart;
 
-                // https://docs.microsoft.com/ru-ru/office/open-xml/how-to-retrieve-the-values-of-cells-in-a-spreadsheet
+                //заявление, чтобы получить счет рабочего листа
+                int worksheetcount = doc.WorkbookPart.Workbook.Sheets.Count();
 
-                // Получить ссылку на часть рабочего листа
-                WorksheetPart worksheetPart = (WorksheetPart)(workbookPart.GetPartById(theSheet.Id));
+                // Name = "Лист1"  
+                Sheet mysheet = (Sheet)doc.WorkbookPart.Workbook.Sheets.ChildElements.GetItem(0);
 
-                // Используем его свойство Worksheet для получения ссылки на ячейку
-                // чей адрес соответствует указанному вами адресу
-                Cell theCell = worksheetPart.Worksheet.Descendants<Cell>().Where(c => c.CellReference == "A8").FirstOrDefault();
+                //оператор для получения объекта рабочего листа с использованием идентификатора листа
+                Worksheet Worksheet = ((WorksheetPart)wbPart.GetPartById(mysheet.Id)).Worksheet;
+
+                //Примечание. У рабочего листа 8 дочерних элементов, и первый дочерний элемент [1] = sheetviewdimension, .... child [4] = sheetdata.
+                int wkschildno = 4;
+
+
+                //оператор для получения данных листа, который содержит строки и ячейку в таблице
+                SheetData Rows = (SheetData)Worksheet.ChildElements.GetItem(wkschildno);
+
+
+                //получение строки по указанному индексу метода getitem
+                Row currentrow = (Row)Rows.ChildElements.GetItem(1);
+
+                //получение ячейки по указанному индексу метода getitem
+                Cell currentcell = (Cell)currentrow.ChildElements.GetItem(1);
+
+                //инструкция для получения целочисленного значения  
+                string currentcellvalue = currentcell.InnerText;
 
                 Console.WriteLine();
             }
@@ -189,4 +199,5 @@ namespace ReportDBmySQL
             Console.WriteLine();
         }
     }
+
 }
