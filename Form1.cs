@@ -76,11 +76,18 @@ namespace ReportDBmySQL
             foreach (CatalogInfo c in path)
             {
                 var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
+
+                // Ошибки 
+                // Васильево Ленина => Васильево
+                // Карла Маркса => Карла
+                // Васильево Санатория территория => Васильево
+                // П. Мухамедьярова  => П.
+                // Пр. Победы => Пр.
                 var street = pathTrim.Substring(0, pathTrim.IndexOf(" "));
+
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
                 catalog_id++;
                 folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
-
             }
             return folderAdress;
         }
