@@ -113,13 +113,16 @@ namespace ReportDBmySQL
 
             var fileName = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
 
-            // https://docs.microsoft.com/ru-ru/office/open-xml/how-to-open-a-spreadsheet-document-from-a-stream 
-
-
+            // Откройте документ электронной таблицы для доступа только для чтения
             using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
             {
+                // Получить ссылку на часть книги
                 WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
+
+                // https://docs.microsoft.com/ru-ru/office/open-xml/how-to-retrieve-the-values-of-cells-in-a-spreadsheet
+
                 WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
+
                 SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
 
                 ArrayList data = new ArrayList();
@@ -141,6 +144,7 @@ namespace ReportDBmySQL
                 }
 
                 string text;
+                
                 foreach (Row r in sheetData.Elements<Row>())
                 {
                     foreach (Cell c in r.Elements<Cell>())
