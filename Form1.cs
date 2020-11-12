@@ -36,8 +36,10 @@ namespace ReportDBmySQL
             */
 
             db.CreateTableRegisters();
-            List<RegistryInfo> RegistersList = GetFillRegisters();
-            db.InsertTableRegisters(RegistersList);
+            //List<RegistryInfo> RegistersList = GetFillRegisters();
+            //db.InsertTableRegisters(RegistersList);
+
+            GetCellValue(@"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx", "Лист1", "A8");
 
             /*
             db.CreateTableAdresses();
@@ -125,39 +127,12 @@ namespace ReportDBmySQL
 
                 // https://docs.microsoft.com/ru-ru/office/open-xml/how-to-retrieve-the-values-of-cells-in-a-spreadsheet
 
-                WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
+                // Получить ссылку на часть рабочего листа
+                WorksheetPart worksheetPart = (WorksheetPart)(workbookPart.GetPartById(theSheet.Id));
 
-                SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
-
-
-                ArrayList data = new ArrayList();
-
-                foreach (Row r in sheetData.Elements<Row>())
-                {
-                    foreach (Cell c in r.Elements<Cell>())
-                    {
-                        if (c.DataType != null && c.DataType == CellValues.SharedString)
-                        {
-                            var stringId = Convert.ToInt32(c.InnerText);
-                            data.Add(workbookPart.SharedStringTablePart.SharedStringTable.Elements<SharedStringItem>().ElementAt(stringId).InnerText);
-                        }
-                        else if (c.InnerText != null || c.InnerText != string.Empty)
-                        {
-                            data.Add(c.InnerText);
-                        }
-                    }
-                }
-
-                string text;
-                
-                foreach (Row r in sheetData.Elements<Row>())
-                {
-                    foreach (Cell c in r.Elements<Cell>())
-                    {
-                        text = c.CellValue.Text;
-                        Console.Write(text + " ");
-                    }
-                }
+                // Используем его свойство Worksheet для получения ссылки на ячейку
+                // чей адрес соответствует указанному вами адресу
+                Cell theCell = worksheetPart.Worksheet.Descendants<Cell>().Where(c => c.CellReference == "A8").FirstOrDefault();
 
                 Console.WriteLine();
             }
