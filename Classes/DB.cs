@@ -60,7 +60,7 @@ namespace ReportDBmySQL
         /// </summary>
         public void ClearAddressInfoDB()
         {
-            MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, catalogs;", connection);
+            MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, catalogs, registers;", connection);
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();

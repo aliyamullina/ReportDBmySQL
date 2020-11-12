@@ -1,10 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ReportDBmySQL.Classes
+namespace ReportDBmySQL
 {
     public class DateInfo
     {
@@ -35,6 +32,16 @@ namespace ReportDBmySQL.Classes
         /// </summary>
         public void CreateTableRegisters()
         {
+            MySqlCommand command = new MySqlCommand(@"
+                CREATE TABLE IF NOT EXISTS Registers
+                (Registry_Id INT AUTO_INCREMENT PRIMARY KEY, 
+                Apartment VARCHAR(5) NOT NULL,
+                Model VARCHAR(20) NOT NULL,
+                Serial VARCHAR(20) NOT NULL);",
+                connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace ReportDBmySQL
             List<CityInfo> CitiesList = GetFillCities();
             db.InsertTableCities(CitiesList);
 
+            db.CreateTableRegisters();
 
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
