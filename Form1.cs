@@ -70,7 +70,7 @@ namespace ReportDBmySQL
             DB DBObject = new DB();
             List<CatalogInfo> path = DBObject.GetCatalogList();
             List<AddressInfo> folderAdress = new List<AddressInfo>();
-            int city_id = 1;
+            int city_id = 5;
             int catalog_id = 0;
 
             foreach (CatalogInfo c in path)
@@ -91,7 +91,7 @@ namespace ReportDBmySQL
         private static List<CityInfo> GetFillCities()
         {
             List<CityInfo> citiesList = new List<CityInfo>();
-            string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора" };
+            string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора", "Зеленодольск" };
             foreach (var city in citiesArray)
             {
                 citiesList.Add(new CityInfo(city));
