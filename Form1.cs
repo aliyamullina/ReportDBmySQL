@@ -32,6 +32,7 @@ namespace ReportDBmySQL
             db.InsertTableCities(CitiesList);
 
             db.CreateTableRegisters();
+            List<RegistryInfo> RegistersList = GetFillRegisters();
             db.InsertTableRegisters(RegistersList);
 
             db.CreateTableAdresses();
@@ -105,12 +106,11 @@ namespace ReportDBmySQL
         {
             List<RegistryInfo> registersList = new List<RegistryInfo>();
 
-            string[] registersArray = { };
+            var apartment = "97";
+            var model = "СО-И449М";
+            var serial = "0174281";
 
-            foreach (var registry in registersArray)
-            {
-                registersList.Add(new RegistryInfo(apartment, model, serial));
-            }
+            registersList.Add(new RegistryInfo(apartment, model, serial));
 
             return registersList;
         }
