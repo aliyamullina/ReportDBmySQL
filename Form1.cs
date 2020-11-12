@@ -32,6 +32,7 @@ namespace ReportDBmySQL
             db.InsertTableCities(CitiesList);
 
             db.CreateTableRegisters();
+            db.InsertTableRegisters(RegistersList);
 
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
@@ -39,7 +40,7 @@ namespace ReportDBmySQL
 
             CreateDoc();
 
-            db.ClearAddressInfoDB();
+            //db.ClearAddressInfoDB();
 
             Application.Exit();
         }
@@ -95,6 +96,23 @@ namespace ReportDBmySQL
                 citiesList.Add(new CityInfo(city));
             }
             return citiesList;
+        }
+
+        /// <summary>
+        /// Берет данные из массива и передает в коллекцию
+        /// </summary>
+        private static List<RegistryInfo> GetFillRegisters()
+        {
+            List<RegistryInfo> registersList = new List<RegistryInfo>();
+
+            string[] registersArray = { };
+
+            foreach (var registry in registersArray)
+            {
+                registersList.Add(new RegistryInfo(apartment, model, serial));
+            }
+
+            return registersList;
         }
 
         /// <summary>
