@@ -40,6 +40,11 @@ namespace ReportDBmySQL
                 categoryRow = categoryRow.RowBelow();
             }
 
+            var firstTableCell = ws.FirstCellUsed();
+            var lastTableCell = ws.LastCellUsed();
+            var rngData = ws.Range(firstTableCell.Address, lastTableCell.Address);
+            string address = ws.Cell("C3").GetString();
+
             Console.WriteLine();
         }
     }
