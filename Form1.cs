@@ -126,6 +126,15 @@ namespace ReportDBmySQL
                 //оператор для получения объекта рабочего листа с использованием идентификатора листа
                 Worksheet Worksheet = ((WorksheetPart)wbPart.GetPartById(mysheet.Id)).Worksheet;
 
+                DocumentFormat.OpenXml.Spreadsheet.SheetData sheetdata = Worksheet.Elements<DocumentFormat.OpenXml.Spreadsheet.SheetData>().FirstOrDefault();
+
+                foreach (DocumentFormat.OpenXml.Spreadsheet.Row r in sheetdata.Elements<DocumentFormat.OpenXml.Spreadsheet.Row>())
+                {
+                    DocumentFormat.OpenXml.Spreadsheet.Cell c = r.Elements<DocumentFormat.OpenXml.Spreadsheet.Cell>().First();
+                    _ = c.CellValue.Text + Environment.NewLine;
+                }
+      
+
                 Console.WriteLine();
             }
 
