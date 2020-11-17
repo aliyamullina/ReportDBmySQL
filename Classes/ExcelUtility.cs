@@ -10,7 +10,6 @@ namespace ReportDBmySQL
         public static void GetExcelTableRead(string northwinddataXlsx, out List<RegistryInfo> registersList)
         {
             registersList = new List<RegistryInfo>();
-            const int coCategoryId = 1;
 
             const int apartmentRow = 1;
             const int modelRow = 2;
@@ -19,17 +18,13 @@ namespace ReportDBmySQL
             var wb = new XLWorkbook(northwinddataXlsx);
             var ws = wb.Worksheet("Лист1");
 
-            // Найдите первую использованную строку
             var firstRowUsed = ws.FirstRowUsed();
-
-            // Сузьте строку, чтобы она включала только использованную часть
             var categoryRow = firstRowUsed.RowUsed();
 
-            // Перейти к следующей строке (теперь в ней есть заголовки)
             categoryRow = categoryRow.RowBelow();
 
             // Get all categories
-            while (!categoryRow.Cell(coCategoryId).IsEmpty())
+            while (!categoryRow.Cell(1).IsEmpty())
             {
                 string apartment = categoryRow.Cell(apartmentRow).GetString();
                 string model = categoryRow.Cell(modelRow).GetString();
