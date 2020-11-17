@@ -114,7 +114,6 @@ namespace ReportDBmySQL
 
             using (SpreadsheetDocument doc = SpreadsheetDocument.Open(fileName, false))
             {
-
                 //создать объект для части книги
                 WorkbookPart wbPart = doc.WorkbookPart;
 
@@ -126,23 +125,6 @@ namespace ReportDBmySQL
 
                 //оператор для получения объекта рабочего листа с использованием идентификатора листа
                 Worksheet Worksheet = ((WorksheetPart)wbPart.GetPartById(mysheet.Id)).Worksheet;
-
-                //Примечание. У рабочего листа 8 дочерних элементов, и первый дочерний элемент [1] = sheetviewdimension, .... child [4] = sheetdata.
-                int wkschildno = 4;
-
-
-                //оператор для получения данных листа, который содержит строки и ячейку в таблице
-                SheetData Rows = (SheetData)Worksheet.ChildElements.GetItem(wkschildno);
-
-
-                //получение строки по указанному индексу метода getitem
-                Row currentrow = (Row)Rows.ChildElements.GetItem(1);
-
-                //получение ячейки по указанному индексу метода getitem
-                Cell currentcell = (Cell)currentrow.ChildElements.GetItem(1);
-
-                //инструкция для получения целочисленного значения  
-                string currentcellvalue = currentcell.InnerText;
 
                 Console.WriteLine();
             }
