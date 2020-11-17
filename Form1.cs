@@ -118,12 +118,8 @@ namespace ReportDBmySQL
             registersList.Add(new RegistryInfo(apartment, model, serial));
 
             //Excel read
-            ExcelUtility eu = new ExcelUtility();
-            var fname = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
-            var dt = eu.ReadExcelSheet(fname, false);
 
-            Console.WriteLine(dt);
-            
+            var puth = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
 
             //Excel read END
 
