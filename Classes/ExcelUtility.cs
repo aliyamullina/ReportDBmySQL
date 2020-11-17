@@ -31,6 +31,7 @@ namespace ReportDBmySQL
                         var j = 1;
                         foreach (Cell cell in row.Descendants<Cell>())
                         {
+                            Console.WriteLine();
                             var colunmName = firstRowIsHeader ? GetCellValue(doc, cell) : "Field" + j++;
                             Console.WriteLine(colunmName);
                             Headers.Add(colunmName);
@@ -56,11 +57,20 @@ namespace ReportDBmySQL
         private string GetCellValue(SpreadsheetDocument doc, Cell cell)
         {
             string value = cell.CellValue.InnerText;
+
             if (cell.DataType != null && cell.DataType.Value == CellValues.SharedString)
             {
                 return doc.WorkbookPart.SharedStringTablePart.SharedStringTable.ChildElements.GetItem(int.Parse(value)).InnerText;
             }
-            return value;
+            else
+            {
+                Console.WriteLine();
+                if (cell.StyleIndex != null)
+                {
+                    Console.WriteLine();
+                }
+            }
+                return value;
         }
     }
 }
