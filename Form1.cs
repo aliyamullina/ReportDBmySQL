@@ -119,10 +119,11 @@ namespace ReportDBmySQL
 
             //Excel read
 
-            var puth = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
+            //var puth = @"C:\Users\User1_106\Desktop\Реестр Ибрагимова 37 — копия.xlsx";
+            var puth = @"C:\Users\User1_106\Desktop\Реестр Ибрагимова 37.xlsx";
             List<RegistryInfo> registersListTable = new List<RegistryInfo>();
 
-            ExcelUtility.ExtractCategoriesCompanies(puth, out registersListTable);
+            ExcelUtility.GetExcelTableRead(puth, out registersListTable);
 
             //Excel read END
 
