@@ -11,13 +11,12 @@ namespace ReportDBmySQL
         {
             registersList = new List<RegistryInfo>();
             const int coCategoryId = 1;
-            const int coCategoryName = 2;
+            const int coCategoryName1 = 1;
+            const int coCategoryName2 = 2;
+            const int coCategoryName3 = 3;
 
             var wb = new XLWorkbook(northwinddataXlsx);
             var ws = wb.Worksheet("Лист1");
-
-            var model = "1";
-            var serial = "2";
 
             // Найдите первую использованную строку
             var firstRowUsed = ws.FirstRowUsed();
@@ -31,33 +30,15 @@ namespace ReportDBmySQL
             // Get all categories
             while (!categoryRow.Cell(coCategoryId).IsEmpty())
             {
-                string apartment = categoryRow.Cell(coCategoryName).GetString();
+                string apartment = categoryRow.Cell(coCategoryName1).GetString();
+                string model = categoryRow.Cell(coCategoryName2).GetString();
+                string serial = categoryRow.Cell(coCategoryName3).GetString();
 
                 registersList.Add(new RegistryInfo(apartment, model, serial));
 
                 categoryRow = categoryRow.RowBelow();
             }
 
-            // Есть много способов получить таблицу компании. 
-            // Здесь мы используем простой метод. 
-            // Другой способ - найти первую строку в таблице компании 
-            // с помощью цикла while row.IsEmpty ()
-
-            // Первый возможный адрес таблицы компании:
-            var firstPossibleAddress = ws.Row(categoryRow.RowNumber()).FirstCell().Address;
-            // Последний возможный адрес таблицы компании:
-            var lastPossibleAddress = ws.LastCellUsed().Address;
-
-            // Получение диапазона с остатком данных рабочего листа (используемым диапазоном) 
-            var companyRange = ws.Range(firstPossibleAddress, lastPossibleAddress).RangeUsed();
-
-            // Обрабатывать диапазон как таблицу (чтобы можно было использовать имена столбцов)
-            var companyTable = companyRange.AsTable();
-
-            // Получение списка названий 
-            //companies = companyTable.DataRange.Rows()
-            //  .Select(companyRow => companyRow.Field("Company Name").GetString())
-            //  .ToList();
             Console.WriteLine();
         }
     }
