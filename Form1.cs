@@ -110,6 +110,14 @@ namespace ReportDBmySQL
         {
             List<RegistryInfo> registersList = new List<RegistryInfo>();
 
+            var apartment = "97";
+            var model = "СО-И449М";
+            var serial = "0174281";
+
+            registersList.Add(new RegistryInfo(apartment, model, serial));
+
+            //Excel read
+
             var fileName = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
 
             using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
@@ -125,6 +133,11 @@ namespace ReportDBmySQL
                 foreach (Cell c in headerRow.Elements<Cell>())
                 {
                     string cellText;
+
+                    if (stringTable != null)
+                    {
+                        var sharedString = stringTable.SharedStringTable.ElementAt(int.Parse(c.CellValue.InnerText));
+                    }
 
                     if (c.DataType == CellValues.SharedString)
                     {
@@ -143,13 +156,10 @@ namespace ReportDBmySQL
                 Console.WriteLine();
             }
 
-            var apartment = "97";
-            var model = "СО-И449М";
-            var serial = "0174281";
-
-            registersList.Add(new RegistryInfo(apartment, model, serial));
+            //Excel read END
 
             return registersList;
+
         }
 
         /// <summary>
