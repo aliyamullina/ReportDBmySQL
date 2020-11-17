@@ -112,29 +112,34 @@ namespace ReportDBmySQL
 
             var fileName = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
 
-            using (SpreadsheetDocument doc = SpreadsheetDocument.Open(fileName, false))
+            using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
             {
-                //создать объект для части книги
-                WorkbookPart wbPart = doc.WorkbookPart;
+                WorkbookPart workbookPart = document.WorkbookPart;
+                WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
+                SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
 
-                //заявление, чтобы получить счет рабочего листа
-                int worksheetcount = doc.WorkbookPart.Workbook.Sheets.Count();
+                SharedStringTablePart stringTable = workbookPart.GetPartsOfType<SharedStringTablePart>().FirstOrDefault();
 
-                // Name = "Лист1"  
-                Sheet mysheet = (Sheet)doc.WorkbookPart.Workbook.Sheets.ChildElements.GetItem(0);
+                var headerRow = sheetData.Elements<Row>().FirstOrDefault();
 
-                //оператор для получения объекта рабочего листа с использованием идентификатора листа
-                Worksheet Worksheet = ((WorksheetPart)wbPart.GetPartById(mysheet.Id)).Worksheet;
-
-                DocumentFormat.OpenXml.Spreadsheet.SheetData sheetdata = Worksheet.Elements<DocumentFormat.OpenXml.Spreadsheet.SheetData>().FirstOrDefault();
-
-                foreach (DocumentFormat.OpenXml.Spreadsheet.Row r in sheetdata.Elements<DocumentFormat.OpenXml.Spreadsheet.Row>())
+                foreach (Cell c in headerRow.Elements<Cell>())
                 {
-                    DocumentFormat.OpenXml.Spreadsheet.Cell c = r.Elements<DocumentFormat.OpenXml.Spreadsheet.Cell>().First();
-                    _ = c.CellValue.Text + Environment.NewLine;
-                }
-      
+                    string cellText;
 
+                    if (c.DataType == CellValues.SharedString)
+                    {
+                        //the value will be a number which is an index into the shared strings table
+                        int index = int.Parse(c.CellValue.InnerText);
+                        cellText = stringTable.SharedStringTable.ElementAt(index).InnerText;
+                    }
+                    else
+                    {
+                        //just take the value from the cell (note this won't work for some types e.g. dates)
+                        cellText = c.CellValue.InnerText;
+                    }
+
+                    Console.WriteLine(cellText);
+                }
                 Console.WriteLine();
             }
 
