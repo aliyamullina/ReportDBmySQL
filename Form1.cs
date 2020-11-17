@@ -2,6 +2,7 @@
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -117,44 +118,12 @@ namespace ReportDBmySQL
             registersList.Add(new RegistryInfo(apartment, model, serial));
 
             //Excel read
+            ExcelUtility eu = new ExcelUtility();
+            var fname = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
+            var dt = eu.ReadExcelSheet(fname, false);
 
-            var fileName = @"C:\Users\User1_106\Desktop\Реестр Васильево Ленина 28.xlsx";
-
-            using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
-            {
-                WorkbookPart workbookPart = document.WorkbookPart;
-                WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
-                SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
-
-                SharedStringTablePart stringTable = workbookPart.GetPartsOfType<SharedStringTablePart>().FirstOrDefault();
-
-                var headerRow = sheetData.Elements<Row>().FirstOrDefault();
-
-                foreach (Cell c in headerRow.Elements<Cell>())
-                {
-                    string cellText;
-
-                    if (stringTable != null)
-                    {
-                        var sharedString = stringTable.SharedStringTable.ElementAt(int.Parse(c.CellValue.InnerText));
-                    }
-
-                    if (c.DataType == CellValues.SharedString)
-                    {
-                        //the value will be a number which is an index into the shared strings table
-                        int index = int.Parse(c.CellValue.InnerText);
-                        cellText = stringTable.SharedStringTable.ElementAt(index).InnerText;
-                    }
-                    else
-                    {
-                        //just take the value from the cell (note this won't work for some types e.g. dates)
-                        cellText = c.CellValue.InnerText;
-                    }
-
-                    Console.WriteLine(cellText);
-                }
-                Console.WriteLine();
-            }
+            Console.WriteLine(dt);
+            
 
             //Excel read END
 
@@ -162,10 +131,10 @@ namespace ReportDBmySQL
 
         }
 
-        /// <summary>
-        /// Принимает путь до файла, редактирует его
-        /// </summary>
-        public static void CreateDoc()
+    /// <summary>
+    /// Принимает путь до файла, редактирует его
+    /// </summary>
+    public static void CreateDoc()
         {
             DB yourDBObject = new DB();
             List<DocumentInfo> AddressDocList = yourDBObject.GetDocumentList();
