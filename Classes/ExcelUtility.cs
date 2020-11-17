@@ -16,6 +16,9 @@ namespace ReportDBmySQL
             var wb = new XLWorkbook(northwinddataXlsx);
             var ws = wb.Worksheet("Лист1");
 
+            var model = "1";
+            var serial = "2";
+
             // Найдите первую использованную строку
             var firstRowUsed = ws.FirstRowUsed();
 
@@ -28,8 +31,9 @@ namespace ReportDBmySQL
             // Get all categories
             while (!categoryRow.Cell(coCategoryId).IsEmpty())
             {
-                String categoryName = categoryRow.Cell(coCategoryName).GetString();
-                registersList.Add(categoryName);
+                string apartment = categoryRow.Cell(coCategoryName).GetString();
+
+                registersList.Add(new RegistryInfo(apartment, model, serial));
 
                 categoryRow = categoryRow.RowBelow();
             }
