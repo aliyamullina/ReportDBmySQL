@@ -33,16 +33,24 @@ namespace ReportDBmySQL
         /// </summary>
         public void CreateTableRegisters()
         {
-            MySqlCommand command = new MySqlCommand(@"
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Registers
                 (Registry_Id INT AUTO_INCREMENT PRIMARY KEY, 
                 Apartment VARCHAR(15) NOT NULL,
                 Model VARCHAR(30) NOT NULL,
                 Serial VARCHAR(30) NOT NULL);",
-                connection);
-            connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
+                connection)) { 
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+            }
         }
 
         /// <summary>
