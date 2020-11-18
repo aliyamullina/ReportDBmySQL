@@ -29,21 +29,17 @@ namespace ReportDBmySQL
             List<CatalogInfo> catalogsInsert = GetFillcatalog();
             db.InsertTableCatalogs(catalogsInsert);
 
-
             db.CreateTableCities();
             List<CityInfo> CitiesList = GetFillCities();
             db.InsertTableCities(CitiesList);
-
 
             db.CreateTableRegisters();
             List<RegistryInfo> RegistersList = GetFillRegisters();
             db.InsertTableRegisters(RegistersList);
 
-
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
             db.InsertTableAdresses(addressesList);
-            Console.WriteLine();
 
             CreateDoc();
 
@@ -67,28 +63,6 @@ namespace ReportDBmySQL
                 foreach (var c in cI) { catalogsInsert.Add(new CatalogInfo(c, PathToFolder)); }
             }
             return catalogsInsert;
-        }
-
-        /// <summary>
-        /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
-        /// </summary>
-        private static List<AddressInfo> GetFillAddresses()
-        {
-            DB DBObject = new DB();
-            List<CatalogInfo> path = DBObject.GetCatalogList();
-            List<AddressInfo> folderAdress = new List<AddressInfo>();
-            int city_id = 5;
-            int catalog_id = 0;
-
-            foreach (CatalogInfo c in path)
-            {
-                var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
-                var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
-                var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                catalog_id++;
-                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
-            }
-            return folderAdress;
         }
 
         /// <summary>
@@ -116,11 +90,30 @@ namespace ReportDBmySQL
 
             OfficeUtility.GetExcelTableRead(puth, out registersListTable);
 
-            //Excel read END
-
             return registersListTable;
         }
 
+        /// <summary>
+        /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
+        /// </summary>
+        private static List<AddressInfo> GetFillAddresses()
+        {
+            DB DBObject = new DB();
+            List<CatalogInfo> path = DBObject.GetCatalogList();
+            List<AddressInfo> folderAdress = new List<AddressInfo>();
+            int city_id = 5;
+            int catalog_id = 0;
+
+            foreach (CatalogInfo c in path)
+            {
+                var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
+                var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
+                var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
+                catalog_id++;
+                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
+            }
+            return folderAdress;
+        }
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
