@@ -16,7 +16,7 @@ namespace ReportDBmySQL
             const int serialRow = 3;
 
             var wb = new XLWorkbook(northwinddataXlsx);
-            var ws = wb.Worksheet("Лист1");
+            var ws = wb.Worksheet(1);
 
             var firstRowUsed = ws.FirstRowUsed();
             var categoryRow = firstRowUsed.RowUsed();
