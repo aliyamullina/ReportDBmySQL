@@ -11,10 +11,6 @@ namespace ReportDBmySQL
         {
             registersList = new List<RegistryInfo>();
 
-            const int apartmentRow = 1;
-            const int modelRow = 2;
-            const int serialRow = 3;
-
             var wb = new XLWorkbook(northwinddataXlsx);
             var ws = wb.Worksheet(1);
 
@@ -22,7 +18,11 @@ namespace ReportDBmySQL
             var categoryRow = firstRowUsed.RowUsed();
 
             categoryRow = categoryRow.RowBelow();
-            
+
+            const int apartmentRow = 1;
+            const int modelRow = 2;
+            const int serialRow = 3;
+
             while (!categoryRow.Cell(1).IsEmpty())
             {
                 string apartment = categoryRow.Cell(apartmentRow).GetString();
