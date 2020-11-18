@@ -59,20 +59,26 @@ namespace ReportDBmySQL
             if (dialog == DialogResult.OK)
             {
                 // "C:\\Users\\User1_106\\Desktop\\1"
-                string pathToFolder = folderDlg.SelectedPath;
+                string s = folderDlg.SelectedPath;
                     
-                string[] cI = Directory.GetDirectories(pathToFolder);
+                string[] cI = Directory.GetDirectories(s);
 
                 // "C:\\Users\\User1_106\\Desktop\\1\\Татарстан 10"
                 foreach (var c in cI) 
                 {
-                    //string pathToRegistry = System.IO.Directory.GetFiles(c, "Реестр*");
-                    //string catalog = c;
-                    //string pathToRegistry = Directory.GetFiles(catalog, "Реестр*", SearchOption.AllDirectories)
+                    string r = Directory.GetFiles(c, "Реестр*").ToList().ForEach(f => Console.WriteLine(f));
 
-                    var pathToRegistry = c.Where(fn => Path.GetExtension(fn) == "Реестр*").Select(fn => Path.GetFileNameWithoutExtension(fn));
-                    ;
-                    catalogsInsert.Add(new CatalogInfo(pathToFolder, c, pathToRegistry)); 
+                    //string r = System.IO.Directory.GetFiles(c, "Реестр*");
+
+                    //string catalog = c;
+                    //string r = Directory.GetFiles(catalog, "Реестр*", SearchOption.AllDirectories)
+
+                    //var r = c.Where(fn => Path.GetExtension(fn) == "Реестр*").Select(fn => Path.GetFileNameWithoutExtension(fn));
+
+                    //int i = 0;
+                    //var r = Directory.GetFiles(c)[i].Contains ("Реестр*").ToString();
+
+                    catalogsInsert.Add(new CatalogInfo(s, c, r)); 
                 }
             }
             Console.WriteLine();
