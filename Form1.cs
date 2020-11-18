@@ -62,6 +62,15 @@ namespace ReportDBmySQL
                 string[] cI = Directory.GetDirectories(PathToFolder);
                 foreach (var c in cI) { catalogsInsert.Add(new CatalogInfo(c, PathToFolder)); }
             }
+            //foreach (var pathExcel in path)
+            //{
+
+            //    pathExcelArray = System.IO.Directory.GetFiles(pathExcel, "Реестр*");
+
+            //    //var puth = @"C:\Users\User1_106\Desktop\Реестр Татарстан 8.xlsx";
+
+            //    Console.WriteLine(c);
+            //}
             return catalogsInsert;
         }
 
@@ -88,21 +97,9 @@ namespace ReportDBmySQL
             List<CatalogInfo> path = DBObject.GetCatalogList();
             List<RegistryInfo> registersListTable = new List<RegistryInfo>();
 
-            string[] pathExcelArray = { };
-
-            foreach (var pathExcel in path)
+            foreach (CatalogInfo c in path)
             {
-
-                pathExcelArray = System.IO.Directory.GetFiles(pathExcel, "Реестр*");
-
-                //var puth = @"C:\Users\User1_106\Desktop\Реестр Татарстан 8.xlsx";
-
-                Console.WriteLine(c);
-            }
-
-            foreach (var pathExcel in pathExcelArray)
-            {
-                OfficeUtility.GetExcelTableRead(pathExcel, out registersListTable);
+                OfficeUtility.GetExcelTableRead(c.Catalog, out registersListTable);
             }
 
             return registersListTable;
