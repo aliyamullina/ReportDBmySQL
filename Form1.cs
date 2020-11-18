@@ -84,11 +84,28 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<RegistryInfo> GetFillRegisters()
         {
-            var puth = @"C:\Users\User1_106\Desktop\Реестр Татарстан 8.xlsx";
-
+            DB DBObject = new DB();
+            List<CatalogInfo> path = DBObject.GetCatalogList();
             List<RegistryInfo> registersListTable = new List<RegistryInfo>();
 
-            OfficeUtility.GetExcelTableRead(puth, out registersListTable);
+            string[] pathExcelArray = { };
+
+            foreach (CatalogInfo c in path)
+            {
+
+                //Найти файл, начинающийся со слова "Реестр"
+
+                //Добавить файл в массив pathExcel
+
+                //var puth = @"C:\Users\User1_106\Desktop\Реестр Татарстан 8.xlsx";
+
+                Console.WriteLine(c);
+            }
+
+            foreach (var pathExcel in pathExcelArray)
+            {
+                OfficeUtility.GetExcelTableRead(pathExcel, out registersListTable);
+            }
 
             return registersListTable;
         }
