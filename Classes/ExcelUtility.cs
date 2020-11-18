@@ -22,24 +22,7 @@ namespace ReportDBmySQL
             var categoryRow = firstRowUsed.RowUsed();
 
             categoryRow = categoryRow.RowBelow();
-
-            var rngHeaders = ws.Range("A7:J7");
-            //categoryRow = (IXLRangeRow)ws.Range("A7:J7");
-
-            if (categoryRow.RowNumber() < 7)
-            {
-                var cell = categoryRow.Cell(3).Value;
-            }
-
-            var rows = ws.RangeUsed().RowsUsed().Skip(7); // Skip header row
-            foreach (var row in rows)
-            {
-                var rowNumber = row.RowNumber();
-                // Process the row
-                Console.WriteLine(rowNumber);
-            }
             
-
             while (!categoryRow.Cell(1).IsEmpty())
             {
                 string apartment = categoryRow.Cell(apartmentRow).GetString();
@@ -49,13 +32,7 @@ namespace ReportDBmySQL
                 registersList.Add(new RegistryInfo(apartment, model, serial));
 
                 categoryRow = categoryRow.RowBelow();
-                
             }
-
-            var firstTableCell = ws.FirstCellUsed();
-            var lastTableCell = ws.LastCellUsed();
-            var rngData = ws.Range(firstTableCell.Address, lastTableCell.Address);
-            string address = ws.Cell("C3").GetString();
 
             Console.WriteLine();
         }
