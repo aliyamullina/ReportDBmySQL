@@ -29,17 +29,21 @@ namespace ReportDBmySQL
             List<CatalogInfo> catalogsInsert = GetFillcatalog();
             db.InsertTableCatalogs(catalogsInsert);
 
+
             db.CreateTableCities();
             List<CityInfo> CitiesList = GetFillCities();
             db.InsertTableCities(CitiesList);
+
 
             db.CreateTableRegisters();
             List<RegistryInfo> RegistersList = GetFillRegisters();
             db.InsertTableRegisters(RegistersList);
 
+
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
             db.InsertTableAdresses(addressesList);
+            Console.WriteLine();
 
             CreateDoc();
 
@@ -117,18 +121,18 @@ namespace ReportDBmySQL
             return registersListTable;
         }
 
-    /// <summary>
-    /// Принимает путь до файла, редактирует его
-    /// </summary>
-    public static void CreateDoc()
+        /// <summary>
+        /// Принимает путь до файла, редактирует его
+        /// </summary>
+        public static void CreateDoc()
         {
             DB yourDBObject = new DB();
             List<DocumentInfo> AddressDocList = yourDBObject.GetDocumentList();
 
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
-            // Путь
-            var filePuth = AddressDocList.Select(x => x.Save + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").ToList();
+            // Путь x.Save - если в корень
+            var filePuth = AddressDocList.Select(x => x.Catalog + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").ToList();
 
             // Имя
             var fileName = AddressDocList.Select(x => x.City + ", " + x.Street + " " + x.Home).ToList();
@@ -159,6 +163,6 @@ namespace ReportDBmySQL
             }
             Console.WriteLine();
         }
-    }
+        }
 
 }
