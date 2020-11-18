@@ -66,19 +66,24 @@ namespace ReportDBmySQL
                 // "C:\\Users\\User1_106\\Desktop\\1\\Татарстан 10"
                 foreach (var c in cI) 
                 {
-                    string r = Directory.GetFiles(c, "Реестр*").ToList().ForEach(f => Console.WriteLine(f));
+                    string catalog = c;
 
-                    //string r = System.IO.Directory.GetFiles(c, "Реестр*");
+                    foreach (var file in catalog.GetFiles()) //проходим по файлам
+                    {
+                        //string r = Directory.GetFiles(c, "Реестр*").ToList().ForEach(f => Console.WriteLine(f));
 
-                    //string catalog = c;
-                    //string r = Directory.GetFiles(catalog, "Реестр*", SearchOption.AllDirectories)
+                        //string r = System.IO.Directory.GetFiles(c, "Реестр*");
 
-                    //var r = c.Where(fn => Path.GetExtension(fn) == "Реестр*").Select(fn => Path.GetFileNameWithoutExtension(fn));
+                        //string catalog = c;
+                        //string r = Directory.GetFiles(catalog, "Реестр*", SearchOption.AllDirectories)
 
-                    //int i = 0;
-                    //var r = Directory.GetFiles(c)[i].Contains ("Реестр*").ToString();
+                        //var r = c.Where(fn => Path.GetExtension(fn) == "Реестр*").Select(fn => Path.GetFileNameWithoutExtension(fn));
 
-                    catalogsInsert.Add(new CatalogInfo(s, c, r)); 
+                        //int i = 0;
+                        //var r = Directory.GetFiles(c)[i].Contains ("Реестр*").ToString();
+
+                        catalogsInsert.Add(new CatalogInfo(s, c, r));
+                    }
                 }
             }
             Console.WriteLine();
@@ -110,7 +115,7 @@ namespace ReportDBmySQL
 
             foreach (CatalogInfo c in path)
             {
-                OfficeUtility.GetExcelTableRead(c.Catalog, out registersListTable);
+                OfficeUtility.GetExcelTableRead(c.Registry, out registersListTable);
             }
 
             return registersListTable;
