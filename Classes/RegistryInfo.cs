@@ -35,7 +35,7 @@ namespace ReportDBmySQL
             MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Registers
                 (Registry_Id INT AUTO_INCREMENT PRIMARY KEY, 
-                Apartment VARCHAR(5) NOT NULL,
+                Apartment VARCHAR(10) NOT NULL,
                 Model VARCHAR(20) NOT NULL,
                 Serial VARCHAR(20) NOT NULL);",
                 connection);
