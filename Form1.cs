@@ -90,12 +90,10 @@ namespace ReportDBmySQL
 
             string[] pathExcelArray = { };
 
-            foreach (CatalogInfo c in path)
+            foreach (var pathExcel in path)
             {
 
-                //Найти файл, начинающийся со слова "Реестр"
-
-                //Добавить файл в массив pathExcel
+                pathExcelArray = System.IO.Directory.GetFiles(pathExcel, "Реестр*");
 
                 //var puth = @"C:\Users\User1_106\Desktop\Реестр Татарстан 8.xlsx";
 
