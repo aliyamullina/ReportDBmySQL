@@ -64,26 +64,12 @@ namespace ReportDBmySQL
                 string[] cI = Directory.GetDirectories(s);
 
                 // "C:\\Users\\User1_106\\Desktop\\1\\Татарстан 10"
-                foreach (var c in cI) 
-                {
-                    string catalog = c;
+                foreach (var c in cI)
+                { 
+                    string[] files = new DirectoryInfo(c).GetFiles("*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
 
-                    foreach (var file in catalog.GetFiles()) //проходим по файлам
-                    {
-                        //string r = Directory.GetFiles(c, "Реестр*").ToList().ForEach(f => Console.WriteLine(f));
-
-                        //string r = System.IO.Directory.GetFiles(c, "Реестр*");
-
-                        //string catalog = c;
-                        //string r = Directory.GetFiles(catalog, "Реестр*", SearchOption.AllDirectories)
-
-                        //var r = c.Where(fn => Path.GetExtension(fn) == "Реестр*").Select(fn => Path.GetFileNameWithoutExtension(fn));
-
-                        //int i = 0;
-                        //var r = Directory.GetFiles(c)[i].Contains ("Реестр*").ToString();
-
-                        catalogsInsert.Add(new CatalogInfo(s, c, r));
-                    }
+                    string r = "OK";
+                    catalogsInsert.Add(new CatalogInfo(s, c, r));
                 }
             }
             Console.WriteLine();
