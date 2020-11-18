@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 
 namespace ReportDBmySQL
@@ -35,9 +36,9 @@ namespace ReportDBmySQL
             MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Registers
                 (Registry_Id INT AUTO_INCREMENT PRIMARY KEY, 
-                Apartment VARCHAR(10) NOT NULL,
-                Model VARCHAR(20) NOT NULL,
-                Serial VARCHAR(20) NOT NULL);",
+                Apartment VARCHAR(15) NOT NULL,
+                Model VARCHAR(30) NOT NULL,
+                Serial VARCHAR(30) NOT NULL);",
                 connection);
             connection.Open();
             command.ExecuteNonQuery();
@@ -49,22 +50,30 @@ namespace ReportDBmySQL
         /// </summary>
         public void InsertTableRegisters(List<RegistryInfo> registersList)
         {
-            using (MySqlCommand command = new MySqlCommand(@"
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(@"
                 INSERT INTO Registers(Apartment, Model, Serial) 
                 VALUES (@apartment, @model, @serial)",
                 connection))
-            {
-                connection.Open();
-                foreach (var item in registersList)
                 {
-                    command.Parameters.Clear();
-                    command.Parameters.AddWithValue("@apartment", item.Apartment);
-                    command.Parameters.AddWithValue("@model", item.Model);
-                    command.Parameters.AddWithValue("@serial", item.Serial);
-                    command.ExecuteNonQuery();
+                    connection.Open();
+                    foreach (var item in registersList)
+                    {
+                        command.Parameters.Clear();
+                        command.Parameters.AddWithValue("@apartment", item.Apartment);
+                        command.Parameters.AddWithValue("@model", item.Model);
+                        command.Parameters.AddWithValue("@serial", item.Serial);
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
                 }
-                connection.Close();
             }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+            }
+
         }
 
         /// <summary>
