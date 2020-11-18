@@ -112,7 +112,7 @@ namespace ReportDBmySQL
             var puth = @"C:\Users\User1_106\Desktop\Реестр Ибрагимова 37.xlsx";
             List<RegistryInfo> registersListTable = new List<RegistryInfo>();
 
-            ExcelUtility.GetExcelTableRead(puth, out registersListTable);
+            OfficeUtility.GetExcelTableRead(puth, out registersListTable);
 
             //Excel read END
 
