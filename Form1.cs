@@ -58,19 +58,24 @@ namespace ReportDBmySQL
             DialogResult dialog = folderDlg.ShowDialog();
             if (dialog == DialogResult.OK)
             {
-                string PathToFolder = folderDlg.SelectedPath;
-                string[] cI = Directory.GetDirectories(PathToFolder);
-                foreach (var c in cI) { catalogsInsert.Add(new CatalogInfo(c, PathToFolder)); }
+                // "C:\\Users\\User1_106\\Desktop\\1"
+                string pathToFolder = folderDlg.SelectedPath;
+                    
+                string[] cI = Directory.GetDirectories(pathToFolder);
+
+                // "C:\\Users\\User1_106\\Desktop\\1\\Татарстан 10"
+                foreach (var c in cI) 
+                {
+                    //string pathToRegistry = System.IO.Directory.GetFiles(c, "Реестр*");
+                    //string catalog = c;
+                    //string pathToRegistry = Directory.GetFiles(catalog, "Реестр*", SearchOption.AllDirectories)
+
+                    var pathToRegistry = c.Where(fn => Path.GetExtension(fn) == "Реестр*").Select(fn => Path.GetFileNameWithoutExtension(fn));
+                    ;
+                    catalogsInsert.Add(new CatalogInfo(pathToFolder, c, pathToRegistry)); 
+                }
             }
-            //foreach (var pathExcel in path)
-            //{
-
-            //    pathExcelArray = System.IO.Directory.GetFiles(pathExcel, "Реестр*");
-
-            //    //var puth = @"C:\Users\User1_106\Desktop\Реестр Татарстан 8.xlsx";
-
-            //    Console.WriteLine(c);
-            //}
+            Console.WriteLine();
             return catalogsInsert;
         }
 
