@@ -109,17 +109,6 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<RegistryInfo> GetFillRegisters()
         {
-            List<RegistryInfo> registersList = new List<RegistryInfo>();
-
-            var apartment = "97";
-            var model = "СО-И449М";
-            var serial = "0174281";
-
-            registersList.Add(new RegistryInfo(apartment, model, serial));
-
-            //Excel read
-
-            //var puth = @"C:\Users\User1_106\Desktop\Реестр Ибрагимова 37 — копия.xlsx";
             var puth = @"C:\Users\User1_106\Desktop\Реестр Ибрагимова 37.xlsx";
             List<RegistryInfo> registersListTable = new List<RegistryInfo>();
 
@@ -127,8 +116,7 @@ namespace ReportDBmySQL
 
             //Excel read END
 
-            return registersList;
-
+            return registersListTable;
         }
 
     /// <summary>
