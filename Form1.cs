@@ -25,7 +25,6 @@ namespace ReportDBmySQL
             
             DB db = new DB();
 
-            /*
             db.CreateTableCatalogs();
             List<CatalogInfo> catalogsInsert = GetFillcatalog();
             db.InsertTableCatalogs(catalogsInsert);
@@ -33,19 +32,17 @@ namespace ReportDBmySQL
             db.CreateTableCities();
             List<CityInfo> CitiesList = GetFillCities();
             db.InsertTableCities(CitiesList);
-            */
 
             db.CreateTableRegisters();
             List<RegistryInfo> RegistersList = GetFillRegisters();
             db.InsertTableRegisters(RegistersList);
 
-            /*
             db.CreateTableAdresses();
             List<AddressInfo> addressesList = GetFillAddresses();
             db.InsertTableAdresses(addressesList);
 
             CreateDoc();
-            */
+
             //db.ClearAddressInfoDB();
 
             Application.Exit();
@@ -109,7 +106,8 @@ namespace ReportDBmySQL
         /// </summary>
         private static List<RegistryInfo> GetFillRegisters()
         {
-            var puth = @"C:\Users\User1_106\Desktop\Реестр Ибрагимова 37.xlsx";
+            var puth = @"C:\Users\User1_106\Desktop\Реестр Татарстан 8.xlsx";
+
             List<RegistryInfo> registersListTable = new List<RegistryInfo>();
 
             OfficeUtility.GetExcelTableRead(puth, out registersListTable);
