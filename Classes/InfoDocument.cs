@@ -1,12 +1,12 @@
 ﻿namespace ReportDBmySQL
 {
-    public class DocumentInfo
+    public class InfoDocument
     {
-        public DocumentInfo()
+        public InfoDocument()
         {
         }
 
-        public DocumentInfo(string city, string street, string home, string open, string catalog)
+        public InfoDocument(string city, string street, string home, string open, string catalog)
         {
             this.City = city;
             this.Street = street;

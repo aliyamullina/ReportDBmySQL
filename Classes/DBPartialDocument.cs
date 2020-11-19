@@ -8,9 +8,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Извлечение из БД все связанные таблицы в List
         /// </summary>
-        public List<DocumentInfo> GetDocumentList()
+        public List<InfoDocument> GetDocumentList()
         {
-            List<DocumentInfo> addressSelect = new List<DocumentInfo>();
+            List<InfoDocument> addressSelect = new List<InfoDocument>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
@@ -35,7 +35,7 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        DocumentInfo addressFullList = new DocumentInfo();
+                        InfoDocument addressFullList = new InfoDocument();
 
                         addressFullList.City = dataReader["City"].ToString();
                         addressFullList.Street = dataReader["Street"].ToString();

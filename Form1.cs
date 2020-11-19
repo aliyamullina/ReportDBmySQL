@@ -134,7 +134,7 @@ namespace ReportDBmySQL
         public static void CreateDoc()
         {
             DB db = new DB();
-            List<DocumentInfo> AddressDocList = db.GetDocumentList();
+            List<InfoDocument> AddressDocList = db.GetDocumentList();
 
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
