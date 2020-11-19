@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace ReportDBmySQL
 {
-    class GetFillCatalog
+    public partial class GetFill
     {
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static List<InfoCatalog> Get()
+        public static List<InfoCatalog> GetFillCatalogs()
         {
             List<InfoCatalog> catalogsInsert = new List<InfoCatalog>();
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };

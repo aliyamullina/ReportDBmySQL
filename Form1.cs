@@ -24,19 +24,19 @@ namespace ReportDBmySQL
             DB db = new DB();
 
             db.CreateTableCatalogs();
-            List<InfoCatalog> catalogsInsert = GetFillCatalog.Get();
+            List<InfoCatalog> catalogsInsert = GetFill.GetFillCatalogs();
             db.InsertTableCatalogs(catalogsInsert);
 
             db.CreateTableCities();
-            List<InfoCity> CitiesList = GetFillCities.Get();
+            List<InfoCity> CitiesList = GetFill.GetFillCities();
             db.InsertTableCities(CitiesList);
 
             db.CreateTableRegisters();
-            List<InfoRegistry> RegistersList = GetFillRegisters.Get();
+            List<InfoRegistry> RegistersList = GetFill.GetFillRegisters();
             db.InsertTableRegisters(RegistersList);
 
             db.CreateTableAdresses();
-            List<InfoAddress> addressesList = GetFillAddresses.Get();
+            List<InfoAddress> addressesList = GetFill.GetFillAddresses();
             db.InsertTableAdresses(addressesList);
 
             GetCreateDoc.Create();
