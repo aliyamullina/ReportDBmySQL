@@ -1,9 +1,4 @@
-﻿using DocumentFormat.OpenXml.Packaging;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -20,7 +15,6 @@ namespace ReportDBmySQL
         /// </summary>
         private void Button1_Click(object sender, System.EventArgs e)
         {
-            
             DB db = new DB();
 
             db.CreateTableCatalogs();
