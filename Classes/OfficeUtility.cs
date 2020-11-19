@@ -16,7 +16,7 @@ namespace ReportDBmySQL
                 using (XLWorkbook wb = new XLWorkbook(northwinddataXlsx)) { 
                     var ws = wb.Worksheet(1);
 
-                    var rows = ws.RangeUsed().RowsUsed().Skip(6);
+                    var rows = ws.RangeUsed().RowsUsed().Skip(5);
 
                     foreach (var row in rows)
                     {
