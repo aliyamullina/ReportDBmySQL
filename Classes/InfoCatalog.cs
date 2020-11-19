@@ -1,10 +1,11 @@
 ﻿namespace ReportDBmySQL
 {
+    /// <summary>
+    /// Каталог: выбранная папка, внутренние папки, файл реестра
+    /// </summary>
     public class InfoCatalog
     {
-        public InfoCatalog()
-        {
-        }
+        public InfoCatalog() { }
 
         public InfoCatalog(string open, string catalog, string registry)
         {

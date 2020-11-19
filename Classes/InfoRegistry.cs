@@ -1,5 +1,8 @@
 ﻿namespace ReportDBmySQL
 {
+    /// <summary>
+    /// Реестр: квартира, модель, серийный номер
+    /// </summary>
     public class InfoRegistry
     {
         public InfoRegistry(string apartment, string model, string serial)

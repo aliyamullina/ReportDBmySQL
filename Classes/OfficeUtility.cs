@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace ReportDBmySQL
 {
+    /// <summary>
+    /// Работа с офисными документами: чтение
+    /// </summary>
     public class OfficeUtility
     {
         public static List<InfoRegistry> GetExcelTableRead(string northwinddataXlsx, out List<InfoRegistry> registersList)
