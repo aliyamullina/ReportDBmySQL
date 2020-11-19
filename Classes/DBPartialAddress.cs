@@ -26,7 +26,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Adresses в БД
         /// </summary>
-        public void InsertTableAdresses(List<AddressInfo> addressesList)
+        public void InsertTableAdresses(List<InfoAddress> addressesList)
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"

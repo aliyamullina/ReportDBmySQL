@@ -25,25 +25,25 @@ namespace ReportDBmySQL
             
             DB db = new DB();
 
-            //db.CreateTableCatalogs();
-            //List<CatalogInfo> catalogsInsert = GetFillcatalog();
-            //db.InsertTableCatalogs(catalogsInsert);
+            db.CreateTableCatalogs();
+            List<CatalogInfo> catalogsInsert = GetFillcatalog();
+            db.InsertTableCatalogs(catalogsInsert);
 
-            //db.CreateTableCities();
-            //List<CityInfo> CitiesList = GetFillCities();
-            //db.InsertTableCities(CitiesList);
+            db.CreateTableCities();
+            List<CityInfo> CitiesList = GetFillCities();
+            db.InsertTableCities(CitiesList);
 
             db.CreateTableRegisters();
             List<RegistryInfo> RegistersList = GetFillRegisters();
             db.InsertTableRegisters(RegistersList);
 
-            //db.CreateTableAdresses();
-            //List<AddressInfo> addressesList = GetFillAddresses();
-            //db.InsertTableAdresses(addressesList);
+            db.CreateTableAdresses();
+            List<InfoAddress> addressesList = GetFillAddresses();
+            db.InsertTableAdresses(addressesList);
 
-            //CreateDoc();
+            CreateDoc();
 
-            //db.ClearAddressInfoDB();
+            db.ClearAddressInfoDB();
 
             Application.Exit();
         }
@@ -110,11 +110,11 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        private static List<AddressInfo> GetFillAddresses()
+        private static List<InfoAddress> GetFillAddresses()
         {
             DB DBObject = new DB();
             List<CatalogInfo> path = DBObject.GetCatalogList();
-            List<AddressInfo> folderAdress = new List<AddressInfo>();
+            List<InfoAddress> folderAdress = new List<InfoAddress>();
             int city_id = 5;
             int catalog_id = 0;
 
@@ -124,7 +124,7 @@ namespace ReportDBmySQL
                 var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
                 catalog_id++;
-                folderAdress.Add(new AddressInfo(street, home, city_id, catalog_id));
+                folderAdress.Add(new InfoAddress(street, home, city_id, catalog_id));
             }
             return folderAdress;
         }

@@ -1,12 +1,12 @@
 ﻿namespace ReportDBmySQL
 {
-    public class AddressInfo
+    public class InfoAddress
     {
-        public AddressInfo()
+        public InfoAddress()
         {
         }
 
-        public AddressInfo(string street, string home, int city_id, int catalog_id)
+        public InfoAddress(string street, string home, int city_id, int catalog_id)
         {
             this.Street = street;
             this.Home = home;
