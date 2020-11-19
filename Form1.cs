@@ -41,7 +41,7 @@ namespace ReportDBmySQL
             List<AddressInfo> addressesList = GetFillAddresses();
             db.InsertTableAdresses(addressesList);
 
-            CreateDoc();
+            //CreateDoc();
 
             //db.ClearAddressInfoDB();
 
@@ -58,21 +58,20 @@ namespace ReportDBmySQL
             DialogResult dialog = folderDlg.ShowDialog();
             if (dialog == DialogResult.OK)
             {
-                // "C:\\Users\\User1_106\\Desktop\\1"
-                string s = folderDlg.SelectedPath;
+                string o = folderDlg.SelectedPath;
                     
-                string[] cI = Directory.GetDirectories(s);
+                string[] cI = Directory.GetDirectories(o);
 
-                // "C:\\Users\\User1_106\\Desktop\\1\\Татарстан 10"
                 foreach (var c in cI)
                 { 
-                    string[] files = new DirectoryInfo(c).GetFiles("*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
+                    string[] files = new DirectoryInfo(c).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
 
-                    string r = "OK";
-                    catalogsInsert.Add(new CatalogInfo(s, c, r));
+                    foreach (string r in files)
+                    {
+                        catalogsInsert.Add(new CatalogInfo(o, c, r));
+                    }
                 }
             }
-            Console.WriteLine();
             return catalogsInsert;
         }
 
@@ -138,7 +137,7 @@ namespace ReportDBmySQL
 
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
-            // Путь x.Save - если в корень
+            // Путь x.Open - если в корень
             var filePuth = AddressDocList.Select(x => x.Catalog + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").ToList();
 
             // Имя
@@ -168,8 +167,7 @@ namespace ReportDBmySQL
                     WordDoc.Close();
                 }
             }
-            Console.WriteLine();
         }
-        }
+    }
 
 }
