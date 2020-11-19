@@ -1,8 +1,8 @@
 ﻿namespace ReportDBmySQL
 {
-    public class RegistryInfo
+    public class InfoRegistry
     {
-        public RegistryInfo(string apartment, string model, string serial)
+        public InfoRegistry(string apartment, string model, string serial)
         {
             this.Apartment = apartment;
             this.Model = model;

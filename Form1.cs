@@ -34,7 +34,7 @@ namespace ReportDBmySQL
             db.InsertTableCities(CitiesList);
 
             db.CreateTableRegisters();
-            List<RegistryInfo> RegistersList = GetFillRegisters();
+            List<InfoRegistry> RegistersList = GetFillRegisters();
             db.InsertTableRegisters(RegistersList);
 
             db.CreateTableAdresses();
@@ -92,11 +92,11 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        private static List<RegistryInfo> GetFillRegisters()
+        private static List<InfoRegistry> GetFillRegisters()
         {
             DB DBObject = new DB();
             List<InfoCatalog> path = DBObject.GetCatalogList();
-            List<RegistryInfo> registersListTable = new List<RegistryInfo>();
+            List<InfoRegistry> registersListTable = new List<InfoRegistry>();
 
             foreach (InfoCatalog c in path)
             {

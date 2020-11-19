@@ -35,7 +35,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Registers в БД
         /// </summary>
-        public void InsertTableRegisters(List<RegistryInfo> registersList)
+        public void InsertTableRegisters(List<InfoRegistry> registersList)
         {
             try
             {
@@ -66,9 +66,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Извлечение из таблицы Registers в List
         /// </summary>
-        public List<RegistryInfo> GetRegistryList()
+        public List<InfoRegistry> GetRegistryList()
         {
-            List<RegistryInfo> registrySelect = new List<RegistryInfo>();
+            List<InfoRegistry> registrySelect = new List<InfoRegistry>();
             //
             return registrySelect;
         }

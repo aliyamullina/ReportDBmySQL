@@ -7,9 +7,9 @@ namespace ReportDBmySQL
 {
     public class OfficeUtility
     {
-        public static List<RegistryInfo> GetExcelTableRead(string northwinddataXlsx, out List<RegistryInfo> registersList)
+        public static List<InfoRegistry> GetExcelTableRead(string northwinddataXlsx, out List<InfoRegistry> registersList)
         {
-            registersList = new List<RegistryInfo>();
+            registersList = new List<InfoRegistry>();
 
             try
             {
@@ -25,7 +25,7 @@ namespace ReportDBmySQL
                         string model = row.Cell(2).Value.ToString();
                         string serial = row.Cell(3).Value.ToString();
 
-                        registersList.Add(new RegistryInfo(apartment, model, serial));
+                        registersList.Add(new InfoRegistry(apartment, model, serial));
                     }
                 }
                 return registersList;
