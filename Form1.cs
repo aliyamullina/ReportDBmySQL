@@ -26,7 +26,7 @@ namespace ReportDBmySQL
             DB db = new DB();
 
             db.CreateTableCatalogs();
-            List<CatalogInfo> catalogsInsert = GetFillcatalog();
+            List<InfoCatalog> catalogsInsert = GetFillcatalog();
             db.InsertTableCatalogs(catalogsInsert);
 
             db.CreateTableCities();
@@ -51,9 +51,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        private static List<CatalogInfo> GetFillcatalog()
+        private static List<InfoCatalog> GetFillcatalog()
         {
-            List<CatalogInfo> catalogsInsert = new List<CatalogInfo>();
+            List<InfoCatalog> catalogsInsert = new List<InfoCatalog>();
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
             DialogResult dialog = folderDlg.ShowDialog();
             if (dialog == DialogResult.OK)
@@ -68,7 +68,7 @@ namespace ReportDBmySQL
 
                     foreach (string r in files)
                     {
-                        catalogsInsert.Add(new CatalogInfo(o, c, r));
+                        catalogsInsert.Add(new InfoCatalog(o, c, r));
                     }
                 }
             }
@@ -95,10 +95,10 @@ namespace ReportDBmySQL
         private static List<RegistryInfo> GetFillRegisters()
         {
             DB DBObject = new DB();
-            List<CatalogInfo> path = DBObject.GetCatalogList();
+            List<InfoCatalog> path = DBObject.GetCatalogList();
             List<RegistryInfo> registersListTable = new List<RegistryInfo>();
 
-            foreach (CatalogInfo c in path)
+            foreach (InfoCatalog c in path)
             {
                 OfficeUtility.GetExcelTableRead(c.Registry, out registersListTable);
                 Console.WriteLine();
@@ -113,12 +113,12 @@ namespace ReportDBmySQL
         private static List<InfoAddress> GetFillAddresses()
         {
             DB DBObject = new DB();
-            List<CatalogInfo> path = DBObject.GetCatalogList();
+            List<InfoCatalog> path = DBObject.GetCatalogList();
             List<InfoAddress> folderAdress = new List<InfoAddress>();
             int city_id = 5;
             int catalog_id = 0;
 
-            foreach (CatalogInfo c in path)
+            foreach (InfoCatalog c in path)
             {
                 var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
                 var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));

@@ -1,12 +1,12 @@
 ﻿namespace ReportDBmySQL
 {
-    public class CatalogInfo
+    public class InfoCatalog
     {
-        public CatalogInfo()
+        public InfoCatalog()
         {
         }
 
-        public CatalogInfo(string open, string catalog, string registry)
+        public InfoCatalog(string open, string catalog, string registry)
         {
             this.Open = open;
             this.Catalog = catalog;

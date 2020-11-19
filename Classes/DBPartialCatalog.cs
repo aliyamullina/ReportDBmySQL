@@ -25,7 +25,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Catalogs в БД
         /// </summary>
-        public void InsertTableCatalogs(List<CatalogInfo> catalogsInsert)
+        public void InsertTableCatalogs(List<InfoCatalog> catalogsInsert)
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"INSERT INTO catalogs(Open, Catalog, Registry) VALUES (@open, @catalog, @registry)", connection))
@@ -47,9 +47,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Извлечение из таблицы Catalogs в List
         /// </summary>
-        public List<CatalogInfo> GetCatalogList()
+        public List<InfoCatalog> GetCatalogList()
         {
-            List<CatalogInfo> catalogsSelect = new List<CatalogInfo>();
+            List<InfoCatalog> catalogsSelect = new List<InfoCatalog>();
 
             using (MySqlCommand command = new MySqlCommand(@"SELECT * FROM catalogs", connection))
             {
@@ -59,7 +59,7 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        CatalogInfo catalogList = new CatalogInfo();
+                        InfoCatalog catalogList = new InfoCatalog();
 
                         catalogList.Open = dataReader["Open"].ToString();
                         catalogList.Catalog = dataReader["Catalog"].ToString();
