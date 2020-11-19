@@ -18,15 +18,12 @@ namespace ReportDBmySQL
 
             List<InfoRegistry> registersListTable = new List<InfoRegistry>();
 
-            List<InfoRegistry> Register = (from InfoCatalog c in path
+            List<InfoRegistry> Register = (from InfoCatalog c in path.Where(x => x.Registry == )
                                            let a = GetExcelTableRead(c.Registry, out registersListTable)
-                                           select new InfoRegistry()
+                                           select new InfoRegistry
                                            {
-                                               //Apartment = a,
-                                               //Model = m,
-                                               //Serial = s,
+                                               Apartment = a.Apartment, Model = a.Model, Serial = a.Serial,
                                            }).ToList<InfoRegistry>();;
-
             return Register;
         }
 
