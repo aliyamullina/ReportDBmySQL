@@ -25,21 +25,21 @@ namespace ReportDBmySQL
             
             DB db = new DB();
 
-            db.CreateTableCatalogs();
-            List<CatalogInfo> catalogsInsert = GetFillcatalog();
-            db.InsertTableCatalogs(catalogsInsert);
+            //db.CreateTableCatalogs();
+            //List<CatalogInfo> catalogsInsert = GetFillcatalog();
+            //db.InsertTableCatalogs(catalogsInsert);
 
-            db.CreateTableCities();
-            List<CityInfo> CitiesList = GetFillCities();
-            db.InsertTableCities(CitiesList);
+            //db.CreateTableCities();
+            //List<CityInfo> CitiesList = GetFillCities();
+            //db.InsertTableCities(CitiesList);
 
             db.CreateTableRegisters();
             List<RegistryInfo> RegistersList = GetFillRegisters();
             db.InsertTableRegisters(RegistersList);
 
-            db.CreateTableAdresses();
-            List<AddressInfo> addressesList = GetFillAddresses();
-            db.InsertTableAdresses(addressesList);
+            //db.CreateTableAdresses();
+            //List<AddressInfo> addressesList = GetFillAddresses();
+            //db.InsertTableAdresses(addressesList);
 
             //CreateDoc();
 
@@ -101,8 +101,9 @@ namespace ReportDBmySQL
             foreach (CatalogInfo c in path)
             {
                 OfficeUtility.GetExcelTableRead(c.Registry, out registersListTable);
+                Console.WriteLine();
             }
-
+            Console.WriteLine();
             return registersListTable;
         }
 
@@ -132,8 +133,8 @@ namespace ReportDBmySQL
         /// </summary>
         public static void CreateDoc()
         {
-            DB yourDBObject = new DB();
-            List<DocumentInfo> AddressDocList = yourDBObject.GetDocumentList();
+            DB db = new DB();
+            List<DocumentInfo> AddressDocList = db.GetDocumentList();
 
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
