@@ -10,9 +10,6 @@ namespace ReportDBmySQL
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Действие по клику
-        /// </summary>
         private void Button1_Click(object sender, System.EventArgs e)
         {
             DB db = new DB();
