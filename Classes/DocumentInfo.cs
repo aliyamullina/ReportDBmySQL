@@ -9,19 +9,19 @@ namespace ReportDBmySQL
         {
         }
 
-        public DocumentInfo(string city, string street, string home, string save, string catalog)
+        public DocumentInfo(string city, string street, string home, string open, string catalog)
         {
             this.City = city;
             this.Street = street;
             this.Home = home;
             this.Catalog = catalog;
-            this.Save = save;
+            this.Open = open;
         }
         public string City { get; set; }
         public string Street { get; set; }
         public string Home { get; set; }
         public string Catalog { get; set; }
-        public string Save { get; set; }
+        public string Open { get; set; }
     }
 
     public partial class DB
@@ -39,7 +39,7 @@ namespace ReportDBmySQL
                     addresses.Street, 
                     addresses.Home,
                     catalogs.Catalog,
-                    catalogs.Save
+                    catalogs.Open
                 FROM 
                     addresses,
                     cities,
@@ -62,7 +62,7 @@ namespace ReportDBmySQL
                         addressFullList.Street = dataReader["Street"].ToString();
                         addressFullList.Home = dataReader["Home"].ToString();
                         addressFullList.Catalog = dataReader["Catalog"].ToString();
-                        addressFullList.Save = dataReader["Save"].ToString();
+                        addressFullList.Open = dataReader["Open"].ToString();
 
                         addressSelect.Add(addressFullList);
                     }

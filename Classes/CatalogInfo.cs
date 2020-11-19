@@ -9,14 +9,14 @@ namespace ReportDBmySQL
         {
         }
 
-        public CatalogInfo(string save, string catalog, string registry)
+        public CatalogInfo(string open, string catalog, string registry)
         {
-            this.Save = save;
+            this.Open = open;
             this.Catalog = catalog;
             this.Registry = registry;
         }
 
-        public string Save { get; set; }
+        public string Open { get; set; }
         public string Catalog { get; set; }
         public string Registry { get; set; }
     }
@@ -31,7 +31,7 @@ namespace ReportDBmySQL
             MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Catalogs
                 (Catalog_Id INT AUTO_INCREMENT PRIMARY KEY, 
-                Save VARCHAR(150) NOT NULL,
+                Open VARCHAR(150) NOT NULL,
                 Catalog VARCHAR(150) NOT NULL,
                 Registry VARCHAR(150) NOT NULL);",
                 connection);
@@ -46,13 +46,13 @@ namespace ReportDBmySQL
         public void InsertTableCatalogs(List<CatalogInfo> catalogsInsert)
         {
             // Добавляет повторно, нет проверки на существование записи
-            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO catalogs(Catalog, Save, Registry) VALUES (@save, @catalog, @registry)", connection))
+            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO catalogs(Open, Catalog, Registry) VALUES (@open, @catalog, @registry)", connection))
             {
                 connection.Open();
                 foreach (var item in catalogsInsert)
                 {
                     command.Parameters.Clear();
-                    command.Parameters.AddWithValue("@save", item.Save);
+                    command.Parameters.AddWithValue("@open", item.Open);
                     command.Parameters.AddWithValue("@catalog", item.Catalog);
                     command.Parameters.AddWithValue("@registry", item.Registry);
                     command.ExecuteNonQuery();
@@ -79,7 +79,7 @@ namespace ReportDBmySQL
                     {
                         CatalogInfo catalogList = new CatalogInfo();
 
-                        catalogList.Save = dataReader["Save"].ToString();
+                        catalogList.Open = dataReader["Open"].ToString();
                         catalogList.Catalog = dataReader["Catalog"].ToString();
                         catalogList.Registry = dataReader["Registry"].ToString();
 
