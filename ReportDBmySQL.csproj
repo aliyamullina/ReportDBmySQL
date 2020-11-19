@@ -110,6 +110,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\GetCreateDoc.cs" />
+    <Compile Include="Classes\GetFillAddresses.cs" />
+    <Compile Include="Classes\GetFillCatalog.cs" />
+    <Compile Include="Classes\GetFillCities.cs" />
+    <Compile Include="Classes\GetFillRegisters.cs" />
     <Compile Include="Classes\InfoDate.cs" />
     <Compile Include="Classes\DBPartialAddress.cs" />
     <Compile Include="Classes\DBPartialCatalog.cs" />
