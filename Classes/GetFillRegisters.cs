@@ -17,12 +17,16 @@ namespace ReportDBmySQL
 
             List<InfoRegistry> registersListTable = new List<InfoRegistry>();
 
+            //Ошибка
+            //Проходит по 3 файлам из БД Catalogs
+            //Возвращает коллецию registersListTable
+            //В эту коллекцию попадает значения из последнего файла foreach
+            //То есть не все значения передаются
             foreach (InfoCatalog c in path)
             {
                 GetExcelTableRead(c.Registry, out registersListTable);
-                Console.WriteLine();
             }
-            Console.WriteLine();
+            
             return registersListTable;
         }
 
