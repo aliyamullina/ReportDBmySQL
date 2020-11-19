@@ -20,13 +20,14 @@ namespace ReportDBmySQL
 
             foreach (InfoCatalog c in path)
             {
-                var r = GetExcelTableRead(c.Registry, out registersListTable);
+                List<InfoRegistry> r = GetExcelTableRead(c.Registry, out registersListTable);
 
-                var a = "1";
-                var m = "1";
-                var s = "1";
+                //var a = "1";
+                //var m = "1";
+                //var s = "1";
 
-                registersListTable.Add(new InfoRegistry(a, m, s));
+                //registersListTable.Add(new InfoRegistry(a, m, s));
+                //registersListTable.AddRange(r);
             }
 
             return registersListTable;
