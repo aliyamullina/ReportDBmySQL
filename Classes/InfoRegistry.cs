@@ -5,6 +5,8 @@
     /// </summary>
     public class InfoRegistry
     {
+        public InfoRegistry() { }
+
         public InfoRegistry(string apartment, string model, string serial)
         {
             this.Apartment = apartment;
