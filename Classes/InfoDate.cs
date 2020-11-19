@@ -1,8 +1,8 @@
 ﻿namespace ReportDBmySQL
 {
-    public class DateInfo
+    public class InfoDate
     {
-        public DateInfo(string date)
+        public InfoDate(string date)
         {
             this.Date = date;
         }
