@@ -1,8 +1,8 @@
 ﻿namespace ReportDBmySQL
 {
-    public class CityInfo
+    public class InfoCity
     {
-        public CityInfo(string city)
+        public InfoCity(string city)
         {
             this.City = city;
         }

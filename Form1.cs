@@ -30,7 +30,7 @@ namespace ReportDBmySQL
             db.InsertTableCatalogs(catalogsInsert);
 
             db.CreateTableCities();
-            List<CityInfo> CitiesList = GetFillCities();
+            List<InfoCity> CitiesList = GetFillCities();
             db.InsertTableCities(CitiesList);
 
             db.CreateTableRegisters();
@@ -78,13 +78,13 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        private static List<CityInfo> GetFillCities()
+        private static List<InfoCity> GetFillCities()
         {
-            List<CityInfo> citiesList = new List<CityInfo>();
+            List<InfoCity> citiesList = new List<InfoCity>();
             string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора", "Зеленодольск" };
             foreach (var city in citiesArray)
             {
-                citiesList.Add(new CityInfo(city));
+                citiesList.Add(new InfoCity(city));
             }
             return citiesList;
         }
