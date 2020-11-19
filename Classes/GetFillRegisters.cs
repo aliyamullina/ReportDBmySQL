@@ -25,8 +25,10 @@ namespace ReportDBmySQL
             foreach (InfoCatalog c in path)
             {
                 GetExcelTableRead(c.Registry, out registersListTable);
+
+                return registersListTable; // Передает данные 1 файла из 3х
             }
-            
+
             return registersListTable;
         }
 
