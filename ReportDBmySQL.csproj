@@ -130,7 +130,6 @@
     </Compile>
     <Compile Include="Classes\DBPartialDocument.cs" />
     <Compile Include="Classes\InfoDocument.cs" />
-    <Compile Include="Classes\OfficeUtility.cs" />
     <Compile Include="Classes\DBPartialRegistry.cs" />
     <Compile Include="Classes\InfoRegistry.cs" />
     <Compile Include="Form1.cs">
