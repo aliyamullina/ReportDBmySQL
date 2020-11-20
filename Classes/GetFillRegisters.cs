@@ -22,10 +22,10 @@ namespace ReportDBmySQL
             {
                 List<InfoRegistry> r = GetExcelTableRead(c.Registry, out registersListTable);
 
-                registersListTable.AddRange(r.ToArray());
+                return r;
             }
 
-            return registersListTable;
+            return null;
         }
 
         /// <summary>
