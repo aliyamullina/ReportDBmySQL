@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 
 namespace ReportDBmySQL
@@ -49,10 +50,19 @@ namespace ReportDBmySQL
         /// </summary>
         public void CreateAddressInfoDB()
         {
-            MySqlCommand command = new MySqlCommand("CREATE DATABASE addressinfodb;", connection);
-            connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand("CREATE DATABASE addressinfodb;", connection))
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+            }
         }
 
         /// <summary>
@@ -60,10 +70,19 @@ namespace ReportDBmySQL
         /// </summary>
         public void ClearAddressInfoDB()
         {
-            MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, catalogs, registers;", connection);
-            connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, catalogs, registers;", connection))
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+              }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+            }
         }
     }
 }
