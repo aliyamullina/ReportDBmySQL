@@ -20,12 +20,10 @@ namespace ReportDBmySQL
 
             foreach (InfoCatalog c in path)
             {
-                List<InfoRegistry> r = GetExcelTableRead(c.Registry, out registersListTable);
-
-                return r;
+                yield return registersListTable = GetExcelTableRead(c.Registry, out registersListTable);
             }
 
-            return null;
+            return registersListTable;
         }
 
         /// <summary>
