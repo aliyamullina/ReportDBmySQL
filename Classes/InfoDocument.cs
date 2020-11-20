@@ -45,4 +45,19 @@
         public string Model { get; set; }
         public string Serial { get; set; }
     }
+
+    public class InfoDocumentAddress
+    {
+        public InfoDocumentAddress() { }
+
+        public InfoDocumentAddress
+            (
+            string address
+            )
+        {
+            this.Address = address;
+        }
+
+        public string Address { get; set; }
+    }
 }
