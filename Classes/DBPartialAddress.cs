@@ -10,17 +10,19 @@ namespace ReportDBmySQL
         /// </summary>
         public void CreateTableAdresses()
         {
-            MySqlCommand command = new MySqlCommand(@"
+            using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Addresses
                 (Id INT AUTO_INCREMENT PRIMARY KEY, 
                 Street VARCHAR(30) NOT NULL, 
                 Home VARCHAR(10), 
                 City_id INT REFERENCES Cities(City_id),
                 Catalog_id INT REFERENCES Catalogs(Catalog_id))",
-                connection);
-            connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
+                connection)) 
+            { 
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
 
         /// <summary>
