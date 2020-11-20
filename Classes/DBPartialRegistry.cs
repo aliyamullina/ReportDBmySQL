@@ -15,10 +15,13 @@ namespace ReportDBmySQL
             {
                 using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Registers
-                (Registry_Id INT AUTO_INCREMENT PRIMARY KEY, 
+                (
+                Registry_Id INT AUTO_INCREMENT PRIMARY KEY, 
+                RegisterAddress_id INT(5) NOT NULL,
                 Apartment VARCHAR(15) NOT NULL,
                 Model VARCHAR(30) NOT NULL,
-                Serial VARCHAR(30) NOT NULL);",
+                Serial VARCHAR(30) NOT NULL
+                );",
                 connection))
                 {
                     connection.Open();
@@ -40,7 +43,7 @@ namespace ReportDBmySQL
             try
             {
                 using (MySqlCommand command = new MySqlCommand(@"
-                INSERT INTO Registers(Apartment, Model, Serial) 
+                INSERT INTO Registers(RegisterAddress_id, Apartment, Model, Serial) 
                 VALUES (@apartment, @model, @serial)",
                 connection))
                 {
@@ -48,6 +51,7 @@ namespace ReportDBmySQL
                     foreach (var item in registersList)
                     {
                         command.Parameters.Clear();
+                        command.Parameters.AddWithValue("@registeraddress_id", item.RegisterAddress_id);
                         command.Parameters.AddWithValue("@apartment", item.Apartment);
                         command.Parameters.AddWithValue("@model", item.Model);
                         command.Parameters.AddWithValue("@serial", item.Serial);

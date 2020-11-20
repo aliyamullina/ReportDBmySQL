@@ -28,9 +28,11 @@ namespace ReportDBmySQL
                     catalogs,
                     registers
                 WHERE 
-                    addresses.City_id = cities.City_Id 
+                    addresses.City_id = cities.City_Id
                 AND
                     addresses.Catalog_id = catalogs.Catalog_Id
+                AND
+                    addresses.RegisterAddress_id = registers.RegisterAddress_id
                 ", connection))
             {
                 connection.Open();
@@ -40,12 +42,15 @@ namespace ReportDBmySQL
                     while (dataReader.Read())
                     {
                         InfoDocument addressFullList = new InfoDocument();
-
+                        // InfoCity
                         addressFullList.City = dataReader["City"].ToString();
+                        // InfoAddress
                         addressFullList.Street = dataReader["Street"].ToString();
                         addressFullList.Home = dataReader["Home"].ToString();
+                        // InfoCatalog
                         addressFullList.Catalog = dataReader["Catalog"].ToString();
                         addressFullList.Open = dataReader["Open"].ToString();
+                        // InfoRegistry
                         addressFullList.Apartment = dataReader["Apartment"].ToString();
                         addressFullList.Model = dataReader["Model"].ToString();
                         addressFullList.Serial = dataReader["Serial"].ToString();

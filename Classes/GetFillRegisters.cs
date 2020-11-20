@@ -47,11 +47,12 @@ namespace ReportDBmySQL
 
                     foreach (var row in rows)
                     {
+                        int registeraddress_id = 1;
                         string apartment = row.Cell(1).Value.ToString();
                         string model = row.Cell(2).Value.ToString();
                         string serial = row.Cell(3).Value.ToString();
 
-                        registersList.Add(new InfoRegistry(apartment, model, serial));
+                        registersList.Add(new InfoRegistry(registeraddress_id, apartment, model, serial));
                     }
                 }
                 return registersList;
