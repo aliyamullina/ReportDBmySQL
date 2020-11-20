@@ -122,12 +122,7 @@ namespace ReportDBmySQL
                     addresses,
                     catalogs,
                     cities
-                WHERE 
-                    `Street` LIKE 'Татарстан' 
-                AND 
-                    `Home` LIKE '10'
-                AND
-                	`City` LIKE 'Зеленодольск'
+                WHERE 'Татарстан 10' LIKE CONCAT (City, Street, Home)
                 AND 
                     addresses.Catalog_id = catalogs.Catalog_Id
                 AND
