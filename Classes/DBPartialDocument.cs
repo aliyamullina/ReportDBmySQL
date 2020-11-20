@@ -122,7 +122,7 @@ namespace ReportDBmySQL
                     addresses,
                     catalogs,
                     cities
-                WHERE CONCAT(City, ', ',Street, ' ' ,Home) LIKE '%Зеленодольск, Татарстан 10%'
+                WHERE CONCAT(City, ', ',Street, ' ' ,Home) LIKE '%@address%'
                 AND 
                     addresses.Catalog_id = catalogs.Catalog_Id
                 AND
@@ -131,6 +131,9 @@ namespace ReportDBmySQL
                 ", connection))
             {
                 connection.Open();
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@address", address);
+                command.ExecuteNonQuery();
 
                 using (MySqlDataReader dataReader = command.ExecuteReader())
                 {
