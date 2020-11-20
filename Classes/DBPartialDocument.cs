@@ -18,11 +18,15 @@ namespace ReportDBmySQL
                     addresses.Street, 
                     addresses.Home,
                     catalogs.Catalog,
-                    catalogs.Open
+                    catalogs.Open,
+                    registers.Apartment,
+                    registers.Model,
+                    registers.Serial
                 FROM 
                     addresses,
                     cities,
-                    catalogs
+                    catalogs,
+                    registers
                 WHERE 
                     addresses.City_id = cities.City_Id 
                 AND
@@ -42,6 +46,9 @@ namespace ReportDBmySQL
                         addressFullList.Home = dataReader["Home"].ToString();
                         addressFullList.Catalog = dataReader["Catalog"].ToString();
                         addressFullList.Open = dataReader["Open"].ToString();
+                        addressFullList.Apartment = dataReader["Apartment"].ToString();
+                        addressFullList.Model = dataReader["Model"].ToString();
+                        addressFullList.Serial = dataReader["Serial"].ToString();
 
                         addressSelect.Add(addressFullList);
                     }
