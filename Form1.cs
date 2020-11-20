@@ -12,7 +12,7 @@ namespace ReportDBmySQL
 
         private void Button1_Click(object sender, System.EventArgs e)
         {
-            DB db = new DB();
+            //DB db = new DB();
 
             //db.CreateTableCatalogs();
             //List<InfoCatalog> catalogsInsert = GetFill.GetFillCatalogs();
