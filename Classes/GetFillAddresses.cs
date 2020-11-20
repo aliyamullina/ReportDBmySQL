@@ -14,6 +14,7 @@ namespace ReportDBmySQL
             List<InfoAddress> folderAdress = new List<InfoAddress>();
             int city_id = 5;
             int catalog_id = 0;
+            int registeraddress_id = 0;
 
             foreach (InfoCatalog c in path)
             {
@@ -21,7 +22,8 @@ namespace ReportDBmySQL
                 var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
                 catalog_id++;
-                folderAdress.Add(new InfoAddress(street, home, city_id, catalog_id));
+                registeraddress_id++;
+                folderAdress.Add(new InfoAddress(street, home, city_id, catalog_id, registeraddress_id));
             }
             return folderAdress;
         }
