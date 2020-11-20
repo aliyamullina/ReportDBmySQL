@@ -10,7 +10,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        public static List<InfoRegistry> GetFillRegisters(IEnumerable<InfoRegistry> registersListTable)
+        public static List<InfoRegistry> GetFillRegisters()
         {
             DB db = new DB();
 
@@ -20,9 +20,8 @@ namespace ReportDBmySQL
 
             foreach (InfoCatalog c in path)
             {
-
-                registersListTable = GetExcelTableRead(c.Registry, out registersListTables);
-                registersListTables.Add(registersListTable);
+                var registersListTable = GetExcelTableRead(c.Registry, out registersListTables);
+                registersListTables = registersListTable.ToList();
             }
             return registersListTables;
         }
