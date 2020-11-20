@@ -22,15 +22,15 @@ namespace ReportDBmySQL
             //List<InfoCity> CitiesList = GetFill.GetFillCities();
             //db.InsertTableCities(CitiesList);
 
-            db.CreateTableRegisters();
-            List<InfoRegistry> RegistersList = GetFill.GetFillRegisters();
-            db.InsertTableRegisters(RegistersList);
+            //db.CreateTableRegisters();
+            //List<InfoRegistry> RegistersList = GetFill.GetFillRegisters();
+            //db.InsertTableRegisters(RegistersList);
 
             //db.CreateTableAdresses();
             //List<InfoAddress> addressesList = GetFill.GetFillAddresses();
             //db.InsertTableAdresses(addressesList);
 
-            //GetCreateDoc.Create();
+            GetCreateDoc.Create();
 
             //db.ClearAddressInfoDB();
 
