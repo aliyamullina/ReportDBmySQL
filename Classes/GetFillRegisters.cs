@@ -22,12 +22,7 @@ namespace ReportDBmySQL
             {
                 List<InfoRegistry> r = GetExcelTableRead(c.Registry, out registersListTable);
 
-                //var a = "1";
-                //var m = "1";
-                //var s = "1";
-
-                //registersListTable.Add(new InfoRegistry(a, m, s));
-                //registersListTable.AddRange(r);
+                registersListTable.AddRange(r.ToArray());
             }
 
             return registersListTable;
