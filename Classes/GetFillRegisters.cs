@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ClosedXML.Excel;
 using System.Linq;
 
@@ -12,36 +11,21 @@ namespace ReportDBmySQL
         /// </summary>
         public static List<InfoRegistry> GetFillRegisters()
         {
-            DB db = new DB();
-
-            List<InfoCatalog> path = db.GetCatalogList();
-
-            List<InfoRegistry> registersListTables = new List<InfoRegistry>();
-            List<InfoRegistry> registersListTablesAll = new List<InfoRegistry>();
-
-            foreach (InfoCatalog c in path)
-            {
-                //Татарстан 10
-                //16  СО - ИБМЗ 11511
-
-                //Татарстан 24
-                //47  ЦЭ6807Б с150403
-                //48  ЦЭ6807Б с151129
-
-                //Татарстан 8
-                //20  СО505   128862
-                //24  СО505   129860
-                //21  СО505   133023
-                //2   СО - И4491 - 2  9044
-                //4   СО - ИБМ1 91714
-                //35  СО505   137298
-
-                GetExcelTableRead(c.Registry, out registersListTables);
-
-                registersListTablesAll.ForEach(p => registersListTables.Add(p));
+            try {
+                DB db = new DB();
+                List<InfoCatalog> path = db.GetCatalogList();
+                List<InfoRegistry> registersTables = new List<InfoRegistry>();
+                foreach (InfoCatalog c in path)
+                {
+                    GetExcelTableRead(c.Registry, out List<InfoRegistry> registersTable);
+                    registersTables= registersTable.Union(registersTables).ToList();
+                }
+                return registersTables;
             }
-
-            return registersListTablesAll;
+            catch 
+            { 
+                return null; 
+            }
         }
 
         /// <summary>
