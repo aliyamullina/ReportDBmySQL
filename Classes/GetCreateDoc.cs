@@ -16,7 +16,14 @@ namespace ReportDBmySQL
         {
             DB db = new DB();
 
+            // Все доступные адреса
             List<InfoDocumentAddress> InfoDocumentAddress = db.GetDocumentAddresses();
+
+            foreach (InfoDocumentAddress a in InfoDocumentAddress)
+            {
+                //Поиск каталога к адресу
+                db.GetDocumentCatalog(a.Address);
+            }
 
             Console.WriteLine();
 

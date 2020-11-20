@@ -64,6 +64,9 @@ namespace ReportDBmySQL
             return addressSelect;
         }
 
+        /// <summary>
+        /// Возвращает все адреса из БД
+        /// </summary>
         public List<InfoDocumentAddress> GetDocumentAddresses()
         {
             List<InfoDocumentAddress> documentAddresses = new List<InfoDocumentAddress>();
@@ -99,42 +102,55 @@ namespace ReportDBmySQL
             return documentAddresses;
         }
 
-        //public List<InfoDocumentAddress> GetDocumentCatalog()
-        //{
-        //    List<InfoDocumentAddress> documentAddresses = new List<InfoDocumentAddress>();
 
-        //    using (MySqlCommand command = new MySqlCommand(@"
-        //        SELECT 
-	       //         cities.City,
-        //            addresses.Street, 
-        //            addresses.Home
-        //        FROM 
-        //            cities,
-        //            addresses
-        //        WHERE 
-        //            addresses.City_id = cities.City_Id
-        //        ", connection))
-        //    {
-        //        connection.Open();
+        /// <summary>
+        /// Возвращает каталог для текущего адреса в БД
+        /// </summary>
+        /// <returns></returns>
+        public List<InfoDocumentCatalog> GetDocumentCatalog(string address)
+        {
+            List<InfoDocumentCatalog> documentCatalog = new List<InfoDocumentCatalog>();
 
-        //        using (MySqlDataReader dataReader = command.ExecuteReader())
-        //        {
-        //            while (dataReader.Read())
-        //            {
-        //                InfoDocumentAddress documentAddressesList = new InfoDocumentAddress();
-        //                // InfoCity
-        //                documentAddressesList.City = dataReader["City"].ToString();
-        //                // InfoAddress
-        //                documentAddressesList.Street = dataReader["Street"].ToString();
-        //                documentAddressesList.Home = dataReader["Home"].ToString();
+            // Как использовать adress?
+            // 1 нахожу catalog_id, 
+            // 2 по нему нахожу сам каталог и передаю
 
-        //                documentAddresses.Add(documentAddressesList);
-        //            }
-        //            dataReader.Close();
-        //        }
-        //        connection.Close();
-        //    }
-        //    return documentAddresses;
-        //}
+            using (MySqlCommand command = new MySqlCommand(@"
+                SELECT 
+                    catalogs.catalog
+                FROM 
+                    addresses,
+                    catalogs,
+                    cities
+                WHERE 
+                    `Street` LIKE 'Татарстан' 
+                AND 
+                    `Home` LIKE '10'
+                AND
+                	`City` LIKE 'Зеленодольск'
+                AND 
+                    addresses.Catalog_id = catalogs.Catalog_Id
+                AND
+                    addresses.City_id = cities.City_Id
+
+                ", connection))
+            {
+                connection.Open();
+
+                using (MySqlDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        InfoDocumentCatalog documentCatalogList = new InfoDocumentCatalog();
+
+                        documentCatalogList.Catalog += dataReader["Catalog"].ToString();
+                        documentCatalog.Add(documentCatalogList);
+                    }
+                    dataReader.Close();
+                }
+                connection.Close();
+            }
+            return documentCatalog;
+        }
     }
 }
