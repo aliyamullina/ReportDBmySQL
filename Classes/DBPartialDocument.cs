@@ -122,7 +122,7 @@ namespace ReportDBmySQL
                     addresses,
                     catalogs,
                     cities
-                WHERE 'Татарстан 10' LIKE CONCAT (City, Street, Home)
+                WHERE CONCAT(City, ', ',Street, ' ' ,Home) LIKE '%Зеленодольск, Татарстан 10%'
                 AND 
                     addresses.Catalog_id = catalogs.Catalog_Id
                 AND
