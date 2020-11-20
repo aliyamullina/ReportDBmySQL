@@ -16,11 +16,11 @@ namespace ReportDBmySQL
                 using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Registers
                 (
-                Registry_Id INT AUTO_INCREMENT PRIMARY KEY, 
-                Catalog_id INT(5) NOT NULL,
-                Apartment VARCHAR(15) NOT NULL,
-                Model VARCHAR(30) NOT NULL,
-                Serial VARCHAR(30) NOT NULL
+                    Registry_Id INT AUTO_INCREMENT PRIMARY KEY, 
+                    Catalog_id INT(5) NOT NULL,
+                    Apartment VARCHAR(15) NOT NULL,
+                    Model VARCHAR(30) NOT NULL,
+                    Serial VARCHAR(30) NOT NULL
                 );",
                 connection))
                 {
@@ -44,7 +44,7 @@ namespace ReportDBmySQL
             {
                 using (MySqlCommand command = new MySqlCommand(@"
                 INSERT INTO Registers(Catalog_id, Apartment, Model, Serial) 
-                VALUES (@apartment, @model, @serial)",
+                VALUES (@catalog_id, @apartment, @model, @serial)",
                 connection))
                 {
                     connection.Open();
