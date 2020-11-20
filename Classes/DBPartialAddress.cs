@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 
 namespace ReportDBmySQL
@@ -10,18 +11,25 @@ namespace ReportDBmySQL
         /// </summary>
         public void CreateTableAdresses()
         {
-            using (MySqlCommand command = new MySqlCommand(@"
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Addresses
                 (Id INT AUTO_INCREMENT PRIMARY KEY, 
                 Street VARCHAR(30) NOT NULL, 
                 Home VARCHAR(10), 
                 City_id INT REFERENCES Cities(City_id),
                 Catalog_id INT REFERENCES Catalogs(Catalog_id))",
-                connection)) 
-            { 
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
+                connection))
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
             }
         }
 
@@ -30,23 +38,30 @@ namespace ReportDBmySQL
         /// </summary>
         public void InsertTableAdresses(List<InfoAddress> addressesList)
         {
-            // Добавляет повторно, нет проверки на существование записи
-            using (MySqlCommand command = new MySqlCommand(@"
+            try
+            {
+                // Добавляет повторно, нет проверки на существование записи
+                using (MySqlCommand command = new MySqlCommand(@"
                 INSERT INTO addresses(Street, Home, City_id, Catalog_id) 
                 VALUES (@street, @home, @city_id, @сatalog_id)",
-                connection))
-            {
-                connection.Open();
-                foreach (var item in addressesList)
+                    connection))
                 {
-                    command.Parameters.Clear();
-                    command.Parameters.AddWithValue("@street", item.Street);
-                    command.Parameters.AddWithValue("@home", item.Home);
-                    command.Parameters.AddWithValue("@city_id", item.City_id);
-                    command.Parameters.AddWithValue("@сatalog_id", item.Catalog_id);
-                    command.ExecuteNonQuery();
+                    connection.Open();
+                    foreach (var item in addressesList)
+                    {
+                        command.Parameters.Clear();
+                        command.Parameters.AddWithValue("@street", item.Street);
+                        command.Parameters.AddWithValue("@home", item.Home);
+                        command.Parameters.AddWithValue("@city_id", item.City_id);
+                        command.Parameters.AddWithValue("@сatalog_id", item.Catalog_id);
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
                 }
-                connection.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
             }
         }
     }
