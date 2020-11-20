@@ -32,7 +32,7 @@ namespace ReportDBmySQL
                 AND
                     addresses.Catalog_id = catalogs.Catalog_Id
                 AND
-                    addresses.RegisterAddress_id = registers.RegisterAddress_id
+                    addresses.Catalog_id = registers.Catalog_Id
                 ", connection))
             {
                 connection.Open();

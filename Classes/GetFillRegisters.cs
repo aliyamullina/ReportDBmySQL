@@ -44,16 +44,16 @@ namespace ReportDBmySQL
                 {
                     var ws = wb.Worksheet(1);
                     var rows = ws.RangeUsed().RowsUsed().Skip(5);
-                    int registeraddress_id = 0;
+                    int catalog_id = 0;
 
                     foreach (var row in rows)
                     {
-                        registeraddress_id++;
+                        catalog_id++;
                         string apartment = row.Cell(1).Value.ToString();
                         string model = row.Cell(2).Value.ToString();
                         string serial = row.Cell(3).Value.ToString();
 
-                        registersList.Add(new InfoRegistry(registeraddress_id, apartment, model, serial));
+                        registersList.Add(new InfoRegistry(catalog_id, apartment, model, serial));
                     }
                 }
                 return registersList;
