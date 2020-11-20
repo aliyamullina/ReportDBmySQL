@@ -17,13 +17,31 @@ namespace ReportDBmySQL
             List<InfoCatalog> path = db.GetCatalogList();
 
             List<InfoRegistry> registersListTables = new List<InfoRegistry>();
+            List<InfoRegistry> registersListTablesAll = new List<InfoRegistry>();
 
             foreach (InfoCatalog c in path)
             {
-                var registersListTable = GetExcelTableRead(c.Registry, out registersListTables);
-                registersListTables = registersListTable.ToList();
+                //Татарстан 10
+                //16  СО - ИБМЗ 11511
+
+                //Татарстан 24
+                //47  ЦЭ6807Б с150403
+                //48  ЦЭ6807Б с151129
+
+                //Татарстан 8
+                //20  СО505   128862
+                //24  СО505   129860
+                //21  СО505   133023
+                //2   СО - И4491 - 2  9044
+                //4   СО - ИБМ1 91714
+                //35  СО505   137298
+
+                GetExcelTableRead(c.Registry, out registersListTables);
+
+                registersListTablesAll.ForEach(p => registersListTables.Add(p));
             }
-            return registersListTables;
+
+            return registersListTablesAll;
         }
 
         /// <summary>
