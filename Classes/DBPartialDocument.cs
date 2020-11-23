@@ -90,9 +90,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает ресстр для текущего адреса в БД
         /// </summary>
-        public List<InfoDocumentTable> GetDocumentList()
+        public List<InfoDocumentTable> GetDocumentTable(string catalog)
         {
-            List<InfoDocumentTable> addressSelect = new List<InfoDocumentTable>();
+            List<InfoDocumentTable> documentTable = new List<InfoDocumentTable>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
@@ -113,29 +113,32 @@ namespace ReportDBmySQL
                 ", connection))
             {
                 connection.Open();
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@catalog", "%" + catalog + "%");
+                command.ExecuteNonQuery();
 
                 using (MySqlDataReader dataReader = command.ExecuteReader())
                 {
                     while (dataReader.Read())
                     {
-                        InfoDocumentTable addressFullList = new InfoDocumentTable();
+                        InfoDocumentTable documentTableList = new InfoDocumentTable();
                         // InfoCity
-                        addressFullList.City = dataReader["City"].ToString();
+                        documentTableList.City = dataReader["City"].ToString();
                         // InfoAddress
-                        addressFullList.Street = dataReader["Street"].ToString();
-                        addressFullList.Home = dataReader["Home"].ToString();
+                        documentTableList.Street = dataReader["Street"].ToString();
+                        documentTableList.Home = dataReader["Home"].ToString();
                         // InfoRegistry
-                        addressFullList.Apartment = dataReader["Apartment"].ToString();
-                        addressFullList.Model = dataReader["Model"].ToString();
-                        addressFullList.Serial = dataReader["Serial"].ToString();
+                        documentTableList.Apartment = dataReader["Apartment"].ToString();
+                        documentTableList.Model = dataReader["Model"].ToString();
+                        documentTableList.Serial = dataReader["Serial"].ToString();
 
-                        addressSelect.Add(addressFullList);
+                        documentTable.Add(documentTableList);
                     }
                     dataReader.Close();
                 }
                 connection.Close();
             }
-            return addressSelect;
+            return documentTable;
         }
     }
 }
