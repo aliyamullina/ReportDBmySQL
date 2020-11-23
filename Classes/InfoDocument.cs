@@ -20,6 +20,9 @@
         public string Catalog { get; set; }
     }
 
+    /// <summary>
+    /// Модель таблицы: полный адрес, реестр
+    /// </summary>
     public class InfoDocumentTable
     {
         public InfoDocumentTable() { }
