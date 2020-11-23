@@ -25,14 +25,20 @@ namespace ReportDBmySQL
             {
                 List<InfoDocumentCatalog> fileCatalog = db.GetDocumentCatalog(fileName.Address);
 
-                //var fileName = AddressDocList.Select(x => x.City + ", " + x.Street + " " + x.Home).Distinct().ToList();
-                //IEnumerable<string> fileCatalog = fullAddressCatalog.Select(x => x.Catalog);
+                //fileCatalog.Select(x=>x.Catalog);
+                //fileName.Address;
 
-                //foreach (var pn in fileCatalog.Zip(fileName, (p, n) => new { fileCatalog = p, fileName = n }))
-                //{
-                //    var filePuth = fullAddressCatalog.Select(x => x.Catalog + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").Distinct().ToList();
-                //    var filePuth = fullAddressCatalog.Select(x => x.Catalog + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").Distinct().ToList();
-                //}
+                IEnumerable<string> fC = fileCatalog.Select(x => x.Catalog);
+                string fN = fileName.Address;
+
+                foreach (var pn in fC.Zip(fN, (p, n) => new { fC = p, fN = n }))
+                {
+                    //var filePuth = fullAddressCatalog.Select(x => x.Catalog + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").Distinct().ToList();
+                    string filePath = pn.fC + @"\Отчет ППО " + pn.fN + ".docx";
+
+                    File.Copy(originalFilePath, filePath);
+                    Console.WriteLine();
+                }
                 Console.WriteLine();
             }
 
@@ -44,9 +50,6 @@ namespace ReportDBmySQL
 
             //foreach (var pn in filePuth.Zip(fileName, (p, n) => new { filePuth = p, fileName = n }))
             //{
-            //    // Копировал файл, давал новое имя, редактировал
-            //    File.Copy(originalFilePath, pn.filePuth);
-
             //    // Берет готовый doc, редактирует
             //    using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(pn.filePuth, isEditable: true))
             //    {
