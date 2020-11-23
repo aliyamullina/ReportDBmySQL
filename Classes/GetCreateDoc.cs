@@ -29,11 +29,13 @@ namespace ReportDBmySQL
 
                 var fC = string.Join("", fileCatalog.Select(x => x.Catalog));
 
+                List<InfoDocumentTable> fileTable = db.GetDocumentTable(fC);
+
+                var fT = fileTable.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
+
+                // Создается файл по шаблону
                 var filePath = fC + @"\Отчет ППО " + fN + ".docx";
-
                 File.Copy(originalFilePath, filePath);
-
-                //var table = AddressDocList.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
 
                 // Берет готовый doc, редактирует
                 using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
@@ -44,8 +46,11 @@ namespace ReportDBmySQL
                         docText = sr.ReadToEnd();
                     }
 
-                    Regex regexText = new Regex("AddressInfo");
-                    docText = regexText.Replace(docText, fN);
+                    Regex AddressText = new Regex("AddressInfo");
+                    docText = AddressText.Replace(docText, fN);
+
+                    Regex TableText = new Regex("TableInfo");
+                    //docText = TableText.Replace(docText, fT);
 
                     using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                     {
@@ -57,10 +62,7 @@ namespace ReportDBmySQL
                     Console.WriteLine();
                 }
             }
-
             Console.WriteLine();
-
-            List<InfoDocument> AddressDocList = db.GetDocumentList();
         }
     }
 }
