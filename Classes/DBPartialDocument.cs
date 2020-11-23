@@ -106,12 +106,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает каталог для текущего адреса в БД
         /// </summary>
-        /// <returns></returns>
         public List<InfoDocumentCatalog> GetDocumentCatalog(string address)
         {
             List<InfoDocumentCatalog> documentCatalog = new List<InfoDocumentCatalog>();
-
-            // Должно вернуться C:\Users\User1_106\Desktop\1\Татарстан 10
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 

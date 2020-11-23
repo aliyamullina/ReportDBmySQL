@@ -22,7 +22,7 @@ namespace ReportDBmySQL
             foreach (InfoDocumentAddress a in InfoDocumentAddress)
             {
                 //Поиск каталога к адресу
-                db.GetDocumentCatalog(a.Address);
+                var c = db.GetDocumentCatalog(a.Address);
             }
 
             Console.WriteLine();
