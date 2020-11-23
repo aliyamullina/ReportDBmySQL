@@ -111,9 +111,7 @@ namespace ReportDBmySQL
         {
             List<InfoDocumentCatalog> documentCatalog = new List<InfoDocumentCatalog>();
 
-            // Как использовать adress?
-            // 1 нахожу catalog_id, 
-            // 2 по нему нахожу сам каталог и передаю
+            // Должно вернуться C:\Users\User1_106\Desktop\1\Татарстан 10
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
@@ -122,7 +120,7 @@ namespace ReportDBmySQL
                     addresses,
                     catalogs,
                     cities
-                WHERE CONCAT(City, ', ',Street, ' ' ,Home) LIKE '%@address%'
+                WHERE CONCAT(City, ', ',Street, ' ' ,Home) LIKE @address
                 AND 
                     addresses.Catalog_id = catalogs.Catalog_Id
                 AND
@@ -132,7 +130,7 @@ namespace ReportDBmySQL
             {
                 connection.Open();
                 command.Parameters.Clear();
-                command.Parameters.AddWithValue("@address", address);
+                command.Parameters.AddWithValue("@address", "%" + address + "%");
                 command.ExecuteNonQuery();
 
                 using (MySqlDataReader dataReader = command.ExecuteReader())
