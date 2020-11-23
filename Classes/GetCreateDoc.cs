@@ -25,20 +25,14 @@ namespace ReportDBmySQL
             {
                 List<InfoDocumentCatalog> fileCatalog = db.GetDocumentCatalog(fileName.Address);
 
-                //fileCatalog.Select(x=>x.Catalog);
-                //fileName.Address;
+                var fN = fileName.Address;
 
-                IEnumerable<string> fC = fileCatalog.Select(x => x.Catalog);
-                string fN = fileName.Address;
+                var fC = string.Join("", fileCatalog.Select(x => x.Catalog));
 
-                foreach (var pn in fC.Zip(fN, (p, n) => new { fC = p, fN = n }))
-                {
-                    //var filePuth = fullAddressCatalog.Select(x => x.Catalog + @"\Отчет ППО " + x.City + ", " + x.Street + " " + x.Home + ".docx").Distinct().ToList();
-                    string filePath = pn.fC + @"\Отчет ППО " + pn.fN + ".docx";
+                var filePath = fC + @"\Отчет ППО " + fN + ".docx";
 
-                    File.Copy(originalFilePath, filePath);
-                    Console.WriteLine();
-                }
+                File.Copy(originalFilePath, filePath);
+  
                 Console.WriteLine();
             }
 
