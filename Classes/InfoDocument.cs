@@ -1,13 +1,30 @@
 ﻿namespace ReportDBmySQL
 {
     /// <summary>
-    /// Документ: город, улица, дом, выбранная папка, каталог сохранения
+    /// Модель адреса: город, улица, дом
     /// </summary>
-    public class InfoDocument
+    public class InfoDocumentAddress
     {
-        public InfoDocument() { }
+        public InfoDocumentAddress() { }
+        public InfoDocumentAddress(string address) { this.Address = address; }
+        public string Address { get; set; }
+    }
 
-        public InfoDocument
+    /// <summary>
+    /// Модель каталога: путь
+    /// </summary>
+    public class InfoDocumentCatalog
+    {
+        public InfoDocumentCatalog() { }
+        public InfoDocumentCatalog(string catalog) { this.Catalog = catalog; }
+        public string Catalog { get; set; }
+    }
+
+    public class InfoDocumentTable
+    {
+        public InfoDocumentTable() { }
+
+        public InfoDocumentTable
             (
             // InfoCity
             string city,
@@ -15,10 +32,6 @@
             // InfoAddress
             string street, 
             string home,
-
-            // InfoCatalog
-            string open, 
-            string catalog,
 
             // InfoRegistry
             string apartment, 
@@ -29,8 +42,7 @@
             this.City = city;          
             this.Street = street;
             this.Home = home; 
-            this.Catalog = catalog;
-            this.Open = open;
+
             this.Apartment = apartment;
             this.Model = model;
             this.Serial = serial;
@@ -39,24 +51,8 @@
         public string City { get; set; }
         public string Street { get; set; }
         public string Home { get; set; }
-        public string Catalog { get; set; }
-        public string Open { get; set; }
         public string Apartment { get; set; }
         public string Model { get; set; }
         public string Serial { get; set; }
-    }
-
-    public class InfoDocumentAddress
-    {
-        public InfoDocumentAddress() { }
-        public InfoDocumentAddress ( string address ) { this.Address = address; }
-        public string Address { get; set; }
-    }
-
-    public class InfoDocumentCatalog
-    {
-        public InfoDocumentCatalog() { }
-        public InfoDocumentCatalog(string catalog) { this.Catalog = catalog; }
-        public string Catalog { get; set; }
     }
 }
