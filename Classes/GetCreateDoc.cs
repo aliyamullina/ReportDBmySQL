@@ -18,7 +18,6 @@ namespace ReportDBmySQL
 
             DB db = new DB();
 
-            // Все доступные адреса
             List<InfoDocumentAddress> fullAddresses = db.GetDocumentAddresses();
 
             foreach (InfoDocumentAddress fileName in fullAddresses)
@@ -32,36 +31,58 @@ namespace ReportDBmySQL
 
                 var fT = fileTable.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
 
-                // Создается файл по шаблону
-                var filePath = fC + @"\Отчет ППО " + fN + ".docx";
-                File.Copy(originalFilePath, filePath);
+                string filePath = getCreateDoc(originalFilePath, fN, fC);
 
-                // Берет готовый doc, редактирует
-                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
-                {
-                    string docText = null;
-                    using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
-                    {
-                        docText = sr.ReadToEnd();
-                    }
-
-                    Regex AddressText = new Regex("AddressInfo");
-                    docText = AddressText.Replace(docText, fN);
-
-                    Regex TableText = new Regex("TableInfo");
-                    //docText = TableText.Replace(docText, fT);
-
-                    using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
-                    {
-                        sw.Write(docText);
-                    }
-                    WordDoc.MainDocumentPart.Document.Save();
-                    WordDoc.Close();
-
-                    Console.WriteLine();
-                }
+                getReplaceDoc(fN, filePath);
             }
             Console.WriteLine();
+        }
+
+        /// <summary>
+        /// Создается файл по шаблону
+        /// </summary>
+        /// <param name="originalFilePath"></param>
+        /// <param name="fN"></param>
+        /// <param name="fC"></param>
+        /// <returns></returns>
+        private static string getCreateDoc(string originalFilePath, string fN, string fC)
+        {
+            var filePath = fC + @"\Отчет ППО " + fN + ".docx";
+            File.Copy(originalFilePath, filePath);
+            return filePath;
+        }
+
+        /// <summary>
+        /// Берет готовый doc, редактирует
+        /// </summary>
+        /// <param name="fN"></param>
+        /// <param name="filePath"></param>
+        private static void getReplaceDoc(string fN, string filePath)
+        {
+            using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
+            {
+                string docText = null;
+                using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
+                {
+                    docText = sr.ReadToEnd();
+                }
+
+                docText = new Regex("AddressInfo").Replace(docText, fN);
+
+                // Одно слово заменить списком
+                // docText = new Regex("TableInfo").Replace(docText, fT);
+
+
+
+                using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                {
+                    sw.Write(docText);
+                }
+                WordDoc.MainDocumentPart.Document.Save();
+                WordDoc.Close();
+
+                Console.WriteLine();
+            }
         }
     }
 }
