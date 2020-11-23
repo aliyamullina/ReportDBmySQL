@@ -35,7 +35,7 @@ namespace ReportDBmySQL
 
                 string filePath = getTemplateDoc(originalFilePath, fN, fC);
 
-                getFillDoc(fN, filePath);
+                getFillDoc(fN, filePath, fT);
             }
             Console.WriteLine();
         }
@@ -61,7 +61,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет готовый doc, редактирует
         /// </summary>
-        private static void getFillDoc(string fN, string filePath)
+        private static void getFillDoc(string fN, string filePath, List<string> fT)
         {
             using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
             {
@@ -74,7 +74,7 @@ namespace ReportDBmySQL
                 docText = new Regex("AddressInfo").Replace(docText, fN);
 
                 Table table = new Table();
-                getFillTable(WordDoc, table);
+                getFillTable(WordDoc, table, fT);
 
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {
@@ -88,37 +88,20 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создание и заполнение таблицы
         /// </summary>
-        private static void getFillTable(WordprocessingDocument WordDoc, Table table)
+        private static void getFillTable(WordprocessingDocument WordDoc, Table table, List<string> fT)
         {
             // №п/п	Нас.пункт	Улица	№дома	№ кв.	Тип ПУ	№ПУ	Комментарии
 
             // Создайте объект TableProperties и укажите информацию о его границах.
             TableProperties tblProp = new TableProperties(
-                new TableBorders(
-                    new TopBorder()
-                    {
-                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
-                    },
-                    new BottomBorder()
-                    {
-                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
-                    },
-                    new LeftBorder()
-                    {
-                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
-                    },
-                    new RightBorder()
-                    {
-                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
-                    },
-                    new InsideHorizontalBorder()
-                    {
-                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
-                    },
-                    new InsideVerticalBorder()
-                    {
-                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
-                    }
+                new TableBorders
+                (
+                    new TopBorder()                 { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
+                    new BottomBorder()              { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
+                    new LeftBorder()                { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
+                    new RightBorder()               { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
+                    new InsideHorizontalBorder()    { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
+                    new InsideVerticalBorder()      { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 }
                 )
             );
 
@@ -132,8 +115,10 @@ namespace ReportDBmySQL
             TableCell tc1 = new TableCell();
 
             // Укажите свойство ширины ячейки таблицы
-            tc1.Append(new TableCellProperties(
-                new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
+            tc1.Append(new TableCellProperties
+                (
+                    new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" })
+                );
 
             // Укажите содержимое ячейки таблицы
             tc1.Append(new Paragraph(new Run(new Text("some text"))));
