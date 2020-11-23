@@ -90,13 +90,13 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает ресстр для текущего адреса в БД
         /// </summary>
-        public List<InfoDocumentTable> GetDocumentTable(string catalog)
+        public List<InfoDocumentTable> GetDocumentTable(string address)
         {
             List<InfoDocumentTable> documentTable = new List<InfoDocumentTable>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
-	                cities.City,
+                    cities.City,
                     addresses.Street, 
                     addresses.Home,
                     registers.Apartment,
@@ -105,16 +105,20 @@ namespace ReportDBmySQL
                 FROM 
                     addresses,
                     cities,
-                    registers
-                WHERE 
-                    addresses.City_id = cities.City_Id
+                    registers,
+                    catalogs
+                WHERE CONCAT(City, ', ',Street, ' ' ,Home) LIKE @address
                 AND
-                    addresses.Catalog_id = registers.Catalog_Id
+                    catalogs.Catalog_id = registers.Catalog_Id
+                AND
+                    addresses.Catalog_id = catalogs.Catalog_Id
+                AND
+                    addresses.City_id = cities.City_Id
                 ", connection))
             {
                 connection.Open();
                 command.Parameters.Clear();
-                command.Parameters.AddWithValue("@catalog", "%" + catalog + "%");
+                command.Parameters.AddWithValue("@address", "%" + address + "%");
                 command.ExecuteNonQuery();
 
                 using (MySqlDataReader dataReader = command.ExecuteReader())
