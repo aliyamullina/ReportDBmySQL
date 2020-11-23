@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,9 +33,9 @@ namespace ReportDBmySQL
 
                 var fT = fileTable.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
 
-                string filePath = getCreateDoc(originalFilePath, fN, fC);
+                string filePath = getTemplateDoc(originalFilePath, fN, fC);
 
-                getReplaceDoc(fN, filePath);
+                getFillDoc(fN, filePath);
             }
             Console.WriteLine();
         }
@@ -41,23 +43,25 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается файл по шаблону
         /// </summary>
-        /// <param name="originalFilePath"></param>
-        /// <param name="fN"></param>
-        /// <param name="fC"></param>
-        /// <returns></returns>
-        private static string getCreateDoc(string originalFilePath, string fN, string fC)
+        private static string getTemplateDoc(string originalFilePath, string fN, string fC)
         {
             var filePath = fC + @"\Отчет ППО " + fN + ".docx";
-            File.Copy(originalFilePath, filePath);
+            try { 
+                
+                File.Copy(originalFilePath, filePath);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+                // удалить существующий файл
+            }
             return filePath;
         }
 
         /// <summary>
         /// Берет готовый doc, редактирует
         /// </summary>
-        /// <param name="fN"></param>
-        /// <param name="filePath"></param>
-        private static void getReplaceDoc(string fN, string filePath)
+        private static void getFillDoc(string fN, string filePath)
         {
             using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
             {
@@ -69,10 +73,8 @@ namespace ReportDBmySQL
 
                 docText = new Regex("AddressInfo").Replace(docText, fN);
 
-                // Одно слово заменить списком
-                // docText = new Regex("TableInfo").Replace(docText, fT);
-
-
+                Table table = new Table();
+                getFillTable(WordDoc, table);
 
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {
@@ -80,9 +82,76 @@ namespace ReportDBmySQL
                 }
                 WordDoc.MainDocumentPart.Document.Save();
                 WordDoc.Close();
-
-                Console.WriteLine();
             }
+        }
+
+        /// <summary>
+        /// Создание и заполнение таблицы
+        /// </summary>
+        private static void getFillTable(WordprocessingDocument WordDoc, Table table)
+        {
+            // №п/п	Нас.пункт	Улица	№дома	№ кв.	Тип ПУ	№ПУ	Комментарии
+
+            // Создайте объект TableProperties и укажите информацию о его границах.
+            TableProperties tblProp = new TableProperties(
+                new TableBorders(
+                    new TopBorder()
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
+                    },
+                    new BottomBorder()
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
+                    },
+                    new LeftBorder()
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
+                    },
+                    new RightBorder()
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
+                    },
+                    new InsideHorizontalBorder()
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
+                    },
+                    new InsideVerticalBorder()
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24
+                    }
+                )
+            );
+
+            // Добавьте объект TableProperties в пустую таблицу
+            table.AppendChild<TableProperties>(tblProp);
+
+            // Создайте ряд
+            TableRow tr = new TableRow();
+
+            // Создайте ячейку
+            TableCell tc1 = new TableCell();
+
+            // Укажите свойство ширины ячейки таблицы
+            tc1.Append(new TableCellProperties(
+                new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
+
+            // Укажите содержимое ячейки таблицы
+            tc1.Append(new Paragraph(new Run(new Text("some text"))));
+
+            // Добавить ячейку таблицы в строку таблицы
+            tr.Append(tc1);
+
+            // Создайте вторую ячейку таблицы, скопировав значение OuterXml первой ячейки таблицы
+            TableCell tc2 = new TableCell(tc1.OuterXml);
+
+            // Добавить ячейку таблицы в строку таблицы.
+            tr.Append(tc2);
+
+            // Добавить строку таблицы в таблицу.
+            table.Append(tr);
+
+            // Приложите таблицу к документу.
+            WordDoc.MainDocumentPart.Document.Body.Append(table);
         }
     }
 }
