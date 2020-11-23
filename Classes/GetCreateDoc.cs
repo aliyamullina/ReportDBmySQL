@@ -23,13 +23,12 @@ namespace ReportDBmySQL
 
             foreach (InfoDocumentAddress fileName in fullAddresses)
             {
-                List<InfoDocumentCatalog> fileCatalog = db.GetDocumentCatalog(fileName.Address);
-
                 var fN = fileName.Address;
 
-                var fC = string.Join("", fileCatalog.Select(x => x.Catalog));
+                List<InfoDocumentCatalog> fileCatalog = db.GetDocumentCatalog(fN);
+                List<InfoDocumentTable> fileTable = db.GetDocumentTable(fN);
 
-                List<InfoDocumentTable> fileTable = db.GetDocumentTable(fC);
+                var fC = string.Join("", fileCatalog.Select(x => x.Catalog));
 
                 var fT = fileTable.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
 
