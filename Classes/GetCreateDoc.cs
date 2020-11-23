@@ -31,7 +31,7 @@ namespace ReportDBmySQL
 
                 var filePath = fC + @"\Отчет ППО " + fN + ".docx";
 
-                //File.Copy(originalFilePath, filePath);
+                File.Copy(originalFilePath, filePath);
 
                 //var table = AddressDocList.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
 
@@ -56,8 +56,6 @@ namespace ReportDBmySQL
 
                     Console.WriteLine();
                 }
-
-                Console.WriteLine();
             }
 
             Console.WriteLine();
