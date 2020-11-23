@@ -31,39 +31,38 @@ namespace ReportDBmySQL
 
                 var filePath = fC + @"\Отчет ППО " + fN + ".docx";
 
-                File.Copy(originalFilePath, filePath);
-  
+                //File.Copy(originalFilePath, filePath);
+
+                //var table = AddressDocList.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
+
+                // Берет готовый doc, редактирует
+                using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
+                {
+                    string docText = null;
+                    using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
+                    {
+                        docText = sr.ReadToEnd();
+                    }
+
+                    Regex regexText = new Regex("AddressInfo");
+                    docText = regexText.Replace(docText, fN);
+
+                    using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+                    {
+                        sw.Write(docText);
+                    }
+                    WordDoc.MainDocumentPart.Document.Save();
+                    WordDoc.Close();
+
+                    Console.WriteLine();
+                }
+
                 Console.WriteLine();
             }
 
             Console.WriteLine();
 
             List<InfoDocument> AddressDocList = db.GetDocumentList();
-
-            //var table = AddressDocList.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
-
-            //foreach (var pn in filePuth.Zip(fileName, (p, n) => new { filePuth = p, fileName = n }))
-            //{
-            //    // Берет готовый doc, редактирует
-            //    using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(pn.filePuth, isEditable: true))
-            //    {
-            //        string docText = null;
-            //        using (StreamReader sr = new StreamReader(WordDoc.MainDocumentPart.GetStream()))
-            //        {
-            //            docText = sr.ReadToEnd();
-            //        }
-
-            //        Regex regexText = new Regex("AddressInfo");
-            //        docText = regexText.Replace(docText, pn.fileName);
-
-            //        using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
-            //        {
-            //            sw.Write(docText);
-            //        }
-            //        WordDoc.MainDocumentPart.Document.Save();
-            //        WordDoc.Close();
-            //    }
-            //}
         }
     }
 }
