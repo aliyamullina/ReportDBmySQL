@@ -14,9 +14,9 @@ namespace ReportDBmySQL
         {
             DB db = new DB();
 
-            db.CreateTableCatalogs();
+            db.CreateCatalogs();
             List<InfoCatalog> catalogsInsert = GetFill.GetFillCatalogs();
-            db.InsertTableCatalogs(catalogsInsert);
+            db.InsertCatalogs(catalogsInsert);
 
             db.CreateTableCities();
             List<InfoCity> CitiesList = GetFill.GetFillCities();

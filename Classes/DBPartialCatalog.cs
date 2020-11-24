@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается таблица Catalogs в БД
         /// </summary>
-        public void CreateTableCatalogs()
+        public void CreateCatalogs()
         {
             MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Catalogs
@@ -25,7 +25,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Catalogs в БД
         /// </summary>
-        public void InsertTableCatalogs(List<InfoCatalog> catalogsInsert)
+        public void InsertCatalogs(List<InfoCatalog> catalogsInsert)
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"INSERT INTO catalogs(Open, Catalog, Registry) VALUES (@open, @catalog, @registry)", connection))
@@ -38,6 +38,8 @@ namespace ReportDBmySQL
                     command.Parameters.AddWithValue("@catalog", item.Catalog);
                     command.Parameters.AddWithValue("@registry", item.Registry);
                     command.ExecuteNonQuery();
+
+
                 }
                 connection.Close();
             }
@@ -72,34 +74,6 @@ namespace ReportDBmySQL
                 connection.Close();
             }
             return catalogsSelect;
-        }
-
-        /// <summary>
-        /// Извлечение из таблицы Catalogs catalog_id
-        /// </summary>
-        public int GetCatalogId(string catalog)
-        {
-            int catalog_id = 0;
-
-            using (MySqlCommand command = new MySqlCommand(@"SELECT catalog_id FROM catalogs WHERE Catalog LIKE @catalog", connection))
-            {
-                connection.Open();
-
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@catalog", "%" + catalog + "%");
-                command.ExecuteNonQuery();
-
-                using (MySqlDataReader dataReader = command.ExecuteReader())
-                {
-                    while (dataReader.Read())
-                    {
-                        catalog_id = (int)dataReader["Catalog"];
-                    }
-                    dataReader.Close();
-                }
-                connection.Close();
-            }
-            return catalog_id;
         }
     }
 }
