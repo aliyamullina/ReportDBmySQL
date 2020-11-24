@@ -46,14 +46,19 @@ namespace ReportDBmySQL
         private static string getTemplateDoc(string originalFilePath, string fN, string fC)
         {
             var filePath = fC + @"\Отчет ППО " + fN + ".docx";
+
             try { 
-                
+
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+
                 File.Copy(originalFilePath, filePath);
             }
             catch (Exception e)
             {
                 Console.WriteLine($"{e.Message}");
-                // удалить существующий файл
             }
             return filePath;
         }
