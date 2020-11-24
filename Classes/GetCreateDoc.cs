@@ -73,16 +73,18 @@ namespace ReportDBmySQL
 
                 docText = new Regex("AddressInfo").Replace(docText, fN);
 
-                Table table = new Table();
-                getFillTable(WordDoc, table, fT);
-
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {
                     sw.Write(docText);
                 }
+
+                Table table = new Table();
+                getFillTable(WordDoc, table, fT);
+
                 WordDoc.MainDocumentPart.Document.Save();
                 WordDoc.Close();
             }
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -122,10 +124,10 @@ namespace ReportDBmySQL
 
             tr1.Append(td1, td2, td3, td4, td5, td6, td7, td8);
 
-            // Add row to the table.
+            // Add row to the table
             table.AppendChild(tr1);
 
-            // Приложите таблицу к документу.
+            // Приложите таблицу к документу
             WordDoc.MainDocumentPart.Document.Body.Append(table);
         }
 
