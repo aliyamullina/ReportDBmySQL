@@ -27,15 +27,15 @@ namespace ReportDBmySQL
                 var fN = fileName.Address;
 
                 List<InfoDocumentCatalog> fileCatalog = db.GetDocumentCatalog(fN);
-                List<InfoDocumentTable> fileTable = db.GetDocumentTable(fN);
+                
 
                 var fC = string.Join("", fileCatalog.Select(x => x.Catalog));
 
-                var fT = fileTable.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
+                //var fT = fileTable.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
 
                 string filePath = getTemplateDoc(originalFilePath, fN, fC);
 
-                getFillDoc(fN, filePath, fT);
+                getFillDoc(fN, filePath, db);
             }
             Console.WriteLine();
         }
@@ -61,7 +61,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет готовый doc, редактирует
         /// </summary>
-        private static void getFillDoc(string fN, string filePath, List<string> fT)
+        private static void getFillDoc(string fN, string filePath, DB db)
         {
             using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
             {
@@ -79,7 +79,7 @@ namespace ReportDBmySQL
                 }
 
                 Table table = new Table();
-                getFillTable(table, fT);
+                getFillTable(table, fN, db);
 
                 WordDoc.MainDocumentPart.Document.Body.Append(table);
                 WordDoc.MainDocumentPart.Document.Save();
@@ -90,7 +90,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создание и заполнение таблицы
         /// </summary>
-        private static void getFillTable(Table table, List<string> fT)
+        private static void getFillTable(Table table, string fN, DB db)
         {
             getCreateProperties(table);
 
@@ -100,24 +100,44 @@ namespace ReportDBmySQL
 
             // 1 ряд в таблице
             TableRow headerRow = new TableRow();
+            TableCell headerTdCount = new TableCell(new Paragraph(new Run(new Text("№ П/П"))));
+            TableCell headerTdCity = new TableCell(new Paragraph(new Run(new Text("Нас. пункт"))));
+            TableCell headerTdStreet = new TableCell(new Paragraph(new Run(new Text("Улица"))));
+            TableCell headerTdHome = new TableCell(new Paragraph(new Run(new Text("Дом"))));
+            TableCell headerTdApartment = new TableCell(new Paragraph(new Run(new Text("Кв."))));
+            TableCell headerTdModel = new TableCell(new Paragraph(new Run(new Text("Тип ПУ"))));
+            TableCell headerTdSerial = new TableCell(new Paragraph(new Run(new Text("№ ПУ"))));
+            TableCell headerTdComment = new TableCell(new Paragraph(new Run(new Text("Комментарии"))));
 
-            // №п/п	Нас.пункт	Улица	№дома	№ кв.	Тип ПУ	№ПУ	Комментарии
-            TableCell td1 = new TableCell(new Paragraph(new Run(new Text("№ П/П"))));
-            TableCell td2 = new TableCell(new Paragraph(new Run(new Text("Нас. пункт"))));
-            TableCell td3 = new TableCell(new Paragraph(new Run(new Text("Улица"))));
-            TableCell td4 = new TableCell(new Paragraph(new Run(new Text("№ Дома"))));
-            TableCell td5 = new TableCell(new Paragraph(new Run(new Text("№ Кв."))));
-            TableCell td6 = new TableCell(new Paragraph(new Run(new Text("Тип ПУ"))));
-            TableCell td7 = new TableCell(new Paragraph(new Run(new Text("№ ПУ"))));
-            TableCell td8 = new TableCell(new Paragraph(new Run(new Text("Комментарии"))));
-
-            headerRow.Append(td1, td2, td3, td4, td5, td6, td7, td8);
+            headerRow.Append(headerTdCount, headerTdCity, headerTdStreet, headerTdHome, headerTdApartment, headerTdModel, headerTdSerial, headerTdComment);
 
             table.AppendChild(headerRow);
 
-            // Зеленодольск Татарстан 10 16 СО-ИБМЗ 11511
+            List<InfoDocumentTable> fileTable = db.GetDocumentTable(fN);
+
+            string comment = "В 2020 году истекает срок поверки. Требуется замена";
+
+            int count = 1;
+
+            foreach (InfoDocumentTable iT in fileTable)
+            {
+                TableRow bodyRow = new TableRow();
+                TableCell bodyTdCount = new TableCell(new Paragraph(new Run(new Text((count++).ToString()))));
+                TableCell bodyTdCity = new TableCell(new Paragraph(new Run(new Text(iT.City))));
+                TableCell bodyTdStreet = new TableCell(new Paragraph(new Run(new Text(iT.Street))));
+                TableCell bodyTdHome = new TableCell(new Paragraph(new Run(new Text(iT.Home))));
+                TableCell bodyTdApartment = new TableCell(new Paragraph(new Run(new Text(iT.Apartment))));
+                TableCell bodyTdModel = new TableCell(new Paragraph(new Run(new Text(iT.Model))));
+                TableCell bodyTdSerial = new TableCell(new Paragraph(new Run(new Text(iT.Serial))));
+                TableCell bodyTdComment = new TableCell(new Paragraph(new Run(new Text(comment))));
+                bodyRow.Append(bodyTdCount, bodyTdCity, bodyTdStreet, bodyTdHome, bodyTdApartment, bodyTdModel, bodyTdSerial, bodyTdComment);
+                table.AppendChild(bodyRow);
+            }
         }
 
+        /// <summary>
+        /// Настройки свойств для таблицы
+        /// </summary>
         private static void getCreateProperties(Table table)
         {
             TableProperties props = new TableProperties(
