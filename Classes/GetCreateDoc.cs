@@ -81,10 +81,10 @@ namespace ReportDBmySQL
                 Table table = new Table();
                 getFillTable(WordDoc, table, fT);
 
+                WordDoc.MainDocumentPart.Document.Body.Append(table);
                 WordDoc.MainDocumentPart.Document.Save();
                 WordDoc.Close();
             }
-            Console.WriteLine();
         }
 
         /// <summary>
@@ -92,8 +92,18 @@ namespace ReportDBmySQL
         /// </summary>
         private static void getFillTable(WordprocessingDocument WordDoc, Table table, List<string> fT)
         {
-            TableProperties props = CreateProperties();
-            
+            TableProperties props = new TableProperties(
+                new TableBorders
+                (
+                    new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 }
+                )
+            );
+
             TableStyle tableStyle = new TableStyle() { Val = "TableGrid" };
 
             TableWidth tableWidth = new TableWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
@@ -126,24 +136,6 @@ namespace ReportDBmySQL
 
             // Add row to the table
             table.AppendChild(tr1);
-
-            // Приложите таблицу к документу
-            WordDoc.MainDocumentPart.Document.Body.Append(table);
-        }
-
-        private static TableProperties CreateProperties()
-        {
-            return new TableProperties(
-                            new TableBorders
-                            (
-                                new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 }
-                            )
-                        );
         }
     }
 }
