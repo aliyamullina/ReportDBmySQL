@@ -78,10 +78,8 @@ namespace ReportDBmySQL
                     sw.Write(docText);
                 }
 
-                Table table = new Table();
-                getFillTable(table, fN, db);
-
-                WordDoc.MainDocumentPart.Document.Body.Append(table);
+                getFillTable(WordDoc, fN, db);
+                
                 WordDoc.MainDocumentPart.Document.Save();
                 WordDoc.Close();
             }
@@ -90,11 +88,39 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создание и заполнение таблицы
         /// </summary>
-        private static void getFillTable(Table table, string fN, DB db)
+        private static void getFillTable(WordprocessingDocument WordDoc, string fN, DB db)
         {
+            Table table = new Table();
             getCreateProperties(table);
             getFillTableHead(table);
             getFillTableBody(table, fN, db);
+            WordDoc.MainDocumentPart.Document.Body.Append(table);
+        }
+
+        /// <summary>
+        /// Настройки свойств для таблицы
+        /// </summary>
+        private static void getCreateProperties(Table table)
+        {
+            TableProperties props = new TableProperties(
+                            new TableBorders
+                            (
+                                new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 }
+                            )
+                        );
+
+            TableStyle tableStyle = new TableStyle() { Val = "TableGrid" };
+
+            TableWidth tableWidth = new TableWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
+
+            props.Append(tableStyle, tableWidth);
+
+            table.AppendChild(props);
         }
 
         /// <summary>
@@ -143,33 +169,6 @@ namespace ReportDBmySQL
                 bodyRow.Append(bodyTdCount, bodyTdCity, bodyTdStreet, bodyTdHome, bodyTdApartment, bodyTdModel, bodyTdSerial, bodyTdComment);
                 table.AppendChild(bodyRow);
             }
-        }
-
-
-        /// <summary>
-        /// Настройки свойств для таблицы
-        /// </summary>
-        private static void getCreateProperties(Table table)
-        {
-            TableProperties props = new TableProperties(
-                            new TableBorders
-                            (
-                                new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                            new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                            new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                            new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                            new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                            new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 }
-                            )
-                        );
-
-            TableStyle tableStyle = new TableStyle() { Val = "TableGrid" };
-
-            TableWidth tableWidth = new TableWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
-
-            props.Append(tableStyle, tableWidth);
-
-            table.AppendChild(props);
         }
     }
 }
