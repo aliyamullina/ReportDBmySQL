@@ -9,10 +9,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        public static List<InfoRegistry> GetFillRegisters()
+        public static List<InfoRegistry> GetFillRegisters(DB db)
         {
             try {
-                DB db = new DB();
                 List<InfoCatalog> path = db.GetCatalogList();
                 List<InfoRegistry> registersTables = new List<InfoRegistry>();
                 foreach (InfoCatalog c in path)

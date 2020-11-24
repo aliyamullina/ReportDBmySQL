@@ -23,7 +23,7 @@ namespace ReportDBmySQL
             db.InsertTableCities(CitiesList);
 
             db.CreateTableRegisters();
-            List<InfoRegistry> RegistersList = GetFill.GetFillRegisters();
+            List<InfoRegistry> RegistersList = GetFill.GetFillRegisters(db);
             db.InsertTableRegisters(RegistersList);
 
             db.CreateTableAdresses();
@@ -32,7 +32,7 @@ namespace ReportDBmySQL
 
             //GetCreateDoc.Create();
 
-            //db.ClearAddressInfoDB();
+            db.ClearAddressInfoDB();
 
             Application.Exit();
         }
