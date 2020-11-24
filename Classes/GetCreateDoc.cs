@@ -79,7 +79,7 @@ namespace ReportDBmySQL
                 }
 
                 Table table = new Table();
-                getFillTable(WordDoc, table, fT);
+                getFillTable(table, fT);
 
                 WordDoc.MainDocumentPart.Document.Body.Append(table);
                 WordDoc.MainDocumentPart.Document.Save();
@@ -90,39 +90,18 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создание и заполнение таблицы
         /// </summary>
-        private static void getFillTable(WordprocessingDocument WordDoc, Table table, List<string> fT)
+        private static void getFillTable(Table table, List<string> fT)
         {
-            TableProperties props = new TableProperties(
-                new TableBorders
-                (
-                    new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
-                                new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 }
-                )
-            );
-
-            TableStyle tableStyle = new TableStyle() { Val = "TableGrid" };
-
-            TableWidth tableWidth = new TableWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
-
-            props.Append(tableStyle, tableWidth);
-
-            table.AppendChild(props);
-
-            // №п/п	Нас.пункт	Улица	№дома	№ кв.	Тип ПУ	№ПУ	Комментарии
-            // Зеленодольск Татарстан 10 16 СО-ИБМЗ 11511
+            getCreateProperties(table);
 
             // 8 колонок в таблице
             TableGrid tr = new TableGrid(new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn());
             table.AppendChild(tr);
 
             // 1 ряд в таблице
-            TableRow tr1 = new TableRow();
+            TableRow headerRow = new TableRow();
 
-            // Ячейки
+            // №п/п	Нас.пункт	Улица	№дома	№ кв.	Тип ПУ	№ПУ	Комментарии
             TableCell td1 = new TableCell(new Paragraph(new Run(new Text("№ П/П"))));
             TableCell td2 = new TableCell(new Paragraph(new Run(new Text("Нас. пункт"))));
             TableCell td3 = new TableCell(new Paragraph(new Run(new Text("Улица"))));
@@ -132,10 +111,34 @@ namespace ReportDBmySQL
             TableCell td7 = new TableCell(new Paragraph(new Run(new Text("№ ПУ"))));
             TableCell td8 = new TableCell(new Paragraph(new Run(new Text("Комментарии"))));
 
-            tr1.Append(td1, td2, td3, td4, td5, td6, td7, td8);
+            headerRow.Append(td1, td2, td3, td4, td5, td6, td7, td8);
 
-            // Add row to the table
-            table.AppendChild(tr1);
+            table.AppendChild(headerRow);
+
+            // Зеленодольск Татарстан 10 16 СО-ИБМЗ 11511
+        }
+
+        private static void getCreateProperties(Table table)
+        {
+            TableProperties props = new TableProperties(
+                            new TableBorders
+                            (
+                                new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                            new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 }
+                            )
+                        );
+
+            TableStyle tableStyle = new TableStyle() { Val = "TableGrid" };
+
+            TableWidth tableWidth = new TableWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
+
+            props.Append(tableStyle, tableWidth);
+
+            table.AppendChild(props);
         }
     }
 }
