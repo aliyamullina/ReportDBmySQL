@@ -27,7 +27,7 @@ namespace ReportDBmySQL
                     connection.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 Console.WriteLine($"{e.Message}");
                 //Extension.LogWriter.Write(ex);
