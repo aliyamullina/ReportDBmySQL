@@ -30,16 +30,13 @@ namespace ReportDBmySQL
         /// <summary>
         /// Читает данные из Excel
         /// </summary>
-        /// <param name="northwinddataXlsx"></param>
-        /// <param name="registersList"></param>
-        /// <returns></returns>
-        public static List<InfoRegistry> GetExcelTableRead(string northwinddataXlsx, out List<InfoRegistry> registersList)
+        public static List<InfoRegistry> GetExcelTableRead(string pathRegistry, out List<InfoRegistry> registersList)
         {
             registersList = new List<InfoRegistry>();
 
             try
             {
-                using (XLWorkbook wb = new XLWorkbook(northwinddataXlsx))
+                using (XLWorkbook wb = new XLWorkbook(pathRegistry))
                 {
                     var ws = wb.Worksheet(1);
                     var rows = ws.RangeUsed().RowsUsed().Skip(5);
