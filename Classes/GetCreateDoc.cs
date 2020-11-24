@@ -90,46 +90,40 @@ namespace ReportDBmySQL
         /// </summary>
         private static void getFillTable(WordprocessingDocument WordDoc, Table table, List<string> fT)
         {
-            // Создайте объект TableProperties и укажите информацию о его границах.
             TableProperties props = CreateProperties();
+            
+            TableStyle tableStyle = new TableStyle() { Val = "TableGrid" };
 
-            // Добавьте объект TableProperties в пустую таблицу
-            table.AppendChild<TableProperties>(props);
+            TableWidth tableWidth = new TableWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
+
+            props.Append(tableStyle, tableWidth);
+
+            table.AppendChild(props);
 
             // №п/п	Нас.пункт	Улица	№дома	№ кв.	Тип ПУ	№ПУ	Комментарии
             // Зеленодольск Татарстан 10 16 СО-ИБМЗ 11511
 
+            // 8 колонок в таблице
+            TableGrid tr = new TableGrid(new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn());
+            table.AppendChild(tr);
 
+            // 1 ряд в таблице
+            TableRow tr1 = new TableRow();
 
+            // Ячейки
+            TableCell td1 = new TableCell(new Paragraph(new Run(new Text("№ П/П"))));
+            TableCell td2 = new TableCell(new Paragraph(new Run(new Text("Нас. пункт"))));
+            TableCell td3 = new TableCell(new Paragraph(new Run(new Text("Улица"))));
+            TableCell td4 = new TableCell(new Paragraph(new Run(new Text("№ Дома"))));
+            TableCell td5 = new TableCell(new Paragraph(new Run(new Text("№ Кв."))));
+            TableCell td6 = new TableCell(new Paragraph(new Run(new Text("Тип ПУ"))));
+            TableCell td7 = new TableCell(new Paragraph(new Run(new Text("№ ПУ"))));
+            TableCell td8 = new TableCell(new Paragraph(new Run(new Text("Комментарии"))));
 
-            // Создайте ряд
-            //TableRow tr = new TableRow();
+            tr1.Append(td1, td2, td3, td4, td5, td6, td7, td8);
 
-            //// Создайте ячейку
-            //TableCell tc1 = new TableCell();
-
-            //// Укажите свойство ширины ячейки таблицы
-            //tc1.Append(new TableCellProperties
-            //    (
-            //        new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" })
-            //    );
-
-            //// Укажите содержимое ячейки таблицы
-            //tc1.Append(new Paragraph(new Run(new Text("some text"))));
-
-            //// Добавить ячейку таблицы в строку таблицы
-            //tr.Append(tc1);
-
-            //// Создайте вторую ячейку таблицы, скопировав значение OuterXml первой ячейки таблицы
-            //TableCell tc2 = new TableCell(tc1.OuterXml);
-
-            //// Добавить ячейку таблицы в строку таблицы.
-            //tr.Append(tc2);
-
-            //// Добавить строку таблицы в таблицу.
-            //table.Append(tr);
-
-            //
+            // Add row to the table.
+            table.AppendChild(tr1);
 
             // Приложите таблицу к документу.
             WordDoc.MainDocumentPart.Document.Body.Append(table);
@@ -140,12 +134,12 @@ namespace ReportDBmySQL
             return new TableProperties(
                             new TableBorders
                             (
-                                new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
-                                new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
-                                new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
-                                new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
-                                new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 },
-                                new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 24 }
+                                new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 },
+                                new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 1 }
                             )
                         );
         }
