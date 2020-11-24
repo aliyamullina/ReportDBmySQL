@@ -93,12 +93,18 @@ namespace ReportDBmySQL
         private static void getFillTable(Table table, string fN, DB db)
         {
             getCreateProperties(table);
+            getFillTableHead(table);
+            getFillTableBody(table, fN, db);
+        }
 
-            // 8 колонок в таблице
+        /// <summary>
+        /// Заполнение заголовков таблицы
+        /// </summary>
+        private static void getFillTableHead(Table table)
+        {
             TableGrid tr = new TableGrid(new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn());
             table.AppendChild(tr);
 
-            // 1 ряд в таблице
             TableRow headerRow = new TableRow();
             TableCell headerTdCount = new TableCell(new Paragraph(new Run(new Text("№ П/П"))));
             TableCell headerTdCity = new TableCell(new Paragraph(new Run(new Text("Нас. пункт"))));
@@ -108,11 +114,15 @@ namespace ReportDBmySQL
             TableCell headerTdModel = new TableCell(new Paragraph(new Run(new Text("Тип ПУ"))));
             TableCell headerTdSerial = new TableCell(new Paragraph(new Run(new Text("№ ПУ"))));
             TableCell headerTdComment = new TableCell(new Paragraph(new Run(new Text("Комментарии"))));
-
             headerRow.Append(headerTdCount, headerTdCity, headerTdStreet, headerTdHome, headerTdApartment, headerTdModel, headerTdSerial, headerTdComment);
-
             table.AppendChild(headerRow);
+        }
 
+        /// <summary>
+        /// Заполнение содержимого таблицы
+        /// </summary>
+        private static void getFillTableBody(Table table, string fN, DB db)
+        {
             List<InfoDocumentTable> fileTable = db.GetDocumentTable(fN);
 
             string comment = "В 2020 году истекает срок поверки. Требуется замена";
@@ -134,6 +144,7 @@ namespace ReportDBmySQL
                 table.AppendChild(bodyRow);
             }
         }
+
 
         /// <summary>
         /// Настройки свойств для таблицы
