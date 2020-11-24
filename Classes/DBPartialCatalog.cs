@@ -79,12 +79,12 @@ namespace ReportDBmySQL
         /// </summary>
         public int GetCatalogId(string catalog)
         {
-            
+            int catalog_id = 0;
 
             using (MySqlCommand command = new MySqlCommand(@"SELECT catalog_id FROM catalogs WHERE Catalog LIKE @catalog", connection))
             {
-                int catalog_id;
                 connection.Open();
+
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@catalog", "%" + catalog + "%");
                 command.ExecuteNonQuery();
@@ -98,11 +98,8 @@ namespace ReportDBmySQL
                     dataReader.Close();
                 }
                 connection.Close();
-
-                return catalog_id;
             }
-
-            
+            return catalog_id;
         }
     }
 }
