@@ -73,5 +73,36 @@ namespace ReportDBmySQL
             }
             return catalogsSelect;
         }
+
+        /// <summary>
+        /// Извлечение из таблицы Catalogs catalog_id
+        /// </summary>
+        public int GetCatalogId(string catalog)
+        {
+            
+
+            using (MySqlCommand command = new MySqlCommand(@"SELECT catalog_id FROM catalogs WHERE Catalog LIKE @catalog", connection))
+            {
+                int catalog_id;
+                connection.Open();
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@catalog", "%" + catalog + "%");
+                command.ExecuteNonQuery();
+
+                using (MySqlDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        catalog_id = (int)dataReader["Catalog"];
+                    }
+                    dataReader.Close();
+                }
+                connection.Close();
+
+                return catalog_id;
+            }
+
+            
+        }
     }
 }

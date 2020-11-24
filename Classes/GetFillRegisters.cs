@@ -16,7 +16,8 @@ namespace ReportDBmySQL
                 List<InfoRegistry> registersTables = new List<InfoRegistry>();
                 foreach (InfoCatalog c in path)
                 {
-                    GetExcelTableRead(c.Registry, out List<InfoRegistry> registersTable);
+                    var catalog_id = db.GetCatalogId(c.Catalog);
+                    GetExcelTableRead(c.Registry, catalog_id, out List <InfoRegistry> registersTable);
                     registersTables= registersTable.Union(registersTables).ToList();
                 }
                 return registersTables;
@@ -30,7 +31,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Читает данные из Excel
         /// </summary>
-        public static List<InfoRegistry> GetExcelTableRead(string pathRegistry, out List<InfoRegistry> registersList)
+        public static List<InfoRegistry> GetExcelTableRead(string pathRegistry, int catalog_id, out List<InfoRegistry> registersList)
         {
             registersList = new List<InfoRegistry>();
 
@@ -40,11 +41,11 @@ namespace ReportDBmySQL
                 {
                     var ws = wb.Worksheet(1);
                     var rows = ws.RangeUsed().RowsUsed().Skip(5);
-                    int catalog_id = 0;
+                    //int catalog_id = 0;
 
                     foreach (var row in rows)
                     {
-                        catalog_id++;
+                        //catalog_id++;
                         string apartment = row.Cell(1).Value.ToString();
                         string model = row.Cell(2).Value.ToString();
                         string serial = row.Cell(3).Value.ToString();
