@@ -16,7 +16,8 @@ namespace ReportDBmySQL
                 List<InfoRegistry> registersTables = new List<InfoRegistry>();
                 foreach (InfoCatalog c in path)
                 {
-                    var catalog_id = db.GetCatalogId(c.Catalog);
+                    //var catalog_id = db.GetCatalogId(c.Catalog);
+                    int catalog_id = 1;
                     GetExcelTableRead(c.Registry, catalog_id, out List <InfoRegistry> registersTable);
                     registersTables= registersTable.Union(registersTables).ToList();
                 }
@@ -41,11 +42,9 @@ namespace ReportDBmySQL
                 {
                     var ws = wb.Worksheet(1);
                     var rows = ws.RangeUsed().RowsUsed().Skip(5);
-                    //int catalog_id = 0;
 
                     foreach (var row in rows)
                     {
-                        //catalog_id++;
                         string apartment = row.Cell(1).Value.ToString();
                         string model = row.Cell(2).Value.ToString();
                         string serial = row.Cell(3).Value.ToString();
