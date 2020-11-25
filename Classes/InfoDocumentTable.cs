@@ -1,26 +1,6 @@
 ﻿namespace ReportDBmySQL
 {
     /// <summary>
-    /// Модель адреса: город, улица, дом
-    /// </summary>
-    public class InfoDocumentAddress
-    {
-        public InfoDocumentAddress() { }
-        public InfoDocumentAddress(string address) { this.Address = address; }
-        public string Address { get; set; }
-    }
-
-    /// <summary>
-    /// Модель каталога: путь
-    /// </summary>
-    public class InfoDocumentCatalog
-    {
-        public InfoDocumentCatalog() { }
-        public InfoDocumentCatalog(string catalog) { this.Catalog = catalog; }
-        public string Catalog { get; set; }
-    }
-
-    /// <summary>
     /// Модель таблицы: полный адрес, реестр
     /// </summary>
     public class InfoDocumentTable
