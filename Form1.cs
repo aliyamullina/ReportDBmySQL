@@ -14,13 +14,13 @@ namespace ReportDBmySQL
         {
             DB db = new DB();
 
+            db.GetCreateTableCities();
+            List<InfoCity> CitiesList = GetFill.GetFillCities();
+            db.GetInsertTableCities(CitiesList);
+
             db.CreateCatalogs();
             List<InfoCatalog> catalogsInsert = GetFill.GetFillCatalogs();
             db.InsertCatalogs(catalogsInsert);
-
-            db.CreateTableCities();
-            List<InfoCity> CitiesList = GetFill.GetFillCities();
-            db.InsertTableCities(CitiesList);
 
             db.CreateTableRegisters();
             List<InfoRegistry> RegistersList = GetFill.GetFillRegisters(db);
