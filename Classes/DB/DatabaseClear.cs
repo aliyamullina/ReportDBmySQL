@@ -6,18 +6,18 @@ namespace ReportDBmySQL
     public partial class DB
     {
         /// <summary>
-        /// Создается общая БД addressinfodb
+        /// Очистка общей таблицы
         /// </summary>
-        public void DBCreate()
+        public void DatabaseClear()
         {
             try
             {
-                using (MySqlCommand command = new MySqlCommand("CREATE DATABASE addressinfodb;", connection))
+                using (MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, catalogs, registers;", connection))
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
                     connection.Close();
-                }
+              }
             }
             catch (Exception e)
             {
