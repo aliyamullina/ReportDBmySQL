@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается общая БД addressinfodb
         /// </summary>
-        public void CreateAddressInfoDB()
+        public void DBCreate()
         {
             try
             {
@@ -18,26 +18,6 @@ namespace ReportDBmySQL
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"{e.Message}");
-            }
-        }
-
-        /// <summary>
-        /// Очистка общей таблицы
-        /// </summary>
-        public void ClearAddressInfoDB()
-        {
-            try
-            {
-                using (MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, catalogs, registers;", connection))
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-              }
             }
             catch (Exception e)
             {

@@ -32,7 +32,7 @@ namespace ReportDBmySQL
 
             GetCreateDoc.GetCreateDocs();
 
-            db.ClearAddressInfoDB();
+            db.DBClear();
 
             Application.Exit();
         }
