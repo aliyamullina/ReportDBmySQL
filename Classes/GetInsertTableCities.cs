@@ -5,28 +5,10 @@ namespace ReportDBmySQL
 {
     public partial class DB
     {
-
-        /// <summary>
-        /// Создается таблица Cities в БД
-        /// </summary>
-        public void CreateTableCities()
-        {
-            using (MySqlCommand command = new MySqlCommand(@"
-                CREATE TABLE IF NOT EXISTS Cities
-                (City_Id INT AUTO_INCREMENT PRIMARY KEY, 
-                City VARCHAR(30) NOT NULL);",
-                connection))
-            {
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-            }   
-        }
-
         /// <summary>
         /// Заполнение таблицы Cities в БД
         /// </summary>
-        public void InsertTableCities(List<InfoCity> citiesList)
+        public void GetInsertTableCities(List<InfoCity> citiesList)
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"INSERT INTO cities(City) VALUES (@city)", connection))
