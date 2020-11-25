@@ -70,7 +70,7 @@ namespace ReportDBmySQL
                     //OUTPUT Inserted.ID
                     //VALUES('что-нибудь');
                 }
-
+                connection.Close();
             }
         }
 
