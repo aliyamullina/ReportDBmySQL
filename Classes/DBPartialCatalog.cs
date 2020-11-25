@@ -28,7 +28,10 @@ namespace ReportDBmySQL
         public void InsertCatalogs(List<InfoCatalog> catalogsInsert)
         {
             // Добавляет повторно, нет проверки на существование записи
-            using (MySqlCommand command = new MySqlCommand(@"INSERT INTO catalogs(Open, Catalog, Registry) VALUES (@open, @catalog, @registry)", connection))
+            using (MySqlCommand command = new MySqlCommand(@"
+                INSERT INTO catalogs(Open, Catalog, Registry) 
+                VALUES (@open, @catalog, @registry)
+                ", connection))
             {
                 connection.Open();
                 foreach (var item in catalogsInsert)
