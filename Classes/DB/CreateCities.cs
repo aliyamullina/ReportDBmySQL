@@ -7,7 +7,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается таблица Cities в БД
         /// </summary>
-        public void GetCreateCities()
+        public void CreateCities()
         {
             using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Cities

@@ -1,26 +1,25 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
     public partial class DB
     {
         /// <summary>
-        /// Создается таблица Registers в БД
+        /// Создается таблица Adresses в БД
         /// </summary>
-        public void GetCreateRegisters()
+        public void CreateAdresses()
         {
             try
             {
                 using (MySqlCommand command = new MySqlCommand(@"
-                CREATE TABLE IF NOT EXISTS Registers
-                (
-                    Registry_Id INT AUTO_INCREMENT PRIMARY KEY, 
-                    Catalog_id INT(5) NOT NULL,
-                    Apartment VARCHAR(15) NOT NULL,
-                    Model VARCHAR(30) NOT NULL,
-                    Serial VARCHAR(30) NOT NULL
-                );",
+                CREATE TABLE IF NOT EXISTS Addresses
+                (Id INT AUTO_INCREMENT PRIMARY KEY, 
+                Street VARCHAR(30) NOT NULL, 
+                Home VARCHAR(10), 
+                City_id INT REFERENCES Cities(City_id),
+                Catalog_id INT REFERENCES Catalogs(Catalog_id))",
                 connection))
                 {
                     connection.Open();
@@ -31,6 +30,7 @@ namespace ReportDBmySQL
             catch (Exception e)
             {
                 Console.WriteLine($"{e.Message}");
+                //Extension.LogWriter.Write(ex);
             }
         }
     }

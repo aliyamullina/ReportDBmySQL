@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается таблица Catalogs в БД
         /// </summary>
-        public void GetCreateCatalogs()
+        public void CreateCatalogs()
         {
             MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Catalogs
