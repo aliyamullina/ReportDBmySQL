@@ -110,36 +110,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\GetFillTableBody.cs" />
-    <Compile Include="Classes\GetFillTableHead.cs" />
-    <Compile Include="Classes\GetCreateTableProperties.cs" />
-    <Compile Include="Classes\GetFillTable.cs" />
-    <Compile Include="Classes\GetFillDoc.cs" />
-    <Compile Include="Classes\GetCreateDocs.cs" />
-    <Compile Include="Classes\GetTemplateDoc.cs" />
-    <Compile Include="Classes\GetCreateCities%28%29.cs" />
-    <Compile Include="Classes\GetCreateRegisters.cs" />
-    <Compile Include="Classes\GetExcelTableRead.cs" />
-    <Compile Include="Classes\GetFillAddresses.cs" />
-    <Compile Include="Classes\GetFillCatalogs.cs" />
-    <Compile Include="Classes\GetFillCities.cs" />
-    <Compile Include="Classes\GetFillRegisters.cs" />
+    <Compile Include="Classes\InfoDocumentAddress.cs" />
+    <Compile Include="Classes\DB\DBCreateClearAddressInfoDB.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Classes\GetFill\GetFillTableBody.cs" />
+    <Compile Include="Classes\GetFill\GetFillTableHead.cs" />
+    <Compile Include="Classes\GetCreateDoc\GetCreateTableProperties.cs" />
+    <Compile Include="Classes\GetFill\GetFillTable.cs" />
+    <Compile Include="Classes\GetFill\GetFillDoc.cs" />
+    <Compile Include="Classes\GetCreateDoc\GetCreateDocs.cs" />
+    <Compile Include="Classes\GetCreateDoc\GetTemplateDoc.cs" />
+    <Compile Include="Classes\DB\GetCreateCities%28%29.cs" />
+    <Compile Include="Classes\DB\GetCreateRegisters.cs" />
+    <Compile Include="Classes\GetCreateDoc\GetExcelTableRead.cs" />
+    <Compile Include="Classes\GetFill\GetFillAddresses.cs" />
+    <Compile Include="Classes\GetFill\GetFillCatalogs.cs" />
+    <Compile Include="Classes\GetFill\GetFillCities.cs" />
+    <Compile Include="Classes\GetFill\GetFillRegisters.cs" />
     <Compile Include="Classes\InfoDate.cs" />
-    <Compile Include="Classes\DBPartialAddress.cs" />
-    <Compile Include="Classes\DBPartialCatalog.cs" />
+    <Compile Include="Classes\DB\DBPartialAddress.cs" />
+    <Compile Include="Classes\DB\DBPartialCatalog.cs" />
     <Compile Include="Classes\InfoCatalog.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Classes\GetInsertCities.cs" />
+    <Compile Include="Classes\DB\GetInsertCities.cs" />
     <Compile Include="Classes\InfoCity.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Classes\DB.cs">
+    <Compile Include="Classes\DB\DBOpenCloseGetConnection.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Classes\DBPartialDocument.cs" />
-    <Compile Include="Classes\InfoDocument.cs" />
-    <Compile Include="Classes\GetInsertRegisters.cs" />
+    <Compile Include="Classes\DB\DBPartialDocument.cs" />
+    <Compile Include="Classes\InfoDocumentTable.cs" />
+    <Compile Include="Classes\DB\GetInsertRegisters.cs" />
+    <Compile Include="Classes\InfoDocumentCatalog.cs" />
     <Compile Include="Classes\InfoRegistry.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
