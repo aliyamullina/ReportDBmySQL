@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 
 namespace ReportDBmySQL
@@ -30,7 +31,8 @@ namespace ReportDBmySQL
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"
                 INSERT INTO catalogs(Open, Catalog, Registry) 
-                VALUES (@open, @catalog, @registry)
+                VALUES (@open, @catalog, @registry);
+                SELECT LAST_INSERT_ID();
                 ", connection))
             {
                 connection.Open();
@@ -42,36 +44,18 @@ namespace ReportDBmySQL
                     command.Parameters.AddWithValue("@registry", item.Registry);
                     command.ExecuteNonQuery();
 
-                    // Вернуть Catalog_Id
-                    //command.ExecuteScalar();
-                    //return (int)command.Parameters["@newId"].Value;
-                    //return (int)(decimal)cmd.ExecuteScalar();
-                    //return int modified = (int)cmd.ExecuteScalar();
-
-                    //int newID;
-                    //var cmd = "INSERT INTO foo (column_name)VALUES (@Value);SELECT CAST(scope_identity() AS int)";
-                    //using (var insertCommand = new SqlCommand(cmd, con))
+                    //using (MySqlDataReader dataReader = command.ExecuteReader())
                     //{
-                    //    insertCommand.Parameters.AddWithValue("@Value", "bar");
-                    //    con.Open();
-                    //    newID = (int)insertCommand.ExecuteScalar();
+                    //    while (dataReader.Read())
+                    //    {
+                    //        int catalog_id = dataReader["Open"].ToString();
+
+                    //    }
+                    //    dataReader.Close();
                     //}
 
-                    // mysql OUTPUT id AUTO_INCREMENT
-
-                    //insert into record (firstname,middlename,lastname,birthday,age,department) 
-                    //OUTPUT INSERTED.ID values ....connection.Close();
-
-                    //SELECT SCOPE_IDENTITY() - для одного
-
-                    //OUTPUT  несколько значений идентификаторов
-
-                    //Select t.userid_pk From Crm_User_Info T
-                    //Where T.Rowid = (select max(t.rowid) from crm_user_info t) 
-
-                    //INSERT INTO table(name)
-                    //OUTPUT Inserted.ID
-                    //VALUES('что-нибудь');
+                    int catalog_id = (int)command.ExecuteScalar();
+                    Console.WriteLine(catalog_id);
                 }
                 connection.Close();
             }
