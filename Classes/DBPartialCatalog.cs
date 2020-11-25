@@ -32,7 +32,7 @@ namespace ReportDBmySQL
             using (MySqlCommand command = new MySqlCommand(@"
                 INSERT INTO catalogs(Open, Catalog, Registry) 
                 VALUES (@open, @catalog, @registry);
-                SELECT LAST_INSERT_ID() AS 'Catalog_id';
+                SELECT LAST_INSERT_ID();
                 ", connection))
             {
                 connection.Open();
@@ -44,14 +44,16 @@ namespace ReportDBmySQL
                     command.Parameters.AddWithValue("@registry", item.Registry);
                     command.ExecuteNonQuery();
 
-                    //using (MySqlDataReader dataReader = command.ExecuteReader())
-                    //{
-                    //    while (dataReader.Read())
-                    //    {
-                    //        int catalog_id = (int)dataReader["catalog_id"];
-                    //    }
-                    //    dataReader.Close();
-                    //}
+                    int catalog_id = 0;
+
+                    using (MySqlDataReader dataReader = command.ExecuteReader())
+                    {
+                        if (dataReader != null && dataReader.Read())
+                        {
+                            int catalog_id = (int)dataReader();
+                        }
+                        dataReader.Close();
+                    }
                     //int catalog_id = (int)command.ExecuteScalar();
                 }
                 connection.Close();
