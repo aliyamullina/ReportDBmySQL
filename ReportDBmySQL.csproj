@@ -110,7 +110,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\GetCreateDoc.cs" />
+    <Compile Include="Classes\GetFillTableBody.cs" />
+    <Compile Include="Classes\GetFillTableHead.cs" />
+    <Compile Include="Classes\GetCreateTableProperties.cs" />
+    <Compile Include="Classes\GetFillTable.cs" />
+    <Compile Include="Classes\GetFillDoc.cs" />
+    <Compile Include="Classes\GetCreateDocs.cs" />
+    <Compile Include="Classes\GetTemplateDoc.cs" />
+    <Compile Include="Classes\GetCreateCities%28%29.cs" />
+    <Compile Include="Classes\GetCreateRegisters.cs" />
+    <Compile Include="Classes\GetExcelTableRead.cs" />
     <Compile Include="Classes\GetFillAddresses.cs" />
     <Compile Include="Classes\GetFillCatalogs.cs" />
     <Compile Include="Classes\GetFillCities.cs" />
@@ -121,7 +130,7 @@
     <Compile Include="Classes\InfoCatalog.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Classes\DBPartialCity.cs" />
+    <Compile Include="Classes\GetInsertCities.cs" />
     <Compile Include="Classes\InfoCity.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
@@ -130,7 +139,7 @@
     </Compile>
     <Compile Include="Classes\DBPartialDocument.cs" />
     <Compile Include="Classes\InfoDocument.cs" />
-    <Compile Include="Classes\DBPartialRegistry.cs" />
+    <Compile Include="Classes\GetInsertRegisters.cs" />
     <Compile Include="Classes\InfoRegistry.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
