@@ -42,19 +42,21 @@ namespace ReportDBmySQL
                     command.Parameters.AddWithValue("@open", item.Open);
                     command.Parameters.AddWithValue("@catalog", item.Catalog);
                     command.Parameters.AddWithValue("@registry", item.Registry);
-                    command.ExecuteNonQuery();
+                    //command.Parameters["Catalog_Id"].Value;
+                    int catalog_id = (int)command.ExecuteScalar();
+                    //command.ExecuteNonQuery();
 
-                    int catalog_id = 0;
+                    //int catalog_id = 0;
 
-                    using (MySqlDataReader dataReader = command.ExecuteReader())
-                    {
-                        if (dataReader != null && dataReader.Read())
-                        {
-                            int catalog_id = (int)dataReader();
-                        }
-                        dataReader.Close();
-                    }
-                    //int catalog_id = (int)command.ExecuteScalar();
+                    //using (MySqlDataReader dataReader = command.ExecuteReader())
+                    //{
+                    //    if (dataReader != null && dataReader.Read())
+                    //    {
+                    //        catalog_id = (int)dataReader();
+                    //    }
+                    //    dataReader.Close();
+                    //}
+                    
                 }
                 connection.Close();
             }
