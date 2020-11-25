@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
@@ -47,24 +46,3 @@ namespace ReportDBmySQL
         }
     }
 }
-
-
-//2 таблица Реестр
-//IdУлица
-//IdДом
-//Данные по счетчикам
-
-//3 таблица 2гис данные
-//IdУлица
-//IdДом
-//Данные по домам
-
-//4 таблица аскуэ
-//IdУлица
-//IdДом
-//Данные по подъездам
-//Этаж
-//Количество квартир
-//Подъезды
-
-
