@@ -15,13 +15,13 @@ namespace ReportDBmySQL
 
             DB db = new DB();
 
-            List<InfoDocumentAddress> fullAddresses = db.GetDocumentAddresses();
+            List<InfoDocumentAddress> fullAddresses = db.GetDocAddresses();
 
             foreach (InfoDocumentAddress fileName in fullAddresses)
             {
                 var fN = fileName.Address;
 
-                List<InfoDocumentCatalog> fileCatalog = db.GetDocumentCatalog(fN);
+                List<InfoDocumentCatalog> fileCatalog = db.GetDocCatalog(fN);
 
 
                 var fC = string.Join("", fileCatalog.Select(x => x.Catalog));

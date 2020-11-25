@@ -10,7 +10,7 @@ namespace ReportDBmySQL
         /// </summary>
         private static void GetFillTableBody(Table table, string fN, DB db)
         {
-            List<InfoDocumentTable> fileTable = db.GetDocumentTable(fN);
+            List<InfoDocumentTable> fileTable = db.GetDocTable(fN);
 
             string comment = "В 2020 году истекает срок поверки. Требуется замена";
 
