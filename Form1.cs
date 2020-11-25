@@ -22,9 +22,9 @@ namespace ReportDBmySQL
             List<InfoCatalog> catalogsInsert = GetFill.GetFillCatalogs();
             db.InsertCatalogs(catalogsInsert);
 
-            db.CreateTableRegisters();
+            db.GetCreateRegisters();
             List<InfoRegistry> RegistersList = GetFill.GetFillRegisters(db);
-            db.InsertTableRegisters(RegistersList);
+            db.GetInsertRegisters(RegistersList);
 
             db.CreateTableAdresses();
             List<InfoAddress> addressesList = GetFill.GetFillAddresses();
