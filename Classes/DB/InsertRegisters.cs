@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Registers в БД
         /// </summary>
-        public void GetInsertRegisters(List<InfoRegistry> registersList)
+        public void InsertRegisters(List<InfoRegistry> registersList)
         {
             try
             {

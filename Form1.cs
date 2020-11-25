@@ -16,7 +16,7 @@ namespace ReportDBmySQL
 
             db.CreateCities();
             List<InfoCity> CitiesList = GetFill.GetFillCities();
-            db.GetInsertCities(CitiesList);
+            db.InsertCities(CitiesList);
 
             db.CreateCatalogs();
             List<InfoCatalog> catalogsInsert = GetFill.GetFillCatalogs();
@@ -24,11 +24,11 @@ namespace ReportDBmySQL
 
             db.CreateRegisters();
             List<InfoRegistry> RegistersList = GetFill.GetFillRegisters(db);
-            db.GetInsertRegisters(RegistersList);
+            db.InsertRegisters(RegistersList);
 
             db.CreateAdresses();
             List<InfoAddress> addressesList = GetFill.GetFillAddresses();
-            db.GetInsertAdresses(addressesList);
+            db.InsertAdresses(addressesList);
 
             GetCreateDoc.GetCreateDocs();
 
