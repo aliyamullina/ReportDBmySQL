@@ -49,7 +49,6 @@ namespace ReportDBmySQL
                     //    while (dataReader.Read())
                     //    {
                     //        int catalog_id = dataReader["Open"].ToString();
-
                     //    }
                     //    dataReader.Close();
                     //}
@@ -76,12 +75,12 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoCatalog catalogList = new InfoCatalog();
-
-                        catalogList.Open = dataReader["Open"].ToString();
-                        catalogList.Catalog = dataReader["Catalog"].ToString();
-                        catalogList.Registry = dataReader["Registry"].ToString();
-
+                        InfoCatalog catalogList = new InfoCatalog
+                        {
+                            Open = dataReader["Open"].ToString(),
+                            Catalog = dataReader["Catalog"].ToString(),
+                            Registry = dataReader["Registry"].ToString()
+                        };
                         catalogsSelect.Add(catalogList);
                     }
                     dataReader.Close();
