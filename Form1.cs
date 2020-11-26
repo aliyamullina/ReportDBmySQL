@@ -12,7 +12,6 @@ namespace ReportDBmySQL
 
         private void Button1_Click(object sender, System.EventArgs e)
         {
-
             Database db = new Database();
             MySql.Data.MySqlClient.MySqlConnection connection = db.GetConnection();
 
@@ -26,11 +25,11 @@ namespace ReportDBmySQL
             List<InfoAddress> AddressesList = Adresses.GetFill(connection);
             List<InfoRegistry> RegistersList = Registers.GetFill(connection);
 
-            Cities.GetInsert(CitiesList, connection);
             Catalogs.GetInsert(CatalogsInsert, connection);
-            Registers.GetInsert(RegistersList, connection);
+            Cities.GetInsert(CitiesList, connection);
             Adresses.GetInsert(AddressesList, connection);
-
+            Registers.GetInsert(RegistersList, connection);
+            
             //Document.GetCreateDocs(connection);
 
             //db.Clear();
