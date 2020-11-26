@@ -118,8 +118,8 @@
     <Compile Include="Classes\Database\Connection.cs" />
     <Compile Include="Classes\Database\Create.cs" />
     <Compile Include="Classes\Catalogs\GetList.cs" />
-    <Compile Include="Classes\Adresses\GetDoc.cs" />
-    <Compile Include="Classes\Catalogs\GetDoc.cs" />
+    <Compile Include="Classes\Document\GetDocAddresses.cs" />
+    <Compile Include="Classes\Document\GetDocCatalogs.cs" />
     <Compile Include="Classes\Document\GetDocTable.cs" />
     <Compile Include="Classes\Adresses\GetInsert.cs" />
     <Compile Include="Classes\Catalogs\GetInsert.cs" />

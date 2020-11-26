@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Adresses
+    public partial class Document
     {
         /// <summary>
         /// Возвращает все адреса из БД
         /// </summary>
-        public List<InfoDocumentAddress> GetDoc()
+        public List<InfoDocumentAddress> GetDocAddresses()
         {
             List<InfoDocumentAddress> documentAddresses = new List<InfoDocumentAddress>();
 

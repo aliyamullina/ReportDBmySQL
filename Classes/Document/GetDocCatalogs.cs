@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Catalogs
+    public partial class Document
     {
         /// <summary>
         /// Возвращает каталог для текущего адреса в БД
         /// </summary>
-        public List<InfoDocumentCatalog> GetDoc(string address)
+        public List<InfoDocumentCatalog> GetDocCatalogs(string address)
         {
             List<InfoDocumentCatalog> documentCatalog = new List<InfoDocumentCatalog>();
 
