@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Database
+    public partial class Catalogs
     {
         /// <summary>
         /// Возвращает каталог для текущего адреса в БД

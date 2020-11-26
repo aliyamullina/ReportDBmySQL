@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace ReportDBmySQL
 {
-    public partial class CreateDocument
+    public partial class Document
     {
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        public static void GetCreateDocs(Database db)
+        public static void GetCreateDocs(Adresses db)
         {
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 

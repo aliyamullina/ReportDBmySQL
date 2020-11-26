@@ -4,12 +4,12 @@ using System.Text.RegularExpressions;
 
 namespace ReportDBmySQL
 {
-    public partial class CreateDocument
+    public partial class Document
     {
         /// <summary>
         /// Берет готовый doc, редактирует
         /// </summary>
-        private static void GetFillDoc(string fN, string filePath, Database db)
+        private static void GetFillDoc(string fN, string filePath, Adresses db)
         {
             using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
             {

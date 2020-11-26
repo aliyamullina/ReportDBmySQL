@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Database
+    public partial class Catalogs
     {
         /// <summary>
         /// Извлечение из таблицы Catalogs в List

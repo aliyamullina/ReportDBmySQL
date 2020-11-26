@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Database
+    public partial class Adresses
     {
         /// <summary>
         /// Возвращает все адреса из БД

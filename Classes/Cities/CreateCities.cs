@@ -2,7 +2,7 @@
 
 namespace ReportDBmySQL
 {
-    public partial class Database
+    public partial class Cities
     {
         /// <summary>
         /// Создается таблица Cities в БД

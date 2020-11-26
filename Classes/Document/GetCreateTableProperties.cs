@@ -3,7 +3,7 @@ using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace ReportDBmySQL
 {
-    public partial class CreateDocument
+    public partial class Document
     {
         /// <summary>
         /// Настройки свойств для таблицы

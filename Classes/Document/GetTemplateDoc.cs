@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ReportDBmySQL
 {
-    public partial class CreateDocument
+    public partial class Document
     {
         /// <summary>
         /// Создается файл по шаблону

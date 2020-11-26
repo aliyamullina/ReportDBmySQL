@@ -2,7 +2,7 @@
 
 namespace ReportDBmySQL
 {
-    public partial class DatabaseTable
+    public partial class Cities
     {
         /// <summary>
         /// Берет данные из массива и передает в коллекцию

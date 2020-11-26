@@ -1,15 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Database
+    public partial class Adresses
     {
         /// <summary>
         /// Создается таблица Adresses в БД
         /// </summary>
-        public void CreateAdresses()
+        public void CreateAdresses(Adresses db)
         {
             try
             {

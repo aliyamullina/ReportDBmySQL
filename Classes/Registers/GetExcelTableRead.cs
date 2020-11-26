@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ReportDBmySQL
 {
-    public partial class DatabaseTable
+    public partial class Registers
     {
         /// <summary>
         /// Читает данные из Excel

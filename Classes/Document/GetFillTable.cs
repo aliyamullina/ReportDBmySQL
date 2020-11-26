@@ -3,12 +3,12 @@ using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace ReportDBmySQL
 {
-    public partial class CreateDocument
+    public partial class Document
     {
         /// <summary>
         /// Создание и заполнение таблицы
         /// </summary>
-        private static void GetFillTable(WordprocessingDocument WordDoc, string fN, Database db)
+        private static void GetFillTable(WordprocessingDocument WordDoc, string fN, Adresses db)
         {
             Table table = new Table();
             GetCreateTableProperties(table);

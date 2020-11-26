@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace ReportDBmySQL
 {
-    public partial class DatabaseTable
+    public partial class Registers
     {
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        public static List<InfoRegistry> GetFillRegisters(Database db)
+        public static List<InfoRegistry> GetFillRegisters(Adresses db)
         {
             try {
                 List<InfoCatalog> path = db.GetCatalogList();

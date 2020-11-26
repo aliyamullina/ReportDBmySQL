@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class CreateDocument
+    public partial class Document
     {
         /// <summary>
         /// Заполнение содержимого таблицы
         /// </summary>
-        private static void GetFillTableBody(Table table, string fN, Database db)
+        private static void GetFillTableBody(Table table, string fN, Adresses db)
         {
             List<InfoDocumentTable> fileTable = db.GetDocTable(fN);
 
