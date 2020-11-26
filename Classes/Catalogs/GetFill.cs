@@ -17,17 +17,17 @@ namespace ReportDBmySQL
             DialogResult dialog = folderDlg.ShowDialog();
             if (dialog == DialogResult.OK)
             {
-                string o = folderDlg.SelectedPath;
+                string open = folderDlg.SelectedPath;
 
-                string[] cI = Directory.GetDirectories(o);
+                string[] cI = Directory.GetDirectories(open);
 
-                foreach (var c in cI)
+                foreach (var catalog in cI)
                 {
-                    string[] files = new DirectoryInfo(c).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
+                    string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
 
-                    foreach (string r in files)
+                    foreach (string registry in files)
                     {
-                        catalogsInsert.Add(new InfoCatalog(o, c, r));
+                        catalogsInsert.Add(new InfoCatalog(open, catalog, registry));
                     }
                 }
             }
