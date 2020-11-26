@@ -18,7 +18,6 @@ namespace ReportDBmySQL
                 VALUES (@catalog_id, @apartment, @model, @serial)",
                 connection))
                 {
-                    //connection.Open();
                     foreach (var item in registersList)
                     {
                         command.Parameters.Clear();
@@ -28,7 +27,6 @@ namespace ReportDBmySQL
                         command.Parameters.AddWithValue("@serial", item.Serial);
                         command.ExecuteNonQuery();
                     }
-                    //connection.Close();
                 }
             }
             catch (Exception e)

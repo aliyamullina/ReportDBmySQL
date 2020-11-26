@@ -19,7 +19,6 @@ namespace ReportDBmySQL
                 VALUES (@street, @home, @city_id, @сatalog_id)",
                     connection))
                 {
-                    //connection.Open();
                     foreach (var item in addressesList)
                     {
                         command.Parameters.Clear();
@@ -29,7 +28,6 @@ namespace ReportDBmySQL
                         command.Parameters.AddWithValue("@сatalog_id", item.Catalog_id);
                         command.ExecuteNonQuery();
                     }
-                    //connection.Close();
                 }
             }
             catch (Exception e)
