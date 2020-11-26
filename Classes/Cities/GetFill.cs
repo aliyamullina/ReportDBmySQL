@@ -10,7 +10,7 @@ namespace ReportDBmySQL
         public static List<InfoCity> GetFill()
         {
             List<InfoCity> citiesList = new List<InfoCity>();
-            string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора", "Зеленодольск" };
+            string[] citiesArray = { "Казань", "Нурлат", "Чистополь", "Высокая гора", "Зеленодольск", "Васильево" };
             foreach (var city in citiesArray)
             {
                 citiesList.Add(new InfoCity(city));
