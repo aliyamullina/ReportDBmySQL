@@ -3,7 +3,7 @@ using System;
 
 namespace ReportDBmySQL
 {
-    public partial class DB
+    public partial class Database
     {
         /// <summary>
         /// Создается таблица Registers в БД

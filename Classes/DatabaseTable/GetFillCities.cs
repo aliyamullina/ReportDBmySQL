@@ -2,7 +2,7 @@
 
 namespace ReportDBmySQL
 {
-    public partial class GetFill
+    public partial class DatabaseTable
     {
         /// <summary>
         /// Берет данные из массива и передает в коллекцию

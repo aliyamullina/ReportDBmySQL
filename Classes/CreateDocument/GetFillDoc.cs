@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет готовый doc, редактирует
         /// </summary>
-        private static void GetFillDoc(string fN, string filePath, DB db)
+        private static void GetFillDoc(string fN, string filePath, Database db)
         {
             using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
             {

@@ -2,12 +2,12 @@
 
 namespace ReportDBmySQL
 {
-    public partial class GetFill
+    public partial class DatabaseTable
     {
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        public static List<InfoAddress> GetFillAddresses(DB db)
+        public static List<InfoAddress> GetFillAddresses(Database db)
         {
             List<InfoCatalog> path = db.GetCatalogList();
             List<InfoAddress> folderAdress = new List<InfoAddress>();

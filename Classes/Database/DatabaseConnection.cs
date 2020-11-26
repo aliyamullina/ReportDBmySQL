@@ -2,7 +2,7 @@
 
 namespace ReportDBmySQL
 {
-    public partial class DB
+    public partial class Database
     {
         readonly MySqlConnection connection = new MySqlConnection(
             "Server = localhost; " +

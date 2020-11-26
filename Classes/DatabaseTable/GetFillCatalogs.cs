@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace ReportDBmySQL
 {
-    public partial class GetFill
+    public partial class DatabaseTable
     {
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo

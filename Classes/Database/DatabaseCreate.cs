@@ -3,21 +3,21 @@ using System;
 
 namespace ReportDBmySQL
 {
-    public partial class DB
+    public partial class Database
     {
         /// <summary>
-        /// Очистка общей таблицы
+        /// Создается общая БД addressinfodb
         /// </summary>
-        public void DatabaseClear()
+        public void DatabaseCreate()
         {
             try
             {
-                using (MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, catalogs, registers;", connection))
+                using (MySqlCommand command = new MySqlCommand("CREATE DATABASE addressinfodb;", connection))
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
                     connection.Close();
-              }
+                }
             }
             catch (Exception e)
             {

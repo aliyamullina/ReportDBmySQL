@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение содержимого таблицы
         /// </summary>
-        private static void GetFillTableBody(Table table, string fN, DB db)
+        private static void GetFillTableBody(Table table, string fN, Database db)
         {
             List<InfoDocumentTable> fileTable = db.GetDocTable(fN);
 

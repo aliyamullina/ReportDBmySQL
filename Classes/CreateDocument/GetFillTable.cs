@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создание и заполнение таблицы
         /// </summary>
-        private static void GetFillTable(WordprocessingDocument WordDoc, string fN, DB db)
+        private static void GetFillTable(WordprocessingDocument WordDoc, string fN, Database db)
         {
             Table table = new Table();
             GetCreateTableProperties(table);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class DB
+    public partial class Database
     {
         /// <summary>
         /// Возвращает ресстр для текущего адреса в БД

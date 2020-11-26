@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        public static void GetCreateDocs(DB db)
+        public static void GetCreateDocs(Database db)
         {
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 

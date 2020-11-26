@@ -12,22 +12,22 @@ namespace ReportDBmySQL
 
         private void Button1_Click(object sender, System.EventArgs e)
         {
-            DB db = new DB();
+            Database db = new Database();
 
             db.CreateCities();
-            List<InfoCity> CitiesList = GetFill.GetFillCities();
+            List<InfoCity> CitiesList = DatabaseTable.GetFillCities();
             db.InsertCities(CitiesList);
 
             db.CreateCatalogs();
-            List<InfoCatalog> catalogsInsert = GetFill.GetFillCatalogs();
+            List<InfoCatalog> catalogsInsert = DatabaseTable.GetFillCatalogs();
             db.InsertCatalogs(catalogsInsert);
 
             db.CreateRegisters();
-            List<InfoRegistry> RegistersList = GetFill.GetFillRegisters(db);
+            List<InfoRegistry> RegistersList = DatabaseTable.GetFillRegisters(db);
             db.InsertRegisters(RegistersList);
 
             db.CreateAdresses();
-            List<InfoAddress> addressesList = GetFill.GetFillAddresses(db);
+            List<InfoAddress> addressesList = DatabaseTable.GetFillAddresses(db);
             db.InsertAdresses(addressesList);
 
             CreateDocument.GetCreateDocs(db);

@@ -110,26 +110,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DB\CreateAdresses.cs" />
-    <Compile Include="Classes\DB\CreateCatalogs.cs" />
-    <Compile Include="Classes\DB\CreateCities.cs" />
-    <Compile Include="Classes\DB\CreateRegisters.cs" />
-    <Compile Include="Classes\DB\DatabaseClear.cs" />
-    <Compile Include="Classes\DB\DatabaseConnection.cs" />
-    <Compile Include="Classes\DB\DatabaseCreate.cs" />
-    <Compile Include="Classes\DB\GetCatalogList.cs" />
-    <Compile Include="Classes\DB\GetDocAddresses.cs" />
-    <Compile Include="Classes\DB\GetDocCatalog.cs" />
-    <Compile Include="Classes\DB\GetDocTable.cs" />
-    <Compile Include="Classes\DB\InsertAdresses.cs" />
-    <Compile Include="Classes\DB\InsertCatalogs.cs" />
-    <Compile Include="Classes\DB\InsertCities.cs" />
-    <Compile Include="Classes\DB\InsertRegisters.cs" />
-    <Compile Include="Classes\GetFill\GetExcelTableRead.cs" />
-    <Compile Include="Classes\GetFill\GetFillAddresses.cs" />
-    <Compile Include="Classes\GetFill\GetFillCatalogs.cs" />
-    <Compile Include="Classes\GetFill\GetFillCities.cs" />
-    <Compile Include="Classes\GetFill\GetFillRegisters.cs" />
+    <Compile Include="Classes\Database\CreateAdresses.cs" />
+    <Compile Include="Classes\Database\CreateCatalogs.cs" />
+    <Compile Include="Classes\Database\CreateCities.cs" />
+    <Compile Include="Classes\Database\CreateRegisters.cs" />
+    <Compile Include="Classes\Database\DatabaseClear.cs" />
+    <Compile Include="Classes\Database\DatabaseConnection.cs" />
+    <Compile Include="Classes\Database\DatabaseCreate.cs" />
+    <Compile Include="Classes\Database\GetCatalogList.cs" />
+    <Compile Include="Classes\Database\GetDocAddresses.cs" />
+    <Compile Include="Classes\Database\GetDocCatalog.cs" />
+    <Compile Include="Classes\Database\GetDocTable.cs" />
+    <Compile Include="Classes\Database\InsertAdresses.cs" />
+    <Compile Include="Classes\Database\InsertCatalogs.cs" />
+    <Compile Include="Classes\Database\InsertCities.cs" />
+    <Compile Include="Classes\Database\InsertRegisters.cs" />
+    <Compile Include="Classes\DatabaseTable\GetExcelTableRead.cs" />
+    <Compile Include="Classes\DatabaseTable\GetFillAddresses.cs" />
+    <Compile Include="Classes\DatabaseTable\GetFillCatalogs.cs" />
+    <Compile Include="Classes\DatabaseTable\GetFillCities.cs" />
+    <Compile Include="Classes\DatabaseTable\GetFillRegisters.cs" />
     <Compile Include="Classes\CreateDocument\GetCreateDocs.cs" />
     <Compile Include="Classes\CreateDocument\GetCreateTableProperties.cs" />
     <Compile Include="Classes\CreateDocument\GetFillDoc.cs" />
