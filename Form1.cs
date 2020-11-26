@@ -27,7 +27,7 @@ namespace ReportDBmySQL
             db.InsertRegisters(RegistersList);
 
             db.CreateAdresses();
-            List<InfoAddress> addressesList = GetFill.GetFillAddresses();
+            List<InfoAddress> addressesList = GetFill.GetFillAddresses(db);
             db.InsertAdresses(addressesList);
 
             GetCreateDoc.GetCreateDocs();

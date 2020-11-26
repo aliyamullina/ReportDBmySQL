@@ -7,10 +7,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        public static List<InfoAddress> GetFillAddresses()
+        public static List<InfoAddress> GetFillAddresses(DB db)
         {
-            DB DBObject = new DB();
-            List<InfoCatalog> path = DBObject.GetCatalogList();
+            List<InfoCatalog> path = db.GetCatalogList();
             List<InfoAddress> folderAdress = new List<InfoAddress>();
             int city_id = 5;
             int catalog_id = 0;
