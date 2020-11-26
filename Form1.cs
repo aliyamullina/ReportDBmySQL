@@ -14,21 +14,21 @@ namespace ReportDBmySQL
         {
             Database db = new Database();
 
-            Adresses.CreateCities();
+            Adresses.GetCreate();
             List<InfoCity> CitiesList = Cities.GetFill();
-            Cities.InsertCities(CitiesList);
+            Cities.GetInsert(CitiesList);
 
-            Adresses.CreateCatalogs();
+            Adresses.GetCreate();
             List<InfoCatalog> catalogsInsert = Catalogs.GetFill();
-            Catalogs.InsertCatalogs(catalogsInsert);
+            Catalogs.GetInsert(catalogsInsert);
 
-            Adresses.CreateRegisters();
-            List<InfoRegistry> RegistersList = Registers.GetFillRegisters();
-            Registers.InsertRegisters(RegistersList);
+            Adresses.GetCreate();
+            List<InfoRegistry> RegistersList = Registers.GetFill();
+            Registers.GetInsert(RegistersList);
 
-            Adresses.CreateAdresses();
-            List<InfoAddress> addressesList = Adresses.GetFillAddresses();
-            Adresses.InsertAdresses(addressesList);
+            Adresses.GetCreate();
+            List<InfoAddress> addressesList = Adresses.GetFill();
+            Adresses.GetInsert(addressesList);
 
             Document.GetCreateDocs();
 
