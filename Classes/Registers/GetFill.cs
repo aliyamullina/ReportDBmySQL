@@ -17,9 +17,6 @@ namespace ReportDBmySQL
                 List<InfoRegistry> registersTables = new List<InfoRegistry>();
                 foreach (InfoCatalog c in path)
                 {
-                    //var catalog_id = db.GetCatalogId(c.Catalog);
-                    //int catalog_id = 1;
-                    int id = GetID(catalog_id);
                     GetExcelTableRead(c.Registry, catalog_id, out List <InfoRegistry> registersTable);
                     registersTables= registersTable.Union(registersTables).ToList();
                 }

@@ -13,15 +13,13 @@ namespace ReportDBmySQL
             List<InfoCatalog> path = Catalogs.GetSelect(connection);
             List<InfoAddress> folderAdress = new List<InfoAddress>();
             int city_id = 5;
-            int id = GetID(catalog_id);
 
             foreach (InfoCatalog c in path)
             {
                 var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
                 var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                id++;
-                folderAdress.Add(new InfoAddress(street, home, city_id, id));
+                folderAdress.Add(new InfoAddress(street, home, city_id, catalog_id));
             }
             return folderAdress;
         }

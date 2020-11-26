@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -20,18 +21,13 @@ namespace ReportDBmySQL
             Adresses.GetCreate(connection);
             Registers.GetCreate(connection);
 
+            Console.WriteLine();
+
             List<InfoCity> CitiesList = Cities.GetFill();
+            Cities.GetInsert(CitiesList, connection);
+
             List<InfoCatalog> CatalogsInsert = Catalogs.GetFill();
             Catalogs.GetInsert(CatalogsInsert, connection);
-
-            
-            List<InfoAddress> AddressesList = Adresses.GetFill(connection);
-            List<InfoRegistry> RegistersList = Registers.GetFill(connection);
-
-            
-            Cities.GetInsert(CitiesList, connection);
-            Adresses.GetInsert(AddressesList, connection);
-            Registers.GetInsert(RegistersList, connection);
             
             //Document.GetCreateDocs(connection);
 
