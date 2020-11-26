@@ -10,7 +10,7 @@ namespace ReportDBmySQL
         /// </summary>
         public static List<InfoAddress> GetFill(MySqlConnection connection)
         {
-            List<InfoCatalog> path = Catalogs.GetList(connection);
+            List<InfoCatalog> path = Catalogs.GetSelect(connection);
             List<InfoAddress> folderAdress = new List<InfoAddress>();
             int city_id = 5;
             int catalog_id = 0;

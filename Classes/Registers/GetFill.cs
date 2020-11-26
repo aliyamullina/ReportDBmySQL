@@ -13,7 +13,7 @@ namespace ReportDBmySQL
         public static List<InfoRegistry> GetFill(MySqlConnection connection)
         {
             try {
-                List<InfoCatalog> path = Catalogs.GetList(connection);
+                List<InfoCatalog> path = Catalogs.GetSelect(connection);
                 List<InfoRegistry> registersTables = new List<InfoRegistry>();
                 foreach (InfoCatalog c in path)
                 {

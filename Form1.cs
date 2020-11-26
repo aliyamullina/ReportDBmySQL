@@ -16,25 +16,24 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySql.Data.MySqlClient.MySqlConnection connection = db.GetConnection();
 
-            Cities.GetCreate(connection);
-            List<InfoCity> CitiesList = Cities.GetFill();
-            Cities.GetInsert(CitiesList, connection);
-
             Catalogs.GetCreate(connection);
-            List<InfoCatalog> catalogsInsert = Catalogs.GetFill();
-            Catalogs.GetInsert(catalogsInsert, connection);
-
-            Registers.GetCreate(connection);
-            List<InfoRegistry> RegistersList = Registers.GetFill(connection);
-            Registers.GetInsert(RegistersList, connection);
-
+            Cities.GetCreate(connection);
             Adresses.GetCreate(connection);
-            List<InfoAddress> addressesList = Adresses.GetFill(connection);
-            Adresses.GetInsert(addressesList, connection);
+            Registers.GetCreate(connection);
 
-            Document.GetCreateDocs(connection);
+            List<InfoCatalog> CatalogsInsert = Catalogs.GetFill();
+            List<InfoCity> CitiesList = Cities.GetFill();
+            List<InfoAddress> AddressesList = Adresses.GetFill(connection);
+            List<InfoRegistry> RegistersList = Registers.GetFill(connection);
 
-            db.Clear();
+            Cities.GetInsert(CitiesList, connection);
+            Catalogs.GetInsert(CatalogsInsert, connection);
+            Registers.GetInsert(RegistersList, connection);
+            Adresses.GetInsert(AddressesList, connection);
+
+            //Document.GetCreateDocs(connection);
+
+            //db.Clear();
 
             Application.Exit();
         }
