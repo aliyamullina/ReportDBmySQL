@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Adresses\GetCreate.cs" />
+    <Compile Include="Classes\Adresses\GetID.cs" />
     <Compile Include="Classes\Catalogs\GetCreate.cs" />
     <Compile Include="Classes\Cities\GetCreate.cs" />
     <Compile Include="Classes\Registers\GetCreate.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Classes\Adresses\GetInsert.cs" />
     <Compile Include="Classes\Catalogs\GetInsert.cs" />
     <Compile Include="Classes\Cities\GetInsert.cs" />
+    <Compile Include="Classes\Registers\GetID.cs" />
     <Compile Include="Classes\Registers\GetInsert.cs" />
     <Compile Include="Classes\Registers\GetExcelTableRead.cs" />
     <Compile Include="Classes\Adresses\GetFill.cs" />
