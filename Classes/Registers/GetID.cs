@@ -5,9 +5,9 @@ namespace ReportDBmySQL
 {
     public partial class Registers
     {
-        public static void GetID(MySqlConnection connection, int catalog_id)
+        public static void GetID(MySqlConnection connection, int catalog_id, List<InfoCatalog> path)
         {
-            List<InfoRegistry> RegistersList = GetFill(connection, catalog_id);
+            List<InfoRegistry> RegistersList = GetFill(catalog_id, path);
             GetInsert(RegistersList, connection);
         }
     }

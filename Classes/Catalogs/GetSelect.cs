@@ -9,12 +9,20 @@ namespace ReportDBmySQL
         /// <summary>
         /// Извлечение из таблицы Catalogs в List
         /// </summary>
-        public static List<InfoCatalog> GetSelect(MySqlConnection connection)
+        public static List<InfoCatalog> GetSelect(MySqlConnection connection, int catalog_id)
         {
             List<InfoCatalog> catalogsSelect = new List<InfoCatalog>();
 
-            using (MySqlCommand command = new MySqlCommand(@"SELECT * FROM catalogs", connection))
+            using (MySqlCommand command = new MySqlCommand(@"
+                SELECT * FROM catalogs 
+                WHERE Catalog_Id 
+                LIKE @catalog_id
+                ", connection))
             {
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@catalog_id", "%" + catalog_id + "%");
+                command.ExecuteNonQuery();
+
                 using (MySqlDataReader dataReader = command.ExecuteReader())
                 {
                     while (dataReader.Read())

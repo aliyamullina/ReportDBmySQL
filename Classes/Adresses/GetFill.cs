@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
@@ -8,20 +7,26 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        public static List<InfoAddress> GetFill(MySqlConnection connection, int catalog_id)
+        public static List<InfoAddress> GetFill(int catalog_id, List<InfoCatalog> path)
         {
-            List<InfoCatalog> path = Catalogs.GetSelect(connection);
-            List<InfoAddress> folderAdress = new List<InfoAddress>();
-            int city_id = 5;
-
-            foreach (InfoCatalog c in path)
+            try
             {
-                var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
-                var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
-                var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                folderAdress.Add(new InfoAddress(street, home, city_id, catalog_id));
+                List<InfoAddress> folderAdress = new List<InfoAddress>();
+                int city_id = 5;
+
+                foreach (InfoCatalog c in path)
+                {
+                    var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
+                    var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
+                    var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
+                    folderAdress.Add(new InfoAddress(street, home, city_id, catalog_id));
+                }
+                return folderAdress;
             }
-            return folderAdress;
+            catch
+            {
+                return null;
+            }
         }
     }
 }
