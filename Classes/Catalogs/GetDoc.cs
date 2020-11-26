@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает каталог для текущего адреса в БД
         /// </summary>
-        public List<InfoDocumentCatalog> GetDocCatalog(string address)
+        public List<InfoDocumentCatalog> GetDoc(string address)
         {
             List<InfoDocumentCatalog> documentCatalog = new List<InfoDocumentCatalog>();
 

@@ -10,7 +10,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static List<InfoCatalog> GetFillCatalogs()
+        public static List<InfoCatalog> GetFill()
         {
             List<InfoCatalog> catalogsInsert = new List<InfoCatalog>();
             FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };

@@ -15,11 +15,11 @@ namespace ReportDBmySQL
             Database db = new Database();
 
             Adresses.CreateCities();
-            List<InfoCity> CitiesList = Cities.GetFillCities();
+            List<InfoCity> CitiesList = Cities.GetFill();
             Cities.InsertCities(CitiesList);
 
             Adresses.CreateCatalogs();
-            List<InfoCatalog> catalogsInsert = Catalogs.GetFillCatalogs();
+            List<InfoCatalog> catalogsInsert = Catalogs.GetFill();
             Catalogs.InsertCatalogs(catalogsInsert);
 
             Adresses.CreateRegisters();

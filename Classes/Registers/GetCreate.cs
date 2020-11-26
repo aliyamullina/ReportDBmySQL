@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается таблица Registers в БД
         /// </summary>
-        public void CreateRegisters()
+        public void GetCreate()
         {
             try
             {

@@ -13,7 +13,7 @@ namespace ReportDBmySQL
         {
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
-            List<InfoDocumentAddress> fullAddresses = db.GetDocAddresses();
+            List<InfoDocumentAddress> fullAddresses = db.GetDoc();
 
             foreach (InfoDocumentAddress fileName in fullAddresses)
             {

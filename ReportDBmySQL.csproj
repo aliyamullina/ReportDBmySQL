@@ -110,26 +110,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Adresses\CreateAdresses.cs" />
-    <Compile Include="Classes\Catalogs\CreateCatalogs.cs" />
-    <Compile Include="Classes\Cities\CreateCities.cs" />
-    <Compile Include="Classes\Registers\CreateRegisters.cs" />
+    <Compile Include="Classes\Adresses\GetCreate.cs" />
+    <Compile Include="Classes\Catalogs\GetCreate.cs" />
+    <Compile Include="Classes\Cities\GetCreate.cs" />
+    <Compile Include="Classes\Registers\GetCreate.cs" />
     <Compile Include="Classes\Database\Clear.cs" />
     <Compile Include="Classes\Database\Connection.cs" />
     <Compile Include="Classes\Database\Create.cs" />
-    <Compile Include="Classes\Catalogs\GetCatalogList.cs" />
-    <Compile Include="Classes\Adresses\GetDocAddresses.cs" />
-    <Compile Include="Classes\Catalogs\GetDocCatalog.cs" />
+    <Compile Include="Classes\Catalogs\GetList.cs" />
+    <Compile Include="Classes\Adresses\GetDoc.cs" />
+    <Compile Include="Classes\Catalogs\GetDoc.cs" />
     <Compile Include="Classes\Document\GetDocTable.cs" />
-    <Compile Include="Classes\Adresses\InsertAdresses.cs" />
-    <Compile Include="Classes\Catalogs\InsertCatalogs.cs" />
-    <Compile Include="Classes\Cities\InsertCities.cs" />
-    <Compile Include="Classes\Registers\InsertRegisters.cs" />
+    <Compile Include="Classes\Adresses\GetInsert.cs" />
+    <Compile Include="Classes\Catalogs\GetInsert.cs" />
+    <Compile Include="Classes\Cities\GetInsert.cs" />
+    <Compile Include="Classes\Registers\GetInsert.cs" />
     <Compile Include="Classes\Registers\GetExcelTableRead.cs" />
-    <Compile Include="Classes\Adresses\GetFillAddresses.cs" />
-    <Compile Include="Classes\Catalogs\GetFillCatalogs.cs" />
-    <Compile Include="Classes\Cities\GetFillCities.cs" />
-    <Compile Include="Classes\Registers\GetFillRegisters.cs" />
+    <Compile Include="Classes\Adresses\GetFill.cs" />
+    <Compile Include="Classes\Catalogs\GetFill.cs" />
+    <Compile Include="Classes\Cities\GetFill.cs" />
+    <Compile Include="Classes\Registers\GetFill.cs" />
     <Compile Include="Classes\Document\GetCreateDocs.cs" />
     <Compile Include="Classes\Document\GetCreateTableProperties.cs" />
     <Compile Include="Classes\Document\GetFillDoc.cs" />
