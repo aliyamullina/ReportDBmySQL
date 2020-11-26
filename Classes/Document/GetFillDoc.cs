@@ -32,6 +32,8 @@ namespace ReportDBmySQL
                 WordDoc.MainDocumentPart.Document.Save();
                 WordDoc.Close();
             }
+
+            //catch System.IO.FileNotFoundException: "Could not find document"
         }
     }
 }
