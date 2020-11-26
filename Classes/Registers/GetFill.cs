@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        public static List<InfoRegistry> GetFill(Adresses db)
+        public static List<InfoRegistry> GetFill()
         {
             try {
                 List<InfoCatalog> path = db.GetCatalogList();
