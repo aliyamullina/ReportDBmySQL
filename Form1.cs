@@ -20,17 +20,12 @@ namespace ReportDBmySQL
             Cities.GetCreate(connection);
             Adresses.GetCreate(connection);
             Registers.GetCreate(connection);
-
             List<InfoCity> CitiesList = Cities.GetFill();
             Cities.GetInsert(CitiesList, connection);
-
-            
-
             List<InfoCatalog> CatalogsInsert = Catalogs.GetFill();
-            Console.WriteLine();
             Catalogs.GetInsert(CatalogsInsert, connection);
-            
-            //Document.GetCreateDocs(connection);
+
+            Document.GetCreateDocs(connection);
 
             //db.Clear();
 
