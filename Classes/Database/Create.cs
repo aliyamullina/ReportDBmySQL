@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается общая БД addressinfodb
         /// </summary>
-        public void DatabaseCreate()
+        public void Create()
         {
             try
             {

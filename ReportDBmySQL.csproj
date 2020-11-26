@@ -114,9 +114,9 @@
     <Compile Include="Classes\Database\CreateCatalogs.cs" />
     <Compile Include="Classes\Database\CreateCities.cs" />
     <Compile Include="Classes\Database\CreateRegisters.cs" />
-    <Compile Include="Classes\Database\DatabaseClear.cs" />
-    <Compile Include="Classes\Database\DatabaseConnection.cs" />
-    <Compile Include="Classes\Database\DatabaseCreate.cs" />
+    <Compile Include="Classes\Database\Clear.cs" />
+    <Compile Include="Classes\Database\Connection.cs" />
+    <Compile Include="Classes\Database\Create.cs" />
     <Compile Include="Classes\Database\GetCatalogList.cs" />
     <Compile Include="Classes\Database\GetDocAddresses.cs" />
     <Compile Include="Classes\Database\GetDocCatalog.cs" />

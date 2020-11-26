@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Очистка общей таблицы
         /// </summary>
-        public void DatabaseClear()
+        public void Clear()
         {
             try
             {
