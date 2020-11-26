@@ -10,7 +10,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        public static List<InfoRegistry> GetFill(MySqlConnection connection)
+        public static List<InfoRegistry> GetFill(MySqlConnection connection, int catalog_id)
         {
             try {
                 List<InfoCatalog> path = Catalogs.GetSelect(connection);
@@ -18,7 +18,8 @@ namespace ReportDBmySQL
                 foreach (InfoCatalog c in path)
                 {
                     //var catalog_id = db.GetCatalogId(c.Catalog);
-                    int catalog_id = 1;
+                    //int catalog_id = 1;
+                    int id = GetID(catalog_id);
                     GetExcelTableRead(c.Registry, catalog_id, out List <InfoRegistry> registersTable);
                     registersTables= registersTable.Union(registersTables).ToList();
                 }

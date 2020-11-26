@@ -8,20 +8,20 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        public static List<InfoAddress> GetFill(MySqlConnection connection)
+        public static List<InfoAddress> GetFill(MySqlConnection connection, int catalog_id)
         {
             List<InfoCatalog> path = Catalogs.GetSelect(connection);
             List<InfoAddress> folderAdress = new List<InfoAddress>();
             int city_id = 5;
-            int catalog_id = 0;
+            int id = GetID(catalog_id);
 
             foreach (InfoCatalog c in path)
             {
                 var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
                 var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                catalog_id++;
-                folderAdress.Add(new InfoAddress(street, home, city_id, catalog_id));
+                id++;
+                folderAdress.Add(new InfoAddress(street, home, city_id, id));
             }
             return folderAdress;
         }

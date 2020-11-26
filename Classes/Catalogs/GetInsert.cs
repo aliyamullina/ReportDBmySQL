@@ -26,6 +26,9 @@ namespace ReportDBmySQL
                     command.Parameters.AddWithValue("@catalog", item.Catalog);
                     command.Parameters.AddWithValue("@registry", item.Registry);
                     int catalog_id = Convert.ToInt32(command.ExecuteScalar());
+
+                    Adresses.GetID(catalog_id);
+                    Registers.GetID(catalog_id);
                 }
                 connection.Close();
             }
