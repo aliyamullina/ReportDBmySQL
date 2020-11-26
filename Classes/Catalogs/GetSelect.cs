@@ -15,7 +15,7 @@ namespace ReportDBmySQL
 
             using (MySqlCommand command = new MySqlCommand(@"SELECT * FROM catalogs", connection))
             {
-                connection.Open();
+                //connection.Open();
 
                 using (MySqlDataReader dataReader = command.ExecuteReader())
                 {
@@ -31,7 +31,7 @@ namespace ReportDBmySQL
                     }
                     dataReader.Close();
                 }
-                connection.Close();
+                //connection.Close();
             }
             return catalogsSelect;
         }
