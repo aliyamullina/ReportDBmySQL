@@ -2,7 +2,7 @@
 
 namespace ReportDBmySQL
 {
-    public partial class GetCreateDoc
+    public partial class CreateDocument
     {
         /// <summary>
         /// Заполнение заголовков таблицы

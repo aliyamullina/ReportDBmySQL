@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace ReportDBmySQL
 {
-    public partial class GetCreateDoc
+    public partial class CreateDocument
     {
         /// <summary>
         /// Берет готовый doc, редактирует

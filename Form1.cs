@@ -30,7 +30,7 @@ namespace ReportDBmySQL
             List<InfoAddress> addressesList = GetFill.GetFillAddresses(db);
             db.InsertAdresses(addressesList);
 
-            GetCreateDoc.GetCreateDocs(db);
+            CreateDocument.GetCreateDocs(db);
 
             db.DatabaseClear();
 
