@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Wordprocessing;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 
 namespace ReportDBmySQL
@@ -8,9 +9,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение содержимого таблицы
         /// </summary>
-        private static void GetFillTableBody(Table table, string fN, Adresses db)
+        private static void GetFillTableBody(Table table, string fN, MySqlConnection connection)
         {
-            List<InfoDocumentTable> fileTable = db.GetDocTable(fN);
+            List<InfoDocumentTable> fileTable = Document.GetDocTable(fN, connection);
 
             string comment = "В 2020 году истекает срок поверки. Требуется замена";
 

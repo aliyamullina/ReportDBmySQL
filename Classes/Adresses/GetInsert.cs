@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Adresses в БД
         /// </summary>
-        public void GetInsert(List<InfoAddress> addressesList)
+        public static void GetInsert(List<InfoAddress> addressesList, MySqlConnection connection)
         {
             try
             {

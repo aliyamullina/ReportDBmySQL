@@ -7,8 +7,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается таблица Cities в БД
         /// </summary>
-        public void GetCreate()
+        public static void GetCreate(MySqlConnection connection)
         {
+            
             using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Cities
                 (City_Id INT AUTO_INCREMENT PRIMARY KEY, 

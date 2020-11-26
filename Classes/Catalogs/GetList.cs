@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Извлечение из таблицы Catalogs в List
         /// </summary>
-        public List<InfoCatalog> GetList()
+        public static List<InfoCatalog> GetList(MySqlConnection connection)
         {
             List<InfoCatalog> catalogsSelect = new List<InfoCatalog>();
 

@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using MySql.Data.MySqlClient;
 
 namespace ReportDBmySQL
 {
@@ -8,12 +9,12 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создание и заполнение таблицы
         /// </summary>
-        private static void GetFillTable(WordprocessingDocument WordDoc, string fN, Adresses db)
+        private static void GetFillTable(WordprocessingDocument WordDoc, string fN, MySqlConnection connection)
         {
             Table table = new Table();
             GetCreateTableProperties(table);
             GetFillTableHead(table);
-            GetFillTableBody(table, fN, db);
+            GetFillTableBody(table, fN, connection);
             WordDoc.MainDocumentPart.Document.Body.Append(table);
         }
     }

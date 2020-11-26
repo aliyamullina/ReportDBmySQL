@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,17 +10,17 @@ namespace ReportDBmySQL
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        public static void GetCreateDocs()
+        public static void GetCreateDocs(MySqlConnection connection)
         {
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
-            List<InfoDocumentAddress> fullAddresses = db.GetDocAddresses();
+            List<InfoDocumentAddress> fullAddresses = GetDocAddresses(connection);
 
             foreach (InfoDocumentAddress fileName in fullAddresses)
             {
                 var fN = fileName.Address;
 
-                List<InfoDocumentCatalog> fileCatalog = db.GetDocCatalog(fN);
+                List<InfoDocumentCatalog> fileCatalog = GetDocCatalogs(fN, connection);
 
 
                 var fC = string.Join("", fileCatalog.Select(x => x.Catalog));
@@ -28,7 +29,7 @@ namespace ReportDBmySQL
 
                 string filePath = GetTemplateDoc(originalFilePath, fN, fC);
 
-                GetFillDoc(fN, filePath, db);
+                GetFillDoc(fN, filePath, connection);
             }
             Console.WriteLine();
         }

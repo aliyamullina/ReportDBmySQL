@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
@@ -7,9 +8,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        public static List<InfoAddress> GetFill()
+        public static List<InfoAddress> GetFill(MySqlConnection connection)
         {
-            List<InfoCatalog> path = db.GetCatalogList();
+            List<InfoCatalog> path = Catalogs.GetList(connection);
             List<InfoAddress> folderAdress = new List<InfoAddress>();
             int city_id = 5;
             int catalog_id = 0;

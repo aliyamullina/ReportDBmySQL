@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,10 +10,10 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        public static List<InfoRegistry> GetFill()
+        public static List<InfoRegistry> GetFill(MySqlConnection connection)
         {
             try {
-                List<InfoCatalog> path = db.GetCatalogList();
+                List<InfoCatalog> path = Catalogs.GetList(connection);
                 List<InfoRegistry> registersTables = new List<InfoRegistry>();
                 foreach (InfoCatalog c in path)
                 {

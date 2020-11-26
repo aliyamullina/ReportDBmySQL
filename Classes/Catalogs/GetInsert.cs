@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Catalogs в БД
         /// </summary>
-        public void GetInsert(List<InfoCatalog> catalogsInsert)
+        public static void GetInsert(List<InfoCatalog> catalogsInsert, MySqlConnection connection)
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"

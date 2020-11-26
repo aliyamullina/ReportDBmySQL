@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
+using MySql.Data.MySqlClient;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -9,7 +10,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет готовый doc, редактирует
         /// </summary>
-        private static void GetFillDoc(string fN, string filePath, Adresses db)
+        private static void GetFillDoc(string fN, string filePath, MySqlConnection connection)
         {
             using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
             {
@@ -26,7 +27,7 @@ namespace ReportDBmySQL
                     sw.Write(docText);
                 }
 
-                GetFillTable(WordDoc, fN, db);
+                GetFillTable(WordDoc, fN, connection);
                 
                 WordDoc.MainDocumentPart.Document.Save();
                 WordDoc.Close();

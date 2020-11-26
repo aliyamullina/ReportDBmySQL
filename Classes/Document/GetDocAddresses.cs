@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает все адреса из БД
         /// </summary>
-        public List<InfoDocumentAddress> GetDocAddresses()
+        public static List<InfoDocumentAddress> GetDocAddresses(MySqlConnection connection)
         {
             List<InfoDocumentAddress> documentAddresses = new List<InfoDocumentAddress>();
 
