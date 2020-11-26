@@ -25,13 +25,10 @@ namespace ReportDBmySQL
 
                 var fC = string.Join("", fileCatalog.Select(x => x.Catalog));
 
-                //var fT = fileTable.Select(x => x.City + " " + x.Street + " " + x.Home + " " + x.Apartment + " " + x.Model + " " + x.Serial).ToList();
-
                 string filePath = GetTemplateDoc(originalFilePath, fN, fC);
 
                 GetFillDoc(fN, filePath, connection);
             }
-            Console.WriteLine();
         }
     }
 }
