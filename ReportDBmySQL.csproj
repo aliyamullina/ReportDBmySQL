@@ -117,7 +117,7 @@
     <Compile Include="Classes\Database\Clear.cs" />
     <Compile Include="Classes\Database\Connection.cs" />
     <Compile Include="Classes\Database\Create.cs" />
-    <Compile Include="Classes\Catalogs\GetList.cs" />
+    <Compile Include="Classes\Catalogs\GetSelect.cs" />
     <Compile Include="Classes\Document\GetDocAddresses.cs" />
     <Compile Include="Classes\Document\GetDocCatalogs.cs" />
     <Compile Include="Classes\Document\GetDocTable.cs" />
