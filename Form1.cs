@@ -32,9 +32,9 @@ namespace ReportDBmySQL
             List<InfoAddress> addressesList = Adresses.GetFill(connection);
             Adresses.GetInsert(addressesList, connection);
 
-            //Document.GetCreateDocs();
+            Document.GetCreateDocs(connection);
 
-            //db.Clear();
+            db.Clear();
 
             Application.Exit();
         }
