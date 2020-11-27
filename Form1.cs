@@ -24,6 +24,7 @@ namespace ReportDBmySQL
             Cities.GetCreate(connection);
             Adresses.GetCreate(connection);
             Registers.GetCreate(connection);
+
             List<InfoCity> CitiesList = Cities.GetFill();
             Cities.GetInsert(CitiesList, connection);
             List<InfoCatalog> CatalogsInsert = Catalogs.GetFill();
@@ -31,7 +32,7 @@ namespace ReportDBmySQL
 
             Document.GetCreateDocs(connection);
 
-            //db.Clear();
+            db.Clear();
 
             Application.Exit();
         }
