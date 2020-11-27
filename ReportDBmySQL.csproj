@@ -120,7 +120,7 @@
     <Compile Include="Classes\Database\Create.cs" />
     <Compile Include="Classes\Catalogs\GetSelect.cs" />
     <Compile Include="Classes\Document\GetInfoDocument.cs" />
-    <Compile Include="Classes\Document\GetDocTable.cs" />
+    <Compile Include="Classes\Document\GetInfoDocumentTable.cs" />
     <Compile Include="Classes\Adresses\GetInsert.cs" />
     <Compile Include="Classes\Catalogs\GetInsert.cs" />
     <Compile Include="Classes\Cities\GetInsert.cs" />
@@ -137,7 +137,7 @@
     <Compile Include="Classes\Document\GetFillTable.cs" />
     <Compile Include="Classes\Document\GetFillTableBody.cs" />
     <Compile Include="Classes\Document\GetFillTableHead.cs" />
-    <Compile Include="Classes\Document\GetTemplateDoc.cs" />
+    <Compile Include="Classes\Document\GetDocumentTemplate.cs" />
     <Compile Include="Classes\InfoDocumentTable.cs" />
     <Compile Include="Classes\InfoDocument.cs" />
     <Compile Include="Classes\InfoCatalog.cs" />

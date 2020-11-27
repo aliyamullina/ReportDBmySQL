@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает ресстр для текущего адреса в БД
         /// </summary>
-        public static List<InfoDocumentTable> GetDocTable(string address, MySqlConnection connection)
+        public static List<InfoDocumentTable> GetInfoDocumentTable(string address, MySqlConnection connection)
         {
             List<InfoDocumentTable> documentTable = new List<InfoDocumentTable>();
 

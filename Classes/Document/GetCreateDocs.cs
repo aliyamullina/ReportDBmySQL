@@ -12,7 +12,7 @@ namespace ReportDBmySQL
         /// </summary>
         public static void GetCreateDocs(MySqlConnection connection)
         {
-            var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
+            var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 
             List<InfoDocument> infoDocuments = GetInfoDocument(connection);
 
@@ -22,7 +22,7 @@ namespace ReportDBmySQL
 
                 var fC = info.Catalog;
 
-                string filePath = GetTemplateDoc(originalFilePath, fN, fC);
+                string filePath = GetDocumentTemplate(documentTemplate, fN, fC);
 
                 GetFillDoc(fN, filePath, connection);
             }
