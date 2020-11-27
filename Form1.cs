@@ -16,6 +16,10 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySql.Data.MySqlClient.MySqlConnection connection = db.GetConnection();
 
+            // Опредалять город
+            // Находить дату
+            // Вставлять значения из 2Гис
+
             Catalogs.GetCreate(connection);
             Cities.GetCreate(connection);
             Adresses.GetCreate(connection);
