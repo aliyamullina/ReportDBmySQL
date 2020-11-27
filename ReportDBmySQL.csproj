@@ -114,6 +114,7 @@
     <Compile Include="Classes\Adresses\GetID.cs" />
     <Compile Include="Classes\Catalogs\GetCreate.cs" />
     <Compile Include="Classes\Cities\GetCreate.cs" />
+    <Compile Include="Classes\Database\CreateTable.cs" />
     <Compile Include="Classes\Registers\GetCreate.cs" />
     <Compile Include="Classes\Database\Clear.cs" />
     <Compile Include="Classes\Database\Connection.cs" />
