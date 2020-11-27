@@ -14,9 +14,6 @@ namespace ReportDBmySQL
         {
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
-            // 1
-
-            // Запрос адреса
             List<InfoDocument> infoDocuments = GetInfoDocument(connection);
 
             foreach (InfoDocument info in infoDocuments)

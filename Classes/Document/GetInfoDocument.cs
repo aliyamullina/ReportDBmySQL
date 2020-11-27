@@ -6,14 +6,11 @@ namespace ReportDBmySQL
     public partial class Document
     {
         /// <summary>
-        /// Возвращает все адреса из БД
+        /// Возвращает все адреса из БД: City, Street, Home, Catalog
         /// </summary>
         public static List<InfoDocument> GetInfoDocument(MySqlConnection connection)
         {
-            List<InfoDocument> documentAddresses = new List<InfoDocument>();
-
-            // 2 
-            // Тут запросить сразу Catalog и Registry? Или id?
+            List<InfoDocument> infoDocuments = new List<InfoDocument>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
@@ -37,18 +34,20 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoDocument documentAddressesList = new InfoDocument();
-                        documentAddressesList.Address += dataReader["City"].ToString();
-                        documentAddressesList.Address += ", " + dataReader["Street"].ToString();
-                        documentAddressesList.Address += " " + dataReader["Home"].ToString();
-                        documentAddressesList.Catalog = dataReader["Catalog"].ToString();
-                        documentAddresses.Add(documentAddressesList);
+                        InfoDocument infoDocumentsList = new InfoDocument();
+                        infoDocumentsList.Address += dataReader["City"].ToString();
+                        infoDocumentsList.Address += ", " + dataReader["Street"].ToString();
+                        infoDocumentsList.Address += " " + dataReader["Home"].ToString();
+
+                        infoDocumentsList.Catalog = dataReader["Catalog"].ToString();
+
+                        infoDocuments.Add(infoDocumentsList);
                     }
                     dataReader.Close();
                 }
                 connection.Close();
             }
-            return documentAddresses;
+            return infoDocuments;
         }
     }
 }

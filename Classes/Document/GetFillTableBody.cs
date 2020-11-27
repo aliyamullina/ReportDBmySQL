@@ -11,7 +11,7 @@ namespace ReportDBmySQL
         /// </summary>
         private static void GetFillTableBody(Table table, string fN, MySqlConnection connection)
         {
-            List<InfoDocumentTable> fileTable = Document.GetDocTable(fN, connection);
+            List<InfoDocumentTable> fileTable = GetDocTable(fN, connection);
 
             string comment = "В 2020 году истекает срок поверки. Требуется замена";
 
@@ -20,7 +20,7 @@ namespace ReportDBmySQL
             foreach (InfoDocumentTable iT in fileTable)
             {
                 TableRow bodyRow = new TableRow();
-                TableCell bodyTdCount = new TableCell(new Paragraph(new Run(new Text((count++).ToString()))));
+                TableCell bodyTdCount = new TableCell(new Paragraph(new Run(new Text(count++.ToString()))));
                 TableCell bodyTdCity = new TableCell(new Paragraph(new Run(new Text(iT.City))));
                 TableCell bodyTdStreet = new TableCell(new Paragraph(new Run(new Text(iT.Street))));
                 TableCell bodyTdHome = new TableCell(new Paragraph(new Run(new Text(iT.Home))));
