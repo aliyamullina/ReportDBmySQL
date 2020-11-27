@@ -12,6 +12,8 @@ namespace ReportDBmySQL
         {
             List<InfoDocumentAddress> documentAddresses = new List<InfoDocumentAddress>();
 
+            // Тут запросить сразу Catalog и Registry? Или id?
+
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
 	                cities.City,
