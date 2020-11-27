@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -14,19 +15,17 @@ namespace ReportDBmySQL
         private void Button1_Click(object sender, System.EventArgs e)
         {
             Database db = new Database();
-            MySql.Data.MySqlClient.MySqlConnection connection = db.GetConnection();
+            MySqlConnection connection = db.GetConnection();
 
             // Опредалять город
             // Находить дату
             // Вставлять значения из 2Гис
 
-            Catalogs.GetCreate(connection);
-            Cities.GetCreate(connection);
-            Adresses.GetCreate(connection);
-            Registers.GetCreate(connection);
+            Database.CreateTable(connection);
 
             List<InfoCity> CitiesList = Cities.GetFill();
             Cities.GetInsert(CitiesList, connection);
+
             List<InfoCatalog> CatalogsInsert = Catalogs.GetFill();
             Catalogs.GetInsert(CatalogsInsert, connection);
 
@@ -36,5 +35,7 @@ namespace ReportDBmySQL
 
             Application.Exit();
         }
+
+        
     }
 }
