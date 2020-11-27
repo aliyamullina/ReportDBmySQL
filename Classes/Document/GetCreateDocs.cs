@@ -14,12 +14,14 @@ namespace ReportDBmySQL
         {
             var originalFilePath = @"C:\Users\User1_106\Desktop\template.docx";
 
+            // Запрос адреса
             List<InfoDocumentAddress> fullAddresses = GetDocAddresses(connection);
 
             foreach (InfoDocumentAddress fileName in fullAddresses)
             {
                 var fN = fileName.Address;
 
+                // Чтобы найти каталог
                 List<InfoDocumentCatalog> fileCatalog = GetDocCatalogs(fN, connection);
 
 

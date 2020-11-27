@@ -12,6 +12,8 @@ namespace ReportDBmySQL
         {
             List<InfoDocumentCatalog> documentCatalog = new List<InfoDocumentCatalog>();
 
+            // Лишний запрос
+
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
                     catalogs.catalog
