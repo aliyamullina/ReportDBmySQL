@@ -8,22 +8,27 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает все адреса из БД
         /// </summary>
-        public static List<InfoDocumentAddress> GetDocAddresses(MySqlConnection connection)
+        public static List<InfoDocument> GetInfoDocument(MySqlConnection connection)
         {
-            List<InfoDocumentAddress> documentAddresses = new List<InfoDocumentAddress>();
+            List<InfoDocument> documentAddresses = new List<InfoDocument>();
 
+            // 2 
             // Тут запросить сразу Catalog и Registry? Или id?
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
 	                cities.City,
                     addresses.Street, 
-                    addresses.Home
+                    addresses.Home,
+                    catalogs.catalog
                 FROM 
                     cities,
-                    addresses
+                    addresses,
+                    catalogs
                 WHERE 
                     addresses.City_id = cities.City_Id
+                AND 
+                    addresses.Catalog_id = catalogs.Catalog_Id
                 ", connection))
             {
                 connection.Open();
@@ -32,10 +37,11 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoDocumentAddress documentAddressesList = new InfoDocumentAddress();
+                        InfoDocument documentAddressesList = new InfoDocument();
                         documentAddressesList.Address += dataReader["City"].ToString();
                         documentAddressesList.Address += ", " + dataReader["Street"].ToString();
                         documentAddressesList.Address += " " + dataReader["Home"].ToString();
+                        documentAddressesList.Catalog = dataReader["Catalog"].ToString();
                         documentAddresses.Add(documentAddressesList);
                     }
                     dataReader.Close();
