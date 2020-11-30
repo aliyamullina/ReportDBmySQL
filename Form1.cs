@@ -51,5 +51,6 @@ namespace ReportDBmySQL
 
             Application.Exit();
         }
+
     }
 }
