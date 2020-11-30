@@ -25,11 +25,14 @@ namespace ReportDBmySQL
 
             // Выбрать 1 папку или несколько
 
-            Database.CreateTable(connection);
-            Database.GetFillTable(connection);
+            //Database.CreateTable(connection);
+            //Database.GetFillTable(connection);
+
+            Maps.SelectAddresses(connection);
+
             //Document.CreateDocs(connection);
 
-            db.Clear();
+            //db.Clear();
 
             Application.Exit();
         }

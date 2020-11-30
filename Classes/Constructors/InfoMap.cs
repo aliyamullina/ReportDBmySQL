@@ -5,15 +5,15 @@
     /// </summary>
     public class InfoMap
     {
-        public InfoMap(string floor, string apartmentcount, string entrance)
+        public InfoMap(string floor, string flatscount, string entrance)
         {
             this.Floor = floor;
-            this.ApartmentCount = apartmentcount;
+            this.FlatsCount = flatscount;
             this.Entrance = entrance;
         }
 
         public string Floor { get; set; }
-        public string ApartmentCount { get; set; }
+        public string FlatsCount { get; set; }
         public string Entrance { get; set; }
     }
 }

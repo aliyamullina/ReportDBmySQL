@@ -110,16 +110,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Constructors\InfoMapAddress.cs" />
     <Compile Include="Classes\Methods\Adresses\GetCreate.cs" />
     <Compile Include="Classes\Methods\Adresses\GetID.cs" />
     <Compile Include="Classes\Methods\Catalogs\GetCreate.cs" />
     <Compile Include="Classes\Methods\Cities\GetCreate.cs" />
     <Compile Include="Classes\Methods\Maps\GetCreate.cs" />
     <Compile Include="Classes\Methods\Maps\GetFill.cs" />
-    <Compile Include="Classes\Methods\Maps\GetID.cs" />
     <Compile Include="Classes\Methods\Maps\GetInsert.cs" />
     <Compile Include="Classes\Database\GetFillTable.cs" />
     <Compile Include="Classes\Database\CreateTable.cs" />
+    <Compile Include="Classes\Methods\Maps\SelectAddresses.cs" />
     <Compile Include="Classes\Methods\Registers\GetCreate.cs" />
     <Compile Include="Classes\Database\Clear.cs" />
     <Compile Include="Classes\Database\Connection.cs" />

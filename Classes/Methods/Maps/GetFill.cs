@@ -7,7 +7,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается список данных карты для адресов
         /// </summary>
-        public static List<InfoMap> GetFill(List<InfoAddress> AddressesList)
+        public static List<InfoMap> GetFill()
         {
             List<InfoMap> mapsList = new List<InfoMap>();
             mapsList.Add(new InfoMap("​5 этажей", "60", "В доме 4 подъезда"));  // Высокая гора, Большая Красная, 214 
@@ -21,11 +21,7 @@ namespace ReportDBmySQL
             mapsList.Add(new InfoMap("3 этажа", "27", "В доме 3 подъезда"));   // Высокая гора, Заречная, 7 
             mapsList.Add(new InfoMap("4 этажа", "27", "В доме 3 подъезда"));   // Высокая гора, Заречная, 8 
 
-            //AddressesList:
-            //string street, 
-            //string home, 
-            //int city_id, 
-            //int catalog_id
+            // Получить данные из БД
 
             return mapsList;
         }
