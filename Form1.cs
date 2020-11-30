@@ -31,16 +31,13 @@ namespace ReportDBmySQL
 
             List<InfoMapAddress> InfoMapAddresses = Maps.SelectAddresses(connection);
 
-            listView1.Items.AddRange(
-            InfoMapAddresses.Select(
-                (row, index) => new ListViewItem(
-                    new[] { index.ToString() }
-                        .Concat((IEnumerable<string>)row)
-                        .ToArray()
-                    )
-                )
-                .ToArray()
-            );
+            foreach (InfoMapAddress item in InfoMapAddresses)
+            {
+                var lvi = new ListViewItem(new[] { item.Address});
+                listView1.Items.Add(lvi);
+            }
+
+            listView1.Refresh();
 
             //Maps.GetFill();
 
@@ -48,7 +45,7 @@ namespace ReportDBmySQL
 
             //db.Clear();
 
-            Application.Exit();
+            //Application.Exit();
         }
     }
 }
