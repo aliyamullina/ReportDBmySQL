@@ -14,7 +14,7 @@ namespace ReportDBmySQL
         {
             var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 
-            List<InfoDocument> infoDocuments = GetInfoDocument(connection);
+            List<InfoDocument> infoDocuments = SelectInfoDocument(connection);
 
             foreach (InfoDocument info in infoDocuments)
             {

@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает все адреса из БД: City, Street, Home, Catalog
         /// </summary>
-        public static List<InfoDocument> GetInfoDocument(MySqlConnection connection)
+        public static List<InfoDocument> SelectInfoDocument(MySqlConnection connection)
         {
             List<InfoDocument> infoDocuments = new List<InfoDocument>();
 
