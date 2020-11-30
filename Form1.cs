@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -30,8 +31,16 @@ namespace ReportDBmySQL
 
             List<InfoMapAddress> InfoMapAddresses = Maps.SelectAddresses(connection);
 
-            listView1.DataSource = InfoMapAddresses;
-            listView1.DataBind();
+            listView1.Items.AddRange(
+            InfoMapAddresses.Select(
+                (row, index) => new ListViewItem(
+                    new[] { index.ToString() }
+                        .Concat((IEnumerable<string>)row)
+                        .ToArray()
+                    )
+                )
+                .ToArray()
+            );
 
             //Maps.GetFill();
 
