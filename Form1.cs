@@ -30,8 +30,9 @@ namespace ReportDBmySQL
 
             Maps.SelectAddresses(connection);
 
-            Form2 f2 = new Form2();
-            f2.Show();
+            //Form2 f2 = new Form2();
+            
+            //f2.Show();
 
             // передать List<InfoMapAddress> InfoMapAddresses в listView1 f2
 
