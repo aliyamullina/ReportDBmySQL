@@ -45,9 +45,9 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(26, 109);
+            this.button1.Location = new System.Drawing.Point(19, 105);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(85, 25);
             this.button1.TabIndex = 0;
             this.button1.Text = "Выбрать";
             this.button1.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 48);
+            this.label1.Location = new System.Drawing.Point(16, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 1;
@@ -109,9 +109,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(26, 102);
+            this.button2.Location = new System.Drawing.Point(19, 100);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(85, 25);
             this.button2.TabIndex = 1;
             this.button2.Text = "Создать";
             this.button2.UseVisualStyleBackColor = true;
@@ -120,11 +120,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 47);
+            this.label2.Location = new System.Drawing.Point(16, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Создать отчет";
+            this.label2.Text = "Создайте отчет";
             // 
             // Form1
             // 
