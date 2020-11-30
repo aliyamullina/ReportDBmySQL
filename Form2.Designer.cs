@@ -55,7 +55,7 @@ namespace ReportDBmySQL
             // 
             this.textBox1.Location = new System.Drawing.Point(17, 61);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 22);
+            this.textBox1.Size = new System.Drawing.Size(218, 22);
             this.textBox1.TabIndex = 1;
             // 
             // listView1
@@ -89,14 +89,14 @@ namespace ReportDBmySQL
             // 
             this.textBox2.Location = new System.Drawing.Point(19, 119);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 22);
+            this.textBox2.Size = new System.Drawing.Size(216, 22);
             this.textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(19, 193);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 22);
+            this.textBox3.Size = new System.Drawing.Size(216, 22);
             this.textBox3.TabIndex = 6;
             // 
             // groupBox1
@@ -123,21 +123,23 @@ namespace ReportDBmySQL
             this.button1.TabIndex = 8;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(232, 350);
+            this.button2.Location = new System.Drawing.Point(231, 348);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
             this.button2.Text = "Отправить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 393);
+            this.ClientSize = new System.Drawing.Size(836, 383);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listView1);
