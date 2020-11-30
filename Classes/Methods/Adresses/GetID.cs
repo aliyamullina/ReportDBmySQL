@@ -9,6 +9,7 @@ namespace ReportDBmySQL
         {
             List<InfoAddress> AddressesList = GetFill(catalog_id, path);
             GetInsert(AddressesList, connection);
+            Maps.GetID(connection, AddressesList);
         }
     }
 }

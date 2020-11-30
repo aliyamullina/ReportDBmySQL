@@ -5,10 +5,13 @@ namespace ReportDBmySQL
 {
     public partial class Maps
     {
-        public static void GetID(MySqlConnection connection, int catalog_id, List<InfoCatalog> path)
+        /// <summary>
+        /// Создается список данных карты для адресов
+        /// </summary>
+        public static void GetID(MySqlConnection connection, List<InfoAddress> AddressesList)
         {
-            List<InfoRegistry> RegistersList = GetFill(catalog_id, path);
-            GetInsert(RegistersList, connection);
+            List<InfoMap> MapList = GetFill(AddressesList);
+            GetInsert(MapList, connection);
         }
     }
 }

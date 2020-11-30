@@ -27,7 +27,7 @@ namespace ReportDBmySQL
 
             Database.CreateTable(connection);
             Database.GetFillTable(connection);
-            Document.CreateDocs(connection);
+            //Document.CreateDocs(connection);
 
             db.Clear();
 
