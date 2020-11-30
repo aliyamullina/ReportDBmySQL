@@ -17,8 +17,6 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
-            
-
             // Опредалять город
 
             // Находить дату
@@ -35,7 +33,10 @@ namespace ReportDBmySQL
             Form2 f2 = new Form2();
             f2.Show();
 
-            //listView1
+            // передать List<InfoMapAddress> InfoMapAddresses в listView1 f2
+
+            // получить из listView1 f2 в List<InfoMap> mapsList
+            Maps.GetFill();
 
             //Document.CreateDocs(connection);
 
