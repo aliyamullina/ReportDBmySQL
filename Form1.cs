@@ -33,11 +33,11 @@ namespace ReportDBmySQL
 
             List<InfoMapAddress> InfoMapAddresses = Maps.SelectAddresses(connection);
 
-
+            //c#  dataGridView1 from list
 
             //Maps.GetFill();
 
-            
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
