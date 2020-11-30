@@ -16,7 +16,7 @@ namespace ReportDBmySQL
                 SELECT 
 	                cities.City,
                     addresses.Street, 
-                    addresses.Home,
+                    addresses.Home
                 FROM 
                     cities,
                     addresses
