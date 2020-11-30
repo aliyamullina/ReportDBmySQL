@@ -12,7 +12,7 @@ namespace ReportDBmySQL
         private static void GetFillTable(WordprocessingDocument WordDoc, string fN, MySqlConnection connection)
         {
             Table table = new Table();
-            GetCreateTableProperties(table);
+            CreateTableProperties(table);
             GetFillTableHead(table);
             GetFillTableBody(table, fN, connection);
             WordDoc.MainDocumentPart.Document.Body.Append(table);

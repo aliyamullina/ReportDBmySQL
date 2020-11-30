@@ -10,7 +10,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        public static void GetCreateDocs(MySqlConnection connection)
+        public static void CreateDocs(MySqlConnection connection)
         {
             var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 

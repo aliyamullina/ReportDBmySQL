@@ -114,6 +114,9 @@
     <Compile Include="Classes\DatabaseTables\Adresses\GetID.cs" />
     <Compile Include="Classes\DatabaseTables\Catalogs\GetCreate.cs" />
     <Compile Include="Classes\DatabaseTables\Cities\GetCreate.cs" />
+    <Compile Include="Classes\DatabaseTables\Maps\GetCreate.cs" />
+    <Compile Include="Classes\DatabaseTables\Maps\GetFill.cs" />
+    <Compile Include="Classes\DatabaseTables\Maps\GetInsert.cs" />
     <Compile Include="Classes\Database\CreateTable.cs" />
     <Compile Include="Classes\DatabaseTables\Registers\GetCreate.cs" />
     <Compile Include="Classes\Database\Clear.cs" />
@@ -132,13 +135,14 @@
     <Compile Include="Classes\DatabaseTables\Catalogs\GetFill.cs" />
     <Compile Include="Classes\DatabaseTables\Cities\GetFill.cs" />
     <Compile Include="Classes\DatabaseTables\Registers\GetFill.cs" />
-    <Compile Include="Classes\Document\GetCreateDocs.cs" />
-    <Compile Include="Classes\Document\GetCreateTableProperties.cs" />
+    <Compile Include="Classes\Document\CreateDocs.cs" />
+    <Compile Include="Classes\Document\CreateTableProperties.cs" />
     <Compile Include="Classes\Document\GetFillDoc.cs" />
     <Compile Include="Classes\Document\GetFillTable.cs" />
     <Compile Include="Classes\Document\GetFillTableBody.cs" />
     <Compile Include="Classes\Document\GetFillTableHead.cs" />
     <Compile Include="Classes\Document\GetDocumentTemplate.cs" />
+    <Compile Include="Classes\InfoMap.cs" />
     <Compile Include="Classes\InfoDocumentTable.cs" />
     <Compile Include="Classes\InfoDocument.cs" />
     <Compile Include="Classes\InfoCatalog.cs" />

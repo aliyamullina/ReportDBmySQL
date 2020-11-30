@@ -33,7 +33,7 @@ namespace ReportDBmySQL
             List<InfoCatalog> CatalogsInsert = Catalogs.GetFill();
             Catalogs.GetInsert(CatalogsInsert, connection);
 
-            Document.GetCreateDocs(connection);
+            Document.CreateDocs(connection);
 
             db.Clear();
 
