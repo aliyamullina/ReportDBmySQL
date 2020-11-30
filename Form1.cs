@@ -28,11 +28,12 @@ namespace ReportDBmySQL
             //Database.CreateTable(connection);
             //Database.GetFillTable(connection);
 
-            Maps.SelectAddresses(connection);
+            List<InfoMapAddress> InfoMapAddresses = Maps.SelectAddresses(connection);
 
+            listView1.DataSource = InfoMapAddresses;
+            listView1.DataBind();
 
-
-            Maps.GetFill();
+            //Maps.GetFill();
 
             //Document.CreateDocs(connection);
 
