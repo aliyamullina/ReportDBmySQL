@@ -26,13 +26,7 @@ namespace ReportDBmySQL
             // Выбрать 1 папку или несколько
 
             Database.CreateTable(connection);
-
-            List<InfoCity> CitiesList = Cities.GetFill();
-            Cities.GetInsert(CitiesList, connection);
-
-            List<InfoCatalog> CatalogsInsert = Catalogs.GetFill();
-            Catalogs.GetInsert(CatalogsInsert, connection);
-
+            Database.GetFillTable(connection);
             Document.CreateDocs(connection);
 
             db.Clear();
