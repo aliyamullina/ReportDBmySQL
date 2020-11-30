@@ -5,7 +5,7 @@ namespace ReportDBmySQL
     public partial class Maps
     {
         /// <summary>
-        /// 
+        /// Создается таблица карты
         /// </summary>
         public static void GetCreate(MySqlConnection connection)
         {

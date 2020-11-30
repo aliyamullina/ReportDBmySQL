@@ -1,7 +1,7 @@
 ﻿namespace ReportDBmySQL
 {
     /// <summary>
-    /// Город: название города
+    /// Карта: данные с карты, этаж, количество квартир, число подъездов
     /// </summary>
     public class InfoMap
     {

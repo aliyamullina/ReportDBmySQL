@@ -5,7 +5,7 @@ namespace ReportDBmySQL
     public partial class Maps
     {
         /// <summary>
-        /// Берет данные из массива и передает в коллекцию
+        /// Создается список данных карты для адресов
         /// </summary>
         public static List<InfoMap> GetFill()
         {
