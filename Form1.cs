@@ -24,6 +24,10 @@ namespace ReportDBmySQL
             // Найти каталоги, где нет отчета ппо
             // Выдать список адресов для 2гиса)
 
+            // Выбрать 1 папку или несколько
+
+            // Добавить слово Реестр к xlsx рядом с актом
+
             Database.CreateTable(connection);
 
             List<InfoCity> CitiesList = Cities.GetFill();
