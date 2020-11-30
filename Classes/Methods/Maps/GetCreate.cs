@@ -13,7 +13,7 @@ namespace ReportDBmySQL
                 CREATE TABLE IF NOT EXISTS Maps
                 (Map_Id INT AUTO_INCREMENT PRIMARY KEY, 
                 Floor VARCHAR(30) NOT NULL,
-                Apartment VARCHAR(30) NOT NULL,
+                ApartmentCount VARCHAR(30) NOT NULL,
                 Entrance VARCHAR(30) NOT NULL
                 );", connection))
             {

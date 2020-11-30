@@ -30,6 +30,7 @@ namespace ReportDBmySQL
                     List<InfoCatalog> path = GetSelect(connection, catalog_id);
 
                     Adresses.GetID(connection, catalog_id, path);
+                    Maps.GetID(connection, catalog_id, path);
                     Registers.GetID(connection, catalog_id, path);
                 }
                 connection.Close();

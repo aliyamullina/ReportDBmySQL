@@ -110,32 +110,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Adresses\GetCreate.cs" />
-    <Compile Include="Classes\Adresses\GetID.cs" />
-    <Compile Include="Classes\Catalogs\GetCreate.cs" />
-    <Compile Include="Classes\Cities\GetCreate.cs" />
-    <Compile Include="Classes\Maps\GetCreate.cs" />
-    <Compile Include="Classes\Maps\GetFill.cs" />
-    <Compile Include="Classes\Maps\GetInsert.cs" />
+    <Compile Include="Classes\Methods\Adresses\GetCreate.cs" />
+    <Compile Include="Classes\Methods\Adresses\GetID.cs" />
+    <Compile Include="Classes\Methods\Catalogs\GetCreate.cs" />
+    <Compile Include="Classes\Methods\Cities\GetCreate.cs" />
+    <Compile Include="Classes\Methods\Maps\GetCreate.cs" />
+    <Compile Include="Classes\Methods\Maps\GetFill.cs" />
+    <Compile Include="Classes\Methods\Maps\GetID.cs" />
+    <Compile Include="Classes\Methods\Maps\GetInsert.cs" />
     <Compile Include="Classes\Database\GetFillTable.cs" />
     <Compile Include="Classes\Database\CreateTable.cs" />
-    <Compile Include="Classes\Registers\GetCreate.cs" />
+    <Compile Include="Classes\Methods\Registers\GetCreate.cs" />
     <Compile Include="Classes\Database\Clear.cs" />
     <Compile Include="Classes\Database\Connection.cs" />
     <Compile Include="Classes\Database\Create.cs" />
-    <Compile Include="Classes\Catalogs\GetSelect.cs" />
+    <Compile Include="Classes\Methods\Catalogs\GetSelect.cs" />
     <Compile Include="Classes\Document\GetInfoDocument.cs" />
     <Compile Include="Classes\Document\GetInfoDocumentTable.cs" />
-    <Compile Include="Classes\Adresses\GetInsert.cs" />
-    <Compile Include="Classes\Catalogs\GetInsert.cs" />
-    <Compile Include="Classes\Cities\GetInsert.cs" />
-    <Compile Include="Classes\Registers\GetID.cs" />
-    <Compile Include="Classes\Registers\GetInsert.cs" />
-    <Compile Include="Classes\Registers\GetExcelTableRead.cs" />
-    <Compile Include="Classes\Adresses\GetFill.cs" />
-    <Compile Include="Classes\Catalogs\GetFill.cs" />
-    <Compile Include="Classes\Cities\GetFill.cs" />
-    <Compile Include="Classes\Registers\GetFill.cs" />
+    <Compile Include="Classes\Methods\Adresses\GetInsert.cs" />
+    <Compile Include="Classes\Methods\Catalogs\GetInsert.cs" />
+    <Compile Include="Classes\Methods\Cities\GetInsert.cs" />
+    <Compile Include="Classes\Methods\Registers\GetID.cs" />
+    <Compile Include="Classes\Methods\Registers\GetInsert.cs" />
+    <Compile Include="Classes\Methods\Registers\GetExcelTableRead.cs" />
+    <Compile Include="Classes\Methods\Adresses\GetFill.cs" />
+    <Compile Include="Classes\Methods\Catalogs\GetFill.cs" />
+    <Compile Include="Classes\Methods\Cities\GetFill.cs" />
+    <Compile Include="Classes\Methods\Registers\GetFill.cs" />
     <Compile Include="Classes\Document\CreateDocs.cs" />
     <Compile Include="Classes\Document\CreateTableProperties.cs" />
     <Compile Include="Classes\Document\GetFillDoc.cs" />
@@ -143,14 +144,14 @@
     <Compile Include="Classes\Document\GetFillTableBody.cs" />
     <Compile Include="Classes\Document\GetFillTableHead.cs" />
     <Compile Include="Classes\Document\GetDocumentTemplate.cs" />
-    <Compile Include="Classes\Info\InfoMap.cs" />
-    <Compile Include="Classes\Info\InfoDocumentTable.cs" />
-    <Compile Include="Classes\Info\InfoDocument.cs" />
-    <Compile Include="Classes\Info\InfoCatalog.cs" />
-    <Compile Include="Classes\Info\InfoRegistry.cs" />
-    <Compile Include="Classes\Info\InfoAddress.cs" />
-    <Compile Include="Classes\Info\InfoCity.cs" />
-    <Compile Include="Classes\Info\InfoDate.cs" />
+    <Compile Include="Classes\Constructors\InfoMap.cs" />
+    <Compile Include="Classes\Constructors\InfoDocumentTable.cs" />
+    <Compile Include="Classes\Constructors\InfoDocument.cs" />
+    <Compile Include="Classes\Constructors\InfoCatalog.cs" />
+    <Compile Include="Classes\Constructors\InfoRegistry.cs" />
+    <Compile Include="Classes\Constructors\InfoAddress.cs" />
+    <Compile Include="Classes\Constructors\InfoCity.cs" />
+    <Compile Include="Classes\Constructors\InfoDate.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
