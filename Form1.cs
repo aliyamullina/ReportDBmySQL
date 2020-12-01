@@ -31,7 +31,7 @@ namespace ReportDBmySQL
             //Database.GetFillTable(connection);
 
             // Узел
-            List<TreeNode> nodeList = Node.SelectAddresses(connection);
+            List<InfoNode> nodeList = Node.SelectAddresses(connection);
 
             LoadTree(treeView1, nodeList);
 
@@ -39,7 +39,7 @@ namespace ReportDBmySQL
 
         }
 
-        public static void LoadTree(TreeView treeView1, List<TreeNode> nodeList)
+        public static void LoadTree(TreeView treeView1, List<InfoNode> nodeList)
         {
             // ​5 этажей, 60, В доме 4 подъезда
             //Address
@@ -47,25 +47,15 @@ namespace ReportDBmySQL
             //    - FlatsCount
             //    - Entrance
 
-            //TreeNode Address = new TreeNode("Address", nodeList.Select(x => new TreeNode(x.Address)).ToArray());
-
-            //TreeNodeCollection Floor = new TreeNode("Floor", nodeList.Select(x => new TreeNode(x.Floor)).ToArray());
-            //TreeNodeCollection FlatsCount = new TreeNode("FlatsCount", nodeList.Select(x => new TreeNode(x.FlatsCount)).ToArray());
-            //TreeNodeCollection Entrance = new TreeNode("Entrance", nodeList.Select(x => new TreeNode(x.Entrance)).ToArray());
-
-            //treeView1.Nodes.AddRange(new[] 
-            //{ 
-            //    Floor, FlatsCount, Entrance 
-            //});
-
-            //TreeNodeCollection items;
-            //TreeNode treeNode = items.Add(food.Item1);
-
-            List<TreeNode> treeNodeList = new List<TreeNode>();
-
-            foreach (TreeNode n in nodeList)
+            foreach (InfoNode parent in nodeList)
             {
-                treeNodeList.Add(n);
+                TreeNode nodeHead = treeView1.Nodes.Add(parent.Address);
+
+                foreach (var child in nodeList)
+                {
+                    TreeNode FloorNode = nodeHead.Nodes.Add(child.Floor);
+                    TreeNode FlatsNode = nodeHead.Nodes.Add(child.FlatsCount);
+                }
             }
         }
 
