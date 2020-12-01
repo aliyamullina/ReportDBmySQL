@@ -35,7 +35,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,13 +78,13 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox2.Controls.Add(this.richTextBox1);
+            this.groupBox2.Controls.Add(this.treeView1);
             this.groupBox2.Location = new System.Drawing.Point(142, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(572, 297);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Шаг 2. Введите данные с карты";
+            this.groupBox2.Text = "Шаг 2. Введите данные";
             // 
             // groupBox3
             // 
@@ -116,13 +116,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Создайте отчет";
             // 
-            // richTextBox1
+            // treeView1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(11, 21);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(555, 270);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.treeView1.Location = new System.Drawing.Point(15, 21);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(551, 270);
+            this.treeView1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -152,7 +151,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
 
