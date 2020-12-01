@@ -43,8 +43,8 @@ namespace ReportDBmySQL
             //сохранить в бд
 
             // https://stackoverflow.com/questions/40009277/speed-up-the-loading-a-list-of-strings-to-a-treeview
-            treeView1.Nodes.Add("Загрузка...");
-            Task.Run(() => LoadTree(InfoMapAddresses, mapsList));
+
+            LoadTree(InfoMapAddresses, mapsList);
 
             //Maps.GetFill();
 
@@ -55,10 +55,11 @@ namespace ReportDBmySQL
         {
             // Code Using Linq
             TreeNode addressList = new TreeNode("addressList", InfoMapAddresses.Select(x => new TreeNode(x.Address)).ToArray());
+            TreeNode childList = new TreeNode("addressList", mapsList.Select(x => new TreeNode(x.Floor)).ToArray());
 
             //parent nodes
             treeView1.Nodes.AddRange(new[] {
-            new TreeNode("Address", new TreeNode[] { addressList })
+            new TreeNode("Address", new TreeNode[] { addressList, childList })
             });
         }
 
