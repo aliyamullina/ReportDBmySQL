@@ -32,8 +32,13 @@ namespace ReportDBmySQL
             //Database.GetFillTable(connection);
 
             List<InfoMapAddress> InfoMapAddresses = Maps.SelectAddresses(connection);
+            List<InfoMap> mapsList = Maps.GetFill();
 
-            //c#  dataGridView1 from list
+            //получить список адресов
+            //к нему добавить список из карты
+            //сохранить в бд
+
+
 
             //Maps.GetFill();
 
