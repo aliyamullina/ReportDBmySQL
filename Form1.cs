@@ -33,13 +33,13 @@ namespace ReportDBmySQL
             // Узел
             List<InfoNode> nodeList = Node.SelectAddresses(connection);
 
-            treeView1.Nodes.Add(LoadTree(nodeList));
+            LoadTree(treeView1, nodeList);
 
             //Maps.GetFill();
 
         }
 
-        public static TreeNode LoadTree(List<InfoNode> nodeList)
+        public static void LoadTree( TreeView treeView1, List<InfoNode> nodeList)
         {
             // ​5 этажей, 60, В доме 4 подъезда
             //Address
@@ -47,23 +47,16 @@ namespace ReportDBmySQL
             //    - FlatsCount
             //    - Entrance
 
-            //var rootNode = new TreeNode("Address", nodeList.Select(x => new TreeNode(x.Address)).ToArray());
+            TreeNode Address = new TreeNode("Address", nodeList.Select(x => new TreeNode(x.Address)).ToArray());
+            TreeNode Floor = new TreeNode("Floor", nodeList.Select(x => new TreeNode(x.Floor)).ToArray());
+            TreeNode FlatsCount = new TreeNode("FlatsCount", nodeList.Select(x => new TreeNode(x.FlatsCount)).ToArray());
+            TreeNode Entrance = new TreeNode("Entrance", nodeList.Select(x => new TreeNode(x.Entrance)).ToArray());
 
-            TreeNode thisnode = new TreeNode();
-            TreeNode currentnode;
+            treeView1.Nodes.AddRange(new[] 
+            { 
+                Floor, FlatsCount, Entrance 
+            });
 
-            foreach (var n in nodeList)
-            {
-                var Address = n.Address;
-                var Floor = n.Floor;
-                var FlatsCount = n.FlatsCount;
-                var Entrance = n.Entrance;
-
-                currentnode = thisnode;
-                currentnode = currentnode.Nodes.Add(Floor, FlatsCount, Entrance);
-
-            }
-            return thisnode;
         }
 
         private void Button2_Click(object sender, EventArgs e)
