@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -31,18 +31,27 @@ namespace ReportDBmySQL
             //Database.CreateTable(connection);
             //Database.GetFillTable(connection);
 
+            // Узел
             List<InfoMapAddress> InfoMapAddresses = Maps.SelectAddresses(connection);
+
+            // Подузел
             List<InfoMap> mapsList = Maps.GetFill();
 
             //получить список адресов
             //к нему добавить список из карты
             //сохранить в бд
 
-
+            treeView1.Nodes.Add("Загрузка...");
+            Task.Run(() => LoadTree());
 
             //Maps.GetFill();
 
 
+        }
+
+        private void LoadTree()
+        {
+            throw new NotImplementedException();
         }
 
         private void Button2_Click(object sender, EventArgs e)
