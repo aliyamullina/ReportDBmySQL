@@ -35,6 +35,10 @@ namespace ReportDBmySQL
                         infoNodeList.Address += ", " + dataReader["Street"].ToString();
                         infoNodeList.Address += " " + dataReader["Home"].ToString();
 
+                        infoNodeList.Floor = "Введите количество этажей";
+                        infoNodeList.FlatsCount = "Введите количество квартир";
+                        infoNodeList.Entrance = "Введите количество подъездов";
+
                         nodeList.Add(infoNodeList);
                     }
                     dataReader.Close();

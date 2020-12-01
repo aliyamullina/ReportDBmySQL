@@ -42,6 +42,10 @@ namespace ReportDBmySQL
         private void LoadTree(List<InfoNode> nodeList)
         {
             // ​5 этажей, 60, В доме 4 подъезда
+            //Address
+            //    - Floor
+            //    - FlatsCount
+            //    - Entrance
             TreeNode Address = new TreeNode("Address", nodeList.Select(x => new TreeNode(x.Address)).ToArray());
             TreeNode Floor = new TreeNode("Floor", nodeList.Select(x => new TreeNode(x.Floor)).ToArray());
             TreeNode FlatsCount = new TreeNode("FlatsCount", nodeList.Select(x => new TreeNode(x.FlatsCount)).ToArray());
