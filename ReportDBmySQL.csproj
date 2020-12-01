@@ -118,6 +118,7 @@
     <Compile Include="Classes\Methods\Maps\GetCreate.cs" />
     <Compile Include="Classes\Database\GetFillTable.cs" />
     <Compile Include="Classes\Database\CreateTable.cs" />
+    <Compile Include="Classes\Methods\Node\LoadTree.cs" />
     <Compile Include="Classes\Methods\Node\SelectAddresses.cs" />
     <Compile Include="Classes\Methods\Registers\GetCreate.cs" />
     <Compile Include="Classes\Database\Clear.cs" />
