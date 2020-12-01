@@ -47,16 +47,25 @@ namespace ReportDBmySQL
             //    - FlatsCount
             //    - Entrance
 
-            foreach (InfoNode parent in nodeList)
-            {
-                TreeNode nodeHead = treeView1.Nodes.Add(parent.Address);
+            treeView1.Nodes.Clear();
 
-                foreach (var child in nodeList)
-                {
-                    TreeNode FloorNode = nodeHead.Nodes.Add(child.Floor);
-                    TreeNode FlatsNode = nodeHead.Nodes.Add(child.FlatsCount);
-                }
+            List<TreeNode> TestNodes = new List<TreeNode>();
+
+            foreach (InfoNode item in nodeList)
+            {
+                //List<TreeNode> parent = new List<TreeNode>();
+
+                List<TreeNode> child = new List<TreeNode>();
+
+                child.Add(new TreeNode(item.Floor, child.ToArray()));
+                child.Add(new TreeNode(item.FlatsCount, child.ToArray()));
+                child.Add(new TreeNode(item.Entrance, child.ToArray()));
+
+                TestNodes.Add(new TreeNode(item.Address, child.ToArray()));
+
             }
+
+            treeView1.Nodes.AddRange(TestNodes.ToArray());
         }
 
         private void Button2_Click(object sender, EventArgs e)
