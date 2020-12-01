@@ -116,19 +116,21 @@
             // treeView1
             // 
             this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.treeView1.Location = new System.Drawing.Point(15, 21);
+            this.treeView1.Location = new System.Drawing.Point(6, 19);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(411, 270);
+            this.treeView1.Size = new System.Drawing.Size(427, 272);
             this.treeView1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 315);
+            this.ClientSize = new System.Drawing.Size(589, 311);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(610, 600);
+            this.MinimumSize = new System.Drawing.Size(605, 350);
             this.Name = "Form1";
             this.Text = "Отчет ППО";
             this.groupBox1.ResumeLayout(false);
