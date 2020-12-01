@@ -110,7 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Constructors\TreeNode.cs" />
+    <Compile Include="Classes\Constructors\InfoNode.cs" />
     <Compile Include="Classes\Methods\Adresses\GetCreate.cs" />
     <Compile Include="Classes\Methods\Adresses\GetID.cs" />
     <Compile Include="Classes\Methods\Catalogs\GetCreate.cs" />

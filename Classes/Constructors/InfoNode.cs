@@ -3,13 +3,13 @@
     /// <summary>
     /// Адрес: улица, дом, id города, id каталога
     /// </summary>
-    public class TreeNode
+    public class InfoNode
     {
-        public TreeNode()
+        public InfoNode()
         {
         }
 
-        public TreeNode(string address, string floor, string flatscount, string entrance)
+        public InfoNode(string address, string floor, string flatscount, string entrance)
         {
             this.Address = address;
             this.Floor = floor;
