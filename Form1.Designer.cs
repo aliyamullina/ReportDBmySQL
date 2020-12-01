@@ -81,7 +81,7 @@
             this.groupBox2.Controls.Add(this.treeView1);
             this.groupBox2.Location = new System.Drawing.Point(142, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(572, 297);
+            this.groupBox2.Size = new System.Drawing.Size(439, 297);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Шаг 2. Введите данные";
@@ -120,14 +120,14 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(15, 21);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(551, 270);
+            this.treeView1.Size = new System.Drawing.Size(411, 270);
             this.treeView1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 315);
+            this.ClientSize = new System.Drawing.Size(589, 315);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
