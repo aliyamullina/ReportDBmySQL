@@ -27,40 +27,28 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
-            
-
             //Database.CreateTable(connection);
             //Database.GetFillTable(connection);
 
             // Узел
-            List<InfoMapAddress> InfoMapAddresses = Maps.SelectAddresses(connection);
+            List<InfoNode> nodeList = Node.SelectAddresses(connection);
 
-            // Подузел
-            List<InfoMap> mapsList = Maps.GetFill();
-
-            //получить список адресов
-            //к нему добавить список из карты
-            //сохранить в бд
-
-            // https://stackoverflow.com/questions/40009277/speed-up-the-loading-a-list-of-strings-to-a-treeview
-
-            LoadTree(InfoMapAddresses, mapsList);
+            LoadTree(nodeList);
 
             //Maps.GetFill();
 
-
         }
 
-        private void LoadTree(List<InfoMapAddress> InfoMapAddresses, List<InfoMap> mapsList)
+        private void LoadTree(List<InfoNode> nodeList)
         {
-            // Code Using Linq
-            TreeNode addressList = new TreeNode("addressList", InfoMapAddresses.Select(x => new TreeNode(x.Address)).ToArray());
-            TreeNode childList = new TreeNode("addressList", mapsList.Select(x => new TreeNode(x.Floor)).ToArray());
+            // ​5 этажей, 60, В доме 4 подъезда
+            TreeNode Address = new TreeNode("Address", nodeList.Select(x => new TreeNode(x.Address)).ToArray());
+            TreeNode Floor = new TreeNode("Floor", nodeList.Select(x => new TreeNode(x.Floor)).ToArray());
+            TreeNode FlatsCount = new TreeNode("FlatsCount", nodeList.Select(x => new TreeNode(x.FlatsCount)).ToArray());
+            TreeNode Entrance = new TreeNode("Entrance", nodeList.Select(x => new TreeNode(x.Entrance)).ToArray());
 
             //parent nodes
-            treeView1.Nodes.AddRange(new[] {
-            new TreeNode("Address", new TreeNode[] { addressList, childList })
-            });
+            treeView1.Nodes.AddRange(new[] { Address, Floor, FlatsCount, Entrance });
         }
 
         private void Button2_Click(object sender, EventArgs e)

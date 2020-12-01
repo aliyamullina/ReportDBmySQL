@@ -110,17 +110,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Constructors\InfoMapAddress.cs" />
+    <Compile Include="Classes\Constructors\InfoNode.cs" />
     <Compile Include="Classes\Methods\Adresses\GetCreate.cs" />
     <Compile Include="Classes\Methods\Adresses\GetID.cs" />
     <Compile Include="Classes\Methods\Catalogs\GetCreate.cs" />
     <Compile Include="Classes\Methods\Cities\GetCreate.cs" />
     <Compile Include="Classes\Methods\Maps\GetCreate.cs" />
-    <Compile Include="Classes\Methods\Maps\GetFill.cs" />
-    <Compile Include="Classes\Methods\Maps\GetInsert.cs" />
     <Compile Include="Classes\Database\GetFillTable.cs" />
     <Compile Include="Classes\Database\CreateTable.cs" />
-    <Compile Include="Classes\Methods\Maps\SelectAddresses.cs" />
+    <Compile Include="Classes\Methods\Node\SelectAddresses.cs" />
     <Compile Include="Classes\Methods\Registers\GetCreate.cs" />
     <Compile Include="Classes\Database\Clear.cs" />
     <Compile Include="Classes\Database\Connection.cs" />
@@ -145,7 +143,6 @@
     <Compile Include="Classes\Document\GetFillTableBody.cs" />
     <Compile Include="Classes\Document\GetFillTableHead.cs" />
     <Compile Include="Classes\Document\GetDocumentTemplate.cs" />
-    <Compile Include="Classes\Constructors\InfoMap.cs" />
     <Compile Include="Classes\Constructors\InfoDocumentTable.cs" />
     <Compile Include="Classes\Constructors\InfoDocument.cs" />
     <Compile Include="Classes\Constructors\InfoCatalog.cs" />

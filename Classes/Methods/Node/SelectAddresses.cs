@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Maps
+    public partial class Node
     {
         /// <summary>
         /// Возвращает все адреса из БД: City, Street, Home, Catalog
         /// </summary>
-        public static List<InfoMapAddress> SelectAddresses(MySqlConnection connection)
+        public static List<InfoNode> SelectAddresses(MySqlConnection connection)
         {
-            List<InfoMapAddress> InfoMapAddresses = new List<InfoMapAddress>();
+            List<InfoNode> nodeList = new List<InfoNode>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
@@ -30,20 +30,18 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoMapAddress infoMapsList = new InfoMapAddress();
-                        infoMapsList.Address += dataReader["City"].ToString();
-                        infoMapsList.Address += ", " + dataReader["Street"].ToString();
-                        infoMapsList.Address += " " + dataReader["Home"].ToString();
+                        InfoNode infoNodeList = new InfoNode();
+                        infoNodeList.Address += dataReader["City"].ToString();
+                        infoNodeList.Address += ", " + dataReader["Street"].ToString();
+                        infoNodeList.Address += " " + dataReader["Home"].ToString();
 
-                        // Высокая гора, Большая Красная, 214 
-                        // Высокая гора, Большая Красная, 216 
-                        InfoMapAddresses.Add(infoMapsList);
+                        nodeList.Add(infoNodeList);
                     }
                     dataReader.Close();
                 }
                 connection.Close();
             }
-            return InfoMapAddresses;
+            return nodeList;
         }
     }
 }
