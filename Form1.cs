@@ -32,9 +32,9 @@ namespace ReportDBmySQL
 
             List<InfoNode> nodeList = Node.SelectAddresses(connection);
 
-            Node.LoadTree(treeView1, nodeList);
+            List<InfoNode> nodeListEdit = Node.LoadTree(treeView1, nodeList);
 
-            //Maps.GetFill();
+            Node.GetInsert(nodeListEdit, connection);
 
         }
 

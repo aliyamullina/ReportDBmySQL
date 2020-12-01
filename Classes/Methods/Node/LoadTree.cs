@@ -11,9 +11,10 @@ namespace ReportDBmySQL
         /// - FlatsCount 60
         /// - Entrance В доме 4 подъезда
         /// </summary>
-        public static void LoadTree(TreeView treeView1, List<InfoNode> nodeList)
+        public static List<TreeNode> LoadTree(TreeView treeView1, List<InfoNode> nodeList)
         {
             treeView1.Nodes.Clear();
+            treeView1.LabelEdit = true;
 
             List<TreeNode> TestNodes = new List<TreeNode>();
 
@@ -30,6 +31,8 @@ namespace ReportDBmySQL
             }
 
             treeView1.Nodes.AddRange(TestNodes.ToArray());
+
+            return TestNodes;
         }
     }
 }
