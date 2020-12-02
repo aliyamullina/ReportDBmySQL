@@ -1,8 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -14,15 +12,7 @@ namespace ReportDBmySQL
             InitializeComponent();
         }
 
-        // Опредалять город
-
-        // Находить дату
-
-        // Найти каталоги, где нет отчета ппо
-
-        // Выбрать 1 папку или несколько
-
-        private void Button1_Click(object sender, System.EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
@@ -34,13 +24,14 @@ namespace ReportDBmySQL
 
             Node.LoadTree(treeView1, nodeList);
 
-            // c# treeView after edit site:stackoverflow.com
+            // По клику на узел обрабатывать изменения в БД и запрещать менять (окрашивать в серый)
 
-            treeView1.BeginInvoke(new MethodInvoker(treeView1.Sort));
+            //node.Name
+            //node.Nodes
 
-            List<InfoNode> nodeListEdit = Node.GetFill(treeView1);
+            //List<InfoNode> nodeListEdit = Node.GetFill(treeView1);
 
-            Node.GetInsert(nodeListEdit, connection);
+            //Node.GetInsert(nodeListEdit, connection);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -55,5 +46,9 @@ namespace ReportDBmySQL
             Application.Exit();
         }
 
+        private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+            MessageBox.Show("Argg!");
+        }
     }
 }

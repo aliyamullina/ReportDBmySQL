@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -12,10 +13,15 @@ namespace ReportDBmySQL
         {
             List<InfoNode> nodeListEdit = new List<InfoNode>();
 
-            foreach (TreeNode node in treeView1.Nodes)
-            {
-                nodeListEdit.Add(node.Name);
-            }
+            // c# treeView after edit site:stackoverflow.com
+            treeView1.BeginInvoke(new MethodInvoker(treeView1.Sort));
+
+            //foreach (TreeNode node in treeView1.Nodes)
+            //{
+            //    string text = node.Text;
+            //    nodeListEdit.AddRange(text);
+            //    Console.WriteLine();
+            //}
 
             return nodeListEdit;
         }

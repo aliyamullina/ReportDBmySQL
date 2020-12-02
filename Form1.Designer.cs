@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,6 +83,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Шаг 2. Введите данные";
             // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(3, 18);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(433, 276);
+            this.treeView1.TabIndex = 0;
+            this.treeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeView1_AfterLabelEdit);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button2);
@@ -112,14 +121,6 @@
             this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Создайте отчет";
-            // 
-            // treeView1
-            // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.treeView1.Location = new System.Drawing.Point(6, 19);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(427, 272);
-            this.treeView1.TabIndex = 0;
             // 
             // Form1
             // 
