@@ -115,7 +115,6 @@
     <Compile Include="Classes\Methods\Adresses\GetID.cs" />
     <Compile Include="Classes\Methods\Catalogs\GetCreate.cs" />
     <Compile Include="Classes\Methods\Cities\GetCreate.cs" />
-    <Compile Include="Classes\Methods\Node\GetFill.cs" />
     <Compile Include="Classes\Methods\Node\GetInsert.cs" />
     <Compile Include="Classes\Methods\Maps\GetCreate.cs" />
     <Compile Include="Classes\Database\GetFillTable.cs" />
