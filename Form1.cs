@@ -46,6 +46,9 @@ namespace ReportDBmySQL
             //Список для добавления в БД
             List<InfoNode> nodeListEdit = new List<InfoNode>();
 
+            string floor = null; string flatscount = null; string entrance = null;
+
+            string address = e.Node.Parent.Text;
 
             //Общее число элементов
             var childCount = e.Node.Parent.Nodes.Count;
@@ -53,15 +56,29 @@ namespace ReportDBmySQL
             //Индекс  элемента
             var index = e.Node.Parent.Nodes.IndexOf(e.Node);
 
-            //Родитель 
-            var parent = e.Node.Parent.Text;
-
             //Текст элемента
             var child = e.Label;
 
             // Если не содержит
-            if (e.Label.Contains("Введите количество") == false) { }
+            if (e.Label.Contains("Введите количество") == false) 
+            {
+                switch (index)
+                {
+                    case 0:
+                        floor = child;
+                        break;
+                    case 1:
+                        flatscount = child;
+                        break;
+                    case 2:
+                        entrance = child;
+                        break;
+                }
+            }
 
+            nodeListEdit.Add(new InfoNode(address, floor, flatscount, entrance));
+
+            Console.WriteLine();
         }
     }
 }
