@@ -48,17 +48,29 @@ namespace ReportDBmySQL
 
         private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
+            //Все элементы узла 
+            foreach (TreeNode childAll in e.Node.Parent.Nodes)
+            {
+                var a = childAll.Nodes;
+                Console.WriteLine(a);
+            }
+
+            //Общее число элементов
+            var childCount = e.Node.Parent.Nodes.Count;
+
+            //Индекс  элемента
+            var index = e.Node.Parent.Nodes.IndexOf(e.Node);
+
+            //Родитель 
+            var parent = e.Node.Parent.Text;
+
+            //Текст элемента
+            var child = e.Label;
+
             // Если не содержит
             if (e.Label.Contains("Введите количество") == false)
             {
-                // узнать Родителя
-                // узнать соседние элементы на Contains("Введите количество")
-                // если комплект из 3х 
-                // то грузить в бд
-                var d = e.Label;
-                var b = e.Node.Parent.Text;
             }
-
         }
     }
 }
