@@ -7,6 +7,8 @@ namespace ReportDBmySQL
 {
     public partial class Form1 : Form
     {
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -23,10 +25,6 @@ namespace ReportDBmySQL
             List<InfoNode> nodeList = Node.SelectAddresses(connection);
 
             Node.LoadTree(treeView1, nodeList);
-
-            //List<InfoNode> nodeListEdit = Node.GetFill(treeView1);
-
-            //Node.GetInsert(nodeListEdit, connection);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -43,7 +41,7 @@ namespace ReportDBmySQL
 
         private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            //Список для добавления в БД
+            
             List<InfoNode> nodeListEdit = new List<InfoNode>();
 
             string floor = null; string flatscount = null; string entrance = null;
@@ -60,7 +58,7 @@ namespace ReportDBmySQL
             var child = e.Label;
 
             // Если не содержит
-            if (e.Label.Contains("Введите количество") == false) 
+            if (e.Label.Contains("Введите количество") == false)
             {
                 switch (index)
                 {
@@ -78,7 +76,12 @@ namespace ReportDBmySQL
 
             nodeListEdit.Add(new InfoNode(address, floor, flatscount, entrance));
 
-            Console.WriteLine();
+            Database db = new Database();
+            MySqlConnection connection = db.GetConnection();
+
+            Node.GetInsert(nodeListEdit, connection);
         }
+
+        
     }
 }

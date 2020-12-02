@@ -20,6 +20,7 @@ namespace ReportDBmySQL
                 foreach (var item in nodeListEdit)
                 {
                     command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@address", item.Address);
                     command.Parameters.AddWithValue("@floor", item.Floor);
                     command.Parameters.AddWithValue("@flatscount", item.FlatsCount);
                     command.Parameters.AddWithValue("@entrance", item.Entrance);
