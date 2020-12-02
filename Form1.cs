@@ -48,25 +48,15 @@ namespace ReportDBmySQL
 
         private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            //// По клику на узел обрабатывать изменения в БД и запрещать менять (окрашивать в серый)
-            //if (e.Node.IsEditing == true)
-            //{
-            //    e.CancelEdit = true; // узел дерева выйдет из режима редактирования и отменит изменения
-            //}
-
-            //Если все элементы в узле отредактированы 
-            //    закрыть узел для редактирования
-            //    и отправить в БД
-
-
-            foreach (TreeNode child in e.Node.Parent.Nodes)
+            // Если не содержит
+            if (e.Label.Contains("Введите количество") == false)
             {
-                // Если не содержит
-                if (child.Text.Contains("Введите количество") == false)
-                {
-                    string b = e.Node.Parent.Text;
-                    string a = child.Text;
-                }
+                // узнать Родителя
+                // узнать соседние элементы на Contains("Введите количество")
+                // если комплект из 3х 
+                // то грузить в бд
+                var d = e.Label;
+                var b = e.Node.Parent.Text;
             }
 
         }
