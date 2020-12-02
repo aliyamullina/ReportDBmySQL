@@ -59,6 +59,15 @@ namespace ReportDBmySQL
             //    и отправить в БД
 
 
+            foreach (TreeNode child in e.Node.Parent.Nodes)
+            {
+                // Если не содержит
+                if (child.Text.Contains("Введите количество") == false)
+                {
+                    string b = e.Node.Parent.Text;
+                    string a = child.Text;
+                }
+            }
 
         }
     }
