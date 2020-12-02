@@ -48,13 +48,6 @@ namespace ReportDBmySQL
 
         private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            //Все элементы узла 
-            foreach (TreeNode childAll in e.Node.Parent.Nodes)
-            {
-                var a = childAll.Nodes;
-                Console.WriteLine(a);
-            }
-
             //Общее число элементов
             var childCount = e.Node.Parent.Nodes.Count;
 
