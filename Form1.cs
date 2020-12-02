@@ -35,14 +35,12 @@ namespace ReportDBmySQL
             Node.LoadTree(treeView1, nodeList);
 
             // c# treeView after edit site:stackoverflow.com
-            // https://stackoverflow.com/questions/10364580/getting-treenode-text-after-an-edit
-            // https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.nodelabelediteventargs.label?redirectedfrom=MSDN&view=net-5.0#System_Windows_Forms_NodeLabelEditEventArgs_Label
-            // https://stackoverflow.com/questions/5868790/saving-content-of-a-treeview-to-a-file-and-load-it-later
+
             treeView1.BeginInvoke(new MethodInvoker(treeView1.Sort));
 
-            //List<InfoNode> nodeListEdit; 
+            List<InfoNode> nodeListEdit = Node.GetFill(treeView1);
 
-            //Node.GetInsert(nodeListEdit, connection);
+            Node.GetInsert(nodeListEdit, connection);
         }
 
         private void Button2_Click(object sender, EventArgs e)
