@@ -24,7 +24,7 @@ namespace ReportDBmySQL
 
             Node.LoadTree(treeView1, nodeList);
 
-            // По клику на узел обрабатывать изменения в БД и запрещать менять (окрашивать в серый)
+            
 
             //node.Name
             //node.Nodes
@@ -48,7 +48,18 @@ namespace ReportDBmySQL
 
         private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            MessageBox.Show("Argg!");
+            //// По клику на узел обрабатывать изменения в БД и запрещать менять (окрашивать в серый)
+            //if (e.Node.IsEditing == true)
+            //{
+            //    e.CancelEdit = true; // узел дерева выйдет из режима редактирования и отменит изменения
+            //}
+
+            //Если все элементы в узле отредактированы 
+            //    закрыть узел для редактирования
+            //    и отправить в БД
+
+
+
         }
     }
 }
