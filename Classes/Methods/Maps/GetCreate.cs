@@ -12,9 +12,9 @@ namespace ReportDBmySQL
             using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Maps
                 (Map_Id INT AUTO_INCREMENT PRIMARY KEY, 
-                Floor VARCHAR(30) NOT NULL,
-                FlatsCount VARCHAR(30) NOT NULL,
-                Entrance VARCHAR(30) NOT NULL
+                Floor VARCHAR(30),
+                FlatsCount VARCHAR(30),
+                Entrance VARCHAR(30)
                 );", connection))
             {
                 connection.Open();
