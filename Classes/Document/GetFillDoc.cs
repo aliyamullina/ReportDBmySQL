@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -21,10 +22,7 @@ namespace ReportDBmySQL
                 }
 
                 docText = new Regex("AddressInfo").Replace(docText, fN);
-
-                docText = new Regex("FloorInfo").Replace(docText, fN);
-                docText = new Regex("FlatsCountInfo").Replace(docText, fN);
-                docText = new Regex("EntranceInfo").Replace(docText, fN);
+                docText = GetFillDocMap(fN, connection, docText);
 
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {
@@ -32,7 +30,7 @@ namespace ReportDBmySQL
                 }
 
                 GetFillTable(WordDoc, fN, connection);
-                
+
                 WordDoc.MainDocumentPart.Document.Save();
                 WordDoc.Close();
             }

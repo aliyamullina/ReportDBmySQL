@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Constructors\InfoMap.cs" />
+    <Compile Include="Classes\Document\GetFillDocMap.cs" />
     <Compile Include="Classes\Document\SelectInfoMap.cs" />
     <Compile Include="Classes\Methods\Adresses\GetCreate.cs" />
     <Compile Include="Classes\Methods\Adresses\GetID.cs" />
