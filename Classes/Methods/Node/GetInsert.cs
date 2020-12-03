@@ -14,8 +14,10 @@ namespace ReportDBmySQL
             using (MySqlCommand command = new MySqlCommand(@"
             INSERT INTO maps(Floor, FlatsCount, Entrance, Address_Id) 
             VALUES(@floor, @flatscount, @entrance,
-            (SELECT addresses.Address_id FROM addresses, cities
-            WHERE CONCAT(City, ', ', Street, ' ', Home) = @address));
+            (
+                SELECT addresses.Address_id FROM addresses, cities
+                WHERE CONCAT(City, ', ', Street, ' ', Home) = @address)
+            );
             ", connection))
             {
                 connection.Open();
