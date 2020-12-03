@@ -22,7 +22,7 @@ namespace ReportDBmySQL
             //Database.CreateTable(connection);
             //Database.GetFillTable(connection);
 
-            List<InfoNode> nodeList = Node.SelectAddresses(connection);
+            List<InfoMap> nodeList = Node.SelectAddresses(connection);
 
             Node.LoadTree(treeView1, nodeList);
         }
@@ -42,7 +42,7 @@ namespace ReportDBmySQL
         private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
             
-            List<InfoNode> nodeListEdit = new List<InfoNode>();
+            List<InfoMap> mapListEdit = new List<InfoMap>();
 
             string floor = null; string flatscount = null; string entrance = null;
 
@@ -74,12 +74,12 @@ namespace ReportDBmySQL
                 }
             }
 
-            nodeListEdit.Add(new InfoNode(address, floor, flatscount, entrance));
+            mapListEdit.Add(new InfoMap(address, floor, flatscount, entrance));
 
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
-            Node.GetInsert(nodeListEdit, connection);
+            Node.GetInsert(mapListEdit, connection);
         }
     }
 }

@@ -12,14 +12,14 @@ namespace ReportDBmySQL
         /// - FlatsCount 60
         /// - Entrance В доме 4 подъезда
         /// </summary>
-        public static List<TreeNode> LoadTree(TreeView treeView1, List<InfoNode> nodeList)
+        public static List<TreeNode> LoadTree(TreeView treeView1, List<InfoMap> nodeList)
         {
             treeView1.Nodes.Clear();
             treeView1.LabelEdit = true;
 
             List<TreeNode> TestNodes = new List<TreeNode>();
 
-            foreach (InfoNode item in nodeList)
+            foreach (InfoMap item in nodeList)
             {
                 List<TreeNode> child = new List<TreeNode>
                 {

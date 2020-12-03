@@ -8,9 +8,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает все адреса из БД: City, Street, Home, Catalog
         /// </summary>
-        public static List<InfoNode> SelectAddresses(MySqlConnection connection)
+        public static List<InfoMap> SelectAddresses(MySqlConnection connection)
         {
-            List<InfoNode> nodeList = new List<InfoNode>();
+            List<InfoMap> nodeList = new List<InfoMap>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
@@ -30,16 +30,16 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoNode infoNodeList = new InfoNode();
-                        infoNodeList.Address += dataReader["City"].ToString();
-                        infoNodeList.Address += ", " + dataReader["Street"].ToString();
-                        infoNodeList.Address += " " + dataReader["Home"].ToString();
+                        InfoMap infoMapList = new InfoMap();
+                        infoMapList.Address += dataReader["City"].ToString();
+                        infoMapList.Address += ", " + dataReader["Street"].ToString();
+                        infoMapList.Address += " " + dataReader["Home"].ToString();
 
-                        infoNodeList.Floor = "Введите количество этажей";
-                        infoNodeList.FlatsCount = "Введите количество квартир";
-                        infoNodeList.Entrance = "Введите количество подъездов";
+                        infoMapList.Floor = "Введите количество этажей";
+                        infoMapList.FlatsCount = "Введите количество квартир";
+                        infoMapList.Entrance = "Введите количество подъездов";
 
-                        nodeList.Add(infoNodeList);
+                        nodeList.Add(infoMapList);
                     }
                     dataReader.Close();
                 }
