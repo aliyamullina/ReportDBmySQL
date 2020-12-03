@@ -10,7 +10,7 @@ namespace ReportDBmySQL
         /// </summary>
         public static List<InfoMap> SelectInfoMap(string fN, MySqlConnection connection)
         {
-            List<InfoMap> documentTable = new List<InfoMap>();
+            List<InfoMap> documentMap = new List<InfoMap>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
@@ -44,13 +44,13 @@ namespace ReportDBmySQL
                             Entrance = dataReader["Entrance"].ToString()
                         };
 
-                        documentTable.Add(documentTableList);
+                        documentMap.Add(documentTableList);
                     }
                     dataReader.Close();
                 }
                 connection.Close();
             }
-            return documentTable;
+            return documentMap;
         }
     }
 }
