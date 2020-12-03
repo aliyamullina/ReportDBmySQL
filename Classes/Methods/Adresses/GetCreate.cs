@@ -18,8 +18,9 @@ namespace ReportDBmySQL
                 Street VARCHAR(30) NOT NULL, 
                 Home VARCHAR(10), 
                 City_id INT REFERENCES Cities(City_id),
-                Catalog_id INT REFERENCES Catalogs(Catalog_id))",
-                connection))
+                Catalog_id INT REFERENCES Catalogs(Catalog_id))
+                Map_id INT REFERENCES Maps(Map_id))
+                ", connection))
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
