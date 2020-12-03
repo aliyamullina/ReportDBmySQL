@@ -12,17 +12,10 @@ namespace ReportDBmySQL
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"
-            INSERT INTO maps(Floor, FlatsCount, Entrance) 
-            VALUES (@floor, @flatscount, @entrance);
-            SELECT LAST_INSERT_ID();
-            SELECT 
-                    addresses.Address_id
-            FROM 
-                    addresses,
-                    cities
-            WHERE CONCAT(City, ', ',Street, ' ' ,Home) = @address
-            AND
-                VALUES (@floor, @flatscount, @entrance);
+            INSERT INTO maps(Floor, FlatsCount, Entrance, Address_Id) 
+            VALUES(@floor, @flatscount, @entrance,
+            (SELECT addresses.Address_id FROM addresses, cities
+            WHERE CONCAT(City, ', ', Street, ' ', Home) = @address));
             ", connection))
             {
                 connection.Open();
@@ -40,12 +33,4 @@ namespace ReportDBmySQL
         }
     }
 }
-//INSERT INTO maps(Floor, FlatsCount, Entrance) VALUES('7 этажей', '89 квартир', '2 подъезда');
-//SELECT LAST_INSERT_ID();
-
-//INSERT INTO maps(Floor, FlatsCount, Entrance, Address_Id) 
-//VALUES('7 этажей', '89 квартир', '2 подъезда',
-//(SELECT addresses.Address_id FROM addresses, cities 
-//WHERE CONCAT(City, ', ', Street, ' ', Home) = 'Высокая гора, Большая Красная 214'));
-
 
