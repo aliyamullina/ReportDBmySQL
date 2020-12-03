@@ -11,7 +11,7 @@ namespace ReportDBmySQL
             Cities.GetCreate(connection);
             Adresses.GetCreate(connection);
             Registers.GetCreate(connection);
-            Maps.GetCreate(connection);
+            Node.GetCreate(connection);
         }
     }
 }

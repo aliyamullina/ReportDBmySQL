@@ -2,7 +2,7 @@
 
 namespace ReportDBmySQL
 {
-    public partial class Maps
+    public partial class Node
     {
         /// <summary>
         /// Создается таблица карты
