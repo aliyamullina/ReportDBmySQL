@@ -22,10 +22,9 @@ namespace ReportDBmySQL
 
                 docText = new Regex("AddressInfo").Replace(docText, fN);
 
-
-                // FloorInfo
-                // FlatsCountInfo
-                // EntranceInfo
+                docText = new Regex("FloorInfo").Replace(docText, fN);
+                docText = new Regex("FlatsCountInfo").Replace(docText, fN);
+                docText = new Regex("EntranceInfo").Replace(docText, fN);
 
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {
