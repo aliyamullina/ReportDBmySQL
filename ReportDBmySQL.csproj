@@ -111,17 +111,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Constructors\InfoMap.cs" />
-    <Compile Include="Classes\Document\SelectInfoDocumentMap.cs" />
+    <Compile Include="Classes\Document\SelectInfoMap.cs" />
     <Compile Include="Classes\Methods\Adresses\GetCreate.cs" />
     <Compile Include="Classes\Methods\Adresses\GetID.cs" />
     <Compile Include="Classes\Methods\Catalogs\GetCreate.cs" />
     <Compile Include="Classes\Methods\Cities\GetCreate.cs" />
-    <Compile Include="Classes\Methods\Node\GetInsert.cs" />
-    <Compile Include="Classes\Methods\Node\GetCreate.cs" />
+    <Compile Include="Classes\Methods\Maps\GetInsert.cs" />
+    <Compile Include="Classes\Methods\Maps\GetCreate.cs" />
     <Compile Include="Classes\Database\GetFillTable.cs" />
     <Compile Include="Classes\Database\CreateTable.cs" />
-    <Compile Include="Classes\Methods\Node\LoadTree.cs" />
-    <Compile Include="Classes\Methods\Node\SelectAddresses.cs" />
+    <Compile Include="Classes\Methods\Maps\LoadTree.cs" />
+    <Compile Include="Classes\Methods\Maps\SelectAddresses.cs" />
     <Compile Include="Classes\Methods\Registers\GetCreate.cs" />
     <Compile Include="Classes\Database\Clear.cs" />
     <Compile Include="Classes\Database\Connection.cs" />

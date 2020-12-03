@@ -22,9 +22,9 @@ namespace ReportDBmySQL
             //Database.CreateTable(connection);
             //Database.GetFillTable(connection);
 
-            List<InfoMap> nodeList = Node.SelectAddresses(connection);
+            List<InfoMap> nodeList = Maps.SelectAddresses(connection);
 
-            Node.LoadTree(treeView1, nodeList);
+            Maps.LoadTree(treeView1, nodeList);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
-            Node.GetInsert(mapListEdit, connection);
+            Maps.GetInsert(mapListEdit, connection);
         }
     }
 }

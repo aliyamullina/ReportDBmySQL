@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Node
+    public partial class Maps
     {
         /// <summary>
         /// Заполнение таблицы Maps в БД

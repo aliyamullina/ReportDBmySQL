@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ReportDBmySQL
 {
-    public partial class Node
+    public partial class Maps
     {
         /// <summary>
         /// Address
