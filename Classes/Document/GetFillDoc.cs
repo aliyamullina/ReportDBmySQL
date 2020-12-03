@@ -22,6 +22,11 @@ namespace ReportDBmySQL
 
                 docText = new Regex("AddressInfo").Replace(docText, fN);
 
+
+                // FloorInfo
+                // FlatsCountInfo
+                // EntranceInfo
+
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {
                     sw.Write(docText);
@@ -32,8 +37,6 @@ namespace ReportDBmySQL
                 WordDoc.MainDocumentPart.Document.Save();
                 WordDoc.Close();
             }
-
-            //catch System.IO.FileNotFoundException: "Could not find document"
         }
     }
 }
