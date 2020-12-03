@@ -11,7 +11,7 @@ namespace ReportDBmySQL
         {
             using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Maps
-                (Map_Id INT AUTO_INCREMENT PRIMARY KEY, 
+                (Map_id INT AUTO_INCREMENT PRIMARY KEY, 
                 Floor VARCHAR(30),
                 FlatsCount VARCHAR(30),
                 Entrance VARCHAR(30)
