@@ -38,9 +38,9 @@ namespace ReportDBmySQL
                     {
                         InfoMap documentTableList = new InfoMap
                         {
-                            Floor = dataReader["Floor"].ToString(),
-                            FlatsCount = dataReader["FlatsCount"].ToString(),
-                            Entrance = dataReader["Entrance"].ToString()
+                            Floor = dataReader["GROUP_CONCAT(maps.Floor)"].ToString(),
+                            FlatsCount = dataReader["GROUP_CONCAT(maps.FlatsCount)"].ToString(),
+                            Entrance = dataReader["GROUP_CONCAT(maps.Entrance)"].ToString()
                         };
 
                         documentMap.Add(documentTableList);
