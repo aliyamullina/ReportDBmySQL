@@ -46,6 +46,7 @@ namespace ReportDBmySQL
 
             string floor = null; string flatscount = null; string entrance = null;
 
+            //Не позволяет редактировать родителя, выдает исключение
             string address = e.Node.Parent.Text;
 
             //Общее число элементов
