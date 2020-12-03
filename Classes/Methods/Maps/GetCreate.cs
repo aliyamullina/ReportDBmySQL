@@ -14,7 +14,8 @@ namespace ReportDBmySQL
                 (Map_id INT AUTO_INCREMENT PRIMARY KEY, 
                 Floor VARCHAR(30),
                 FlatsCount VARCHAR(30),
-                Entrance VARCHAR(30)
+                Entrance VARCHAR(30),
+                Address_id INT(5)
                 );", connection))
             {
                 connection.Open();
