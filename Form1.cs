@@ -81,7 +81,5 @@ namespace ReportDBmySQL
 
             Node.GetInsert(nodeListEdit, connection);
         }
-
-        
     }
 }
