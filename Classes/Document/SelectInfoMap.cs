@@ -14,14 +14,17 @@ namespace ReportDBmySQL
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
-                    maps.Address_id, 
-                    COALESCE(maps.Floor, maps.FlatsCount, maps.Entrance, NULL)
-                FROM addresses, cities, maps
+	                maps.Address_id, 
+                    GROUP_CONCAT(maps.Floor),  
+                    GROUP_CONCAT(maps.FlatsCount), 
+                    GROUP_CONCAT(maps.Entrance)
+                FROM addresses, cities, maps 
                 WHERE CONCAT(City, ', ', Street, ' ' , Home) = @address
                 AND
-                    addresses.Address_Id = maps.Address_Id
+                 addresses.Address_Id = maps.Address_Id
                 AND
-                    addresses.City_id = cities.City_Id
+                 addresses.City_id = cities.City_Id
+                GROUP BY Address_id
                 ", connection))
             {
                 connection.Open();
@@ -94,3 +97,7 @@ namespace ReportDBmySQL
 //    Sum(COALESCE(bsw, 0)) OVER(partition BY maps.Address_Id  ORDER BY maps.Address_Id)
 //FROM Table1GROUP  
 //GROUP BY maps.Address_Id
+
+//SELECT maps.Address_id, GROUP_CONCAT(maps.Floor)
+//FROM maps
+//GROUP BY Address_id
