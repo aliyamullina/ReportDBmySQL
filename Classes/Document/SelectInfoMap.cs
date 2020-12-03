@@ -15,10 +15,13 @@ namespace ReportDBmySQL
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
                     maps.Address_id, 
-                    COALESCE(maps.Floor, 0), 
-                    COALESCE(maps.FlatsCount, 0), 
-                    COALESCE(maps.Entrance, 0)
-                FROM maps
+                    COALESCE(maps.Floor, maps.FlatsCount, maps.Entrance, NULL)
+                FROM addresses, cities, maps
+                WHERE CONCAT(City, ', ', Street, ' ' , Home) = @address
+                AND
+                    addresses.Address_Id = maps.Address_Id
+                AND
+                    addresses.City_id = cities.City_Id
                 ", connection))
             {
                 connection.Open();
