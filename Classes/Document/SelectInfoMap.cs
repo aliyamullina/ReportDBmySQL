@@ -8,28 +8,22 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает ресстр для текущего адреса в БД
         /// </summary>
-        public static List<InfoDocumentTable> SelectInfoDocumentTable(string fN, MySqlConnection connection)
+        public static List<InfoMap> SelectInfoMap(string fN, MySqlConnection connection)
         {
-            List<InfoDocumentTable> documentTable = new List<InfoDocumentTable>();
+            List<InfoMap> documentTable = new List<InfoMap>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
-                    cities.City,
-                    addresses.Street, 
-                    addresses.Home,
-                    registers.Apartment,
-                    registers.Model,
-                    registers.Serial
+                    maps.Floor,
+                    maps.FlatsCount,
+                    maps.Entrance
                 FROM 
                     addresses,
                     cities,
-                    registers,
-                    catalogs
+                    maps
                 WHERE CONCAT(City, ', ',Street, ' ' ,Home) = @address
                 AND
-                    catalogs.Catalog_id = registers.Catalog_Id
-                AND
-                    addresses.Catalog_id = catalogs.Catalog_Id
+                    addresses.Address_Id = maps.Address_Id
                 AND
                     addresses.City_id = cities.City_Id
                 ", connection))
@@ -43,17 +37,11 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoDocumentTable documentTableList = new InfoDocumentTable
+                        InfoMap documentTableList = new InfoMap
                         {
-                            // InfoCity
-                            City = dataReader["City"].ToString(),
-                            // InfoAddress
-                            Street = dataReader["Street"].ToString(),
-                            Home = dataReader["Home"].ToString(),
-                            // InfoRegistry
-                            Apartment = dataReader["Apartment"].ToString(),
-                            Model = dataReader["Model"].ToString(),
-                            Serial = dataReader["Serial"].ToString()
+                            Floor = dataReader["Floor"].ToString(),
+                            FlatsCount = dataReader["FlatsCount"].ToString(),
+                            Entrance = dataReader["Entrance"].ToString()
                         };
 
                         documentTable.Add(documentTableList);
