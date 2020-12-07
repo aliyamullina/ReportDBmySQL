@@ -16,6 +16,8 @@ namespace ReportDBmySQL
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            //в диалоге поставить галку искать без ппо и с ппо
+            
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
@@ -59,7 +61,10 @@ namespace ReportDBmySQL
             var child = e.Label;
 
             // Если не содержит
-            if (e.Label.Contains("Введите количество") == false)
+            if (e.Label.Contains("Введите количество") == false) 
+                // System.NullReferenceException: "Ссылка на объект не указывает на экземпляр объекта."
+                //System.Windows.Forms.NodeLabelEditEventArgs.Label.get вернул null.
+
             {
                 switch (index)
                 {
