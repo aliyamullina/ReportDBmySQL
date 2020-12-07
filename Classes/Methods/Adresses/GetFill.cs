@@ -12,7 +12,7 @@ namespace ReportDBmySQL
             try
             {
                 List<InfoAddress> folderAdress = new List<InfoAddress>();
-                int city_id = 4;
+                int city_id = 1;
 
                 foreach (InfoCatalog c in path)
                 {

@@ -19,8 +19,8 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
-            //Database.CreateTable(connection);
-            //Database.GetFillTable(connection);
+            Database.CreateTable(connection);
+            Database.GetFillTable(connection);
 
             List<InfoMap> nodeList = Maps.SelectAddresses(connection);
 
@@ -34,7 +34,7 @@ namespace ReportDBmySQL
 
             Document.CreateDocs(connection);
 
-            //db.Clear();
+            db.Clear();
 
             Application.Exit();
         }
