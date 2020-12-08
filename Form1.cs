@@ -63,8 +63,7 @@ namespace ReportDBmySQL
             // Если не содержит
             if (e.Label.Contains("Введите количество") == false) 
                 // System.NullReferenceException: "Ссылка на объект не указывает на экземпляр объекта."
-                //System.Windows.Forms.NodeLabelEditEventArgs.Label.get вернул null.
-
+                //System.Windows.Forms.NodeLabelEditEventArgs.Label.get вернул null
             {
                 switch (index)
                 {
