@@ -14,6 +14,7 @@ namespace ReportDBmySQL
             List<InfoDocumentTable> tableBody = SelectInfoDocumentTable(fN, connection);
 
             string comment = "В 2020 году истекает срок поверки. Требуется замена";
+            string commentNope = "Отсутствует";
 
             int count = 1;
 
@@ -27,7 +28,15 @@ namespace ReportDBmySQL
                 TableCell bodyTdApartment = new TableCell(new Paragraph(new Run(new Text(tableRow.Apartment))));
                 TableCell bodyTdModel = new TableCell(new Paragraph(new Run(new Text(tableRow.Model))));
                 TableCell bodyTdSerial = new TableCell(new Paragraph(new Run(new Text(tableRow.Serial))));
-                TableCell bodyTdComment = new TableCell(new Paragraph(new Run(new Text(comment))));
+                TableCell bodyTdComment;
+                if (tableRow.Model == "Отсутствует" || tableRow.Model == "отсутствует")
+                {
+                    bodyTdComment = new TableCell(new Paragraph(new Run(new Text(commentNope))));
+                } else
+                {
+                    bodyTdComment = new TableCell(new Paragraph(new Run(new Text(comment))));
+                }
+                
                 bodyRow.Append(bodyTdCount, bodyTdCity, bodyTdStreet, bodyTdHome, bodyTdApartment, bodyTdModel, bodyTdSerial, bodyTdComment);
                 table.AppendChild(bodyRow);
             }
