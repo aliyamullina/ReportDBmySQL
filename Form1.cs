@@ -22,11 +22,17 @@ namespace ReportDBmySQL
             MySqlConnection connection = db.GetConnection();
 
             Database.CreateTable(connection);
-            Database.GetFillTable(connection);
+
+            bool withoutReportsSearch;
+            if (checkBox1.Checked == true) { withoutReportsSearch = true; }
+            else { withoutReportsSearch = false; }
+
+            Database.GetFillTable(connection, withoutReportsSearch);
 
             List<InfoMap> nodeList = Maps.SelectAddresses(connection);
 
             Maps.LoadTree(treeView1, nodeList);
+           
         }
 
         private void Button2_Click(object sender, EventArgs e)
