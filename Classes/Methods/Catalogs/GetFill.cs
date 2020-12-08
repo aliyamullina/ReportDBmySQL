@@ -29,14 +29,17 @@ namespace ReportDBmySQL
                 {
                     foreach (var catalog in cI)
                     {
-                        // От общего списка с ППО
-                        string[] filesReports = new DirectoryInfo(catalog)
-                            .GetFiles("Отчет" + "*.docx", SearchOption.AllDirectories)
-                            .Select(f => f.FullName)
-                            .ToArray();
-                        // От общего списка без ППО
+                        // Проверка на ППО
+                        var filesReports = new DirectoryInfo(catalog).GetFiles("Отчет" + "*.docx", SearchOption.AllDirectories).Any(f => f.Exists);
 
-                        Console.WriteLine();
+                        if (filesReports == false)
+                        {
+                            string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
+                            foreach (string registry in files)
+                            {
+                                catalogsInsert.Add(new InfoCatalog(open, catalog, registry));
+                            }
+                        }
                     }
                 }
                 // в cI передать папки c отчетом ППО
