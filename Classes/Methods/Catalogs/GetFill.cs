@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -26,11 +27,12 @@ namespace ReportDBmySQL
                     // в cI передать папки без отчета ППО
                     if (withoutReportsSearch == true)
                     {
-                        string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
-                        foreach (string registry in files)
-                        {
-                            catalogsInsert.Add(new InfoCatalog(open, catalog, registry));
-                        }
+                        string[] filesReports = new DirectoryInfo(catalog)
+                            .GetFiles("Отчет" + "*.docx", SearchOption.AllDirectories)
+                            .Select(f => f.FullName)
+                            .ToArray();
+                        
+                        Console.WriteLine();
                     }
                     // в cI передать папки c отчетом ППО
                     else
