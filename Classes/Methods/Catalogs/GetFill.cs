@@ -23,39 +23,31 @@ namespace ReportDBmySQL
                 // Общий список папок
                 string[] cI = Directory.GetDirectories(open);
 
-
-                // в cI передать папки без отчета ППО
-                if (withoutReportsSearch == true)
+                foreach (var catalog in cI)
                 {
-                    foreach (var catalog in cI)
+                    // Найти без отчета ППО
+                    if (withoutReportsSearch == true)
                     {
                         // Проверка на ППО
                         var filesReports = new DirectoryInfo(catalog).GetFiles("Отчет" + "*.docx", SearchOption.AllDirectories).Any(f => f.Exists);
-
-                        if (filesReports == false)
-                        {
-                            string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
-                            foreach (string registry in files)
-                            {
-                                catalogsInsert.Add(new InfoCatalog(open, catalog, registry));
-                            }
-                        }
+                        if (filesReports == false) { GetRegistryDirectory(catalogsInsert, open, catalog); }
                     }
-                }
-                // в cI передать папки c отчетом ППО
-                else
-                {
-                    foreach (var catalog in cI)
+                    else
                     {
-                        string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
-                        foreach (string registry in files)
-                        {
-                            catalogsInsert.Add(new InfoCatalog(open, catalog, registry));
-                        }
+                        GetRegistryDirectory(catalogsInsert, open, catalog);
                     }
-                }
+                }              
             }
             return catalogsInsert;
+        }
+
+        private static void GetRegistryDirectory(List<InfoCatalog> catalogsInsert, string open, string catalog)
+        {
+            string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
+            foreach (string registry in files)
+            {
+                catalogsInsert.Add(new InfoCatalog(open, catalog, registry));
+            }
         }
     }
 }
