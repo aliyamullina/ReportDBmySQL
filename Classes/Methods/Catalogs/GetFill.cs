@@ -20,22 +20,29 @@ namespace ReportDBmySQL
             if (dialog == DialogResult.OK)
             {
                 string open = folderDlg.SelectedPath;
+                // Общий список папок
                 string[] cI = Directory.GetDirectories(open);
 
-                foreach (var catalog in cI)
+
+                // в cI передать папки без отчета ППО
+                if (withoutReportsSearch == true)
                 {
-                    // в cI передать папки без отчета ППО
-                    if (withoutReportsSearch == true)
+                    foreach (var catalog in cI)
                     {
+                        // От общего списка с ППО
                         string[] filesReports = new DirectoryInfo(catalog)
                             .GetFiles("Отчет" + "*.docx", SearchOption.AllDirectories)
                             .Select(f => f.FullName)
                             .ToArray();
-                        
+                        // От общего списка без ППО
+
                         Console.WriteLine();
                     }
-                    // в cI передать папки c отчетом ППО
-                    else
+                }
+                // в cI передать папки c отчетом ППО
+                else
+                {
+                    foreach (var catalog in cI)
                     {
                         string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
                         foreach (string registry in files)
