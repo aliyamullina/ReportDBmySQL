@@ -13,7 +13,7 @@ namespace ReportDBmySQL
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"
-                INSERT INTO catalogs(Open, Catalog, Registry) 
+                INSERT INTO catalogs(Catalog, Registry) 
                 VALUES (@catalog, @registry);
                 SELECT LAST_INSERT_ID();
                 ", connection))
