@@ -30,9 +30,13 @@ namespace ReportDBmySQL
                     {
                         // Проверка на ППО
                         var filesReports = new DirectoryInfo(catalog).GetFiles("Отчет" + "*.docx", SearchOption.AllDirectories).Any(f => f.Exists);
-                        Console.WriteLine(filesReports);
+                        
                         // Если нет отчета ППО
-                        if (filesReports == false) { GetRegistryDirectory(catalogsInsert, open, catalog); }
+                        if (filesReports == false) 
+                        {
+                            Console.WriteLine(filesReports);
+                            GetRegistryDirectory(catalogsInsert, open, catalog); 
+                        }
                     }
                     else
                     {
