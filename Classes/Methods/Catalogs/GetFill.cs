@@ -14,9 +14,14 @@ namespace ReportDBmySQL
         public static List<InfoCatalog> GetFill(bool withoutReportsSearch)
         {
             List<InfoCatalog> catalogsInsert = new List<InfoCatalog>();
-            FolderBrowserDialog folderDlg = new FolderBrowserDialog { ShowNewFolderButton = true };
+
+            FolderBrowserDialog folderDlg = new FolderBrowserDialog() { 
+                ShowNewFolderButton = false,
+                SelectedPath = @"Z:\Выполнение ТЭСБ 2020\для ранифа\сдаем без успд и с УСПД подписанные акты"
+            };
+
             DialogResult dialog = folderDlg.ShowDialog();
-            
+
             if (dialog == DialogResult.OK)
             {
                 string open = folderDlg.SelectedPath;
