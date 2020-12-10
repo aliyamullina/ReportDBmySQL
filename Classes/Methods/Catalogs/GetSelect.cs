@@ -29,7 +29,6 @@ namespace ReportDBmySQL
                     {
                         InfoCatalog catalogList = new InfoCatalog
                         {
-                            Open = dataReader["Open"].ToString(),
                             Catalog = dataReader["Catalog"].ToString(),
                             Registry = dataReader["Registry"].ToString()
                         };

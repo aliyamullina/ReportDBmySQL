@@ -40,24 +40,24 @@ namespace ReportDBmySQL
                         if (filesReports == false) 
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(catalogsInsert, open, catalog); 
+                            GetRegistryDirectory(catalogsInsert, catalog); 
                         }
                     }
                     else
                     {
-                        GetRegistryDirectory(catalogsInsert, open, catalog);
+                        GetRegistryDirectory(catalogsInsert, catalog);
                     }
                 }              
             }
             return catalogsInsert;
         }
 
-        private static void GetRegistryDirectory(List<InfoCatalog> catalogsInsert, string open, string catalog)
+        private static void GetRegistryDirectory(List<InfoCatalog> catalogsInsert, string catalog)
         {
             string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
             foreach (string registry in files)
             {
-                catalogsInsert.Add(new InfoCatalog(open, catalog, registry));
+                catalogsInsert.Add(new InfoCatalog(catalog, registry));
             }
         }
     }

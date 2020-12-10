@@ -14,7 +14,7 @@ namespace ReportDBmySQL
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"
                 INSERT INTO catalogs(Open, Catalog, Registry) 
-                VALUES (@open, @catalog, @registry);
+                VALUES (@catalog, @registry);
                 SELECT LAST_INSERT_ID();
                 ", connection))
             {
@@ -22,12 +22,12 @@ namespace ReportDBmySQL
                 foreach (var item in catalogsInsert)
                 {
                     command.Parameters.Clear();
-                    command.Parameters.AddWithValue("@open", item.Open);
                     command.Parameters.AddWithValue("@catalog", item.Catalog);
                     command.Parameters.AddWithValue("@registry", item.Registry);
                     int catalog_id = Convert.ToInt32(command.ExecuteScalar());
 
                     List<InfoCatalog> path = GetSelect(connection, catalog_id);
+
 
                     Adresses.GetID(connection, catalog_id, path);
                     Registers.GetID(connection, catalog_id, path);
