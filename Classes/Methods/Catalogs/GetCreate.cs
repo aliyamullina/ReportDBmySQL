@@ -14,8 +14,8 @@ namespace ReportDBmySQL
             MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Catalogs
                 (Catalog_Id INT AUTO_INCREMENT PRIMARY KEY, 
-                Catalog VARCHAR(150) NOT NULL,
-                Registry VARCHAR(150) NOT NULL);",
+                Catalog VARCHAR(300) NOT NULL,
+                Registry VARCHAR(300) NOT NULL);",
                 connection);
             connection.Open();
             command.ExecuteNonQuery();
