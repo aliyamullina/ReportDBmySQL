@@ -8,10 +8,7 @@ namespace ReportDBmySQL
     {
         public static void GetFillTable(MySqlConnection connection, bool withoutReportsSearch)
         {
-            List<InfoCity> CitiesList = Cities.GetFill();
-            Cities.GetInsert(CitiesList, connection);
-
-            List<InfoCatalog> CatalogsInsert = Catalogs.GetFill(withoutReportsSearch);
+            List<InfoCatalog> CatalogsInsert = Catalogs.GetFill(withoutReportsSearch, connection);
             Catalogs.GetInsert(CatalogsInsert, connection);
         }
     }

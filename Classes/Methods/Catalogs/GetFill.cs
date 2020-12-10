@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static List<InfoCatalog> GetFill(bool withoutReportsSearch)
+        public static List<InfoCatalog> GetFill(bool withoutReportsSearch, MySqlConnection connection)
         {
             List<InfoCatalog> catalogsInsert = new List<InfoCatalog>();
 
@@ -24,9 +25,11 @@ namespace ReportDBmySQL
 
             if (dialog == DialogResult.OK)
             {
-                string open = folderDlg.SelectedPath;
+                var open = folderDlg.SelectedPath;
                 // Общий список папок
                 string[] cI = Directory.GetDirectories(open);
+
+                Cities.GetFill(open, connection);
 
                 foreach (var catalog in cI)
                 {
@@ -35,19 +38,19 @@ namespace ReportDBmySQL
                     {
                         // Проверка на ППО
                         var filesReports = new DirectoryInfo(catalog).GetFiles("Отчет" + "*.docx", SearchOption.AllDirectories).Any(f => f.Exists);
-                        
+
                         // Если нет отчета ППО
-                        if (filesReports == false) 
+                        if (filesReports == false)
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(catalogsInsert, catalog); 
+                            GetRegistryDirectory(catalogsInsert, catalog);
                         }
                     }
                     else
                     {
                         GetRegistryDirectory(catalogsInsert, catalog);
                     }
-                }              
+                }
             }
             return catalogsInsert;
         }
