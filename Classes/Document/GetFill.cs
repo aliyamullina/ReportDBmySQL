@@ -11,7 +11,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет готовый doc, редактирует
         /// </summary>
-        private static void GetFillDoc(string fN, string filePath, MySqlConnection connection)
+        private static void GetFill(string fN, string filePath, MySqlConnection connection)
         {
             using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
             {
