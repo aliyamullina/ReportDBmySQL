@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается таблица Catalogs в БД
         /// </summary>
-        public static void GetCreate(MySqlConnection connection)
+        public static void CreateTable(MySqlConnection connection)
         {
             MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Catalogs

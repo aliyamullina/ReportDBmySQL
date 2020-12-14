@@ -7,11 +7,11 @@ namespace ReportDBmySQL
     {
         public static void CreateTable(MySqlConnection connection)
         {
-            Catalogs.GetCreate(connection);
-            Cities.GetCreate(connection);
-            Adresses.GetCreate(connection);
-            Registers.GetCreate(connection);
-            Maps.GetCreate(connection);
+            Catalogs.CreateTable(connection);
+            Cities.CreateTable(connection);
+            Adresses.CreateTable(connection);
+            Registers.CreateTable(connection);
+            Maps.CreateTable(connection);
         }
     }
 }

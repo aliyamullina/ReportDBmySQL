@@ -7,7 +7,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается таблица карты
         /// </summary>
-        public static void GetCreate(MySqlConnection connection)
+        public static void CreateTable(MySqlConnection connection)
         {
             using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Maps

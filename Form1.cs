@@ -40,7 +40,7 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
-            Document.GetCreateDocument(connection);
+            Document.Create(connection);
 
             db.Clear();
 

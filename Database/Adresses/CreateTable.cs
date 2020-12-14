@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается таблица Adresses в БД
         /// </summary>
-        public static void GetCreate(MySqlConnection connection)
+        public static void CreateTable(MySqlConnection connection)
         {
             try
             {
