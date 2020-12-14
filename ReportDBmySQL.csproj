@@ -130,7 +130,7 @@
     <Compile Include="Classes\Database\Connection.cs" />
     <Compile Include="Classes\Database\Create.cs" />
     <Compile Include="Classes\Database\Catalogs\GetSelect.cs" />
-    <Compile Include="Classes\Document\GetSelect.cs" />
+    <Compile Include="Classes\Document\GetSelectDocument.cs" />
     <Compile Include="Classes\Document\Table\GetSelect.cs" />
     <Compile Include="Classes\Database\Adresses\GetInsert.cs" />
     <Compile Include="Classes\Database\Catalogs\GetInsert.cs" />
@@ -142,13 +142,13 @@
     <Compile Include="Classes\Database\Catalogs\GetFill.cs" />
     <Compile Include="Classes\Database\Cities\GetFill.cs" />
     <Compile Include="Classes\Database\Registers\GetFill.cs" />
-    <Compile Include="Classes\Document\GetCreate.cs" />
+    <Compile Include="Classes\Document\GetCreateDocument.cs" />
     <Compile Include="Classes\Document\Table\CreateProperties.cs" />
-    <Compile Include="Classes\Document\GetFill.cs" />
+    <Compile Include="Classes\Document\GetFillDocument.cs" />
     <Compile Include="Classes\Document\Table\GetFillTable.cs" />
     <Compile Include="Classes\Document\Table\GetFillTableBody.cs" />
     <Compile Include="Classes\Document\Table\GetFillTableHead.cs" />
-    <Compile Include="Classes\Document\GetCopy.cs" />
+    <Compile Include="Classes\Document\GetCopyTemplate.cs" />
     <Compile Include="Classes\Document\Table\InfoTable.cs" />
     <Compile Include="Classes\Document\InfoDocument.cs" />
     <Compile Include="Classes\Database\Catalogs\InfoCatalog.cs" />

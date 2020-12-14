@@ -11,7 +11,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет готовый doc, редактирует
         /// </summary>
-        private static void GetFill(string fN, string filePath, MySqlConnection connection)
+        private static void GetFillDocument(string fN, string filePath, MySqlConnection connection)
         {
             using (WordprocessingDocument WordDoc = WordprocessingDocument.Open(filePath, isEditable: true))
             {
@@ -22,7 +22,7 @@ namespace ReportDBmySQL
                 }
 
                 docText = new Regex("AddressInfo").Replace(docText, fN);
-                docText = GetFillDocMap(fN, connection, docText);
+                docText = GetFillMap(fN, connection, docText);
 
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {

@@ -8,11 +8,11 @@ namespace ReportDBmySQL
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        public static void GetCreate(MySqlConnection connection)
+        public static void GetCreateDocument(MySqlConnection connection)
         {
             var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 
-            List<InfoDocument> infoDocuments = GetSelect(connection);
+            List<InfoDocument> infoDocuments = GetSelectDocument(connection);
 
             foreach (InfoDocument info in infoDocuments)
             {
@@ -20,9 +20,9 @@ namespace ReportDBmySQL
 
                 var fC = info.Catalog;
 
-                string filePath = GetCopy(documentTemplate, fN, fC);
+                string filePath = GetCopyTemplate(documentTemplate, fN, fC);
 
-                GetFill(fN, filePath, connection);
+                GetFillDocument(fN, filePath, connection);
             }
         }
     }

@@ -11,7 +11,7 @@ namespace ReportDBmySQL
         /// </summary>
         private static void GetFillTableBody(Table table, string fN, MySqlConnection connection)
         {
-            List<InfoTable> tableBody = GetSelectMap(fN, connection);
+            List<InfoTable> tableBody = GetSelect(fN, connection);
 
             string comment = "В 2020 году истекает срок поверки. Требуется замена";
             string commentNope = "Отсутствует";
