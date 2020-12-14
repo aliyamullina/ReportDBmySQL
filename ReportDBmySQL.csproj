@@ -114,7 +114,7 @@
   <ItemGroup>
     <Compile Include="Classes\Database\Maps\InfoMap.cs" />
     <Compile Include="Classes\Document\Map\GetFillDocMap.cs" />
-    <Compile Include="Classes\Document\Map\SelectInfoMap.cs" />
+    <Compile Include="Classes\Document\Map\GetSelectInfoMap.cs" />
     <Compile Include="Classes\Database\Adresses\GetCreate.cs" />
     <Compile Include="Classes\Database\Adresses\GetID.cs" />
     <Compile Include="Classes\Database\Catalogs\GetCreate.cs" />
@@ -131,7 +131,7 @@
     <Compile Include="Classes\Database\Create.cs" />
     <Compile Include="Classes\Database\Catalogs\GetSelect.cs" />
     <Compile Include="Classes\Document\GetSelect.cs" />
-    <Compile Include="Classes\Document\Table\SelectInfoDocumentTable.cs" />
+    <Compile Include="Classes\Document\Table\GetSelectInfoDocumentTable.cs" />
     <Compile Include="Classes\Database\Adresses\GetInsert.cs" />
     <Compile Include="Classes\Database\Catalogs\GetInsert.cs" />
     <Compile Include="Classes\Database\Cities\GetInsert.cs" />
@@ -155,7 +155,7 @@
     <Compile Include="Classes\Database\Registers\InfoRegistry.cs" />
     <Compile Include="Classes\Database\Adresses\InfoAddress.cs" />
     <Compile Include="Classes\Database\Cities\InfoCity.cs" />
-    <Compile Include="Classes\Document\InfoDate.cs" />
+    <Compile Include="Classes\Document\Date\InfoDate.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает ресстр для текущего адреса в БД
         /// </summary>
-        public static List<InfoMap> SelectInfoMap(string fN, MySqlConnection connection)
+        public static List<InfoMap> GetSelectInfoMap(string fN, MySqlConnection connection)
         {
             List<InfoMap> documentMap = new List<InfoMap>();
 

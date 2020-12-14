@@ -13,7 +13,7 @@ namespace ReportDBmySQL
         /// </summary>
         private static string GetFillDocMap(string fN, MySqlConnection connection, string docText)
         {
-            List<InfoMap> documentMap = SelectInfoMap(fN, connection);
+            List<InfoMap> documentMap = GetSelectInfoMap(fN, connection);
 
             foreach (InfoMap map in documentMap)
             {
