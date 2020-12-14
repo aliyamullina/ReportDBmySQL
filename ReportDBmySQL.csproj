@@ -113,8 +113,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Database\Maps\InfoMap.cs" />
-    <Compile Include="Classes\Document\Map\GetFillDocMap.cs" />
-    <Compile Include="Classes\Document\Map\GetSelectInfoMap.cs" />
+    <Compile Include="Classes\Document\Map\GetFillMap.cs" />
+    <Compile Include="Classes\Document\Map\GetSelectMap.cs" />
     <Compile Include="Classes\Database\Adresses\GetCreate.cs" />
     <Compile Include="Classes\Database\Adresses\GetID.cs" />
     <Compile Include="Classes\Database\Catalogs\GetCreate.cs" />
