@@ -12,7 +12,7 @@ namespace ReportDBmySQL
         {
             var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 
-            List<InfoDocument> infoDocuments = GetSelectDocument(connection);
+            List<InfoDocument> infoDocuments = GetSelect(connection);
 
             foreach (InfoDocument info in infoDocuments)
             {
@@ -20,9 +20,9 @@ namespace ReportDBmySQL
 
                 var fC = info.Catalog;
 
-                string filePath = GetCopyTemplate(documentTemplate, fN, fC);
+                string filePath = CopyTemplate(documentTemplate, fN, fC);
 
-                GetFillDocument(fN, filePath, connection);
+                GetFill(fN, filePath, connection);
             }
         }
     }

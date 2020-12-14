@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Создается файл по шаблону
         /// </summary>
-        private static string GetCopyTemplate(string documentTemplate, string fN, string fC)
+        private static string CopyTemplate(string documentTemplate, string fN, string fC)
         {
             var filePath = fC + @"\Отчет ППО " + fN + ".docx";
 

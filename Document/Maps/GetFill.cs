@@ -1,19 +1,17 @@
-﻿using DocumentFormat.OpenXml.Packaging;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.IO;
 using System.Text.RegularExpressions;
 
 namespace ReportDBmySQL
 {
-    public partial class Document
+    public partial class Maps
     {
         /// <summary>
         /// Добавляет в doc данные по карте
         /// </summary>
-        private static string GetFillMap(string fN, MySqlConnection connection, string docText)
+        public static string GetFill(string fN, MySqlConnection connection, string docText)
         {
-            List<InfoMap> documentMap = GetSelectMap(fN, connection);
+            List<InfoMap> documentMap = GetSelect(fN, connection);
 
             foreach (InfoMap map in documentMap)
             {

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Document
+    public partial class Maps
     {
         /// <summary>
         /// Возвращает ресстр для текущего адреса в БД
         /// </summary>
-        public static List<InfoMap> GetSelectMap(string fN, MySqlConnection connection)
+        public static List<InfoMap> GetSelect(string fN, MySqlConnection connection)
         {
             List<InfoMap> documentMap = new List<InfoMap>();
 

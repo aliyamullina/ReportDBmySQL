@@ -4,12 +4,12 @@ using MySql.Data.MySqlClient;
 
 namespace ReportDBmySQL
 {
-    public partial class Document
+    public partial class ExcelTables
     {
         /// <summary>
         /// Создание и заполнение таблицы
         /// </summary>
-        private static void GetFillTable(WordprocessingDocument WordDoc, string fN, MySqlConnection connection)
+        public static void GetFillTable(WordprocessingDocument WordDoc, string fN, MySqlConnection connection)
         {
             Table table = new Table();
             CreateProperties(table);

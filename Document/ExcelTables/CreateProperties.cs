@@ -3,12 +3,12 @@ using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace ReportDBmySQL
 {
-    public partial class Document
+    public partial class ExcelTables
     {
         /// <summary>
         /// Настройки свойств для таблицы
         /// </summary>
-        private static void CreateProperties(Table table)
+        public static void CreateProperties(Table table)
         {
             TableProperties props = new TableProperties(
                             new TableBorders

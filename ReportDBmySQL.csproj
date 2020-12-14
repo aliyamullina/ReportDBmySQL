@@ -113,8 +113,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Maps\InfoMap.cs" />
-    <Compile Include="Document\Map\GetFillMap.cs" />
-    <Compile Include="Document\Map\GetSelectMap.cs" />
+    <Compile Include="Document\Maps\GetFill.cs" />
+    <Compile Include="Document\Maps\GetSelect.cs" />
     <Compile Include="Database\Adresses\CreateTable.cs" />
     <Compile Include="Database\Adresses\GetID.cs" />
     <Compile Include="Database\Catalogs\CreateTable.cs" />
@@ -130,8 +130,8 @@
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\Create.cs" />
     <Compile Include="Database\Catalogs\GetSelect.cs" />
-    <Compile Include="Document\GetSelectDocument.cs" />
-    <Compile Include="Document\Table\GetSelect.cs" />
+    <Compile Include="Document\GetSelect.cs" />
+    <Compile Include="Document\ExcelTables\GetSelect.cs" />
     <Compile Include="Database\Adresses\GetInsert.cs" />
     <Compile Include="Database\Catalogs\GetInsert.cs" />
     <Compile Include="Database\Cities\GetInsert.cs" />
@@ -143,19 +143,19 @@
     <Compile Include="Database\Cities\GetFill.cs" />
     <Compile Include="Database\Registers\GetFill.cs" />
     <Compile Include="Document\Create.cs" />
-    <Compile Include="Document\Table\CreateProperties.cs" />
-    <Compile Include="Document\GetFillDocument.cs" />
-    <Compile Include="Document\Table\GetFillTable.cs" />
-    <Compile Include="Document\Table\GetFillTableBody.cs" />
-    <Compile Include="Document\Table\GetFillTableHead.cs" />
-    <Compile Include="Document\GetCopyTemplate.cs" />
-    <Compile Include="Document\Table\InfoTable.cs" />
+    <Compile Include="Document\ExcelTables\CreateProperties.cs" />
+    <Compile Include="Document\GetFill.cs" />
+    <Compile Include="Document\ExcelTables\GetFillTable.cs" />
+    <Compile Include="Document\ExcelTables\GetFillTableBody.cs" />
+    <Compile Include="Document\ExcelTables\GetFillTableHead.cs" />
+    <Compile Include="Document\CopyTemplate.cs" />
+    <Compile Include="Document\ExcelTables\InfoTable.cs" />
     <Compile Include="Document\InfoDocument.cs" />
     <Compile Include="Database\Catalogs\InfoCatalog.cs" />
     <Compile Include="Database\Registers\InfoRegistry.cs" />
     <Compile Include="Database\Adresses\InfoAddress.cs" />
     <Compile Include="Database\Cities\InfoCity.cs" />
-    <Compile Include="Database\Date\InfoDate.cs" />
+    <Compile Include="Database\Dates\InfoDate.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
-    public partial class Document
+    public partial class ExcelTables
     {
         /// <summary>
         /// Заполнение содержимого таблицы
         /// </summary>
-        private static void GetFillTableBody(Table table, string fN, MySqlConnection connection)
+        public static void GetFillTableBody(Table table, string fN, MySqlConnection connection)
         {
             List<InfoTable> tableBody = GetSelect(fN, connection);
 

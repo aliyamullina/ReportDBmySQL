@@ -2,12 +2,12 @@
 
 namespace ReportDBmySQL
 {
-    public partial class Document
+    public partial class ExcelTables
     {
         /// <summary>
         /// Заполнение заголовков таблицы
         /// </summary>
-        private static void GetFillTableHead(Table table)
+        public static void GetFillTableHead(Table table)
         {
             TableGrid tr = new TableGrid(new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn(), new GridColumn());
             table.AppendChild(tr);
