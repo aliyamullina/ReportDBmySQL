@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Настройки свойств для таблицы
         /// </summary>
-        private static void CreateTableProperties(Table table)
+        private static void CreateProperties(Table table)
         {
             TableProperties props = new TableProperties(
                             new TableBorders

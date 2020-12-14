@@ -11,14 +11,14 @@ namespace ReportDBmySQL
         /// </summary>
         private static void GetFillTableBody(Table table, string fN, MySqlConnection connection)
         {
-            List<InfoDocumentTable> tableBody = GetSelectInfoDocumentTable(fN, connection);
+            List<InfoTable> tableBody = GetSelect(fN, connection);
 
             string comment = "В 2020 году истекает срок поверки. Требуется замена";
             string commentNope = "Отсутствует";
 
             int count = 1;
 
-            foreach (InfoDocumentTable tableRow in tableBody)
+            foreach (InfoTable tableRow in tableBody)
             {
                 TableRow bodyRow = new TableRow();
                 TableCell bodyTdCount = new TableCell(new Paragraph(new Run(new Text(count++.ToString()))));

@@ -3,11 +3,11 @@
     /// <summary>
     /// Модель таблицы: полный адрес, реестр
     /// </summary>
-    public class InfoDocumentTable
+    public class InfoTable
     {
-        public InfoDocumentTable() { }
+        public InfoTable() { }
 
-        public InfoDocumentTable
+        public InfoTable
             (
             // InfoCity
             string city,

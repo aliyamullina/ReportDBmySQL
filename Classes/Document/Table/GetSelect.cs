@@ -8,9 +8,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает ресстр для текущего адреса в БД
         /// </summary>
-        public static List<InfoDocumentTable> GetSelectInfoDocumentTable(string fN, MySqlConnection connection)
+        public static List<InfoTable> GetSelect(string fN, MySqlConnection connection)
         {
-            List<InfoDocumentTable> documentTable = new List<InfoDocumentTable>();
+            List<InfoTable> documentTable = new List<InfoTable>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
@@ -43,7 +43,7 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoDocumentTable documentTableList = new InfoDocumentTable
+                        InfoTable documentTableList = new InfoTable
                         {
                             // InfoCity
                             City = dataReader["City"].ToString(),
