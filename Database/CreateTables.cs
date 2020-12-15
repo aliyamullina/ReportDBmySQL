@@ -5,7 +5,7 @@ namespace ReportDBmySQL
 {
     public partial class Database
     {
-        public static void CreateTable(MySqlConnection connection)
+        public static void CreateTables(MySqlConnection connection)
         {
             Catalogs.CreateTable(connection);
             Cities.CreateTable(connection);

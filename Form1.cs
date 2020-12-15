@@ -17,22 +17,21 @@ namespace ReportDBmySQL
         private void Button1_Click(object sender, EventArgs e)
         {
             //в диалоге поставить галку искать без ппо и с ппо
-            
-            Database db = new Database();
-            MySqlConnection connection = db.GetConnection();
-
-            Database.CreateTable(connection);
-
             bool withoutReportsSearch;
             if (checkBox1.Checked == true) { withoutReportsSearch = true; }
             else { withoutReportsSearch = false; }
 
-            Database.GetFillTable(connection, withoutReportsSearch);
+            Database db = new Database();
+            MySqlConnection connection = db.GetConnection();
+
+            Database.CreateTables(connection);
+
+            List<InfoCatalog> CatalogsInsert = Catalogs.GetFill(withoutReportsSearch, connection);
+            Catalogs.GetInsert(CatalogsInsert, connection);
 
             List<InfoMap> nodeList = Maps.SelectAddresses(connection);
 
             Maps.LoadTree(treeView1, nodeList);
-           
         }
 
         private void Button2_Click(object sender, EventArgs e)
