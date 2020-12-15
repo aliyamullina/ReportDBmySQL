@@ -25,9 +25,9 @@ namespace ReportDBmySQL
 
             Database.CreateTables(connection);
 
-            List<InfoCatalog> СatalogsInsert = new List<InfoCatalog>();
-            Catalogs.GetFill(ref СatalogsInsert, withoutReportsSearch, connection);
-            Catalogs.GetInsert(СatalogsInsert, connection);
+            List<InfoCatalog> сatalogsData = new List<InfoCatalog>();
+            Catalogs.GetFill(ref сatalogsData, withoutReportsSearch, connection);
+            Catalogs.GetInsert(ref сatalogsData, connection);
 
             List<InfoMap> nodeList = Maps.SelectAddresses(connection);
 

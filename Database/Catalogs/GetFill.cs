@@ -12,7 +12,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static void GetFill(ref List<InfoCatalog> СatalogsInsert, bool withoutReportsSearch, MySqlConnection connection)
+        public static void GetFill(ref List<InfoCatalog> сatalogsData, bool withoutReportsSearch, MySqlConnection connection)
         {
             FolderBrowserDialog folderDlg = new FolderBrowserDialog() { 
                 ShowNewFolderButton = false,
@@ -41,23 +41,23 @@ namespace ReportDBmySQL
                         if (filesReports == false)
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(СatalogsInsert, catalog);
+                            GetRegistryDirectory(сatalogsData, catalog);
                         }
                     }
                     else
                     {
-                        GetRegistryDirectory(СatalogsInsert, catalog);
+                        GetRegistryDirectory(сatalogsData, catalog);
                     }
                 }
             }
         }
 
-        private static void GetRegistryDirectory(List<InfoCatalog> СatalogsInsert, string catalog)
+        private static void GetRegistryDirectory(List<InfoCatalog> сatalogsData, string catalog)
         {
             string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
             foreach (string registry in files)
             {
-                СatalogsInsert.Add(new InfoCatalog(catalog, registry));
+                сatalogsData.Add(new InfoCatalog(catalog, registry));
             }
         }
     }
