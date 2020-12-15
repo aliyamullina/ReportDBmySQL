@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Catalogs в БД
         /// </summary>
-        public static void GetInsert(ref List<InfoCatalog> сatalogsData, MySqlConnection connection)
+        public static void GetInsert(ref List<InfoCatalog> сatalogsPath, MySqlConnection connection)
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"
@@ -19,18 +19,20 @@ namespace ReportDBmySQL
                 ", connection))
             {
                 connection.Open();
-                foreach (var item in сatalogsData)
+                foreach (var item in сatalogsPath)
                 {
                     command.Parameters.Clear();
                     command.Parameters.AddWithValue("@catalog", item.Catalog);
                     command.Parameters.AddWithValue("@registry", item.Registry);
                     int catalog_id = Convert.ToInt32(command.ExecuteScalar());
 
-                    List<InfoCatalog> path = GetSelect(connection, catalog_id);
+                    List<InfoCatalog> oneCatalogPath = new List<InfoCatalog>();
+                        
+                    GetSelect(ref oneCatalogPath, connection, catalog_id);
 
 
-                    Adresses.GetID(connection, catalog_id, path);
-                    Registers.GetID(connection, catalog_id, path);
+                    Adresses.GetID(connection, catalog_id, oneCatalogPath);
+                    Registers.GetID(connection, catalog_id, oneCatalogPath);
                 }
                 connection.Close();
             }

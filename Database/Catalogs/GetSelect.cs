@@ -9,9 +9,8 @@ namespace ReportDBmySQL
         /// <summary>
         /// Извлечение из таблицы Catalogs в List
         /// </summary>
-        public static List<InfoCatalog> GetSelect(MySqlConnection connection, int catalog_id)
+        public static void GetSelect(ref List<InfoCatalog> oneCatalogPath, MySqlConnection connection, int catalog_id)
         {
-            List<InfoCatalog> catalogsSelect = new List<InfoCatalog>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT * FROM catalogs 
@@ -32,12 +31,11 @@ namespace ReportDBmySQL
                             Catalog = dataReader["Catalog"].ToString(),
                             Registry = dataReader["Registry"].ToString()
                         };
-                        catalogsSelect.Add(catalogList);
+                        oneCatalogPath.Add(catalogList);
                     }
                     dataReader.Close();
                 }
             }
-            return catalogsSelect;
         }
     }
 }
