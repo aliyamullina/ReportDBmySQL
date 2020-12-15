@@ -12,10 +12,8 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static List<InfoCatalog> GetFill(bool withoutReportsSearch, MySqlConnection connection)
+        public static void GetFill(ref List<InfoCatalog> СatalogsInsert, bool withoutReportsSearch, MySqlConnection connection)
         {
-            List<InfoCatalog> catalogsInsert = new List<InfoCatalog>();
-
             FolderBrowserDialog folderDlg = new FolderBrowserDialog() { 
                 ShowNewFolderButton = false,
                 SelectedPath = @"Z:\Выполнение ТЭСБ 2020\для ранифа\сдаем без успд и с УСПД подписанные акты"
@@ -43,24 +41,23 @@ namespace ReportDBmySQL
                         if (filesReports == false)
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(catalogsInsert, catalog);
+                            GetRegistryDirectory(СatalogsInsert, catalog);
                         }
                     }
                     else
                     {
-                        GetRegistryDirectory(catalogsInsert, catalog);
+                        GetRegistryDirectory(СatalogsInsert, catalog);
                     }
                 }
             }
-            return catalogsInsert;
         }
 
-        private static void GetRegistryDirectory(List<InfoCatalog> catalogsInsert, string catalog)
+        private static void GetRegistryDirectory(List<InfoCatalog> СatalogsInsert, string catalog)
         {
             string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
             foreach (string registry in files)
             {
-                catalogsInsert.Add(new InfoCatalog(catalog, registry));
+                СatalogsInsert.Add(new InfoCatalog(catalog, registry));
             }
         }
     }

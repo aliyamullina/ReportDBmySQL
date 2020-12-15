@@ -7,7 +7,6 @@ namespace ReportDBmySQL
 {
     public partial class Form1 : Form
     {
-        
 
         public Form1()
         {
@@ -26,8 +25,9 @@ namespace ReportDBmySQL
 
             Database.CreateTables(connection);
 
-            List<InfoCatalog> CatalogsInsert = Catalogs.GetFill(withoutReportsSearch, connection);
-            Catalogs.GetInsert(CatalogsInsert, connection);
+            List<InfoCatalog> СatalogsInsert = new List<InfoCatalog>();
+            Catalogs.GetFill(ref СatalogsInsert, withoutReportsSearch, connection);
+            Catalogs.GetInsert(СatalogsInsert, connection);
 
             List<InfoMap> nodeList = Maps.SelectAddresses(connection);
 
