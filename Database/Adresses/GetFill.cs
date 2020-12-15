@@ -7,25 +7,17 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        public static List<InfoAddress> GetFill(int catalog_id, List<InfoCatalog> path)
+        public static void GetFill(ref List<InfoAddress> addressesList, int catalog_id, ref List<InfoCatalog> oneCatalogPath)
         {
-            try
-            {
-                List<InfoAddress> folderAdress = new List<InfoAddress>();
-                int city_id = 1;
+            int city_id = 1;
 
-                foreach (InfoCatalog c in path)
-                {
-                    var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
-                    var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
-                    var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
-                    folderAdress.Add(new InfoAddress(street, home, city_id, catalog_id));
-                }
-                return folderAdress;
-            }
-            catch
+            foreach (InfoCatalog c in oneCatalogPath)
             {
-                return null;
+                var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
+                var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
+                var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
+
+                addressesList.Add(new InfoAddress(street, home, city_id, catalog_id));
             }
         }
     }
