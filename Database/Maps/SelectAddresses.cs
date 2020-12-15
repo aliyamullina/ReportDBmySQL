@@ -8,10 +8,8 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает все адреса из БД: City, Street, Home, Catalog
         /// </summary>
-        public static List<InfoMap> SelectAddresses(MySqlConnection connection)
+        public static void SelectAddresses(ref List<InfoMap> nodeList, MySqlConnection connection)
         {
-            List<InfoMap> nodeList = new List<InfoMap>();
-
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
 	                cities.City,
@@ -45,7 +43,6 @@ namespace ReportDBmySQL
                 }
                 connection.Close();
             }
-            return nodeList;
         }
     }
 }

@@ -29,9 +29,9 @@ namespace ReportDBmySQL
             Catalogs.GetFill(ref сatalogsList, withoutReportsSearch, connection);
             Catalogs.GetInsert(ref сatalogsList, connection);
 
-            List<InfoMap> nodeList = Maps.SelectAddresses(connection);
-
-            Maps.LoadTree(treeView1, nodeList);
+            List<InfoMap> nodeList = new List<InfoMap>();
+            Maps.SelectAddresses(ref nodeList, connection);
+            Maps.LoadTree(treeView1, ref nodeList);
         }
 
         private void Button2_Click(object sender, EventArgs e)

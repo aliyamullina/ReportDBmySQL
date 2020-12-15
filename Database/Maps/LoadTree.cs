@@ -12,7 +12,7 @@ namespace ReportDBmySQL
         /// - FlatsCount 60
         /// - Entrance В доме 4 подъезда
         /// </summary>
-        public static List<TreeNode> LoadTree(TreeView treeView1, List<InfoMap> nodeList)
+        public static List<TreeNode> LoadTree(TreeView treeView1, ref List<InfoMap> nodeList)
         {
             treeView1.Nodes.Clear();
             treeView1.LabelEdit = true;
