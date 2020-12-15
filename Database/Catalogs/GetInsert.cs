@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Catalogs в БД
         /// </summary>
-        public static void GetInsert(ref List<InfoCatalog> сatalogsPath, MySqlConnection connection)
+        public static void GetInsert(ref List<InfoCatalog> сatalogsList, MySqlConnection connection)
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"
@@ -19,7 +19,7 @@ namespace ReportDBmySQL
                 ", connection))
             {
                 connection.Open();
-                foreach (var item in сatalogsPath)
+                foreach (var item in сatalogsList)
                 {
                     command.Parameters.Clear();
                     command.Parameters.AddWithValue("@catalog", item.Catalog);

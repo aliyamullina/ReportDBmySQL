@@ -12,7 +12,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static void GetFill(ref List<InfoCatalog> сatalogsPath, bool withoutReportsSearch, MySqlConnection connection)
+        public static void GetFill(ref List<InfoCatalog> сatalogsList, bool withoutReportsSearch, MySqlConnection connection)
         {
             FolderBrowserDialog folderDlg = new FolderBrowserDialog() { 
                 ShowNewFolderButton = false,
@@ -41,12 +41,12 @@ namespace ReportDBmySQL
                         if (filesReports == false)
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(сatalogsPath, catalog);
+                            GetRegistryDirectory(сatalogsList, catalog);
                         }
                     }
                     else
                     {
-                        GetRegistryDirectory(сatalogsPath, catalog);
+                        GetRegistryDirectory(сatalogsList, catalog);
                     }
                 }
             }
