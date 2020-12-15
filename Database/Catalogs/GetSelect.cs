@@ -26,12 +26,12 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoCatalog catalogList = new InfoCatalog
-                        {
-                            Catalog = dataReader["Catalog"].ToString(),
-                            Registry = dataReader["Registry"].ToString()
-                        };
-                        oneCatalogPath.Add(catalogList);
+                        oneCatalogPath.Add(
+                            new InfoCatalog(
+                                dataReader["Catalog"].ToString(), 
+                                dataReader["Registry"].ToString()
+                            )
+                        );
                     }
                     dataReader.Close();
                 }
