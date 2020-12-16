@@ -5,8 +5,6 @@
     /// </summary>
     public class InfoAddress
     {
-        public InfoAddress() { }
-
         public InfoAddress(string street, string home, int city_id, int catalog_id)
         {
             this.Street = street;
@@ -15,9 +13,24 @@
             this.Catalog_id = catalog_id;
         }
 
+        /// <summary>
+        /// Улица
+        /// </summary>
         public string Street { get;  set; }
+
+        /// <summary>
+        /// Номер дома
+        /// </summary>
         public string Home { get;  set; }
+
+        /// <summary>
+        /// id Города
+        /// </summary>
         public int City_id { get;  set; }
+
+        /// <summary>
+        /// id Каталога
+        /// </summary>
         public int Catalog_id { get;  set; }
     }
 }

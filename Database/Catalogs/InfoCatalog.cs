@@ -5,8 +5,6 @@
     /// </summary>
     public class InfoCatalog
     {
-        public InfoCatalog() { }
-
         public InfoCatalog(string catalog, string registry)
         {
             this.Catalog = catalog;

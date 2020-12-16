@@ -6,6 +6,10 @@
     public class InfoCity
     {
         public InfoCity(string city) { this.City = city; }
+
+        /// <summary>
+        /// Город
+        /// </summary>
         public string City { get; private set; }
     }
 }
