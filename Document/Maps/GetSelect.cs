@@ -6,7 +6,7 @@ namespace ReportDBmySQL
     public partial class Maps
     {
         /// <summary>
-        /// Возвращает ресстр для текущего адреса в БД
+        /// Возвращает реестр для текущего адреса в БД
         /// </summary>
         public static List<InfoMap> GetSelect(string fN, MySqlConnection connection)
         {
@@ -36,14 +36,12 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoMap documentTableList = new InfoMap
-                        {
-                            Floor = dataReader["GROUP_CONCAT(maps.Floor)"].ToString(),
-                            FlatsCount = dataReader["GROUP_CONCAT(maps.FlatsCount)"].ToString(),
-                            Entrance = dataReader["GROUP_CONCAT(maps.Entrance)"].ToString()
-                        };
-
-                        documentMap.Add(documentTableList);
+                        documentMap.Add(new InfoMap(
+                            fN,
+                            dataReader["GROUP_CONCAT(maps.Floor)"].ToString(),
+                            dataReader["GROUP_CONCAT(maps.FlatsCount)"].ToString(),
+                            dataReader["GROUP_CONCAT(maps.Entrance)"].ToString()
+                            ));
                     }
                     dataReader.Close();
                 }
