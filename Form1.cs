@@ -39,11 +39,13 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
+            var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
+
             List<InfoDocument> documentsList = new List<InfoDocument>();
-            Document.Create(ref documentsList, connection);
+            Document.GetSelect(ref documentsList, connection);
+            Document.Create(ref documentsList, documentTemplate, connection);
 
             db.Clear();
-
             Application.Exit();
         }
 

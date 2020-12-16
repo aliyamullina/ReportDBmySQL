@@ -8,12 +8,8 @@ namespace ReportDBmySQL
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        public static void Create(ref List<InfoDocument> documentsList, MySqlConnection connection)
+        public static void Create(ref List<InfoDocument> documentsList, string documentTemplate, MySqlConnection connection)
         {
-            var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
-
-            GetSelect(ref documentsList, connection);
-
             foreach (InfoDocument info in documentsList)
             {
                 var fN = info.Address;
