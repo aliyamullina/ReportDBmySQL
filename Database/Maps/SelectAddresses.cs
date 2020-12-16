@@ -28,16 +28,14 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoMap infoMapList = new InfoMap();
-                        infoMapList.Address += dataReader["City"].ToString();
-                        infoMapList.Address += ", " + dataReader["Street"].ToString();
-                        infoMapList.Address += " " + dataReader["Home"].ToString();
-
-                        infoMapList.Floor = "Введите количество этажей";
-                        infoMapList.FlatsCount = "Введите количество квартир";
-                        infoMapList.Entrance = "Введите количество подъездов";
-
-                        nodeList.Add(infoMapList);
+                        nodeList.Add(
+                            new InfoMap(
+                                dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"].ToString(),
+                                "Введите количество этажей", 
+                                "Введите количество квартир", 
+                                "Введите количество подъездов"
+                            )
+                        );
                     }
                     dataReader.Close();
                 }
