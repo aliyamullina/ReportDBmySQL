@@ -25,12 +25,10 @@ namespace ReportDBmySQL
 
             Database.CreateTables(connection);
 
-            List<InfoCatalog> сatalogsList = new List<InfoCatalog>();
-            Catalogs.GetFill(ref сatalogsList, withoutReportsSearch, connection);
+            Catalogs.GetFill(out List<InfoCatalog> сatalogsList, withoutReportsSearch, connection);
             Catalogs.GetInsert(ref сatalogsList, connection);
 
-            List<InfoMap> nodeList = new List<InfoMap>();
-            Maps.SelectAddresses(ref nodeList, connection);
+            Maps.SelectAddresses(out List<InfoMap> nodeList, connection);
             Maps.LoadTree(treeView1, ref nodeList);
         }
 
@@ -41,8 +39,7 @@ namespace ReportDBmySQL
 
             var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 
-            List<InfoDocument> documentsList = new List<InfoDocument>();
-            Document.GetSelect(ref documentsList, connection);
+            Document.GetSelect(out List<InfoDocument> documentsList, connection);
             Document.Create(ref documentsList, documentTemplate, connection);
 
             db.Clear();

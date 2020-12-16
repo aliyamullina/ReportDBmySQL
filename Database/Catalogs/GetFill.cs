@@ -12,8 +12,10 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static void GetFill(ref List<InfoCatalog> сatalogsList, bool withoutReportsSearch, MySqlConnection connection)
+        public static void GetFill(out List<InfoCatalog> сatalogsList, bool withoutReportsSearch, MySqlConnection connection)
         {
+            сatalogsList = new List<InfoCatalog>();
+
             FolderBrowserDialog folderDlg = new FolderBrowserDialog() { 
                 ShowNewFolderButton = false,
                 SelectedPath = @"Z:\Выполнение ТЭСБ 2020\для ранифа\сдаем без успд и с УСПД подписанные акты"
