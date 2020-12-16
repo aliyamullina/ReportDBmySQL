@@ -32,13 +32,6 @@ namespace ReportDBmySQL
                 {
                     while (dataReader.Read())
                     {
-                        InfoDocument infoDocumentsList = new InfoDocument();
-                        infoDocumentsList.Address += dataReader["City"].ToString();
-                        infoDocumentsList.Address += ", " + dataReader["Street"].ToString();
-                        infoDocumentsList.Address += " " + dataReader["Home"].ToString();
-
-                        infoDocumentsList.Catalog = dataReader["Catalog"].ToString();
-
                         documentsList.Add(
                             new InfoDocument(
                                 dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"].ToString(),
