@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -21,7 +22,10 @@ namespace ReportDBmySQL
                 }
 
                 docText = new Regex("AddressInfo").Replace(docText, fN);
-                docText = Maps.GetFill(fN, connection, docText);
+
+                List<InfoMap> documentMap = new List<InfoMap>();
+                Maps.GetSelect(ref documentMap, fN, connection);
+                Maps.GetFill(documentMap, ref docText);
 
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
                 {

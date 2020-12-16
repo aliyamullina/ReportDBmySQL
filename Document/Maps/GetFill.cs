@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace ReportDBmySQL
@@ -9,18 +8,14 @@ namespace ReportDBmySQL
         /// <summary>
         /// Добавляет в doc данные по карте
         /// </summary>
-        public static string GetFill(string fN, MySqlConnection connection, string docText)
+        public static void GetFill(List<InfoMap> documentMap, ref string docText)
         {
-            List<InfoMap> documentMap = GetSelect(fN, connection);
-
             foreach (InfoMap map in documentMap)
             {
                 docText = new Regex("FloorInfo").Replace(docText, map.Floor);
                 docText = new Regex("FlatsCountInfo").Replace(docText, map.FlatsCount);
                 docText = new Regex("EntranceInfo").Replace(docText, map.Entrance);
             }
-
-            return docText;
         }
     }
 }
