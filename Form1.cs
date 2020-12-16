@@ -51,9 +51,6 @@ namespace ReportDBmySQL
 
         private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            
-            List<InfoMap> mapListEdit = new List<InfoMap>();
-
             string floor = null; string flatscount = null; string entrance = null;
 
             //Не позволяет редактировать родителя, выдает исключение
@@ -87,11 +84,10 @@ namespace ReportDBmySQL
                 }
             }
 
-            mapListEdit.Add(new InfoMap(address, floor, flatscount, entrance));
-
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
+            List<InfoMap> mapListEdit = new List<InfoMap> { new InfoMap(address, floor, flatscount, entrance) };
             Maps.GetInsert(mapListEdit, connection);
         }
     }
