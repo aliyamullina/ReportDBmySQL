@@ -24,6 +24,7 @@ namespace ReportDBmySQL
             if (dialog == DialogResult.OK)
             {
                 var open = folderDlg.SelectedPath;
+
                 // Общий список папок
                 string[] cI = Directory.GetDirectories(open);
 
@@ -41,23 +42,23 @@ namespace ReportDBmySQL
                         if (filesReports == false)
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(сatalogsList, catalog);
+                            GetRegistryDirectory(ref сatalogsList, catalog);
                         }
                     }
                     else
                     {
-                        GetRegistryDirectory(сatalogsList, catalog);
+                        GetRegistryDirectory(ref сatalogsList, catalog);
                     }
                 }
             }
         }
 
-        private static void GetRegistryDirectory(List<InfoCatalog> сatalogsPath, string catalog)
+        public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, string catalog)
         {
             string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
             foreach (string registry in files)
             {
-                сatalogsPath.Add(new InfoCatalog(catalog, registry));
+                сatalogsList.Add(new InfoCatalog(catalog, registry));
             }
         }
     }
