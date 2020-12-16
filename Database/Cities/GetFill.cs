@@ -13,7 +13,7 @@ namespace ReportDBmySQL
                 {
                     new InfoCity(city)
                 };
-            Cities.GetInsert(citiesList, connection);
+            GetInsert(citiesList, connection);
         }
     }
 }
