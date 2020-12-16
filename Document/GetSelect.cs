@@ -8,10 +8,8 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает все адреса из БД: City, Street, Home, Catalog
         /// </summary>
-        public static List<InfoDocument> GetSelect(MySqlConnection connection)
+        public static List<InfoDocument> GetSelect(ref List<InfoDocument> documentsList, MySqlConnection connection)
         {
-            List<InfoDocument> infoDocuments = new List<InfoDocument>();
-
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
 	                cities.City,
@@ -41,13 +39,18 @@ namespace ReportDBmySQL
 
                         infoDocumentsList.Catalog = dataReader["Catalog"].ToString();
 
-                        infoDocuments.Add(infoDocumentsList);
+                        documentsList.Add(
+                            new InfoDocument(
+                                dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"].ToString(),
+                                dataReader["Catalog"].ToString()
+                            )
+                        );
                     }
                     dataReader.Close();
                 }
                 connection.Close();
             }
-            return infoDocuments;
+            return documentsList;
         }
     }
 }

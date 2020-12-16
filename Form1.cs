@@ -39,7 +39,8 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
-            Document.Create(connection);
+            List<InfoDocument> documentsList = new List<InfoDocument>();
+            Document.Create(ref documentsList, connection);
 
             db.Clear();
 
