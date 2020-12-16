@@ -15,7 +15,7 @@ namespace ReportDBmySQL
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //в диалоге поставить галку искать без ппо и с ппо
+            //выбор искать без ппо и с ппо
             bool withoutReportsSearch;
             if (checkBox1.Checked == true) { withoutReportsSearch = true; }
             else { withoutReportsSearch = false; }
