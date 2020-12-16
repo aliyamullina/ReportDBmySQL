@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         public static void GetID(MySqlConnection connection, int catalog_id, List<InfoCatalog> path)
         {
             List<InfoRegistry> registersList = new List<InfoRegistry>();
-            GetFill(ref registersList, catalog_id, path);
+            GetFillList(ref registersList, catalog_id, path);
             GetInsert(ref registersList, connection);
         }
     }

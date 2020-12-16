@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        public static void GetFill(ref List<InfoRegistry> registersList, int catalog_id, List<InfoCatalog> path)
+        public static void GetFillList(ref List<InfoRegistry> registersList, int catalog_id, List<InfoCatalog> path)
         {
             foreach (InfoCatalog c in path)
             {
