@@ -12,8 +12,8 @@ namespace ReportDBmySQL
         {
             foreach (InfoCatalog c in oneCatalogPath)
             {
-                GetExcelTableRead(c.Registry, catalog_id, out List <InfoRegistry> registersTable);
-                registersList = registersTable.Union(registersList).ToList();
+                GetExcelTableRead(c.Registry, catalog_id, out List <InfoRegistry> catalogRegistersTable);
+                registersList = catalogRegistersTable.Union(registersList).ToList();
             }
         }
     }
