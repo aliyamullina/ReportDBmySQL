@@ -88,7 +88,7 @@ namespace ReportDBmySQL
             MySqlConnection connection = db.GetConnection();
 
             List<InfoMap> mapListEdit = new List<InfoMap> { new InfoMap(address, floor, flatscount, entrance) };
-            Maps.GetInsert(mapListEdit, connection);
+            Maps.GetInsertList(in mapListEdit, connection);
         }
     }
 }

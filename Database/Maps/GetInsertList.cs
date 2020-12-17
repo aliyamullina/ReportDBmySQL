@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Maps в БД
         /// </summary>
-        public static void GetInsert(List<InfoMap> nodeListEdit, MySqlConnection connection)
+        public static void GetInsertList(in List<InfoMap> nodeListEdit, MySqlConnection connection)
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"

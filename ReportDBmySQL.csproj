@@ -118,7 +118,7 @@
     <Compile Include="Database\Adresses\CreateTable.cs" />
     <Compile Include="Database\Catalogs\CreateTable.cs" />
     <Compile Include="Database\Cities\CreateTable.cs" />
-    <Compile Include="Database\Maps\GetInsert.cs" />
+    <Compile Include="Database\Maps\GetInsertList.cs" />
     <Compile Include="Database\Maps\CreateTable.cs" />
     <Compile Include="Database\CreateTables.cs" />
     <Compile Include="Database\Maps\LoadTree.cs" />
