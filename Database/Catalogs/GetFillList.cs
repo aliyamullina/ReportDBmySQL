@@ -12,7 +12,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static void GetFillList(out List<InfoCatalog> сatalogsList, out string openFolder, in bool withoutReportsSearch)
+        public static void GetFillList(in bool withoutReportsSearch, out List<InfoCatalog> сatalogsList, out string openFolder)
         {
             openFolder = null;
             сatalogsList = new List<InfoCatalog>();
