@@ -1,19 +1,14 @@
-﻿using MySql.Data.MySqlClient;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
     public partial class Cities
     {
-        public static void GetFill(string open, MySqlConnection connection)
+        public static void GetFill(in string open, out List<InfoCity> citiesList)
         {
+            citiesList = new List<InfoCity>();
             var city = open.Substring(open.LastIndexOf("\\")).Replace("\\", string.Empty);
-
-            List<InfoCity> citiesList = new List<InfoCity>
-                {
-                    new InfoCity(city)
-                };
-            GetInsert(citiesList, connection);
+            citiesList.Add(new InfoCity(city));
         }
     }
 }
