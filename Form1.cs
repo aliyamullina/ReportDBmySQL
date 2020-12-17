@@ -30,8 +30,8 @@ namespace ReportDBmySQL
             Catalogs.GetSelect(out List<InfoCatalog> oneCatalogPath, in catalog_id, connection);
 
             //Adresses.GetID(in catalog_id, ref oneCatalogPath, connection);
-            Adresses.GetFill(out List<InfoAddress> addressesList, in catalog_id, in oneCatalogPath);
-            Adresses.GetInsert(in addressesList, connection);
+            Adresses.GetFillList(out List<InfoAddress> addressesList, in catalog_id, in oneCatalogPath);
+            Adresses.GetInsertList(in addressesList, connection);
 
             //Registers.GetID(in catalog_id, oneCatalogPath, connection);
             Registers.GetFillList(out List<InfoRegistry> registersList, in catalog_id, in oneCatalogPath);

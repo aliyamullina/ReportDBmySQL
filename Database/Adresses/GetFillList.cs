@@ -7,7 +7,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет названия папок, разделяет на улицу, дом и  передает в коллекцию AddressInfo
         /// </summary>
-        public static void GetFill(out List<InfoAddress> addressesList, int catalog_id, ref List<InfoCatalog> oneCatalogPath)
+        public static void GetFillList(out List<InfoAddress> addressesList, in int catalog_id, in List<InfoCatalog> oneCatalogPath)
         {
             addressesList = new List<InfoAddress>();
             int city_id = 1;
