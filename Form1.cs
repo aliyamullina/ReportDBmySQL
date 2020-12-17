@@ -22,20 +22,11 @@ namespace ReportDBmySQL
 
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
-
+            db.Clear();
             Database.CreateTables(connection);
 
             Catalogs.GetFillList(in withoutReportsSearch, out List<InfoCatalog> сatalogsList, out string openFolder);
-            Catalogs.GetInsertList(in сatalogsList, out int catalog_id, connection);
-            Catalogs.GetSelect(in catalog_id, connection, out List<InfoCatalog> oneCatalogPath);
-
-            //Adresses.GetID(in catalog_id, ref oneCatalogPath, connection);
-            Adresses.GetFillList(in catalog_id, in oneCatalogPath, out List<InfoAddress> addressesList);
-            Adresses.GetInsertList(in addressesList, connection);
-
-            //Registers.GetID(in catalog_id, oneCatalogPath, connection);
-            Registers.GetFillList(in catalog_id, in oneCatalogPath, out List<InfoRegistry> registersList);
-            Registers.GetInsert(in registersList, connection);
+            Catalogs.GetInsertList(in сatalogsList, connection);
 
             Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
             Cities.GetInsertList(in citiesList, connection);

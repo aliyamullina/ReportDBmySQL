@@ -9,10 +9,8 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Catalogs в БД
         /// </summary>
-        public static void GetInsertList(in List<InfoCatalog> сatalogsList, out int catalog_id, MySqlConnection connection)
+        public static void GetInsertList(in List<InfoCatalog> сatalogsList, MySqlConnection connection)
         {
-            catalog_id = 0;
-
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"
                 INSERT INTO catalogs(Catalog, Registry) 
@@ -27,7 +25,15 @@ namespace ReportDBmySQL
                     command.Parameters.AddWithValue("@catalog", item.Catalog);
                     command.Parameters.AddWithValue("@registry", item.Registry);
 
-                    catalog_id = Convert.ToInt32(command.ExecuteScalar());
+                    int catalog_id = Convert.ToInt32(command.ExecuteScalar());
+
+                    Catalogs.GetSelect(in catalog_id, connection, out List<InfoCatalog> oneCatalogPath);
+
+                    Adresses.GetFillList(in catalog_id, in oneCatalogPath, out List<InfoAddress> addressesList);
+                    Adresses.GetInsertList(in addressesList, connection);
+
+                    Registers.GetFillList(in catalog_id, in oneCatalogPath, out List<InfoRegistry> registersList);
+                    Registers.GetInsert(in registersList, connection);
                 }
                 connection.Close();
             }
