@@ -23,7 +23,7 @@ namespace ReportDBmySQL
 
                 docText = new Regex("AddressInfo").Replace(docText, fN);
 
-                Maps.GetSelect(out List<InfoMap> documentMap, in fN, connection);
+                Maps.GetSelectList(out List<InfoMap> documentMap, in fN, connection);
                 Maps.GetReplaceList(in documentMap, ref docText);
 
                 using (StreamWriter sw = new StreamWriter(WordDoc.MainDocumentPart.GetStream(FileMode.Create)))
