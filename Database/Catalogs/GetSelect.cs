@@ -9,8 +9,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Извлечение из таблицы Catalogs в List
         /// </summary>
-        public static void GetSelect(ref List<InfoCatalog> oneCatalogPath, MySqlConnection connection, int catalog_id)
+        public static void GetSelect(out List<InfoCatalog> oneCatalogPath, MySqlConnection connection, int catalog_id)
         {
+            oneCatalogPath = new List<InfoCatalog>();
 
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT * FROM catalogs 
