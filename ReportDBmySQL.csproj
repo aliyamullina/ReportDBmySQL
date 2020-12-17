@@ -113,7 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Maps\InfoMap.cs" />
-    <Compile Include="Document\Maps\GetFill.cs" />
+    <Compile Include="Document\Maps\GetReplaceList.cs" />
     <Compile Include="Document\Maps\GetSelect.cs" />
     <Compile Include="Database\Adresses\CreateTable.cs" />
     <Compile Include="Database\Catalogs\CreateTable.cs" />

@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Добавляет в doc данные по карте
         /// </summary>
-        public static void GetFill(in List<InfoMap> documentMap, ref string docText)
+        public static void GetReplaceList(in List<InfoMap> documentMap, ref string docText)
         {
             foreach (InfoMap map in documentMap)
             {
