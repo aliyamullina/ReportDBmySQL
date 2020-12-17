@@ -8,8 +8,10 @@ namespace ReportDBmySQL
         /// <summary>
         /// Возвращает реестр для текущего адреса в БД
         /// </summary>
-        public static void GetSelect(ref List<InfoMap> documentMap, string fN, MySqlConnection connection)
+        public static void GetSelect(out List<InfoMap> documentMap, in string fN, MySqlConnection connection)
         {
+            documentMap = new List<InfoMap>();
+
             using (MySqlCommand command = new MySqlCommand(@"
                 SELECT 
 	                maps.Address_id, 
