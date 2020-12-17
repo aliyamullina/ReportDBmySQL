@@ -7,8 +7,7 @@ namespace ReportDBmySQL
     {
         public static void GetID(in int catalog_id, ref List<InfoCatalog> oneCatalogPath, MySqlConnection connection)
         {
-            GetFill(out List<InfoAddress> addressesList, catalog_id, ref oneCatalogPath);
-            GetInsert(in addressesList, connection);
+            
         }
     }
 }
