@@ -29,8 +29,8 @@ namespace ReportDBmySQL
             Catalogs.GetInsertList(in сatalogsList, out int catalog_id, connection);
             Catalogs.GetSelect(out List<InfoCatalog> oneCatalogPath, in catalog_id, connection);
 
-            Adresses.GetID(connection, catalog_id, ref oneCatalogPath);
-            Registers.GetID(connection, catalog_id, oneCatalogPath);
+            Adresses.GetID(connection, in catalog_id, ref oneCatalogPath);
+            Registers.GetID(connection, in catalog_id, oneCatalogPath);
 
             Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
             Cities.GetInsertList(in citiesList, connection);
