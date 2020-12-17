@@ -4,10 +4,10 @@ namespace ReportDBmySQL
 {
     public partial class Cities
     {
-        public static void GetFillList(in string open, out List<InfoCity> citiesList)
+        public static void GetFillList(in string openFolder, out List<InfoCity> citiesList)
         {
             citiesList = new List<InfoCity>();
-            var city = open.Substring(open.LastIndexOf("\\")).Replace("\\", string.Empty);
+            var city = openFolder.Substring(openFolder.LastIndexOf("\\")).Replace("\\", string.Empty);
             citiesList.Add(new InfoCity(city));
         }
     }
