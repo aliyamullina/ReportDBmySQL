@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Принимает путь до файла, редактирует его
         /// </summary>
-        public static void Create(ref List<InfoDocument> documentsList, string documentTemplate, MySqlConnection connection)
+        public static void Create(in List<InfoDocument> documentsList, in string documentTemplate, MySqlConnection connection)
         {
             foreach (InfoDocument info in documentsList)
             {
@@ -18,7 +18,7 @@ namespace ReportDBmySQL
 
                 string filePath = CopyTemplate(documentTemplate, fN, fC);
 
-                GetFill(fN, filePath, connection);
+                GetFill(in fN, in filePath, connection);
             }
         }
     }

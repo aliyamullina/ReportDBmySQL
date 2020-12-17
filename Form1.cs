@@ -43,7 +43,7 @@ namespace ReportDBmySQL
             var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 
             Document.GetSelect(out List<InfoDocument> documentsList, connection);
-            Document.Create(ref documentsList, documentTemplate, connection);
+            Document.Create(in documentsList, in documentTemplate, connection);
 
             db.Clear();
             Application.Exit();
