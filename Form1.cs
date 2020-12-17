@@ -25,8 +25,11 @@ namespace ReportDBmySQL
 
             Database.CreateTables(connection);
 
-            Catalogs.GetFillList(out List<InfoCatalog> сatalogsList, in withoutReportsSearch, connection);
+            Catalogs.GetFillList(out List<InfoCatalog> сatalogsList, out string openFolder, in withoutReportsSearch);
             Catalogs.GetInsertList(ref сatalogsList, connection);
+
+            Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
+            Cities.GetInsertList(in citiesList, connection);
 
             Maps.SelectAddresses(out List<InfoMap> nodeList, connection);
             Maps.LoadTree(treeView1, ref nodeList);

@@ -12,8 +12,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static void GetFillList(out List<InfoCatalog> сatalogsList, in bool withoutReportsSearch, MySqlConnection connection)
+        public static void GetFillList(out List<InfoCatalog> сatalogsList, out string openFolder, in bool withoutReportsSearch)
         {
+            openFolder = null;
             сatalogsList = new List<InfoCatalog>();
 
             FolderBrowserDialog folderDlg = new FolderBrowserDialog() { 
@@ -25,10 +26,7 @@ namespace ReportDBmySQL
 
             if (dialog == DialogResult.OK)
             {
-                var openFolder = folderDlg.SelectedPath;
-
-                Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
-                Cities.GetInsertList(in citiesList, connection);
+                openFolder = folderDlg.SelectedPath;
 
                 // Список папок из выбранной папки
                 string[] catalogsArray = Directory.GetDirectories(openFolder);
@@ -45,18 +43,18 @@ namespace ReportDBmySQL
                         if (filesReports == false)
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(ref сatalogsList, catalog);
+                            GetRegistryDirectory(ref сatalogsList, in catalog);
                         }
                     }
                     else
                     {
-                        GetRegistryDirectory(ref сatalogsList, catalog);
+                        GetRegistryDirectory(ref сatalogsList, in catalog);
                     }
                 }
             }
         }
 
-        public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, string catalog)
+        public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, in string catalog)
         {
             string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
             foreach (string registry in files)
