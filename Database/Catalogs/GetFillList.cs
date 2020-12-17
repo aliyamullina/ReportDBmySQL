@@ -12,7 +12,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static void GetFill(out List<InfoCatalog> сatalogsList, in bool withoutReportsSearch, MySqlConnection connection)
+        public static void GetFillList(out List<InfoCatalog> сatalogsList, in bool withoutReportsSearch, MySqlConnection connection)
         {
             сatalogsList = new List<InfoCatalog>();
 
@@ -25,15 +25,15 @@ namespace ReportDBmySQL
 
             if (dialog == DialogResult.OK)
             {
-                var open = folderDlg.SelectedPath;
+                var openFolder = folderDlg.SelectedPath;
 
-                // Общий список папок
-                string[] cI = Directory.GetDirectories(open);
-
-                Cities.GetFillList(in open, out List<InfoCity> citiesList);
+                Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
                 Cities.GetInsertList(in citiesList, connection);
 
-                foreach (var catalog in cI)
+                // Список папок из выбранной папки
+                string[] catalogsArray = Directory.GetDirectories(openFolder);
+
+                foreach (var catalog in catalogsArray)
                 {
                     // Найти без отчета ППО
                     if (withoutReportsSearch == true)
