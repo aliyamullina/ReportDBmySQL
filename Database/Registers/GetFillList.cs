@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Берет данные из массива и передает в коллекцию
         /// </summary>
-        public static void GetFillList(out List<InfoRegistry> registersList, in int catalog_id, List<InfoCatalog> oneCatalogPath)
+        public static void GetFillList(out List<InfoRegistry> registersList, in int catalog_id, in List<InfoCatalog> oneCatalogPath)
         {
             registersList = new List<InfoRegistry>();
 
