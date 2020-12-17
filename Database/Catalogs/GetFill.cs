@@ -30,8 +30,8 @@ namespace ReportDBmySQL
                 // Общий список папок
                 string[] cI = Directory.GetDirectories(open);
 
-                Cities.GetFill(in open, out List<InfoCity> citiesList);
-                Cities.GetInsert(in citiesList, connection);
+                Cities.GetFillList(in open, out List<InfoCity> citiesList);
+                Cities.GetInsertList(in citiesList, connection);
 
                 foreach (var catalog in cI)
                 {

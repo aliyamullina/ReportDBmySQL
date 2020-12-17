@@ -133,13 +133,13 @@
     <Compile Include="Document\ExcelTables\GetSelect.cs" />
     <Compile Include="Database\Adresses\GetInsert.cs" />
     <Compile Include="Database\Catalogs\GetInsert.cs" />
-    <Compile Include="Database\Cities\GetInsert.cs" />
+    <Compile Include="Database\Cities\GetInsertList.cs" />
     <Compile Include="Database\Registers\GetID.cs" />
     <Compile Include="Database\Registers\GetInsert.cs" />
     <Compile Include="Database\Registers\GetExcelTableRead.cs" />
     <Compile Include="Database\Adresses\GetFill.cs" />
     <Compile Include="Database\Catalogs\GetFill.cs" />
-    <Compile Include="Database\Cities\GetFill.cs" />
+    <Compile Include="Database\Cities\GetFillList.cs" />
     <Compile Include="Database\Registers\GetFillList.cs" />
     <Compile Include="Document\Create.cs" />
     <Compile Include="Document\ExcelTables\CreateProperties.cs" />

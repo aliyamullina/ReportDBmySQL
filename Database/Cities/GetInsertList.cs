@@ -8,7 +8,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Cities в БД
         /// </summary>
-        public static void GetInsert(in List<InfoCity> citiesList, MySqlConnection connection)
+        public static void GetInsertList(in List<InfoCity> citiesList, MySqlConnection connection)
         {
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"INSERT INTO cities(City) VALUES (@city)", connection))
