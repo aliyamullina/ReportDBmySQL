@@ -116,7 +116,6 @@
     <Compile Include="Document\Maps\GetFill.cs" />
     <Compile Include="Document\Maps\GetSelect.cs" />
     <Compile Include="Database\Adresses\CreateTable.cs" />
-    <Compile Include="Database\Adresses\GetID.cs" />
     <Compile Include="Database\Catalogs\CreateTable.cs" />
     <Compile Include="Database\Cities\CreateTable.cs" />
     <Compile Include="Database\Maps\GetInsert.cs" />
@@ -134,7 +133,6 @@
     <Compile Include="Database\Adresses\GetInsertList.cs" />
     <Compile Include="Database\Catalogs\GetInsertList.cs" />
     <Compile Include="Database\Cities\GetInsertList.cs" />
-    <Compile Include="Database\Registers\GetID.cs" />
     <Compile Include="Database\Registers\GetInsert.cs" />
     <Compile Include="Database\Registers\GetExcelTableRead.cs" />
     <Compile Include="Database\Adresses\GetFillList.cs" />
