@@ -11,6 +11,8 @@ namespace ReportDBmySQL
         /// </summary>
         public static void GetInsertList(in List<InfoCatalog> сatalogsList, out int catalog_id, MySqlConnection connection)
         {
+            catalog_id = 0;
+
             // Добавляет повторно, нет проверки на существование записи
             using (MySqlCommand command = new MySqlCommand(@"
                 INSERT INTO catalogs(Catalog, Registry) 
