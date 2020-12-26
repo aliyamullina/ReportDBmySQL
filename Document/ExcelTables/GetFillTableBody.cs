@@ -1,6 +1,8 @@
 ﻿using DocumentFormat.OpenXml.Wordprocessing;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ReportDBmySQL
 {
@@ -14,7 +16,7 @@ namespace ReportDBmySQL
             List<InfoTable> tableBody = GetSelect(fN, connection);
 
             string comment = "В 2020 году истекает срок поверки. Требуется замена";
-            string commentNope = "Отсутствует";
+            string[] commentNope = { "Отсутствует", "отсутствует", "Дублер", "дублер" };
 
             int count = 1;
 
@@ -29,14 +31,16 @@ namespace ReportDBmySQL
                 TableCell bodyTdModel = new TableCell(new Paragraph(new Run(new Text(tableRow.Model))));
                 TableCell bodyTdSerial = new TableCell(new Paragraph(new Run(new Text(tableRow.Serial))));
                 TableCell bodyTdComment;
-                if (tableRow.Model == "Отсутствует" || tableRow.Model == "отсутствует")
+
+                if (commentNope.Contains(tableRow.Model))
                 {
-                    bodyTdComment = new TableCell(new Paragraph(new Run(new Text(commentNope))));
-                } else
+                    bodyTdComment = new TableCell(new Paragraph(new Run(new Text(tableRow.Model))));
+                }
+                else 
                 {
                     bodyTdComment = new TableCell(new Paragraph(new Run(new Text(comment))));
                 }
-                
+
                 bodyRow.Append(bodyTdCount, bodyTdCity, bodyTdStreet, bodyTdHome, bodyTdApartment, bodyTdModel, bodyTdSerial, bodyTdComment);
                 table.AppendChild(bodyRow);
             }
