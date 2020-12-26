@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Заполнение таблицы Registers в БД
         /// </summary>
-        public static void GetInsert(in List<InfoRegistry> registersList, MySqlConnection connection)
+        public static void GetInsertList(in List<InfoRegistry> registersList, MySqlConnection connection)
         {
             try
             {

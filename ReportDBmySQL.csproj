@@ -113,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Dates\CreateTable.cs" />
+    <Compile Include="Database\Dates\GetInsertList.cs" />
     <Compile Include="Database\Maps\InfoMap.cs" />
     <Compile Include="Document\Maps\GetReplaceList.cs" />
     <Compile Include="Document\Maps\GetSelectList.cs" />
@@ -134,7 +135,7 @@
     <Compile Include="Database\Adresses\GetInsertList.cs" />
     <Compile Include="Database\Catalogs\GetInsertList.cs" />
     <Compile Include="Database\Cities\GetInsertList.cs" />
-    <Compile Include="Database\Registers\GetInsert.cs" />
+    <Compile Include="Database\Registers\GetInsertList.cs" />
     <Compile Include="Database\Registers\GetExcelTableRead.cs" />
     <Compile Include="Database\Adresses\GetFillList.cs" />
     <Compile Include="Database\Catalogs\GetFillList.cs" />
