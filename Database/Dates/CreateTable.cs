@@ -13,7 +13,7 @@ namespace ReportDBmySQL
             using (MySqlCommand command = new MySqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Dates
                 (Date_Id INT AUTO_INCREMENT PRIMARY KEY, 
-                Date DATE NOT NULL);",
+                Date DATETIME NOT NULL);",
                 connection))
             {
                 connection.Open();
