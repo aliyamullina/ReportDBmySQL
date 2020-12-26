@@ -112,6 +112,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Dates\CreateTable.cs" />
     <Compile Include="Database\Maps\InfoMap.cs" />
     <Compile Include="Document\Maps\GetReplaceList.cs" />
     <Compile Include="Document\Maps\GetSelectList.cs" />
