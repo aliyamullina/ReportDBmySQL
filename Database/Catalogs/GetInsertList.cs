@@ -32,8 +32,10 @@ namespace ReportDBmySQL
                     Adresses.GetFillList(in catalog_id, in oneCatalogPath, out List<InfoAddress> addressesList);
                     Adresses.GetInsertList(in addressesList, connection);
 
-                    Registers.GetFillList(in catalog_id, in oneCatalogPath, out List<InfoRegistry> registersList);
-                    Registers.GetInsert(in registersList, connection);
+                    Registers.GetFillList(in catalog_id, in oneCatalogPath, out List<InfoRegistry> registersList, out List<DateTime> dateList);
+                    Registers.GetInsertList(in registersList, connection);
+
+                    Dates.GetInsertList(in dateList, connection);
                 }
                 connection.Close();
             }

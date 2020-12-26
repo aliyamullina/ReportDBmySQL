@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,9 +10,10 @@ namespace ReportDBmySQL
         /// <summary>
         /// Читает данные из Excel
         /// </summary>
-        public static void GetExcelTableRead(string pathRegistry, int catalog_id, out List<InfoRegistry> catalogRegistersTable)
+        public static void GetExcelTableRead(string pathRegistry, int catalog_id, out List<InfoRegistry> catalogRegistersTable, out List<DateTime> catalogDateTable)
         {
             catalogRegistersTable = new List<InfoRegistry>();
+            catalogDateTable = new List<DateTime>();
 
             using (XLWorkbook wb = new XLWorkbook(pathRegistry))
             {
@@ -27,6 +29,8 @@ namespace ReportDBmySQL
                     string date = row.Cell(10).Value.ToString();
 
                     catalogRegistersTable.Add(new InfoRegistry(catalog_id, apartment, model, serial));
+
+                    catalogDateTable.Add(new DateTime(parsedDate));
                 }
             }
         }
