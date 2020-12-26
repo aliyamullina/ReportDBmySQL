@@ -9,6 +9,7 @@ namespace ReportDBmySQL
         {
             Catalogs.CreateTable(connection);
             Cities.CreateTable(connection);
+            Dates.CreateTable(connection);
             Adresses.CreateTable(connection);
             Registers.CreateTable(connection);
             Maps.CreateTable(connection);
