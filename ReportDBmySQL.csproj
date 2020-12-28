@@ -115,6 +115,8 @@
     <Compile Include="Database\Dates\CreateTable.cs" />
     <Compile Include="Database\Dates\GetInsertList.cs" />
     <Compile Include="Database\Maps\InfoMap.cs" />
+    <Compile Include="Document\Dates\GetReplaceList.cs" />
+    <Compile Include="Document\Dates\GetSelectList.cs" />
     <Compile Include="Document\Maps\GetReplaceList.cs" />
     <Compile Include="Document\Maps\GetSelectList.cs" />
     <Compile Include="Database\Adresses\CreateTable.cs" />
@@ -190,5 +192,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
