@@ -28,8 +28,10 @@ namespace ReportDBmySQL
                     string serial = row.Cell(3).Value.ToString();
                     catalogRegistersTable.Add(new InfoRegistry(catalog_id, apartment, model, serial));
 
-                    DateTime date = row.Cell(10).GetDateTime();                  
-                    catalogDatesTable.Add(date);
+                    DateTime dateTime = row.Cell(10).GetDateTime();
+                    string date = dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+                    catalogDatesTable.Add(Convert.ToDateTime(date));
                 }
             }
         }
