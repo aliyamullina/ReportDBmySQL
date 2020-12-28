@@ -13,7 +13,7 @@ namespace ReportDBmySQL
         {
             foreach (DateTime item in documentDate)
             {
-                docText = new Regex("DateInfo").Replace(docText, item.Date.ToString());
+                docText = new Regex("DateInfo").Replace(docText, item.Date.ToString("dd.MM.yyyy"));
             }
         }
     }
