@@ -27,12 +27,13 @@ namespace ReportDBmySQL
                     string model = row.Cell(2).Value.ToString();
                     string serial = row.Cell(3).Value.ToString();
 
-                    var date = row.Cell(10).GetDateTime();
-                    var date2 = row.Cell(10).GetValue<DateTime>();
+                    DateTime date = row.Cell(10).GetDateTime();
+
+                    //DateTime date2 = row.Cell(10).GetValue<DateTime>();
 
                     catalogRegistersTable.Add(new InfoRegistry(catalog_id, apartment, model, serial));
 
-                    catalogDatesTable.Add(new DateTime(date));
+                    catalogDatesTable.Add(date);
                 }
             }
         }
