@@ -112,8 +112,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Acts\CreateTable.cs" />
     <Compile Include="Database\Dates\CreateTable.cs" />
     <Compile Include="Database\Dates\GetInsertList.cs" />
+    <Compile Include="Database\Acts\InfoActs.cs" />
     <Compile Include="Database\Maps\InfoMap.cs" />
     <Compile Include="Document\Dates\GetReplaceList.cs" />
     <Compile Include="Document\Dates\GetSelectList.cs" />

@@ -11,6 +11,7 @@ namespace ReportDBmySQL
             Cities.CreateTable(connection);
             Dates.CreateTable(connection);
             Adresses.CreateTable(connection);
+            Acts.CreateTable(connection);
             Registers.CreateTable(connection);
             Maps.CreateTable(connection);
         }
