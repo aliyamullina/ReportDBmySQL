@@ -156,7 +156,6 @@
     <Compile Include="Database\Registers\InfoRegistry.cs" />
     <Compile Include="Database\Adresses\InfoAddress.cs" />
     <Compile Include="Database\Cities\InfoCity.cs" />
-    <Compile Include="Database\Dates\InfoDate.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
