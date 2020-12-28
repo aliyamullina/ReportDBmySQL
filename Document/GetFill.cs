@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -22,6 +23,9 @@ namespace ReportDBmySQL
                 }
 
                 docText = new Regex("AddressInfo").Replace(docText, fN);
+
+                Dates.GetSelectList(out List<DateTime> documentDate, in fN, connection);
+                Dates.GetReplaceList(in documentDate, ref docText);
 
                 Maps.GetSelectList(out List<InfoMap> documentMap, in fN, connection);
                 Maps.GetReplaceList(in documentMap, ref docText);
