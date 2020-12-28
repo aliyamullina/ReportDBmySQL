@@ -18,7 +18,9 @@ namespace ReportDBmySQL
             {
                 GetExcelTableRead(c.Registry, catalog_id, out List <InfoRegistry> catalogRegistersTable, out List<DateTime> catalogDateTable);
                 registersList = catalogRegistersTable.Union(registersList).ToList();
-                dateList = catalogDateTable.ToList();
+
+                DateTime min = catalogDateTable.Select(model => model.Date).Min();
+                dateList.Add(min);
             }
         }
     }
