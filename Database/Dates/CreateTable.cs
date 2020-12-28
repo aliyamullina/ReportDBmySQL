@@ -5,7 +5,7 @@ namespace ReportDBmySQL
     public partial class Dates
     {
         /// <summary>
-        /// Создается таблица Cities в БД
+        /// Создается таблица Dates в БД
         /// </summary>
         public static void CreateTable(MySqlConnection connection)
         {
