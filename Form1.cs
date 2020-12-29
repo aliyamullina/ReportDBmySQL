@@ -33,6 +33,8 @@ namespace ReportDBmySQL
 
             Maps.SelectAddresses(connection, out List<InfoMap> nodeList);
             Maps.LoadTree(treeView1, ref nodeList);
+
+            // 2 задачи: акт успд, хранение данных адреса в xml
         }
 
         private void Button2_Click(object sender, EventArgs e)
