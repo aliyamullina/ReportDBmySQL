@@ -12,10 +12,11 @@ namespace ReportDBmySQL
             using (MySqlCommand command = new MySqlCommand(@"
             CREATE TABLE IF NOT EXISTS Acts (
                 Aсt_Id      INT AUTO_INCREMENT PRIMARY KEY, 
-                Device      INT(5) NOT NULL, 
-                Floor       INT(5), 
-                Entrance    INT(5),
-                Side        VARCHAR(10)
+                Device      VARCHAR(20), 
+                Floor       INT(5) NOT NULL, 
+                Entrance    INT(5) NOT NULL,
+                Side        VARCHAR(10),
+                Catalog_id      INT REFERENCES Catalogs(Catalog_id)
             )", connection))
             {
                 connection.Open();
