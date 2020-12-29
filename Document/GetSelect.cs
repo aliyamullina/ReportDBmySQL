@@ -17,7 +17,7 @@ namespace ReportDBmySQL
 	                cities.City,
                     addresses.Street, 
                     addresses.Home,
-                    catalogs.catalog
+                    catalogs.Catalog
                 FROM 
                     cities,
                     addresses,
@@ -25,7 +25,7 @@ namespace ReportDBmySQL
                 WHERE 
                     addresses.City_id = cities.City_Id
                 AND 
-                    addresses.Catalog_id = catalogs.Catalog_Id
+                    addresses.Address_Id = catalogs.Catalog_Id
                 ", connection))
             {
                 connection.Open();

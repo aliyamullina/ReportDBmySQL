@@ -29,7 +29,7 @@ namespace ReportDBmySQL
 
                     Catalogs.GetSelect(in catalog_id, connection, out List<InfoCatalog> oneCatalogPath);
 
-                    Adresses.GetFillList(in catalog_id, in oneCatalogPath, out List<InfoAddress> addressesList);
+                    Adresses.GetFillList(in oneCatalogPath, out List<InfoAddress> addressesList);
                     Adresses.GetInsertList(in addressesList, connection);
 
                     Registers.GetFillList(in catalog_id, in oneCatalogPath, out List<InfoRegistry> registersList, out List<DateTime> dateList);

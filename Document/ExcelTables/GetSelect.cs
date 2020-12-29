@@ -29,7 +29,7 @@ namespace ReportDBmySQL
                 AND
                     catalogs.Catalog_id = registers.Catalog_Id
                 AND
-                    addresses.Catalog_id = catalogs.Catalog_Id
+                    addresses.Address_Id = catalogs.Catalog_Id
                 AND
                     addresses.City_id = cities.City_Id
                 ", connection))

@@ -5,12 +5,11 @@
     /// </summary>
     public class InfoAddress
     {
-        public InfoAddress(string street, string home, int city_id, int catalog_id)
+        public InfoAddress(string street, string home, int city_id)
         {
             this.Street = street;
             this.Home = home;
             this.City_id = city_id;
-            this.Catalog_id = catalog_id;
         }
 
         /// <summary>
