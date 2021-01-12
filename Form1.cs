@@ -35,13 +35,7 @@ namespace ReportDBmySQL
             Maps.SelectAddresses(connection, out List<InfoMap> nodeList);
             Maps.LoadTree(treeView1, ref nodeList);
 
-
-            MessageBox.Show(
-                string.Join(Environment.NewLine, сatalogsListLater.Select(cl => cl.Catalog.ToString())), 
-                "Нет реестра", 
-                MessageBoxButtons.OK, 
-                MessageBoxIcon.Error
-            );
+            if(сatalogsListLater == null) MessageBox.Show(string.Join(Environment.NewLine, сatalogsListLater.Select(cl => cl.Catalog.ToString())), "Нет реестра", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             // 2 задачи: акт успд, хранение данных адреса в xml
         }
