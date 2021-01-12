@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,10 +11,12 @@ namespace ReportDBmySQL
         /// <summary>
         /// Папка с папками, передает пути в коллекцию CatalogInfo
         /// </summary>
-        public static void GetFillList(in bool withoutReportsSearch, out List<InfoCatalog> сatalogsList, out string openFolder)
+        public static void GetFillList(in bool withoutReportsSearch, out List<InfoCatalog> сatalogsList, out List<InfoCatalog> сatalogsListLater, out string openFolder)
         {
             openFolder = null;
             сatalogsList = new List<InfoCatalog>();
+            сatalogsListLater = new List<InfoCatalog>();
+
 
             FolderBrowserDialog folderDlg = new FolderBrowserDialog() { 
                 ShowNewFolderButton = false,
@@ -43,20 +44,23 @@ namespace ReportDBmySQL
                         if (filesReports == false)
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(ref сatalogsList, in catalog);
+                            GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, in catalog);
                         }
                     }
                     else
                     {
-                        GetRegistryDirectory(ref сatalogsList, in catalog);
+                        GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, in catalog);
                     }
                 }
             }
         }
 
-        public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, in string catalog)
+        public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, ref List<InfoCatalog> сatalogsListLater, in string catalog)
         {
             string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
+
+            if (files.Length == 0) сatalogsListLater.Add(new InfoCatalog(catalog, null));
+
             foreach (string registry in files)
             {
                 сatalogsList.Add(new InfoCatalog(catalog, registry));

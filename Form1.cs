@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -25,7 +26,7 @@ namespace ReportDBmySQL
             db.Clear();
             Database.CreateTables(connection);
 
-            Catalogs.GetFillList(in withoutReportsSearch, out List<InfoCatalog> сatalogsList, out string openFolder);
+            Catalogs.GetFillList(in withoutReportsSearch, out List<InfoCatalog> сatalogsList, out List<InfoCatalog> сatalogsListLater, out string openFolder);
             Catalogs.GetInsertList(in сatalogsList, connection);
 
             Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
@@ -33,6 +34,14 @@ namespace ReportDBmySQL
 
             Maps.SelectAddresses(connection, out List<InfoMap> nodeList);
             Maps.LoadTree(treeView1, ref nodeList);
+
+
+            MessageBox.Show(
+                string.Join(Environment.NewLine, сatalogsListLater.Select(cl => cl.Catalog.ToString())), 
+                "Нет реестра", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Error
+            );
 
             // 2 задачи: акт успд, хранение данных адреса в xml
         }
