@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace ReportDBmySQL
 {
@@ -15,7 +16,12 @@ namespace ReportDBmySQL
             foreach (InfoCatalog c in oneCatalogPath)
             {
                 var pathTrim = c.Catalog.Substring(c.Catalog.LastIndexOf("\\")).Replace("\\", string.Empty);
-                var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" "));
+
+                if (c.Catalog.Contains("часть")) 
+                    pathTrim = c.Catalog.Remove(c.Catalog.Length - 7).Replace(@"\", "");
+
+                var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" ")).Replace(@"\", "");
+
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
 
                 addressesList.Add(new InfoAddress(street, home, city_id));
