@@ -59,9 +59,13 @@ namespace ReportDBmySQL
         {
             string registry = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.TopDirectoryOnly).Select(f => f.FullName).FirstOrDefault();
 
-            if (registry == null) сatalogsListLater.Add(new InfoCatalog(catalog, null));
-
-            сatalogsList.Add(new InfoCatalog(catalog, registry));
+            if (registry == null)
+            {
+                сatalogsListLater.Add(new InfoCatalog(catalog, null));
+            } else
+            {
+                сatalogsList.Add(new InfoCatalog(catalog, registry));
+            }
         }
     }
 }
