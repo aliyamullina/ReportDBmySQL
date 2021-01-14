@@ -7,6 +7,7 @@ namespace ReportDBmySQL
     {
         public static void CreateTables(MySqlConnection connection)
         {
+            Opens.CreateTable(connection);
             Catalogs.CreateTable(connection);
             Cities.CreateTable(connection);
             Dates.CreateTable(connection);
