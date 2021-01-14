@@ -29,8 +29,8 @@ namespace ReportDBmySQL
             {
                 openFolder = folderDlg.SelectedPath;
 
-                // Список папок из выбранной папки
-                string[] catalogsArray = Directory.GetDirectories(openFolder);
+                // Список папок, подпапок из выбранной папки
+                string[] catalogsArray = Directory.GetDirectories(openFolder, "*", SearchOption.AllDirectories).ToArray();
 
                 foreach (var catalog in catalogsArray)
                 {
