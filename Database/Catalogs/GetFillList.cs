@@ -70,8 +70,8 @@ namespace ReportDBmySQL
                 сatalogsListLater.Add(new InfoCatalog(open, catalog, null));
             } else
             {
-                registry = registry.Replace(catalog, "").Replace(@"\","");
-                catalog = catalog.Replace(open, "").Replace(@"\", "");
+                registry = registry.Replace(catalog, "");
+                catalog = catalog.Replace(open, "");
 
                 сatalogsList.Add(new InfoCatalog(open, catalog, registry));
             }
