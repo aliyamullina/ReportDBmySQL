@@ -29,6 +29,7 @@ namespace ReportDBmySQL
                     {
                         oneCatalogPath.Add(
                             new InfoCatalog(
+                                dataReader["Open"].ToString(), 
                                 dataReader["Catalog"].ToString(), 
                                 dataReader["Registry"].ToString()
                             )

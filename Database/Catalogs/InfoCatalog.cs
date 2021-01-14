@@ -5,11 +5,17 @@
     /// </summary>
     public class InfoCatalog
     {
-        public InfoCatalog(string catalog, string registry)
+        public InfoCatalog(string open, string catalog, string registry)
         {
+            this.Open = open;
             this.Catalog = catalog;
             this.Registry = registry;
         }
+
+        /// <summary>
+        /// Путь к выбранной папке
+        /// </summary>
+        public string Open { get; set; }
 
         /// <summary>
         /// Путь к папке

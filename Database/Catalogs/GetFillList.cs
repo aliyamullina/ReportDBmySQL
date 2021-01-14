@@ -49,27 +49,27 @@ namespace ReportDBmySQL
                         if (filesReports == false)
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, in catalog);
+                            GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, in catalog, in openFolder);
                         }
                     }
                     else
                     {
-                        GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, in catalog);
+                        GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, in catalog, in openFolder);
                     }
                 }
             }
         }
 
-        public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, ref List<InfoCatalog> сatalogsListLater, in string catalog)
+        public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, ref List<InfoCatalog> сatalogsListLater, in string catalog, in string openFolder)
         {
             string registry = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.TopDirectoryOnly).Select(f => f.FullName).FirstOrDefault();
 
             if (registry == null)
             {
-                сatalogsListLater.Add(new InfoCatalog(catalog, null));
+                сatalogsListLater.Add(new InfoCatalog(openFolder, catalog, null));
             } else
             {
-                сatalogsList.Add(new InfoCatalog(catalog, registry));
+                сatalogsList.Add(new InfoCatalog(openFolder, catalog, registry));
             }
         }
     }
