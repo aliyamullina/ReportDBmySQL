@@ -11,7 +11,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Читает данные из Excel
         /// </summary>
-        public static void GetExcelTableRead(string pathRegistry, int catalog_id, out List<InfoRegistry> catalogRegistersTable, out List<DateTime> catalogDatesTable)
+        public static void GetExcelTableRead(in string pathRegistry, int catalog_id, out List<InfoRegistry> catalogRegistersTable, out List<DateTime> catalogDatesTable)
         {
             catalogRegistersTable = new List<InfoRegistry>();
             catalogDatesTable = new List<DateTime>();

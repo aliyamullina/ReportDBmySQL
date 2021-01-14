@@ -16,7 +16,9 @@ namespace ReportDBmySQL
 
             foreach (InfoCatalog c in oneCatalogPath)
             {
-                GetExcelTableRead(c.Registry, catalog_id, out List <InfoRegistry> catalogRegistersTable, out List<DateTime> catalogDateTable);
+                string pathRegistry = c.Open + c.Catalog + c.Registry;
+
+                GetExcelTableRead(in pathRegistry, catalog_id, out List <InfoRegistry> catalogRegistersTable, out List<DateTime> catalogDateTable);
                 registersList = catalogRegistersTable.Union(registersList).ToList();
 
                 DateTime minDate = catalogDateTable.Select(model => model.Date).Min();
