@@ -14,14 +14,12 @@ namespace ReportDBmySQL
         public static void GetFillList
         (
             in bool withoutReportsSearch, 
-            out List<InfoOpen> openList, 
             out List<InfoCatalog> сatalogsList, 
             out List<InfoCatalog> сatalogsListLater, 
             out string openFolder
         )
         {
             openFolder = null;
-            openList = new List<InfoOpen>();
             сatalogsList = new List<InfoCatalog>();
             сatalogsListLater = new List<InfoCatalog>();
 

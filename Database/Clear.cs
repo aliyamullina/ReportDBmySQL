@@ -12,7 +12,7 @@ namespace ReportDBmySQL
         {
             try
             {
-                using (MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, dates, catalogs, opens, acts, registers, maps;", connection))
+                using (MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, dates, catalogs, acts, registers, maps;", connection))
                 {
                     connection.Open();
                     command.ExecuteNonQuery();

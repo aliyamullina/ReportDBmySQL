@@ -29,7 +29,6 @@ namespace ReportDBmySQL
             Catalogs.GetFillList
             (
                 in withoutReportsSearch, 
-                out List<InfoOpen> openList, 
                 out List<InfoCatalog> сatalogsList, 
                 out List<InfoCatalog> сatalogsListLater, 
                 out string openFolder

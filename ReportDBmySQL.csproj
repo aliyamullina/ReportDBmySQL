@@ -117,8 +117,6 @@
     <Compile Include="Database\Dates\GetInsertList.cs" />
     <Compile Include="Database\Acts\InfoActs.cs" />
     <Compile Include="Database\Maps\InfoMap.cs" />
-    <Compile Include="Database\Opens\CreateTable.cs" />
-    <Compile Include="Database\Opens\InfoOpen.cs" />
     <Compile Include="Document\Dates\GetReplaceList.cs" />
     <Compile Include="Document\Dates\GetSelectList.cs" />
     <Compile Include="Document\Maps\GetReplaceList.cs" />
