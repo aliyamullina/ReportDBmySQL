@@ -57,7 +57,7 @@ namespace ReportDBmySQL
 
         public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, ref List<InfoCatalog> сatalogsListLater, in string catalog)
         {
-            string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.AllDirectories).Select(f => f.FullName).ToArray();
+            string[] files = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.TopDirectoryOnly).Select(f => f.FullName).ToArray();
 
             if (files.Length == 0) сatalogsListLater.Add(new InfoCatalog(catalog, null));
 
