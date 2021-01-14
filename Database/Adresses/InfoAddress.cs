@@ -26,10 +26,5 @@
         /// id Города
         /// </summary>
         public int City_id { get;  set; }
-
-        /// <summary>
-        /// id Каталога
-        /// </summary>
-        public int Catalog_id { get;  set; }
     }
 }
