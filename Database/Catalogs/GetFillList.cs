@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -16,10 +17,10 @@ namespace ReportDBmySQL
             in bool withoutReportsSearch, 
             out List<InfoCatalog> сatalogsList, 
             out List<InfoCatalog> сatalogsListLater, 
-            out string openFolder
+            out string open
         )
         {
-            openFolder = null;
+            open = null;
             сatalogsList = new List<InfoCatalog>();
             сatalogsListLater = new List<InfoCatalog>();
 
@@ -32,10 +33,10 @@ namespace ReportDBmySQL
 
             if (dialog == DialogResult.OK)
             {
-                openFolder = folderDlg.SelectedPath;
+                open = folderDlg.SelectedPath;
 
                 // Список папок, подпапок из выбранной папки
-                string[] catalogsArray = Directory.GetDirectories(openFolder, "*", SearchOption.AllDirectories).ToArray();
+                string[] catalogsArray = Directory.GetDirectories(open, "*", SearchOption.AllDirectories).ToArray();
 
                 foreach (var catalog in catalogsArray)
                 {
@@ -49,27 +50,30 @@ namespace ReportDBmySQL
                         if (filesReports == false)
                         {
                             Console.WriteLine(filesReports);
-                            GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, in catalog, in openFolder);
+                            GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, catalog, in open);
                         }
                     }
                     else
                     {
-                        GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, in catalog, in openFolder);
+                        GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, catalog, in open);
                     }
                 }
             }
         }
 
-        public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, ref List<InfoCatalog> сatalogsListLater, in string catalog, in string openFolder)
+        public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, ref List<InfoCatalog> сatalogsListLater, string catalog, in string open)
         {
             string registry = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.TopDirectoryOnly).Select(f => f.FullName).FirstOrDefault();
 
             if (registry == null)
             {
-                сatalogsListLater.Add(new InfoCatalog(openFolder, catalog, null));
+                сatalogsListLater.Add(new InfoCatalog(open, catalog, null));
             } else
             {
-                сatalogsList.Add(new InfoCatalog(openFolder, catalog, registry));
+                registry = registry.Replace(catalog, "");
+                catalog = catalog.Replace(open, "");
+
+                сatalogsList.Add(new InfoCatalog(open, catalog, registry));
             }
         }
     }
