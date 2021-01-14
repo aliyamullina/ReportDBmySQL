@@ -26,7 +26,14 @@ namespace ReportDBmySQL
             db.Clear();
             Database.CreateTables(connection);
 
-            Catalogs.GetFillList(in withoutReportsSearch, out List<InfoCatalog> сatalogsList, out List<InfoCatalog> сatalogsListLater, out string openFolder);
+            Catalogs.GetFillList
+            (
+                in withoutReportsSearch, 
+                out List<InfoOpen> openList, 
+                out List<InfoCatalog> сatalogsList, 
+                out List<InfoCatalog> сatalogsListLater, 
+                out string openFolder
+            );
             Catalogs.GetInsertList(in сatalogsList, connection);
 
             Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
