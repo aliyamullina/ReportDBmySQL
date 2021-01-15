@@ -19,7 +19,7 @@ namespace ReportDBmySQL
                     GROUP_CONCAT(maps.FlatsCount), 
                     GROUP_CONCAT(maps.Entrance)
                 FROM addresses, cities, maps 
-                WHERE CONCAT(City, ', ', Street, ' ' , Home) = @address
+                WHERE CONCAT(City, ', ', Street, ' ' , Home, ' ' , Part) = @address
                 AND
                  addresses.Address_Id = maps.Address_Id
                 AND
