@@ -19,7 +19,7 @@ namespace ReportDBmySQL
                 SELECT 
                     dates.Date
                 FROM addresses, cities, dates 
-                WHERE CONCAT(City, ', ', Street, ' ' , Home, ' ' , Part) = @address
+                WHERE CONCAT(City, ', ', Street, ' ' , Home, Part) = @address
                 AND
                  addresses.Address_Id = dates.Date_id
                 AND

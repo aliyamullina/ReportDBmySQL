@@ -38,7 +38,7 @@ namespace ReportDBmySQL
                     {
                         documentsList.Add(
                             new InfoDocument(
-                                dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"] + " " + dataReader["Part"].ToString(),
+                                dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"] + dataReader["Part"].ToString(),
                                 dataReader["Open"].ToString() + dataReader["Catalog"].ToString()
                             )
                         );

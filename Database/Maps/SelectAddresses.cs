@@ -33,7 +33,7 @@ namespace ReportDBmySQL
                     {
                         nodeList.Add(
                             new InfoMap(
-                                dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"].ToString() + " " + dataReader["Part"].ToString(),
+                                dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"].ToString() + dataReader["Part"].ToString(),
                                 "Введите количество этажей", 
                                 "Введите количество квартир", 
                                 "Введите количество подъездов"

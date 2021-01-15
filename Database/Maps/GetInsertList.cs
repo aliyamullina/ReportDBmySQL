@@ -16,7 +16,7 @@ namespace ReportDBmySQL
             VALUES(@floor, @flatscount, @entrance,
             (
                 SELECT addresses.Address_id FROM addresses, cities
-                WHERE CONCAT(City, ', ', Street, ' ', Home, ' ', Part) = @address)
+                WHERE CONCAT(City, ', ', Street, ' ', Home, Part) = @address)
             );
             ", connection))
             {

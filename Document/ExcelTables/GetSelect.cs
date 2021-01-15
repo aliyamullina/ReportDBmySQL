@@ -26,7 +26,7 @@ namespace ReportDBmySQL
                     cities,
                     registers,
                     catalogs
-                WHERE CONCAT(City, ', ', Street, ' ' , Home, ' ' , Part) = @address
+                WHERE CONCAT(City, ', ', Street, ' ' , Home, Part) = @address
                 AND
                     catalogs.Catalog_id = registers.Catalog_Id
                 AND
