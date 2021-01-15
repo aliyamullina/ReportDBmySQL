@@ -17,6 +17,7 @@ namespace ReportDBmySQL
 	                cities.City,
                     addresses.Street, 
                     addresses.Home,
+                    catalogs.Open,
                     catalogs.Catalog
                 FROM 
                     cities,
@@ -37,7 +38,7 @@ namespace ReportDBmySQL
                         documentsList.Add(
                             new InfoDocument(
                                 dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"].ToString(),
-                                dataReader["Catalog"].ToString()
+                                dataReader["Open"].ToString() + dataReader["Catalog"].ToString()
                             )
                         );
                     }
