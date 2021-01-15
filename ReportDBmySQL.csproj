@@ -121,7 +121,7 @@
     <Compile Include="Document\Dates\GetSelectList.cs" />
     <Compile Include="Document\Maps\GetReplaceList.cs" />
     <Compile Include="Document\Maps\GetSelectList.cs" />
-    <Compile Include="Database\Adresses\CreateTable.cs" />
+    <Compile Include="Database\Addresses\CreateTable.cs" />
     <Compile Include="Database\Catalogs\CreateTable.cs" />
     <Compile Include="Database\Cities\CreateTable.cs" />
     <Compile Include="Database\Maps\GetInsertList.cs" />
@@ -136,12 +136,12 @@
     <Compile Include="Database\Catalogs\GetSelect.cs" />
     <Compile Include="Document\GetSelectList.cs" />
     <Compile Include="Document\ExcelTables\GetSelect.cs" />
-    <Compile Include="Database\Adresses\GetInsertList.cs" />
+    <Compile Include="Database\Addresses\GetInsertList.cs" />
     <Compile Include="Database\Catalogs\GetInsertList.cs" />
     <Compile Include="Database\Cities\GetInsertList.cs" />
     <Compile Include="Database\Registers\GetInsertList.cs" />
     <Compile Include="Database\Registers\GetExcelTableRead.cs" />
-    <Compile Include="Database\Adresses\GetFillList.cs" />
+    <Compile Include="Database\Addresses\GetFillList.cs" />
     <Compile Include="Database\Catalogs\GetFillList.cs" />
     <Compile Include="Database\Cities\GetFillList.cs" />
     <Compile Include="Database\Registers\GetFillList.cs" />
@@ -156,7 +156,7 @@
     <Compile Include="Document\InfoDocument.cs" />
     <Compile Include="Database\Catalogs\InfoCatalog.cs" />
     <Compile Include="Database\Registers\InfoRegistry.cs" />
-    <Compile Include="Database\Adresses\InfoAddress.cs" />
+    <Compile Include="Database\Addresses\InfoAddress.cs" />
     <Compile Include="Database\Cities\InfoCity.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -193,6 +193,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Document\Maps\maps.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
