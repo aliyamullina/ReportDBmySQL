@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace ReportDBmySQL
 {
@@ -25,7 +24,6 @@ namespace ReportDBmySQL
                     
                 }
                     
-
                 var street = pathTrim.Substring(0, pathTrim.LastIndexOf(" ")).Replace(@"\", "");
 
                 var home = pathTrim.Substring(pathTrim.LastIndexOf(" ")).Replace(" ", string.Empty);
