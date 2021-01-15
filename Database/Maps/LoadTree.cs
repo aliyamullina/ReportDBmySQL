@@ -9,7 +9,7 @@ namespace ReportDBmySQL
         /// <summary>
         /// Address
         /// - Floor ​5 этажей
-        /// - FlatsCount 60
+        /// - FlatsCount 60 квартир
         /// - Entrance В доме 4 подъезда
         /// </summary>
         public static List<TreeNode> LoadTree(TreeView treeView1, ref List<InfoMap> nodeList)
