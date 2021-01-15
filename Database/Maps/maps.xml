@@ -12,4 +12,10 @@
 		<flatscount>80 квартир</flatscount>
 		<entrance>В доме 4 подъезда</entrance>
 	</object>
+	<object>
+		<address>Казань, Шуртыгина 24</address>
+		<floor>​9 этажей</floor>
+		<flatscount>169 квартир</flatscount>
+		<entrance>В доме 1 подъезд</entrance>
+	</object>
 </addresses>
