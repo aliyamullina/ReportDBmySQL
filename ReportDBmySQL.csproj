@@ -134,7 +134,7 @@
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\Create.cs" />
     <Compile Include="Database\Catalogs\GetSelect.cs" />
-    <Compile Include="Document\GetSelect.cs" />
+    <Compile Include="Document\GetSelectList.cs" />
     <Compile Include="Document\ExcelTables\GetSelect.cs" />
     <Compile Include="Database\Adresses\GetInsertList.cs" />
     <Compile Include="Database\Catalogs\GetInsertList.cs" />
