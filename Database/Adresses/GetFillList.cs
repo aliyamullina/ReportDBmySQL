@@ -20,7 +20,7 @@ namespace ReportDBmySQL
 
                 if (c.Catalog.Contains("часть")) 
                 {
-                    part = pathTrim;
+                    part = " " + pathTrim;
                     pathTrim = c.Catalog.Remove(c.Catalog.Length - 7).Replace(@"\", "");
                     
                 }
