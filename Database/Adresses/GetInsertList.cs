@@ -15,8 +15,8 @@ namespace ReportDBmySQL
             {
                 // Добавляет повторно, нет проверки на существование записи
                 using (MySqlCommand command = new MySqlCommand(@"
-                INSERT INTO addresses(Street, Home, City_id) 
-                VALUES (@street, @home, @city_id)",
+                INSERT INTO addresses(Street, Home, Part, City_id) 
+                VALUES (@street, @home, @part, @city_id)",
                     connection))
                 {
                     foreach (var item in addressesList)
@@ -24,6 +24,7 @@ namespace ReportDBmySQL
                         command.Parameters.Clear();
                         command.Parameters.AddWithValue("@street", item.Street);
                         command.Parameters.AddWithValue("@home", item.Home);
+                        command.Parameters.AddWithValue("@part", item.Part);
                         command.Parameters.AddWithValue("@city_id", item.City_id);
                         command.ExecuteNonQuery();
                     }

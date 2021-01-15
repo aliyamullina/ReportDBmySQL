@@ -5,10 +5,11 @@
     /// </summary>
     public class InfoAddress
     {
-        public InfoAddress(string street, string home, int city_id)
+        public InfoAddress(string street, string home, string part, int city_id)
         {
             this.Street = street;
             this.Home = home;
+            this.Part = part;
             this.City_id = city_id;
         }
 
@@ -21,6 +22,11 @@
         /// Номер дома
         /// </summary>
         public string Home { get;  set; }
+
+        /// <summary>
+        /// Часть, если есть
+        /// </summary>
+        public string Part { get; set; }
 
         /// <summary>
         /// id Города

@@ -6,7 +6,7 @@ namespace ReportDBmySQL
     public partial class Maps
     {
         /// <summary>
-        /// Возвращает все адреса из БД: City, Street, Home, Catalog
+        /// Возвращает все адреса из БД: City, Street, Home
         /// </summary>
         public static void SelectAddresses(MySqlConnection connection, out List<InfoMap> nodeList)
         {
@@ -16,7 +16,8 @@ namespace ReportDBmySQL
                 SELECT 
 	                cities.City,
                     addresses.Street, 
-                    addresses.Home
+                    addresses.Home,
+                    addresses.Part
                 FROM 
                     cities,
                     addresses
@@ -32,7 +33,7 @@ namespace ReportDBmySQL
                     {
                         nodeList.Add(
                             new InfoMap(
-                                dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"].ToString(),
+                                dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"].ToString() + " " + dataReader["Part"].ToString(),
                                 "Введите количество этажей", 
                                 "Введите количество квартир", 
                                 "Введите количество подъездов"
