@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<addresses>
+	<object>
+		<address>Казань, Ленинградская 45А</address>
+		<floor>3 этажа</floor>
+		<flatscount>18 квартир</flatscount>
+		<entrance>В доме 2 подъезда</entrance>
+	</object>
+	<object>
+		<address>Казань, О.Кошевого 2</address>
+		<floor>5 этажей</floor>
+		<flatscount>80 квартир</flatscount>
+		<entrance>В доме 4 подъезда</entrance>
+	</object>
+</addresses>

@@ -116,7 +116,9 @@
     <Compile Include="Database\Dates\CreateTable.cs" />
     <Compile Include="Database\Dates\GetInsertList.cs" />
     <Compile Include="Database\Acts\InfoActs.cs" />
+    <Compile Include="Database\Maps\GetXMLInsertList.cs" />
     <Compile Include="Database\Maps\InfoMap.cs" />
+    <Compile Include="Database\Maps\GetXMLFindList.cs" />
     <Compile Include="Document\Dates\GetReplaceList.cs" />
     <Compile Include="Document\Dates\GetSelectList.cs" />
     <Compile Include="Document\Maps\GetReplaceList.cs" />
@@ -194,7 +196,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Document\Maps\maps.xml" />
+    <Content Include="Database\Maps\maps.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

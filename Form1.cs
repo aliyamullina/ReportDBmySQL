@@ -26,13 +26,7 @@ namespace ReportDBmySQL
             //db.Clear();
             Database.CreateTables(connection);
 
-            Catalogs.GetFillList
-            (
-                in withoutReportsSearch, 
-                out List<InfoCatalog> сatalogsList, 
-                out List<InfoCatalog> сatalogsListLater, 
-                out string openFolder
-            );
+            Catalogs.GetFillList(in withoutReportsSearch, out List<InfoCatalog> сatalogsList, out List<InfoCatalog> сatalogsListLater, out string openFolder);
             Catalogs.GetInsertList(in сatalogsList, connection);
 
             Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
@@ -40,6 +34,7 @@ namespace ReportDBmySQL
 
             // Задача: запись и чтение данных xml
             Maps.SelectAddresses(connection, out List<InfoMap> nodeList);
+            Maps.GetXMLFindList(ref nodeList);
             Maps.LoadTree(treeView1, ref nodeList);
 
             if(сatalogsListLater != null) MessageBox.Show(string.Join(Environment.NewLine, сatalogsListLater.Select(cl => cl.Catalog.ToString())), "Нет реестра", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -101,6 +96,7 @@ namespace ReportDBmySQL
 
             List<InfoMap> mapListEdit = new List<InfoMap> { new InfoMap(address, floor, flatscount, entrance) };
             Maps.GetInsertList(in mapListEdit, connection);
+            Maps.GetXMLInsertList(in mapListEdit);
         }
     }
 }
