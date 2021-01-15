@@ -6,7 +6,7 @@ namespace ReportDBmySQL
     public partial class Maps
     {
         /// <summary>
-        /// Возвращает реестр для текущего адреса в БД
+        /// Возвращает данные 2Гис для текущего адреса в БД
         /// </summary>
         public static void GetSelectList(out List<InfoMap> documentMap, in string fN, MySqlConnection connection)
         {
