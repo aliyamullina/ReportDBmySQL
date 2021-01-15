@@ -9,7 +9,10 @@ namespace ReportDBmySQL
         /// </summary>
         public static void GetXMLFindList(ref List<InfoMap> nodeList)
         {
-            
+            foreach(InfoMap i in nodeList)
+            {
+                _ = i.Address;
+            }
         }
     }
 }
