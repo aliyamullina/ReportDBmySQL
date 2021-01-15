@@ -38,12 +38,13 @@ namespace ReportDBmySQL
             Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
             Cities.GetInsertList(in citiesList, connection);
 
+            // Задача: хранение данных адреса в xml
             Maps.SelectAddresses(connection, out List<InfoMap> nodeList);
             Maps.LoadTree(treeView1, ref nodeList);
 
             if(сatalogsListLater != null) MessageBox.Show(string.Join(Environment.NewLine, сatalogsListLater.Select(cl => cl.Catalog.ToString())), "Нет реестра", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            // 2 задачи: акт успд, хранение данных адреса в xml
+            // Задача: акт успд
         }
 
         private void Button2_Click(object sender, EventArgs e)
