@@ -23,7 +23,7 @@ namespace ReportDBmySQL
 
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
-            db.Clear();
+            //db.Clear();
             Database.CreateTables(connection);
 
             Catalogs.GetFillList
@@ -38,7 +38,7 @@ namespace ReportDBmySQL
             Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
             Cities.GetInsertList(in citiesList, connection);
 
-            // Задача: хранение данных адреса в xml
+            // Задача: запись и чтение данных xml
             Maps.SelectAddresses(connection, out List<InfoMap> nodeList);
             Maps.LoadTree(treeView1, ref nodeList);
 
@@ -54,7 +54,7 @@ namespace ReportDBmySQL
 
             var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 
-            Document.GetSelect(out List<InfoDocument> documentsList, connection);
+            Document.GetSelectList(out List<InfoDocument> documentsList, connection);
             Document.Create(in documentsList, in documentTemplate, connection);
 
             db.Clear();
