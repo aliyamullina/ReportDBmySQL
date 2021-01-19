@@ -30,26 +30,25 @@ namespace ReportDBmySQL
                         {
                             foreach (XmlNode childnode in xNode.ChildNodes)
                             {
-                                if (childnode.Name == "floor")
+                                switch (childnode.Name)
                                 {
-                                    xmlFloor = childnode.InnerText;
-                                    nodeList.ForEach(x => x.Floor = x.Floor.Replace(i.Floor, xmlFloor));
+                                    case "floor":
+                                        xmlFloor = childnode.InnerText;
+                                        break;
+                                    case "flatscount":
+                                        xmlFlatsCount = childnode.InnerText;
+                                        break;
+                                    case "entrance":
+                                        xmlEntrance = childnode.InnerText;
+                                        break;
                                 }
-
-                                if (childnode.Name == "flatscount")
-                                {
-                                    xmlFlatsCount = childnode.InnerText;
-                                    nodeList.ForEach(x => x.FlatsCount = x.FlatsCount.Replace(i.FlatsCount, xmlFlatsCount));
-                                }
-
-                                if (childnode.Name == "entrance")
-                                {
-                                    xmlEntrance = childnode.InnerText;
-                                    nodeList.ForEach(x => x.Entrance = x.Entrance.Replace(i.Entrance, xmlEntrance));
-                                }
-
-                                System.Console.WriteLine();
                             }
+
+                            nodeList.ForEach(x => x.Floor = x.Floor.Replace(i.Floor, xmlFloor));
+                            nodeList.ForEach(x => x.FlatsCount = x.FlatsCount.Replace(i.FlatsCount, xmlFlatsCount));
+                            nodeList.ForEach(x => x.Entrance = x.Entrance.Replace(i.Entrance, xmlEntrance));
+
+                            System.Console.WriteLine();
                         }
                     }
                 }
