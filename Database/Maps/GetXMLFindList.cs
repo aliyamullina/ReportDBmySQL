@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 
 namespace ReportDBmySQL
@@ -26,7 +27,7 @@ namespace ReportDBmySQL
                     {
                         XmlNode attr = xNode.Attributes.GetNamedItem("name");
 
-                        if (i.Address == attr.Value)
+                        if (i.Address.Contains(attr.Value))
                         {
                             foreach (XmlNode childnode in xNode.ChildNodes)
                             {
@@ -47,8 +48,6 @@ namespace ReportDBmySQL
                             nodeList.ForEach(x => x.Floor = x.Floor.Replace(i.Floor, xmlFloor));
                             nodeList.ForEach(x => x.FlatsCount = x.FlatsCount.Replace(i.FlatsCount, xmlFlatsCount));
                             nodeList.ForEach(x => x.Entrance = x.Entrance.Replace(i.Entrance, xmlEntrance));
-
-                            System.Console.WriteLine();
                         }
                     }
                 }
