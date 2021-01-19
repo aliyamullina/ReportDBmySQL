@@ -13,6 +13,10 @@ namespace ReportDBmySQL
             foreach(InfoMap i in nodeList)
             {
                 _ = i.Address;
+
+                _ = i.Entrance;
+                _ = i.FlatsCount;
+                _ = i.Floor;
             
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load(@"C:\Users\User1_106\Desktop\Github\ReportDBmySQL\Database\Maps\maps.xml");
@@ -24,13 +28,16 @@ namespace ReportDBmySQL
                 foreach (XmlNode xNode in xRoot)
                 {
                     //получаем атрибут name
-                    if (xNode.Attributes.Count > 0) { XmlNode attr = xNode.Attributes.GetNamedItem("name"); }
+                    if (xNode.Attributes.Count > 0) { 
+                        XmlNode attr = xNode.Attributes.GetNamedItem("name");
+                        _ = attr.Value;
+                    }
                     
                     foreach(XmlNode childnode in xNode.ChildNodes)
                     {
-                        if (childnode.Name== "floor") { }
-                        if (childnode.Name== "flatscount") { }
-                        if (childnode.Name== "entrance") { }
+                        if (childnode.Name== "floor") { _=childnode.InnerText; }
+                        if (childnode.Name== "flatscount") { _=childnode.InnerText; }
+                        if (childnode.Name== "entrance") { _=childnode.InnerText; }
                     }
 
                 }
