@@ -10,36 +10,29 @@ namespace ReportDBmySQL
         /// </summary>
         public static void GetXMLFindList(ref List<InfoMap> nodeList)
         {
-            foreach(InfoMap i in nodeList)
-            {
-                _ = i.Address;
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(@"C:\Users\User1_106\Desktop\Github\ReportDBmySQL\Database\Maps\maps.xml");
+            XmlElement xRoot = xDoc.DocumentElement;
 
-                _ = i.Entrance;
-                _ = i.FlatsCount;
-                _ = i.Floor;
-            
-                XmlDocument xDoc = new XmlDocument();
-                xDoc.Load(@"C:\Users\User1_106\Desktop\Github\ReportDBmySQL\Database\Maps\maps.xml");
-
-                // получим корневой элемент
-                XmlElement xRoot = xDoc.DocumentElement;
-
-                //обход всех узлов в корневом элементе
+            foreach (InfoMap i in nodeList)
+            {        
                 foreach (XmlNode xNode in xRoot)
                 {
-                    //получаем атрибут name
-                    if (xNode.Attributes.Count > 0) { 
-                        XmlNode attr = xNode.Attributes.GetNamedItem("name");
-                        _ = attr.Value;
-                    }
-                    
-                    foreach(XmlNode childnode in xNode.ChildNodes)
-                    {
-                        if (childnode.Name== "floor") { _=childnode.InnerText; }
-                        if (childnode.Name== "flatscount") { _=childnode.InnerText; }
-                        if (childnode.Name== "entrance") { _=childnode.InnerText; }
-                    }
+                    XmlNode attr = xNode.Attributes.GetNamedItem("name");
 
+                    if(i.Address == attr.Value)
+                    {
+                        foreach (XmlNode childnode in xNode.ChildNodes)
+                        {
+                            if (childnode.Name == "floor") { _ = childnode.InnerText; }
+                            if (childnode.Name == "flatscount") { _ = childnode.InnerText; }
+                            if (childnode.Name == "entrance") { _ = childnode.InnerText; }
+
+                            _ = i.Entrance;
+                            _ = i.FlatsCount;
+                            _ = i.Floor;
+                        }
+                    }
                 }
             }
         }
