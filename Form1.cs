@@ -23,7 +23,7 @@ namespace ReportDBmySQL
 
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
-            //db.Clear();
+            db.Clear();
             Database.CreateTables(connection);
 
             Catalogs.GetFillList(in withoutReportsSearch, out List<InfoCatalog> сatalogsList, out List<InfoCatalog> сatalogsListLater, out string openFolder);
@@ -74,7 +74,7 @@ namespace ReportDBmySQL
 
             // Если не содержит
             if (e.Label.Contains("Введите количество") == false) 
-                // System.NullReferenceException: "Ссылка на объект не указывает на экземпляр объекта."
+                //System.NullReferenceException: "Ссылка на объект не указывает на экземпляр объекта."
                 //System.Windows.Forms.NodeLabelEditEventArgs.Label.get вернул null
             {
                 switch (index)
