@@ -32,28 +32,13 @@ namespace ReportDBmySQL
             Cities.GetFillList(in openFolder, out List<InfoCity> citiesList);
             Cities.GetInsertList(in citiesList, connection);
 
-            // Задача: запись и чтение данных xml
             Maps.SelectAddresses(connection, out List<InfoMap> nodeList);
-            Maps.GetXMLFindList(ref nodeList);
+            //Maps.GetXMLFindList(ref nodeList);
             Maps.LoadTree(treeView1, ref nodeList);
 
             if(сatalogsListLater != null) MessageBox.Show(string.Join(Environment.NewLine, сatalogsListLater.Select(cl => cl.Catalog.ToString())), "Нет реестра", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             // Задача: акт успд
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            Database db = new Database();
-            MySqlConnection connection = db.GetConnection();
-
-            var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
-
-            Document.GetSelectList(out List<InfoDocument> documentsList, connection);
-            Document.Create(in documentsList, in documentTemplate, connection);
-
-            db.Clear();
-            Application.Exit();
         }
 
         private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
@@ -97,6 +82,20 @@ namespace ReportDBmySQL
             List<InfoMap> mapListEdit = new List<InfoMap> { new InfoMap(address, floor, flatscount, entrance) };
             Maps.GetInsertList(in mapListEdit, connection);
             Maps.GetXMLInsertList(in mapListEdit);
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+            MySqlConnection connection = db.GetConnection();
+
+            var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
+
+            Document.GetSelectList(out List<InfoDocument> documentsList, connection);
+            Document.Create(in documentsList, in documentTemplate, connection);
+
+            db.Clear();
+            Application.Exit();
         }
     }
 }
