@@ -29,7 +29,21 @@ namespace ReportDBmySQL
                 XmlText flatscounText = xDoc.CreateTextNode(i.FlatsCount);
                 XmlText entranceText = xDoc.CreateTextNode(i.Entrance);
 
+                nameAttribute.AppendChild(nameText);
+
+                floorElement.AppendChild(floorText);
+                flatscounElement.AppendChild(flatscounText);
+                entranceElemement.AppendChild(entranceText);
+
+                addressElement.Attributes.Append(nameAttribute);
+
+                addressElement.AppendChild(floorElement);
+                addressElement.AppendChild(flatscounElement);
+                addressElement.AppendChild(entranceElemement);
+
+                xRoot.AppendChild(addressElement);
             }
+            xDoc.Save(@"C:\Users\User1_106\Desktop\maps.xml");
         }
     }
 }
