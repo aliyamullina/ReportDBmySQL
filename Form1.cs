@@ -16,14 +16,15 @@ namespace ReportDBmySQL
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //выбор искать без ппо и с ппо
             bool withoutReportsSearch;
             if (checkBox1.Checked == true) { withoutReportsSearch = true; }
             else { withoutReportsSearch = false; }
 
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
+
             db.Clear();
+
             Database.CreateTables(connection);
 
             Catalogs.GetFillList(in withoutReportsSearch, out List<InfoCatalog> сatalogsList, out List<InfoCatalog> сatalogsListLater, out string openFolder);
@@ -36,25 +37,19 @@ namespace ReportDBmySQL
             //Maps.GetXMLFindList(ref nodeList);
             Maps.LoadTree(treeView1, ref nodeList);
 
-            if(сatalogsListLater != null) MessageBox.Show(string.Join(Environment.NewLine, сatalogsListLater.Select(cl => cl.Catalog.ToString())), "Нет реестра", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            // Задача: акт успд
+            if (сatalogsListLater != null) 
+            { 
+                MessageBox.Show(string.Join(Environment.NewLine, сatalogsListLater.Select(cl => cl.Catalog.ToString())), "Нет реестра", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
         }
 
-        private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        private void TreeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
             string floor = null; string flatscount = null; string entrance = null;
-
-            //Не позволяет редактировать родителя, выдает исключение
             string address = e.Node.Parent.Text;
 
-            //Общее число элементов
             var childCount = e.Node.Parent.Nodes.Count;
-
-            //Индекс  элемента
             var index = e.Node.Parent.Nodes.IndexOf(e.Node);
-
-            //Текст элемента
             var child = e.Label;
 
             // Если не содержит
@@ -81,13 +76,14 @@ namespace ReportDBmySQL
 
             List<InfoMap> mapListEdit = new List<InfoMap> { new InfoMap(address, floor, flatscount, entrance) };
             Maps.GetInsertList(in mapListEdit, connection);
-            Maps.GetXMLInsertList(in mapListEdit);
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
+
+            Maps.GetXMLInsertList(out List<InfoMap> mapListInsert, connection);
 
             var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 
