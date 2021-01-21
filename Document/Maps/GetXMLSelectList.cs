@@ -18,9 +18,10 @@ namespace ReportDBmySQL
                     addresses.Street, 
                     addresses.Home,
                     addresses.Part,
-                    maps.Floor,
-                    maps.FlatsCount,
-                    maps.Entrance
+                    maps.Address_id, 
+                    GROUP_CONCAT(maps.Floor),
+                    GROUP_CONCAT(maps.FlatsCount),
+                    GROUP_CONCAT(maps.Entrance)
                 FROM 
                     cities,
                     addresses,
@@ -29,6 +30,7 @@ namespace ReportDBmySQL
                     addresses.City_id = cities.City_Id
                 AND 
                     addresses.Address_Id = maps.Address_id
+                GROUP BY Address_id
                 ", connection))
             {
                 connection.Open();
