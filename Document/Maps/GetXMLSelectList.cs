@@ -42,9 +42,9 @@ namespace ReportDBmySQL
                         mapListInsert.Add(
                             new InfoMap(
                                 dataReader["City"].ToString() + ", " + dataReader["Street"].ToString() + " " + dataReader["Home"] + dataReader["Part"].ToString(),
-                                dataReader["Floor"].ToString(),
-                                dataReader["FlatsCount"].ToString(),
-                                dataReader["Entrance"].ToString()
+                                dataReader["GROUP_CONCAT(maps.Floor)"].ToString(),
+                                dataReader["GROUP_CONCAT(maps.FlatsCount)"].ToString(),
+                                dataReader["GROUP_CONCAT(maps.Entrance)"].ToString()
                             )
                         );
                     }
