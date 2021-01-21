@@ -18,9 +18,9 @@ namespace ReportDBmySQL
                     addresses.Street, 
                     addresses.Home,
                     addresses.Part,
-                    map.Floor,
-                    map.FlatsCount,
-                    map.Entrance
+                    maps.Floor,
+                    maps.FlatsCount,
+                    maps.Entrance
                 FROM 
                     cities,
                     addresses,
