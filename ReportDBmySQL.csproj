@@ -116,6 +116,7 @@
     <Compile Include="Database\Dates\CreateTable.cs" />
     <Compile Include="Database\Dates\GetInsertList.cs" />
     <Compile Include="Database\Acts\InfoActs.cs" />
+    <Compile Include="Database\Maps\GetXMLSelectList.cs" />
     <Compile Include="Database\Maps\GetXMLInsertList.cs" />
     <Compile Include="Database\Maps\InfoMap.cs" />
     <Compile Include="Database\Maps\GetXMLFindList.cs" />

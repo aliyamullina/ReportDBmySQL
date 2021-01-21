@@ -83,7 +83,8 @@ namespace ReportDBmySQL
             Database db = new Database();
             MySqlConnection connection = db.GetConnection();
 
-            Maps.GetXMLInsertList(out List<InfoMap> mapListInsert, connection);
+            Maps.GetXMLSelectList(out List<InfoMap> mapListInsert, connection);
+            Maps.GetXMLInsertList(ref mapListInsert);
 
             var documentTemplate = @"C:\Users\User1_106\Desktop\template.docx";
 
