@@ -1,18 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <addresses>
-	<address name="Казань, Ленинградская 45А">
-		<floor>3 этажа</floor>
-		<flatscount>18 квартир</flatscount>
-		<entrance>В доме 2 подъезда</entrance>
-	</address>
-	<address name="Казань, О.Кошевого 2">
-		<floor>5 этажей</floor>
-		<flatscount>80 квартир</flatscount>
-		<entrance>В доме 4 подъезда</entrance>
-	</address>
-	<address name="Казань, Шуртыгина 24">
-		<floor>​9 этажей</floor>
-		<flatscount>169 квартир</flatscount>
-		<entrance>В доме 1 подъезд</entrance>
-	</address>
+  <address name="Казань, Ленинградская 45А">
+    <floor>3 этажа</floor>
+    <flatscount>18 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, О.Кошевого 2">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Шуртыгина 24">
+    <floor>​9 этажей</floor>
+    <flatscount>169 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Гагарина 28Б">
+    <floor>9 этажей</floor>
+    <flatscount>125 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
