@@ -10,8 +10,10 @@ namespace ReportDBmySQL
         /// </summary>
         public static void GetXMLInsertList(ref List<InfoMap> mapListInsert)
         {
+            string file = @"C:\Users\User1_106\Desktop\Github\ReportDBmySQL\Database\Maps\maps.xml";
+
             XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(@"C:\Users\User1_106\Desktop\Github\ReportDBmySQL\Database\Maps\maps.xml");
+            xDoc.Load(file);
             XmlElement xRoot = xDoc.DocumentElement;
 
             foreach (InfoMap i in mapListInsert)
@@ -43,7 +45,7 @@ namespace ReportDBmySQL
 
                 xRoot.AppendChild(addressElement);
             }
-            xDoc.Save(@"C:\Users\User1_106\Desktop\maps.xml");
+            xDoc.Save(file);
         }
     }
 }
