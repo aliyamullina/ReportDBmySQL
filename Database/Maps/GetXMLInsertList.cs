@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 namespace ReportDBmySQL
 {
@@ -7,9 +8,9 @@ namespace ReportDBmySQL
         /// <summary>
         /// Вносит данные адреса в XML файл
         /// </summary>
-        public static void GetXMLInsertList(in List<InfoMap> mapListEdit)
+        public static void GetXMLInsertList(out List<InfoMap> mapListInsert, MySqlConnection connection)
         {
-            
+            mapListInsert = new List<InfoMap>();
         }
     }
 }
