@@ -52,17 +52,18 @@ namespace ReportDBmySQL
                             Console.WriteLine(filesReports);
                             GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, catalog, in open);
                         }
-                    }
-                    else
+                    } else
                     {
                         GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, catalog, in open);
                     }
+
+                    if (сatalogsList.Count > 5) break;
                 }
             }
         }
 
         public static void GetRegistryDirectory(ref List<InfoCatalog> сatalogsList, ref List<InfoCatalog> сatalogsListLater, string catalog, in string open)
-        {
+        {          
             string registry = new DirectoryInfo(catalog).GetFiles("Реестр" + "*.xlsx", SearchOption.TopDirectoryOnly).Select(f => f.FullName).FirstOrDefault();
 
             if (registry == null)
