@@ -150,4 +150,54 @@
     <flatscount>143 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Адоратского 46">
+    <floor>9 этажей</floor>
+    <flatscount>252 квартир</flatscount>
+    <entrance>В доме 7 подъездов</entrance>
+  </address>
+  <address name="Казань, Адоратского 5">
+    <floor>​10 этажей</floor>
+    <flatscount>159 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Адоратского 51">
+    <floor>9 этажей</floor>
+    <flatscount>350 квартир</flatscount>
+    <entrance>В доме 10 подъездов</entrance>
+  </address>
+  <address name="Казань, Адоратского 51">
+    <floor>9 этажей</floor>
+    <flatscount>350 квартир</flatscount>
+    <entrance>В доме 10 подъездов</entrance>
+  </address>
+  <address name="Казань, Адоратского 55">
+    <floor>9 этажей</floor>
+    <flatscount>89 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Адоратского 6">
+    <floor>​9 этажей</floor>
+    <flatscount>192 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Адоратского 60">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Адоратского 64">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Адоратского 66А">
+    <floor>10 этажей</floor>
+    <flatscount>99 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Айдарова 12">
+    <floor>2 этажа</floor>
+    <flatscount>16 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
 </addresses>
