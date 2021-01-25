@@ -320,4 +320,34 @@
     <flatscount>96 квартир</flatscount>
     <entrance>В доме 1 подъезд</entrance>
   </address>
+  <address name="Казань, Ак.Сахарова 27">
+    <floor>​10 этажей</floor>
+    <flatscount>147 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ахтямова 24">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Батыршина 18">
+    <floor>​5 этажей</floor>
+    <flatscount>79 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Батыршина 19">
+    <floor>9 этажей</floor>
+    <flatscount>216 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Батыршина 35">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Белинского 15">
+    <floor>​5 этажей</floor>
+    <flatscount>40 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
 </addresses>
