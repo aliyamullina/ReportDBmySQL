@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -36,6 +37,9 @@ namespace ReportDBmySQL
 
                 // Список папок, подпапок из выбранной папки
                 string[] catalogsArray = Directory.GetDirectories(open, "*", SearchOption.AllDirectories).ToArray();
+
+                // Часть2, часть 3 были в конце списка
+                Array.Sort(catalogsArray);
 
                 foreach (var catalog in catalogsArray)
                 {
