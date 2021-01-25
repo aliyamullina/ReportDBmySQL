@@ -295,4 +295,29 @@
     <flatscount>160 квартир</flatscount>
     <entrance>В доме 5 подъездов</entrance>
   </address>
+  <address name="Казань, Ак.Сахарова 15">
+    <floor>9 этажей</floor>
+    <flatscount>162 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ак.Сахарова 16">
+    <floor>10 этажей</floor>
+    <flatscount>199 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ак.Сахарова 17">
+    <floor>9 этажей</floor>
+    <flatscount>162 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ак.Сахарова 20">
+    <floor>​16 этажей</floor>
+    <flatscount>112 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Ак.Сахарова 21">
+    <floor>16 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
 </addresses>
