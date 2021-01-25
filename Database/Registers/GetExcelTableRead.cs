@@ -26,6 +26,7 @@ namespace ReportDBmySQL
                     string apartment = row.Cell(1).Value.ToString();
                     string model = row.Cell(2).Value.ToString();
                     string serial = row.Cell(3).Value.ToString();
+
                     catalogRegistersTable.Add(new InfoRegistry(catalog_id, apartment, model, serial));
 
                     DateTime dateTime = row.Cell(10).GetDateTime();
