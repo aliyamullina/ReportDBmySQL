@@ -235,4 +235,64 @@
     <flatscount>128 квартир</flatscount>
     <entrance>В доме 1 подъезд</entrance>
   </address>
+  <address name="Казань, Ак.Глушко 41">
+    <floor>​16 этажей</floor>
+    <flatscount>128 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Ак.Завойского 12">
+    <floor>9 этажей</floor>
+    <flatscount>211 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ак.Завойского 14-74">
+    <floor>​9 этажей</floor>
+    <flatscount>216 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ак.Завойского 7">
+    <floor>​9 этажей</floor>
+    <flatscount>125 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ак.Королева 36">
+    <floor>​5 этажей</floor>
+    <flatscount>45 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ак.Павлова 13">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ак.Павлова 17">
+    <floor>9 этажей</floor>
+    <flatscount>110 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Ак.Павлова 21">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Ак.Павлова 23А">
+    <floor>​9 этажей</floor>
+    <flatscount>189 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Ак.Парина 12">
+    <floor>5 этажей</floor>
+    <flatscount>76 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ак.Сахарова 1">
+    <floor>​9 этажей</floor>
+    <flatscount>213 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Ак.Сахарова 12">
+    <floor>​10 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
 </addresses>
