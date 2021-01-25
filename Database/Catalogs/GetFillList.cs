@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ReportDBmySQL
@@ -50,7 +48,6 @@ namespace ReportDBmySQL
                         // Если нет отчета ППО
                         if (filesReports == false)
                         {
-                            Console.WriteLine(filesReports);
                             GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, catalog, in open);
                         }
                     } else
