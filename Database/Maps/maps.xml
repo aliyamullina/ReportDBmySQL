@@ -380,4 +380,64 @@
     <flatscount>199 квартир</flatscount>
     <entrance>В доме 6 подъездов</entrance>
   </address>
+  <address name="Казань, Блюхера 83">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Блюхера 85">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Болотникова 29А">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Бондаренко 14">
+    <floor>10 этажей</floor>
+    <flatscount>158 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Бондаренко 16">
+    <floor>10 этажей</floor>
+    <flatscount>117 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Бондаренко 17">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Бондаренко 20">
+    <floor>10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Бондаренко 22">
+    <floor>10 этажей</floor>
+    <flatscount>116 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Бондаренко 6А">
+    <floor>10 этажей</floor>
+    <flatscount>78 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Бондаренко 7">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Вишневского 59">
+    <floor>​10 этажей</floor>
+    <flatscount>193 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Волгоградская 22">
+    <floor>5 этажей</floor>
+    <flatscount>126 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
 </addresses>
