@@ -200,4 +200,39 @@
     <flatscount>16 квартир</flatscount>
     <entrance>В доме 8 подъездов</entrance>
   </address>
+  <address name="Казань, Айдарова 24">
+    <floor>9 этажей</floor>
+    <flatscount>165 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Айдарова 7">
+    <floor>9 этажей</floor>
+    <flatscount>409 квартир</flatscount>
+    <entrance>В доме 11 подъездов</entrance>
+  </address>
+  <address name="Казань, Ак.Глушко 1">
+    <floor>9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ак.Глушко 17">
+    <floor>9 этажей</floor>
+    <flatscount>139 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ак.Глушко 26">
+    <floor>9 этажей</floor>
+    <flatscount>179 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Ак.Глушко 3">
+    <floor>​9 этажей</floor>
+    <flatscount>216 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ак.Глушко 39">
+    <floor>​16 этажей</floor>
+    <flatscount>128 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
 </addresses>
