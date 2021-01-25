@@ -350,4 +350,34 @@
     <flatscount>40 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
   </address>
+  <address name="Казань, Белинского 31">
+    <floor>5 этажей</floor>
+    <flatscount>60 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Белинского 35">
+    <floor>5 этажей</floor>
+    <flatscount>60 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Белинского 37">
+    <floor>5 этажей</floor>
+    <flatscount>60 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Белинского 4А">
+    <floor>​2 этажа</floor>
+    <flatscount>18 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Беломорская 236">
+    <floor>3 этажа</floor>
+    <flatscount>36 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Бирюзовая 9">
+    <floor>​10 этажей</floor>
+    <flatscount>199 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
 </addresses>
