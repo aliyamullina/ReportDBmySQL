@@ -125,4 +125,9 @@
     <flatscount>180 квартир</flatscount>
     <entrance>В доме 5 подъездов</entrance>
   </address>
+  <address name="Казань, Адоратского 33">
+    <floor>​9 этажей</floor>
+    <flatscount>388</flatscount>
+    <entrance>В доме 11 подъездов</entrance>
+  </address>
 </addresses>
