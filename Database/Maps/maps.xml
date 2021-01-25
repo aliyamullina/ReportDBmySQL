@@ -130,4 +130,24 @@
     <flatscount>388</flatscount>
     <entrance>В доме 11 подъездов</entrance>
   </address>
+  <address name="Казань, Адоратского 39">
+    <floor>9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Адоратского 39А">
+    <floor>​18 этажей</floor>
+    <flatscount>106 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Адоратского 40">
+    <floor>​9 этажей</floor>
+    <flatscount>108 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Адоратского 41">
+    <floor>9 этажей</floor>
+    <flatscount>143 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
