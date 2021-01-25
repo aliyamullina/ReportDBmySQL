@@ -50,4 +50,34 @@
     <flatscount>117 квартир</flatscount>
     <entrance>В доме 3 подъезда</entrance>
   </address>
+  <address name="Казань, Авангардная 88">
+    <floor>​5 этажей</floor>
+    <flatscount>100 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Адоратского 10">
+    <floor>​9 этажей</floor>
+    <flatscount>215 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Адоратского 17">
+    <floor>9 этажей</floor>
+    <flatscount>68 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Адоратского 28">
+    <floor>9 этажей</floor>
+    <flatscount>180 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Адоратского 35">
+    <floor>​9 этажей</floor>
+    <flatscount>280 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
+  <address name="Казань, Адоратского 36">
+    <floor>9 этажей</floor>
+    <flatscount>212 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
 </addresses>
