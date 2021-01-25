@@ -80,4 +80,14 @@
     <flatscount>212 квартир</flatscount>
     <entrance>В доме 6 подъездов</entrance>
   </address>
+  <address name="Казань, 2-я Азинская 1">
+    <floor>15 этажей</floor>
+    <flatscount>105 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, 2-я Азинская 1В">
+    <floor>10 этажей</floor>
+    <flatscount>147 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
