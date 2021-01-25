@@ -14,7 +14,8 @@ namespace ReportDBmySQL
         /// </summary>
         public static void GetFillList
         (
-            in bool withoutReportsSearch, 
+            in bool withoutReportsSearch,
+            in int numericUpDown,
             out List<InfoCatalog> сatalogsList, 
             out List<InfoCatalog> сatalogsListLater, 
             out string open
@@ -57,7 +58,7 @@ namespace ReportDBmySQL
                         GetRegistryDirectory(ref сatalogsList, ref сatalogsListLater, catalog, in open);
                     }
 
-                    if (сatalogsList.Count > 5) break;
+                    if (сatalogsList.Count > numericUpDown) break;
                 }
             }
         }
