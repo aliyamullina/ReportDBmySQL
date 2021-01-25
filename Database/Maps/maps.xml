@@ -90,14 +90,39 @@
     <flatscount>147 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
-  <address name="Казань, 2-я Азинская 3Б часть 2">
+  <address name="Казань, 2-я Азинская 3Б">
     <floor>10 этажей</floor>
     <flatscount>80 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
   </address>
-  <address name="Казань, 2-я Азинская 3В часть 2">
+  <address name="Казань, 2-я Азинская 3В">
     <floor>10 этажей</floor>
     <flatscount>80 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, 2-я Юго-Западная 32">
+    <floor>5 этажей</floor>
+    <flatscount>118 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, 2-я Юго-Западная 33">
+    <floor>5 этажей</floor>
+    <flatscount>79 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Абсалямова 29">
+    <floor>10 этажей</floor>
+    <flatscount>117 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Адоратского 27А">
+    <floor>9 этажей</floor>
+    <flatscount>140 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Адоратского 31">
+    <floor>9 этажей</floor>
+    <flatscount>180 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
   </address>
 </addresses>
