@@ -20,4 +20,34 @@
     <flatscount>125 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Абсалямова 25">
+    <floor>10 этажей</floor>
+    <flatscount>117 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Абсалямова 27">
+    <floor>​10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Абсалямова 28">
+    <floor>10 этажей</floor>
+    <flatscount>236 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Абсалямова 31">
+    <floor>10 этажей</floor>
+    <flatscount>198 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Абсалямова 35">
+    <floor>10 этажей</floor>
+    <flatscount>117 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Абсалямова 39">
+    <floor>10 этажей</floor>
+    <flatscount>117 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
 </addresses>
