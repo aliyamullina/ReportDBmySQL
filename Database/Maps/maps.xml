@@ -750,4 +750,34 @@
     <flatscount>129 квартир</flatscount>
     <entrance>В доме 8 подъездов</entrance>
   </address>
+  <address name="Казань, Годовикова 14">
+    <floor>6 этажей</floor>
+    <flatscount>129 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
+  <address name="Казань, Голубятникова 1">
+    <floor>5 этажей</floor>
+    <flatscount>56 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Голубятникова 26А">
+    <floor>​9 этажей</floor>
+    <flatscount>108 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Голубятникова 30">
+    <floor>9 этажей</floor>
+    <flatscount>295 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
+  <address name="Казань, Губкина 28А">
+    <floor>5 этажей</floor>
+    <flatscount>56 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Гудованцева 50А">
+    <floor>5 этажей</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
 </addresses>
