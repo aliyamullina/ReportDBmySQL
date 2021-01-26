@@ -465,4 +465,34 @@
     <flatscount>80 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Воровского 23">
+    <floor>5 этажей</floor>
+    <flatscount>90 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Воровского 3А">
+    <floor>9 этажей</floor>
+    <flatscount>72 квартиры</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Воровскогого 11">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Восстания 12">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Восстания 14">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Восстания 14 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
