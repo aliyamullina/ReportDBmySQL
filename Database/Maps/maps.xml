@@ -455,12 +455,7 @@
     <flatscount>90 квартир</flatscount>
     <entrance>В доме 6 подъездов</entrance>
   </address>
-  <address name="Казань, Волкова 55 часть 2">
-    <floor>​6 этажей</floor>
-    <flatscount>53 квартиры</flatscount>
-    <entrance>В доме 6 подъездов</entrance>
-  </address>
-  <address name="Казань, Волкова 55 часть 3">
+  <address name="Казань, Волкова 55">
     <floor>​6 этажей</floor>
     <flatscount>53 квартиры</flatscount>
     <entrance>В доме 6 подъездов</entrance>
