@@ -590,11 +590,6 @@
     <flatscount>192 квартиры</flatscount>
     <entrance>В доме 6 подъездов</entrance>
   </address>
-  <address name="Казань, Гаврилова 30 часть 2">
-    <floor>9 этажей</floor>
-    <flatscount>192 квартиры</flatscount>
-    <entrance>В доме 6 подъездов</entrance>
-  </address>
   <address name="Казань, Гаврилова 40">
     <floor>​9 этажей</floor>
     <flatscount>108 квартир</flatscount>
@@ -660,11 +655,6 @@
     <flatscount>64 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
-  <address name="Казань, Гагарина 28Б часть 2">
-    <floor>9 этажей</floor>
-    <flatscount>125 квартир</flatscount>
-    <entrance>В доме 4 подъезда</entrance>
-  </address>
   <address name="Казань, Гагарина 2А">
     <floor>5 этажей</floor>
     <flatscount>80 квартир</flatscount>
@@ -710,22 +700,12 @@
     <flatscount>20 квартир</flatscount>
     <entrance>В доме 10 подъездов</entrance>
   </address>
-  <address name="Казань, Гвардейская 3 часть 2">
-    <floor>5 этажей</floor>
-    <flatscount>64 квартиры</flatscount>
-    <entrance>В доме 4 подъезда</entrance>
-  </address>
   <address name="Казань, Гвардейская 34">
     <floor>5 этажей</floor>
     <flatscount>100 квартир</flatscount>
     <entrance>В доме 6 подъездов</entrance>
   </address>
   <address name="Казань, Гвардейская 36">
-    <floor>5 этажей</floor>
-    <flatscount>40 квартир</flatscount>
-    <entrance>В доме 2 подъезда</entrance>
-  </address>
-  <address name="Казань, Гвардейская 36 часть 2">
     <floor>5 этажей</floor>
     <flatscount>40 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
