@@ -525,4 +525,34 @@
     <flatscount>96 квартир</flatscount>
     <entrance>В доме 1 подъезд</entrance>
   </address>
+  <address name="Казань, Г.Кайбицкой 11">
+    <floor>​7 этажей</floor>
+    <flatscount>140 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Г.Кайбицкой 14">
+    <floor>​10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Г.Кайбицкой 15">
+    <floor>6 этажей</floor>
+    <flatscount>64 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Г.Кайбицкой 4">
+    <floor>​9 этажей</floor>
+    <flatscount>70 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Г.Кайбицкой 5">
+    <floor>7 этажей</floor>
+    <flatscount>140 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Г.Кайбицкой 7">
+    <floor>5 этажей</floor>
+    <flatscount>100 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
 </addresses>
