@@ -495,4 +495,34 @@
     <flatscount>80 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Восстания 49 часть 2">
+    <floor>7 этажей</floor>
+    <flatscount>186 квартир</flatscount>
+    <entrance>В доме 12 подъездов</entrance>
+  </address>
+  <address name="Казань, Восстания 54">
+    <floor>​5 этажей</floor>
+    <flatscount>40 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Восстания 8">
+    <floor>5 этажей</floor>
+    <flatscount>64 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Восстания 91">
+    <floor>5 этажей</floor>
+    <flatscount>70 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Г.Баруди 23 часть 2">
+    <floor>​14 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Г.Баруди 23 часть 3">
+    <floor>​14 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
 </addresses>
