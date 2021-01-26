@@ -570,4 +570,34 @@
     <flatscount>108 квартир</flatscount>
     <entrance>В доме 3 подъезда</entrance>
   </address>
+  <address name="Казань, Гаврилова 22">
+    <floor>9 этажей</floor>
+    <flatscount>108</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Гаврилова 22А">
+    <floor>9 этажей</floor>
+    <flatscount>72 квартиры</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Гаврилова 28">
+    <floor>9 этажей</floor>
+    <flatscount>108 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Гаврилова 30">
+    <floor>9 этажей</floor>
+    <flatscount>192 квартиры</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Гаврилова 30 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>192 квартиры</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Гаврилова 40">
+    <floor>​9 этажей</floor>
+    <flatscount>108 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
 </addresses>
