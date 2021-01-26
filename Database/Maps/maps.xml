@@ -760,4 +760,34 @@
     <flatscount>Нет информации</flatscount>
     <entrance>Нет информации</entrance>
   </address>
+  <address name="Казань, Девятаева 11-1">
+    <floor>​9 этажей</floor>
+    <flatscount>54 квартиры</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Декабристов 10">
+    <floor>​14 этажей</floor>
+    <flatscount>94 квартиры</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Декабристов 127 часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>231 квартира</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Декабристов 129 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>249 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Декабристов 129 часть 3">
+    <floor>9 этажей</floor>
+    <flatscount>249 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Декабристов 131 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>292 квартиры</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
 </addresses>
