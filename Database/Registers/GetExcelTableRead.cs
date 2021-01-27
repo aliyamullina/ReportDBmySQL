@@ -29,12 +29,28 @@ namespace ReportDBmySQL
 
                     catalogRegistersTable.Add(new InfoRegistry(catalog_id, apartment, model, serial));
 
-                    DateTime dateTime = row.Cell(10).GetDateTime();
-                    string date = dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
-
-                    catalogDatesTable.Add(Convert.ToDateTime(date));
+                    GetExcelTableDate(catalogDatesTable, in row);
                 }
             }
+        }
+
+        private static void GetExcelTableDate(List<DateTime> catalogDatesTable, in IXLRangeRow row)
+        {
+            DateTime dateTime;
+
+            // Текущая дата, если дата не указана
+            if (row.Cell(10).IsEmpty())
+            {
+                dateTime = DateTime.Today;
+            }
+            else
+            {
+                dateTime = row.Cell(10).GetDateTime();
+            }
+
+            string date = dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+            catalogDatesTable.Add(Convert.ToDateTime(date));
         }
     }
 }
