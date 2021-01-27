@@ -8,7 +8,6 @@ namespace ReportDBmySQL
 {
     public partial class Form1 : Form
     {
-
         public Form1()
         {
             InitializeComponent();
@@ -93,7 +92,6 @@ namespace ReportDBmySQL
             Document.GetSelectList(out List<InfoDocument> documentsList, connection);
             Document.Create(in documentsList, in documentTemplate, connection);
 
-            db.Clear();
             Application.Exit();
         }
     }

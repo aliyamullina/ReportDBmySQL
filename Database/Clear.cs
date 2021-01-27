@@ -10,18 +10,11 @@ namespace ReportDBmySQL
         /// </summary>
         public void Clear()
         {
-            try
+            using (MySqlCommand command = new MySqlCommand("DROP TABLE IF EXISTS cities, addresses, dates, catalogs, acts, registers, maps;", connection))
             {
-                using (MySqlCommand command = new MySqlCommand("DROP TABLE cities, addresses, dates, catalogs, acts, registers, maps;", connection))
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-              }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"{e.Message}");
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
             }
         }
     }
