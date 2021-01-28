@@ -2205,4 +2205,84 @@
     <flatscount>20 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Челюскина 44 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>65 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Челюскина 48 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>228 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Челюскина 64">
+    <floor>5 этажей</floor>
+    <flatscount>120 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 13">
+    <floor>​10 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 13 часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 22">
+    <floor>10 этажей</floor>
+    <flatscount>118 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 25 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>234 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Четаева 27А">
+    <floor>9 этажей</floor>
+    <flatscount>112 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 33">
+    <floor>​10 этажей</floor>
+    <flatscount>280 квартир</flatscount>
+    <entrance>В доме 7 подъездов</entrance>
+  </address>
+  <address name="Казань, Четаева 39">
+    <floor>10 этажей</floor>
+    <flatscount>98 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 40">
+    <floor>​8 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 45 часть 2">
+    <floor>6 этажей</floor>
+    <flatscount>70 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 46">
+    <floor>10 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 54">
+    <floor>5 этажей</floor>
+    <flatscount>51 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Четаева 58">
+    <floor>​10 этажей</floor>
+    <flatscount>78 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Чистопольская 15">
+    <floor>​9 этажей</floor>
+    <flatscount>117 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
