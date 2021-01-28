@@ -1140,4 +1140,54 @@
     <flatscount>80 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Космонавтов 38">
+    <floor>5 этажей</floor>
+    <flatscount>60 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Космонавтов 51 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>167 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Красной позиции 29">
+    <floor>5 этажей</floor>
+    <flatscount>129 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
+  <address name="Казань, Красной позиции 29А">
+    <floor>5 этажей</floor>
+    <flatscount>100 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Красной позиции 29Б">
+    <floor>​5 этажей</floor>
+    <flatscount>100 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Красной позиции 7 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Красной позиции 7 часть 3">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Красной позиции 3А">
+    <floor>5 этажей</floor>
+    <flatscount>70 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Красной позиции 9А">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Кул Гали 14 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>213 квартир</flatscount>
+    <entrance>В доме 7 подъездов</entrance>
+  </address>
 </addresses>
