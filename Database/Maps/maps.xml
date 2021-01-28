@@ -1700,4 +1700,74 @@
     <flatscount>878 квартир</flatscount>
     <entrance>В доме 12 подъездов</entrance>
   </address>
+  <address name="Казань, Проспект Победы 126А">
+    <floor>​14 этажей</floor>
+    <flatscount>83 квартиры</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 128">
+    <floor>​10 этажей</floor>
+    <flatscount>157 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 136">
+    <floor>​10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 142">
+    <floor>​9 этажей</floor>
+    <flatscount>122 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 15-2">
+    <floor>​14 этажей</floor>
+    <flatscount>112 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 156-26 часть 2">
+    <floor>​16 этажей</floor>
+    <flatscount>128 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 158 часть 3">
+    <floor>9 этажей</floor>
+    <flatscount>261 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 160 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>126 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 168 часть 2">
+    <floor>​16 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 172 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>217 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 18">
+    <floor>9 этажей</floor>
+    <flatscount>211 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 186 часть 2">
+    <floor>19 этажей</floor>
+    <flatscount>132 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 30">
+    <floor>1 этаж</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 32">
+    <floor>9 этажей</floor>
+    <flatscount>126 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
