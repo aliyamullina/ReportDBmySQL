@@ -1770,4 +1770,59 @@
     <flatscount>126 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Проспект Победы 34 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>324 квартир</flatscount>
+    <entrance>В доме 10 подъездов</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 39">
+    <floor>9 этажей</floor>
+    <flatscount>192 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 70">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 70 часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Проф.Камая 5">
+    <floor>​9 этажей</floor>
+    <flatscount>216 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Р.Гареева 4">
+    <floor>18 этажей</floor>
+    <flatscount>255 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Р.Зорге 119">
+    <floor>​14 этажей</floor>
+    <flatscount>95 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Р.Зорге 47А">
+    <floor>6 этажей</floor>
+    <flatscount>36 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Р.Зорге 57-29">
+    <floor>9 этажей</floor>
+    <flatscount>200 квартир</flatscount>
+    <entrance>В доме 7 подъездов</entrance>
+  </address>
+  <address name="Казань, Р.Зорге 60">
+    <floor>​14 этажей</floor>
+    <flatscount>95 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Р.Зорге 66В">
+    <floor>​24 этажа</floor>
+    <flatscount>272 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
 </addresses>
