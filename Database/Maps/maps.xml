@@ -1030,4 +1030,34 @@
     <flatscount>16 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
   </address>
+  <address name="Казань, К.Габишева 23 часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>360 квартир</flatscount>
+    <entrance>В доме 10 подъездов</entrance>
+  </address>
+  <address name="Казань, К.Габишева 7">
+    <floor>9 этажей</floor>
+    <flatscount>450 квартир</flatscount>
+    <entrance>В доме 13 подъездов</entrance>
+  </address>
+  <address name="Казань, К.Тинчурина 1">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, К.Тинчурина 19">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, К.Тинчурина 19 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, К.Тинчурина 7">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
