@@ -1825,4 +1825,114 @@
     <flatscount>272 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
   </address>
+  <address name="Казань, Р.Зорге 84">
+    <floor>9 этажей</floor>
+    <flatscount>180 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Рашида Вагапова 12">
+    <floor>5 этажей</floor>
+    <flatscount>39 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Рашида Вагапова 4">
+    <floor>6 этажей</floor>
+    <flatscount>47 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Рашида Вагапова 5">
+    <floor>​10 этажей</floor>
+    <flatscount>238 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Революционная 27">
+    <floor>​14 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Сафиуллина 17 часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>538 квартир</flatscount>
+    <entrance>В доме 15 подъездов</entrance>
+  </address>
+  <address name="Казань, Сафиуллина 50">
+    <floor>9 этажей</floor>
+    <flatscount>339 квартир</flatscount>
+    <entrance>В доме 10 подъездов</entrance>
+  </address>
+  <address name="Казань, Сафиуллина 6-1">
+    <floor>9 этажей</floor>
+    <flatscount>90 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Светлая 24">
+    <floor>​5 этажей</floor>
+    <flatscount>72 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Седова 7">
+    <floor>5 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Серова 41 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>180 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Серова 6-2">
+    <floor>​9 этажей</floor>
+    <flatscount>210 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Серп и Молот 24А">
+    <floor>​5 этажей</floor>
+    <flatscount>48 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Советская 17">
+    <floor>1 этаж</floor>
+    <flatscount>Нет информации,Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Казань, Советская 27">
+    <floor>4 этажа</floor>
+    <flatscount>48 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Сыртлановой 29">
+    <floor>5 этажей</floor>
+    <flatscount>76 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Сыртлановой 8">
+    <floor>​10 этажей</floor>
+    <flatscount>102 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Татарстан 51">
+    <floor>​9 этажей</floor>
+    <flatscount>36 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Татарстан 54">
+    <floor>​5 этажей</floor>
+    <flatscount>76 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Терегулова 6А часть 2">
+    <floor>​17 этажей</floor>
+    <flatscount>137 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Терегулова 8Б часть 2">
+    <floor>​18 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Тимерязева 8">
+    <floor>5 этажей</floor>
+    <flatscount>84 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
 </addresses>
