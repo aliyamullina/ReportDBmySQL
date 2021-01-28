@@ -1490,4 +1490,54 @@
     <flatscount>120 квартир</flatscount>
     <entrance>В доме 3 подъезда</entrance>
   </address>
+  <address name="Казань, Н.Ершова 49Д">
+    <floor>​5 этажей</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Казань, Н.Ершова 49Д часть 2">
+    <floor>​5 этажей</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Казань, Н.Ершова 55А">
+    <floor>​5 этажей</floor>
+    <flatscount>100 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Новаторов 4А">
+    <floor>​5 этажей</floor>
+    <flatscount>81 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Новаторов 7">
+    <floor>​5 этажей</floor>
+    <flatscount>40 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Ноксинский Спуск 23 часть 3">
+    <floor>​10 этажей</floor>
+    <flatscount>98 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Ноксинский Спуск 25">
+    <floor>​10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Ноксинский Спуск 26 часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>240 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ноксинский Спуск 26 часть 3">
+    <floor>​10 этажей</floor>
+    <flatscount>240 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ноксинский Спуск 29 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
 </addresses>
