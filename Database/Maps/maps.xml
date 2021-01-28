@@ -2285,4 +2285,84 @@
     <flatscount>117 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Чистопольская 27">
+    <floor>9 этажей</floor>
+    <flatscount>72 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Чистопольская 31">
+    <floor>​10 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Чистопольская 33">
+    <floor>10 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Чистопольская 37">
+    <floor>​10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Чистопольская 43">
+    <floor>8 этажей</floor>
+    <flatscount>108 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Чистопольская 47">
+    <floor>10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Чистопольская 47 часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Чистопольская 55">
+    <floor>​10 этажей</floor>
+    <flatscount>240 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Чистопольская 59">
+    <floor>10 этажей</floor>
+    <flatscount>120 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Чишмяле 15">
+    <floor>​10 этажей</floor>
+    <flatscount>237 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Чишмяле 21">
+    <floor>​10 этажей</floor>
+    <flatscount>237 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Чуйкова 11 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Чуйкова 11 часть 3">
+    <floor>9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Чуйкова 13">
+    <floor>​9 этажей</floor>
+    <flatscount>140 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Чуйкова 19 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Чуйкова 23">
+    <floor>​9 этажей</floor>
+    <flatscount>192 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
 </addresses>
