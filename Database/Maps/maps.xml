@@ -2525,4 +2525,44 @@
     <flatscount>382 квартир</flatscount>
     <entrance>В доме 10 подъездов</entrance>
   </address>
+  <address name="Казань, Ямашева 52 часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ямашева 61">
+    <floor>​15 этажей</floor>
+    <flatscount>504 квартир</flatscount>
+    <entrance>В доме 10 подъездов</entrance>
+  </address>
+  <address name="Казань, Ямашева 65">
+    <floor>​10 этажей</floor>
+    <flatscount>118 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ямашева 69 часть 2">
+    <floor>13 этажей</floor>
+    <flatscount>443 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ямашева 71 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>120 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ямашева 73 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ямашева 88 часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>142 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ямашева 91 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>170 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
