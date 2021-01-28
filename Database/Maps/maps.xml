@@ -1645,4 +1645,59 @@
     <flatscount>8 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
   </address>
+  <address name="Казань, П.Лумумбы 23">
+    <floor>2 этажа</floor>
+    <flatscount>12 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, П.Лумумбы 28Б">
+    <floor>5 этажей</floor>
+    <flatscount>8 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, П.Лумумбы 32">
+    <floor>2 этажа</floor>
+    <flatscount>16 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, П.Лумумбы 62А">
+    <floor>10 этажей</floor>
+    <flatscount>78 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Павлюхина 89">
+    <floor>5 этажей</floor>
+    <flatscount>64 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Побежимова 34А">
+    <floor>​3 этажа</floor>
+    <flatscount>18 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Побежимова 39">
+    <floor>​9 этажей</floor>
+    <flatscount>95 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Побежимова 46">
+    <floor>9 этажей</floor>
+    <flatscount>252 квартир</flatscount>
+    <entrance>В доме 7 подъездов</entrance>
+  </address>
+  <address name="Казань, Портовая 17">
+    <floor>​5 этажей</floor>
+    <flatscount>64 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Пржевальского 2">
+    <floor>​10 этажей</floor>
+    <flatscount>335 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
+  <address name="Казань, Проспект Победы 100 часть 2">
+    <floor>​15 этажей</floor>
+    <flatscount>878 квартир</flatscount>
+    <entrance>В доме 12 подъездов</entrance>
+  </address>
 </addresses>
