@@ -2045,4 +2045,164 @@
     <flatscount>267 квартир</flatscount>
     <entrance>В доме 3 подъезда</entrance>
   </address>
+  <address name="Казань, Ф.Амирхана 55">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 71">
+    <floor>​9 этажей</floor>
+    <flatscount>286 квартир</flatscount>
+    <entrance>В доме 9 подъездов</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 83 часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>152 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 83 часть 3">
+    <floor>10 этажей</floor>
+    <flatscount>152 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 89">
+    <floor>9 этажей</floor>
+    <flatscount>143 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 8А часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>143 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 91А">
+    <floor>​10 этажей</floor>
+    <flatscount>130 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 10">
+    <floor>​10 этажей</floor>
+    <flatscount>108 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 13">
+    <floor>​9 этажей</floor>
+    <flatscount>44 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 18">
+    <floor>9 этажей</floor>
+    <flatscount>87 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 19">
+    <floor>​5 этажей</floor>
+    <flatscount>40 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 28">
+    <floor>​7 этажей</floor>
+    <flatscount>82 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 29">
+    <floor>​16 этажей</floor>
+    <flatscount>128 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 29 часть 2">
+    <floor>​16 этажей</floor>
+    <flatscount>128 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 3">
+    <floor>10 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 31">
+    <floor>7 этажей</floor>
+    <flatscount>112 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 33">
+    <floor>​7 этажей</floor>
+    <flatscount>56 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 35">
+    <floor>7 этажей</floor>
+    <flatscount>84 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 35 часть 2">
+    <floor>7 этажей</floor>
+    <flatscount>84 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 4">
+    <floor>​10 этажей</floor>
+    <flatscount>249 квартир</flatscount>
+    <entrance>В доме 7 подъездов</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 5">
+    <floor>​10 этажей</floor>
+    <flatscount>175 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Х.Бигичева 9">
+    <floor>9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Х.Такташа 2">
+    <floor>5 этажей</floor>
+    <flatscount>40 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Халитова 7">
+    <floor>5 этажей</floor>
+    <flatscount>148 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Хибинская 10А">
+    <floor>5 этажей</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Казань, Химиков 45">
+    <floor>5 этажей</floor>
+    <flatscount>145 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Химиков 61 часть 2">
+    <floor>​5 этажей</floor>
+    <flatscount>70 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Химиков 63">
+    <floor>​5 этажей</floor>
+    <flatscount>100 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Химиков 65 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Казань, Чапаева 42А">
+    <floor>2 этажа</floor>
+    <flatscount>8 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Челюскина 25А">
+    <floor>5 этажей</floor>
+    <flatscount>121 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
+  <address name="Казань, Челюскина 42 часть 2">
+    <floor>​5 этажей</floor>
+    <flatscount>20 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
