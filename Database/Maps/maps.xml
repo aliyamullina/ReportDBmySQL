@@ -1990,4 +1990,59 @@
     <flatscount>58 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
   </address>
+  <address name="Казань, Ф.Амирхана 15">
+    <floor>​10 этажей</floor>
+    <flatscount>88 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 2 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>128 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 24">
+    <floor>​10 этажей</floor>
+    <flatscount>152 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 26">
+    <floor>9 этажей</floor>
+    <flatscount>207 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 26А">
+    <floor>​10 этажей</floor>
+    <flatscount>100 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 29">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 2А часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 45 часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 47">
+    <floor>​9 этажей</floor>
+    <flatscount>176 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 53А">
+    <floor>​10 этажей</floor>
+    <flatscount>120 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 53Б">
+    <floor>9 этажей</floor>
+    <flatscount>267 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
 </addresses>
