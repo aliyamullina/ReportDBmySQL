@@ -1340,4 +1340,54 @@
     <flatscount>111 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Мамадышский тракт 34">
+    <floor>​7 этажей</floor>
+    <flatscount>131 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Меридианная 11 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>245 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Меридианная 11 часть 3">
+    <floor>​10 этажей</floor>
+    <flatscount>245 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Меридианная 13">
+    <floor>​10 этажей</floor>
+    <flatscount>276 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Меридианная 17">
+    <floor>10 этажей</floor>
+    <flatscount>197 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Меридианная 17 часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>197 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Меридианная 20">
+    <floor>​10 этажей</floor>
+    <flatscount>98 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Меридианная 24">
+    <floor>​10 этажей</floor>
+    <flatscount>197 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Меридианная 3 часть 2">
+    <floor>6 этажей</floor>
+    <flatscount>202 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
+  <address name="Казань, Меридианная 3А часть 2">
+    <floor>6 этажей</floor>
+    <flatscount>75 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
 </addresses>
