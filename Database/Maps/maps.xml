@@ -1540,4 +1540,54 @@
     <flatscount>80 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
   </address>
+  <address name="Казань, Ноксинский Спуск 39">
+    <floor>​10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, О.Кошевого 2">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, О.Кошевого 4А часть 2">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Окольная 28">
+    <floor>5 этажей</floor>
+    <flatscount>76 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Окольная 94А-1">
+    <floor>​6 этажей</floor>
+    <flatscount>70 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Окольная 94А-2">
+    <floor>​5 этажей</floor>
+    <flatscount>52 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьская 1 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>17 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьская 1 часть 3">
+    <floor>5 этажей</floor>
+    <flatscount>17 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьская 1 часть 4">
+    <floor>5 этажей</floor>
+    <flatscount>17 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьская 15 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>30 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
 </addresses>
