@@ -1390,4 +1390,104 @@
     <flatscount>75 квартир</flatscount>
     <entrance>В доме 3 подъезда</entrance>
   </address>
+  <address name="Казань, Меридианная 7">
+    <floor>10 этажей</floor>
+    <flatscount>225 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Меридианная 7 часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>225 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Меридианная 8">
+    <floor>​16 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Минская 26А">
+    <floor>10 этажей</floor>
+    <flatscount>120 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Минская 26А часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>120 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Минская 40 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>180 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Минская 42">
+    <floor>​10 этажей</floor>
+    <flatscount>78 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Минская 46 часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>77 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Минская 50 часть 2">
+    <floor>​16 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Минская 50 часть 3">
+    <floor>​16 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Минская 56 часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Модельная 10">
+    <floor>9 этажей</floor>
+    <flatscount>104 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Молодежная 14А">
+    <floor>9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Молодежная 6">
+    <floor>​5 этажей</floor>
+    <flatscount>162 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Молодежная 8">
+    <floor>​5 этажей</floor>
+    <flatscount>158 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Мусина 49А">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Мусина 59Б-1 часть 2">
+    <floor>​12 этажей</floor>
+    <flatscount>250 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Мусина 59Б-1 часть 3">
+    <floor>​12 этажей</floor>
+    <flatscount>250 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Мусина 7">
+    <floor>​16 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Мусина 76">
+    <floor>​10 этажей</floor>
+    <flatscount>120 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
 </addresses>
