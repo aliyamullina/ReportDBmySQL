@@ -1590,4 +1590,59 @@
     <flatscount>30 квартир</flatscount>
     <entrance>В доме 3 подъезда</entrance>
   </address>
+  <address name="Казань, Октябрьская 32">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьская 32 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьская 48 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьская 5">
+    <floor>​5 этажей</floor>
+    <flatscount>78 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьская 50">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьская 50 часть 2">
+    <floor>​5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьский Городок 1-149">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Октябрьский Городок 1-162 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Оренбургский тракт 138В часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>136 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Островского 59 часть 2">
+    <floor>​5 этажей</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Казань, П.Лумумбы 13">
+    <floor>2 этажа</floor>
+    <flatscount>8 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
 </addresses>
