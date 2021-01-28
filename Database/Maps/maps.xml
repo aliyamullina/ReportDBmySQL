@@ -1935,4 +1935,59 @@
     <flatscount>84 квартир</flatscount>
     <entrance>В доме 6 подъездов</entrance>
   </address>
+  <address name="Казань, Толбухина 7">
+    <floor>​10 этажей</floor>
+    <flatscount>110 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Толбухина 7 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>110 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Толбухина 9">
+    <floor>​9 этажей</floor>
+    <flatscount>54 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Тополевая 10">
+    <floor>​2 этажа</floor>
+    <flatscount>16 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Туганлык 1">
+    <floor>6 этажей</floor>
+    <flatscount>46 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Туганлык 12">
+    <floor>7 этажей</floor>
+    <flatscount>85 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Тунакова 43 часть 2">
+    <floor>3 этажа</floor>
+    <flatscount>24 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 107">
+    <floor>​9 этажей</floor>
+    <flatscount>178 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 10А-2 часть 2">
+    <floor>​14 этажей</floor>
+    <flatscount>91 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 11 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>58 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Ф.Амирхана 11 часть 3">
+    <floor>​10 этажей</floor>
+    <flatscount>58 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
 </addresses>
