@@ -1,2 +1,3 @@
 # ReportDBmySQL
- Report with mysql data base
+## Пользовательское окно до формирования отчета
+![Пользовательское окно](ScreenApp.JPG)
