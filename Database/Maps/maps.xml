@@ -2565,4 +2565,54 @@
     <flatscount>170 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Казань, Ак.Парина 6">
+    <floor>​10 этажей</floor>
+    <flatscount>353 квартиры</flatscount>
+    <entrance>В доме 9 подъездов</entrance>
+  </address>
+  <address name="Казань, Дубравная 29А">
+    <floor>​16 этажей</floor>
+    <flatscount>96 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Казань, Ильича 28">
+    <floor>9 этажей</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Казань, Карбышева 47-1">
+    <floor>​9 этажей</floor>
+    <flatscount>192 квартиры</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, М.Салимжанова 23 часть 2">
+    <floor>​10 этажей</floor>
+    <flatscount>62 квартиры</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Р.Зорге 41 часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>216 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Х.Мавлютова 35">
+    <floor>5 этажей</floor>
+    <flatscount>87 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Ю.Фучика 107 часть 2">
+    <floor>​9 этажей</floor>
+    <flatscount>180 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Казань, Ю.Фучика 72 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>320 квартир</flatscount>
+    <entrance>В доме 10 подъездов</entrance>
+  </address>
+  <address name="Казань, Ямашева 35 часть 4">
+    <floor>​12 этажей</floor>
+    <flatscount>516 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
 </addresses>
