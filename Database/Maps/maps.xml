@@ -2835,4 +2835,69 @@
     <flatscount>234 квартиры</flatscount>
     <entrance>В доме 7 подъездов</entrance>
   </address>
+  <address name="Елабуга, Проспект Мира 3">
+    <floor>​5 этажей</floor>
+    <flatscount>69 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 30">
+    <floor>​9 этажей</floor>
+    <flatscount>234 квартир</flatscount>
+    <entrance>В доме 7 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 33">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартиры</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 33А">
+    <floor>9 этажей</floor>
+    <flatscount>36 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 34">
+    <floor>​9 этажей</floor>
+    <flatscount>328 квартир</flatscount>
+    <entrance>В доме 10 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 47-16">
+    <floor>5 этажей</floor>
+    <flatscount>201 квартира</flatscount>
+    <entrance>В доме 14 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 49">
+    <floor>​9 этажей</floor>
+    <flatscount>144 квартиры</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 65">
+    <floor>​9 этажей</floor>
+    <flatscount>68 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 69">
+    <floor>​11 этажей</floor>
+    <flatscount>45 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Елабуга, Проспект Нефтяников 20А">
+    <floor>5 этажей</floor>
+    <flatscount>70 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Проспект Нефтяников 72">
+    <floor>​5 этажей</floor>
+    <flatscount>68 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Т.Гиззата 16">
+    <floor>​9 этажей</floor>
+    <flatscount>153 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Т.Гиззата 2">
+    <floor>9 этажей</floor>
+    <flatscount>108 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
 </addresses>
