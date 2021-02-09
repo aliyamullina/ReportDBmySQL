@@ -2635,4 +2635,34 @@
     <flatscount>53 квартиры</flatscount>
     <entrance>В доме 1 подъезд</entrance>
   </address>
+  <address name="Елабуга, Матросова 1">
+    <floor>​2 этажа</floor>
+    <flatscount>24 квартиры</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Матросова 15">
+    <floor>​2 этажа</floor>
+    <flatscount>24 квартиры</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Матросова 17">
+    <floor>​2 этажа</floor>
+    <flatscount>24 квартиры</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Молодежная 2">
+    <floor>5 этажей</floor>
+    <flatscount>74 квартиры</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Молодежная 22">
+    <floor>​5 этажей</floor>
+    <flatscount>264 квартиры</flatscount>
+    <entrance>В доме 17 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Нечаева 10">
+    <floor>​9 этажей</floor>
+    <flatscount>140 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
