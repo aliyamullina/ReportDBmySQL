@@ -2615,4 +2615,14 @@
     <flatscount>516 квартир</flatscount>
     <entrance>В доме 3 подъезда</entrance>
   </address>
+  <address name="Казань, Гаврилова 16А">
+    <floor>9 этажей</floor>
+    <flatscount>108 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Ленская 10">
+    <floor>​10 этажей</floor>
+    <flatscount>233 квартиры</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
 </addresses>
