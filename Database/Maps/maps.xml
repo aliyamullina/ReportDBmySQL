@@ -2745,4 +2745,94 @@
     <flatscount>175 квартир</flatscount>
     <entrance>В доме 12 подъездов</entrance>
   </address>
+  <address name="Елабуга, Говорова 11">
+    <floor>2 этажа</floor>
+    <flatscount>8 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Елабуга, Землянухина 7А">
+    <floor>​4 этажа</floor>
+    <flatscount>29 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Елабуга, Землянухина 7А часть 2">
+    <floor>​4 этажа</floor>
+    <flatscount>29 квартир</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Елабуга, Кооперативная 1Г">
+    <floor>​3 этажа</floor>
+    <flatscount>24 квартиры</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, М.Покровская 33">
+    <floor>2 этажа</floor>
+    <flatscount>16 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Окружное шоссе 39">
+    <floor>​9 этажей</floor>
+    <flatscount>117 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Пролетарская 14">
+    <floor>5 этажей</floor>
+    <flatscount>90 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Пролетарская 16">
+    <floor>5 этажей</floor>
+    <flatscount>90 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Пролетарская 24">
+    <floor>​5 этажей</floor>
+    <flatscount>239 квартир</flatscount>
+    <entrance>В доме 17 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Пролетарская 38">
+    <floor>​5 этажей</floor>
+    <flatscount>285 квартир</flatscount>
+    <entrance>В доме 19 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Пролетарская 46">
+    <floor>​9 этажей</floor>
+    <flatscount>53 квартиры</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Елабуга, Пролетарская 52">
+    <floor>9 этажей</floor>
+    <flatscount>54 квартиры</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 1">
+    <floor>​5 этажей</floor>
+    <flatscount>89 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 14">
+    <floor>5 этажей</floor>
+    <flatscount>100 квартир</flatscount>
+    <entrance>В доме 7 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 16">
+    <floor>​5 этажей</floor>
+    <flatscount>67 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 16 часть 2">
+    <floor>​5 этажей</floor>
+    <flatscount>67 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 18">
+    <floor>​5 этажей</floor>
+    <flatscount>56 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 22">
+    <floor>​9 этажей</floor>
+    <flatscount>234 квартиры</flatscount>
+    <entrance>В доме 7 подъездов</entrance>
+  </address>
 </addresses>
