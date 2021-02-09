@@ -2665,4 +2665,34 @@
     <flatscount>140 квартир</flatscount>
     <entrance>В доме 4 подъезда</entrance>
   </address>
+  <address name="Елабуга, Нечаева 11">
+    <floor>9 этажей</floor>
+    <flatscount>197 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Нечаева 17">
+    <floor>9 этажей</floor>
+    <flatscount>207 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Окружное шоссе 37">
+    <floor>​5 этажей</floor>
+    <flatscount>125 квартир</flatscount>
+    <entrance>В доме 8 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Окружное шоссе 45">
+    <floor>​5 этажей</floor>
+    <flatscount>71 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Проспект Мира 15">
+    <floor>​5 этажей</floor>
+    <flatscount>100 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Елабуга, Проспект Нефтяников 11">
+    <floor>​9 этажей</floor>
+    <flatscount>160 квартир</flatscount>
+    <entrance>В доме 5 подъездов</entrance>
+  </address>
 </addresses>
