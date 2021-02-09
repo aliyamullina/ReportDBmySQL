@@ -2625,4 +2625,14 @@
     <flatscount>233 квартиры</flatscount>
     <entrance>В доме 5 подъездов</entrance>
   </address>
+  <address name="Елабуга, Интернациональная 1">
+    <floor>​9 этажей</floor>
+    <flatscount>108 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Елабуга, Интернациональная 8">
+    <floor>9 этажей</floor>
+    <flatscount>53 квартиры</flatscount>
+    <entrance>В доме 1 подъезд</entrance>
+  </address>
 </addresses>
