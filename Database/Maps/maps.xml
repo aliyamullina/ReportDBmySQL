@@ -2910,4 +2910,29 @@
     <flatscount>24 квартиры</flatscount>
     <entrance>3 подъезда</entrance>
   </address>
+  <address name="Апастово, Молодежная 31">
+    <floor>2 этажа</floor>
+    <flatscount>16 квартир</flatscount>
+    <entrance>2 подъезда</entrance>
+  </address>
+  <address name="Апастово, Молодежная 33">
+    <floor>Нет информации</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Апастово, Молодежная 36">
+    <floor>3 этажа</floor>
+    <flatscount>36 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Апастово, Октябрьская 58">
+    <floor>2 этажа</floor>
+    <flatscount>8 квартир</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
+  <address name="Апастово, Строительная 14">
+    <floor>Нет информации</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
 </addresses>
