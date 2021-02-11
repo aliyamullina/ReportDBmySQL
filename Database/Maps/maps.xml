@@ -2935,4 +2935,49 @@
     <flatscount>Нет информации</flatscount>
     <entrance>Нет информации</entrance>
   </address>
+  <address name="Буинск, Арефьева 21">
+    <floor>Нет информации</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Буинск, Арефьева 9">
+    <floor>3 этажа</floor>
+    <flatscount>36 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Буинск, Б.Хмельницкого 33">
+    <floor>3 этажа</floor>
+    <flatscount>36 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Буинск, Б.Хмельницкого 48">
+    <floor>3 этажа</floor>
+    <flatscount>36 квартир</flatscount>
+    <entrance>4 подъезда</entrance>
+  </address>
+  <address name="Буинск, Вокзальная 82">
+    <floor>3 этажа</floor>
+    <flatscount>27 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Буинск, Ефремова 138">
+    <floor>2 этажа</floor>
+    <flatscount>22 квартиры</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Буинск, Кленовая 3">
+    <floor>4 этажа</floor>
+    <flatscount>48 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Буинск, Луговая 32">
+    <floor>2 этажа</floor>
+    <flatscount>8 квартир</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
+  <address name="Буинск, Матросова 24">
+    <floor>2 этажа</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
 </addresses>
