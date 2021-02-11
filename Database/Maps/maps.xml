@@ -2900,4 +2900,14 @@
     <flatscount>108 квартир</flatscount>
     <entrance>В доме 1 подъезд</entrance>
   </address>
+  <address name="Пестрецы, Мелиораторов 12">
+    <floor>2 этажа</floor>
+    <flatscount>24 квартиры</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Пестрецы, Мелиораторов 13">
+    <floor>2 этажа</floor>
+    <flatscount>24 квартиры</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
 </addresses>
