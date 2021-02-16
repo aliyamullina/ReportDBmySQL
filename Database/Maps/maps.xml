@@ -3020,4 +3020,24 @@
     <flatscount>21 квартира</flatscount>
     <entrance>1 подъезд</entrance>
   </address>
+  <address name="Балтасинский район, с.Карелино, Г. Ашрафзянова 15">
+    <floor>2 этажа</floor>
+    <flatscount>18 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Балтасинский район, с.Карелино, Г. Ашрафзянова 5">
+    <floor>3 этажа</floor>
+    <flatscount>33 квартиры</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Балтасинский район, с.Карелино, Г. Ашрафзянова 5 часть 2">
+    <floor>3 этажа</floor>
+    <flatscount>33 квартиры</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Балтасинский район, с.Карелино, Г. Ашрафзянова 7">
+    <floor>2 этажа</floor>
+    <flatscount>50 квартир</flatscount>
+    <entrance>6 подъездов</entrance>
+  </address>
 </addresses>
