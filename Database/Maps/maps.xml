@@ -2995,4 +2995,29 @@
     <flatscount>Нет информации</flatscount>
     <entrance>1 подъезд</entrance>
   </address>
+  <address name="Балтаси, Ленина 17">
+    <floor>3 этажей</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Балтаси, Наримана 39">
+    <floor>2 этажа</floor>
+    <flatscount>18 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Балтаси, Строителей 3">
+    <floor>3 этажа</floor>
+    <flatscount>22 квартиры</flatscount>
+    <entrance>2 подъезда</entrance>
+  </address>
+  <address name="Балтаси, Строителей 9">
+    <floor>3 этажа</floor>
+    <flatscount>27 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Балтаси, Ямашева 6">
+    <floor>2 этажа</floor>
+    <flatscount>21 квартира</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
 </addresses>
