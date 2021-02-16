@@ -2980,4 +2980,19 @@
     <flatscount>Нет информации</flatscount>
     <entrance>Нет информации</entrance>
   </address>
+  <address name="Арск, Вокзальная 9А">
+    <floor>2 этажа</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Арск, Г.Камала 3Б">
+    <floor>3 этажа</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
+  <address name="Арск, Строителей 9А">
+    <floor>3 этажа</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
 </addresses>
