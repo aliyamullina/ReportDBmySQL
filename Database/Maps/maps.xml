@@ -3040,4 +3040,44 @@
     <flatscount>50 квартир</flatscount>
     <entrance>6 подъездов</entrance>
   </address>
+  <address name="Верхний Услон, Спортивная 112">
+    <floor>6 этажей</floor>
+    <flatscount>20 квартир</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
+  <address name="Камское Устье, Комарова 7">
+    <floor>4 этажа</floor>
+    <flatscount>33 квартиры</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Камское Устье, Куйбышевский затон, Гагарина 23">
+    <floor>2 этажа</floor>
+    <flatscount>8 квартир</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
+  <address name="Камское Устье, Куйбышевский затон, Заводская 3б">
+    <floor>4 этажа</floor>
+    <flatscount>56 квартир</flatscount>
+    <entrance>4 подъезда</entrance>
+  </address>
+  <address name="Камское Устье, Куйбышевский затон, Куйбышева 2а">
+    <floor>4 этажа</floor>
+    <flatscount>51 квартира</flatscount>
+    <entrance>4 подъезда</entrance>
+  </address>
+  <address name="Камское Устье, с.Тенишево, Пионерская 13">
+    <floor>3 этажа</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Камское Устье, с.Тенишево, Пионерская 4">
+    <floor>3 этажа</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Камское Устье, с.Тенишево, Пионерская 6">
+    <floor>3 этажа</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
 </addresses>
