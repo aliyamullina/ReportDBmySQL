@@ -3080,4 +3080,54 @@
     <flatscount>Нет информации</flatscount>
     <entrance>3 подъезда</entrance>
   </address>
+  <address name="Рыбная слобода, Октябрьская 35">
+    <floor>2 этажа</floor>
+    <flatscount>18 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Рыбная слобода, Октябрьская 37">
+    <floor>3 этажа</floor>
+    <flatscount>36 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Рыбная слобода, Октябрьская 43">
+    <floor>3 этажа</floor>
+    <flatscount>27 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Рыбная слобода, Победа 16">
+    <floor>2 этажа</floor>
+    <flatscount>6 квартир</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
+  <address name="Рыбная слобода, Победа 20">
+    <floor>2 этажа</floor>
+    <flatscount>8 квартир</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
+  <address name="Рыбная слобода, Советская 39">
+    <floor>2 этажа</floor>
+    <flatscount>8 квартир</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
+  <address name="Рыбная слобода, Советская 53">
+    <floor>2 этажа</floor>
+    <flatscount>16 квартир</flatscount>
+    <entrance>2 подъезда</entrance>
+  </address>
+  <address name="Рыбная слобода, Шайморданова 42">
+    <floor>2 этажа</floor>
+    <flatscount>18 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
+  <address name="Рыбная слобода, Шайморданова 44">
+    <floor>2 этажа</floor>
+    <flatscount>16 квартир</flatscount>
+    <entrance>2 подъезда</entrance>
+  </address>
+  <address name="Рыбная слобода, Шайморданова 78">
+    <floor>2 этажа</floor>
+    <flatscount>18 квартир</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
 </addresses>
