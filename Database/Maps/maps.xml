@@ -3130,4 +3130,59 @@
     <flatscount>18 квартир</flatscount>
     <entrance>1 подъезд</entrance>
   </address>
+  <address name="Кукмор, Вахитова 18">
+    <floor>5 этажей</floor>
+    <flatscount>77 квартир</flatscount>
+    <entrance>6 подъездов</entrance>
+  </address>
+  <address name="Кукмор, Ворошилова 23">
+    <floor>5 этажей</floor>
+    <flatscount>70 квартир</flatscount>
+    <entrance>4 подъезда</entrance>
+  </address>
+  <address name="Кукмор, Маяковского 11">
+    <floor>Нет информации</floor>
+    <flatscount>Нет информации</flatscount>
+    <entrance>Нет информации</entrance>
+  </address>
+  <address name="Кукмор, Маяковского 3">
+    <floor>4 этажа</floor>
+    <flatscount>16 квартир</flatscount>
+    <entrance>1 подъезд</entrance>
+  </address>
+  <address name="Кукмор, Нур Баяна 35">
+    <floor>5 этажей</floor>
+    <flatscount>75 квартир</flatscount>
+    <entrance>4 подъезда</entrance>
+  </address>
+  <address name="Кукмор, Нур Баяна 42">
+    <floor>5 этажей</floor>
+    <flatscount>64 квартир</flatscount>
+    <entrance>6 подъездов</entrance>
+  </address>
+  <address name="Кукмор, Нур Баяна 48">
+    <floor>5 этажей</floor>
+    <flatscount>30 квартир</flatscount>
+    <entrance>2 подъезда</entrance>
+  </address>
+  <address name="Кукмор, Переулок Майский 1">
+    <floor>5 этажей</floor>
+    <flatscount>75 квартир</flatscount>
+    <entrance>6 подъездов</entrance>
+  </address>
+  <address name="Кукмор, Рабочий Переулок 22">
+    <floor>5 этажей</floor>
+    <flatscount>30 квартир</flatscount>
+    <entrance>2 подъезда</entrance>
+  </address>
+  <address name="Кукмор, Рабочий Переулок 26">
+    <floor>5 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>4 подъезда</entrance>
+  </address>
+  <address name="Кукмор, Рабочий Переулок 36">
+    <floor>5 этажей</floor>
+    <flatscount>30 квартир</flatscount>
+    <entrance>2 подъезда</entrance>
+  </address>
 </addresses>
