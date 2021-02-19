@@ -94,5 +94,9 @@ namespace ReportDBmySQL
 
             Application.Exit();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => System.Diagnostics.Process.Start("https://2gis.ru/");
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => System.Diagnostics.Process.Start("https://dom.mingkh.ru/");
     }
 }
