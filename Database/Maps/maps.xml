@@ -2845,4 +2845,34 @@
     <flatscount>136 квартир</flatscount>
     <entrance>В доме 2 подъезда</entrance>
   </address>
+  <address name="Казань, Бондаренко 14 часть 3">
+    <floor>10 этажей</floor>
+    <flatscount>158 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Бондаренко 20 часть 3">
+    <floor>10 этажей</floor>
+    <flatscount>80 квартир</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, Бондаренко 22 часть 3">
+    <floor>10 этажей</floor>
+    <flatscount>116 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
+  <address name="Казань, Вишневского 49">
+    <floor>9 этажей</floor>
+    <flatscount>192 квартиры</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Волгоградская 6 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>90 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Дубравная 25В часть 2">
+    <floor>10 этажей</floor>
+    <flatscount>120 квартир</flatscount>
+    <entrance>В доме 3 подъезда</entrance>
+  </address>
 </addresses>
