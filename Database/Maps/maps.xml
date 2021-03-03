@@ -2875,4 +2875,34 @@
     <flatscount>120 квартир</flatscount>
     <entrance>В доме 3 подъезда</entrance>
   </address>
+  <address name="Казань, Жуковского 2-11">
+    <floor>5 этажей</floor>
+    <flatscount>51 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Кул Гали 9-95 часть 2">
+    <floor>9 этажей</floor>
+    <flatscount>396 квартир</flatscount>
+    <entrance>В доме 11 подъездов</entrance>
+  </address>
+  <address name="Казань, Кулахметова 9 часть 2">
+    <floor>5 этажей</floor>
+    <flatscount>70 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
+  <address name="Казань, Лаврентьева 8А часть 3">
+    <floor>9 этажей</floor>
+    <flatscount>72 квартиры</flatscount>
+    <entrance>В доме 2 подъезда</entrance>
+  </address>
+  <address name="Казань, М.Салимжанова 15-8В">
+    <floor>​5 этажей</floor>
+    <flatscount>56 квартир</flatscount>
+    <entrance>В доме 6 подъездов</entrance>
+  </address>
+  <address name="Казань, Мамадышский тракт 10 часть 2">
+    <floor>7 этажей</floor>
+    <flatscount>111 квартир</flatscount>
+    <entrance>В доме 4 подъезда</entrance>
+  </address>
 </addresses>
