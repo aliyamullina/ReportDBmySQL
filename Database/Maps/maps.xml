@@ -2945,4 +2945,14 @@
     <flatscount>60 квартир</flatscount>
     <entrance>В доме 3 подъезда</entrance>
   </address>
+  <address name="Сабы, Шемордан, Строителей 4">
+    <floor>2 этажа</floor>
+    <flatscount>16 квартир</flatscount>
+    <entrance>2 подъезда</entrance>
+  </address>
+  <address name="Сабы, Шемордан, Фатыха Карима 11">
+    <floor>4 этажей</floor>
+    <flatscount>35 квартир</flatscount>
+    <entrance>3 подъезда</entrance>
+  </address>
 </addresses>
